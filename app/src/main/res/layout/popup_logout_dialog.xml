@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="25dp"
+        app:cardCornerRadius="15dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                >
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/zonapro_semibold"
+                    android:gravity="center"
+                    android:text="Are You Sure you want to logout?"
+                    android:textSize="16dp">
+
+                </TextView>
+
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title"
+                    android:layout_centerHorizontal="true"
+
+                    android:layout_margin="20dp">
+
+                    <TextView
+                        android:id="@+id/yes"
+                        android:layout_width="75dp"
+                        android:layout_height="30dp"
+                        android:backgroundTint="@color/blue"
+                        android:background="@drawable/submit_cardview"
+                        android:gravity="center"
+                        android:text="YES"
+                        android:textSize="12dp"
+                        android:fontFamily="@font/zonapro_semibold"
+                        android:textColor="@color/white">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/no"
+                        android:layout_width="75dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/yes"
+                        android:backgroundTint="@color/orange"
+                        android:background="@drawable/submit_cardview"
+                        android:gravity="center"
+                        android:text="NO"
+                        android:textSize="12dp"
+                        android:fontFamily="@font/zonapro_semibold"
+                        android:textColor="@color/white">
+
+                    </TextView>
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

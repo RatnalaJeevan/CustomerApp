@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InitiateClaim">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/rl_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/left_arrow">
+
+            </ImageView>
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/zonapro_semibold"
+            android:letterSpacing="0.05"
+            android:text="Initiate Claim"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+    <View
+        android:id="@+id/tv1"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_below="@+id/rl_back"
+        android:background="@color/lightgrey">
+
+    </View>
+
+        <TextView
+            android:id="@+id/label_veh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/zonapro_regular"
+            android:text="Select your vehicle *"
+            android:textColor="@color/black"
+            android:textSize="16dp">
+
+        </TextView>
+
+        <Spinner
+            android:id="@+id/selected_veh_no"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/label_veh"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/zonapro_regular"
+            android:gravity="start"
+            android:popupBackground="@color/white"
+            android:textColor="@color/black"
+            android:textSize="16dp">
+
+        </Spinner>
+
+        <View
+            android:id="@+id/v1"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_below="@+id/selected_veh_no"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/lightgrey">
+
+        </View>
+
+        <TextView
+            android:id="@+id/label_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/v1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/zonapro_regular"
+            android:text="Select the claim type *"
+            android:textColor="@color/black"
+            android:textSize="16dp">
+
+        </TextView>
+
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/progress"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/v1"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@+id/label_type"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/black">
+
+        </ProgressBar>
+    <RelativeLayout
+        android:id="@+id/rl_claim_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/label_type"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_service_type"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/it_place"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/rl_symptoms"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="15dp"
+            app:hintTextAppearance="@style/HintText"
+
+            >
+
+            <EditText
+                android:id="@+id/breakdown_place"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:fontFamily="@font/zonapro_semibold"
+                android:hint="Place of breakdown*"
+                android:padding="5dp"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@color/black"
+                android:textSize="14dp">
+
+            </EditText>
+        </com.google.android.material.textfield.TextInputLayout>
+    <View
+        android:id="@+id/tv2"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/it_place"
+        android:background="@color/lightgrey">
+
+    </View>
+
+        <TextView
+            android:id="@+id/tv_breakdowndate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/zonapro_regular"
+            android:gravity="center"
+            android:text="Date of breakdown*"
+            android:textColor="@color/black"
+            android:textSize="16dp"></TextView>
+
+        <RelativeLayout
+            android:id="@+id/rl_breadowndate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/tv_breakdowndate"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:onClick="onbreakdowndate"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/iv_calendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/calendarweek">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/tv_entered_breakdowndate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/iv_calendar"
+                android:fontFamily="@font/zonapro_semibold"
+                android:hint="dd/mm/yyyy"
+                android:textColor="@color/black"
+                android:textSize="18dp">
+
+            </TextView>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/line_view2"
+            android:layout_width="match_parent"
+            android:layout_height="0.5px"
+            android:layout_below="@+id/rl_breadowndate"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/grey">
+
+        </View>
+
+        <TextView
+            android:id="@+id/label_symptoms_breakdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_claim_type"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/zonapro_regular"
+            android:text="Select the symptoms *"
+            android:textColor="@color/black"
+            android:textSize="16dp">
+
+        </TextView>
+
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/progress1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/rl_claim_type"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@+id/label_symptoms_breakdown"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/black">
+
+        </ProgressBar>
+    <RelativeLayout
+        android:id="@+id/rl_symptoms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/label_symptoms_breakdown"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_symptoms_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+
+        <TextView
+            android:id="@+id/label_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_view2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/zonapro_regular"
+            android:text="Provide detailed description of the claim"
+            android:textColor="@color/black"
+            android:textSize="16dp">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/comments_claim"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_below="@+id/label_description"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/cardview_lightgrey_margined"
+            android:fontFamily="@font/zonapro_regular"
+            android:gravity="start"
+            android:textColor="@color/dimgrey"
+            android:textCursorDrawable="@color/black"
+            android:textSize="16dp">
+
+        </EditText>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/comments_claim"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/cardview_dealership"
+            android:backgroundTint="@color/orange"
+            android:fontFamily="@font/zonapro_semibold"
+            android:gravity="center"
+            android:onClick="on_InitiateClaim"
+            android:padding="10dp"
+            android:text="Initiate claim"
+            android:textColor="@color/white"
+            android:textSize="18dp">
+
+        </TextView>
+
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/progress_add_claim"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:indeterminate="true"
+            android:elevation="10dp"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/black">
+
+        </ProgressBar>
+    </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

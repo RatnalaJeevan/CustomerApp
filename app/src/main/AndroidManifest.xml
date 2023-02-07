@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.wisedrive.customerapp">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission
+        android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/appicon1"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/appicon1"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".TrackImages"
+            android:exported="false" />
+        <activity
+            android:name=".AllClaimsPage"
+            android:exported="false" />
+        <activity
+            android:name=".UploadedInvoicesList"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddInvoice"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AdditionalServicePage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NotificationPage"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TrackClaimPage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InitiateClaim"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WebPage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SelectAddress"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddAddress"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginNewPage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SplashScreen"
+            android:screenOrientation="portrait"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".HelpCentre"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CustomerFeedBack"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SubmitMissingItems"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ServiceCompletedPage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EngineTransmissionWarranty"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddOnServices"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PrepaidServices"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ServiceStatus"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ScheduleService"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CustomerProfile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".VehiclePackageDetails"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivatedMaintenancePlan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PackageActivation"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
+        <service
+            android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"
+            android:enabled="true" />
+    </application>
+
+</manifest>

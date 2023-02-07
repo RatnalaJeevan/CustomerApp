@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+    <!--<TextView
+        android:id="@+id/tv_selectimage"
+        android:fontFamily="@font/zonapro_semibold"
+        android:text="Select your Image"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <View
+        android:id="@+id/view_line"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/tv_selectimage"
+        android:background="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>-->
+    <LinearLayout
+        android:weightSum="2"
+        android:layout_margin="15dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/rl_camera"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_camera"
+                android:src="@drawable/camera_icon"
+                android:layout_centerHorizontal="true"
+                android:layout_width="70dp"
+                android:layout_height="70dp"/>
+            <TextView
+                android:layout_below="@id/iv_camera"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/zonapro_semibold"
+                android:textColor="@color/black"
+                android:text="Camera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rl_gallery"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_gallery"
+                android:src="@drawable/gallery_icon"
+                android:layout_centerHorizontal="true"
+                android:layout_width="70dp"
+                android:layout_height="70dp"/>
+            <TextView
+                android:layout_below="@id/iv_gallery"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:fontFamily="@font/zonapro_semibold"
+                android:textColor="@color/black"
+                android:text="Gallery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

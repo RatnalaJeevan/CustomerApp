@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../../layout/custom_preview.xml" value="0.2935185185185185" />
+        <entry key="app/src/main/res/drawable-v24/cardview_lightorange_margined.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/cardview_activate.xml" value="0.209" />
+        <entry key="app/src/main/res/drawable/searchbar_color.xml" value="0.209" />
+        <entry key="app/src/main/res/layout/activity_activated_maintenance_plan.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/activity_add_address.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/activity_additional_service_page.xml" value="0.23897705078125" />
+        <entry key="app/src/main/res/layout/activity_addon_services.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/activity_all_claims_page.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/activity_claim_warranty.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/activity_customer_feed_back.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_customer_profile.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_engine_transmission_warranty.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/activity_help_centre.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/activity_initiate_claim.xml" value="0.2625766871165644" />
+        <entry key="app/src/main/res/layout/activity_loginnew_page.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_notification_page.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/activity_package_activation.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/activity_prepaid_services.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/activity_schedule_service.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/activity_select_address.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/activity_service_completed.xml" value="0.23333333333333334" />
+        <entry key="app/src/main/res/layout/activity_service_status.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_service_support.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.1578125" />
+        <entry key="app/src/main/res/layout/activity_status_claim_page.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/activity_submit_missing_items.xml" value="0.1578125" />
+        <entry key="app/src/main/res/layout/activity_track_claim_page.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_track_images.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_upload_invoice.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_uploaded_invoices_list.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_vehicle_package_details.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/dialog_camera_options.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/items_add_services_list.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/items_addonservices.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/items_addresses.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/items_all_claimslist.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/items_all_services.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/items_claim_type.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/items_invoices_list.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/items_periodic_maintenance.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/items_prepaid_services.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/items_symptom_list.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/items_track_claim.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/items_track_list.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/items_veh_details.xml" value="0.225" />
+        <entry key="app/src/main/res/layout/items_vehicle_imagelists.xml" value="0.13958333333333334" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PackageActivation"
+    >
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:text="ACTIVATE MAINTENANCE PLAN"
+        android:textSize="16dp"
+        android:textColor="@color/blue"
+        android:fontFamily="@font/zonapro_extrabold">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/tv1"
+        android:text="Activate your maintenance"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:textColor="@color/text_color"
+        android:fontFamily="@font/zonapro_semibold"
+        >
+
+    </TextView>
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv2"
+        android:text=" Plan and drive with"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:textColor="@color/text_color"
+        android:fontFamily="@font/zonapro_semibold">
+
+    </TextView>
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv3"
+        android:text="confidence"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:textColor="@color/text_color"
+        android:fontFamily="@font/zonapro_semibold"
+        >
+
+    </TextView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/centre_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/tv4"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="100dp">
+        <ImageView
+            android:layout_height="160dp"
+            android:layout_width="match_parent"
+            android:src="@drawable/centre_side_image"
+            />
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/centre_image"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="-75dp"
+        android:layout_marginTop="-80dp"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="100dp">
+        <ImageView
+            android:layout_height="150dp"
+            android:layout_width="match_parent"
+            android:src="@drawable/leftside_image"
+            />
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/centre_image"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="-75dp"
+        android:layout_marginTop="-80dp"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="100dp">
+        <ImageView
+            android:layout_height="150dp"
+            android:layout_width="match_parent"
+            android:src="@drawable/rightside_image"
+            />
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/tv5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/centre_image"
+        android:text="1 Year Warranty"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/zonapro_extrabold"
+        >
+
+    </TextView>
+    <TextView
+        android:id="@+id/tv6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv5"
+        android:text="@string/engine_name"
+        android:gravity="center"
+        android:textSize="16dp"
+        android:textColor="@color/text_color"
+        android:fontFamily="@font/zonapro_semibold">
+
+    </TextView>
+    <TextView
+        android:id="@+id/tv7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv6"
+        android:text="Rs. 5,00,000* free with each "
+        android:gravity="center"
+        android:textSize="16dp"
+        android:textColor="@color/text_color"
+        android:fontFamily="@font/zonapro_semibold"
+        >
+    </TextView>
+    <TextView
+        android:id="@+id/tv8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv7"
+        android:text=" maintenance plan"
+        android:gravity="center"
+        android:textSize="16dp"
+        android:textColor="@color/text_color"
+        android:fontFamily="@font/zonapro_semibold"
+        >
+    </TextView>
+    <RelativeLayout
+        android:id="@+id/activation_code"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+       android:layout_above="@+id/activate_button"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="30dp"
+        android:background="@drawable/cardview_activate"
+        >
+
+        <EditText
+            android:id="@+id/entered_act_code"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="@null"
+            android:fontFamily="@font/zonapro_regular"
+            android:gravity="center"
+            android:hint="Activation Code"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textColorHint="@color/lightgrey"
+            android:textSize="20dp">
+
+        </EditText>
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/activate_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:layout_above="@+id/req_activation_code"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/submit_cardview"
+        android:backgroundTint="@color/blue"
+        android:text="ACTIVATE "
+        android:textSize="16dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/zonapro_semibold">
+    </TextView>
+    <TextView
+        android:id="@+id/req_activation_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:gravity="bottom"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:text="@string/req_code"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:fontFamily="@font/zonapro_semibold">
+    </TextView>
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rl_activation_error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/rl_transparent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/cv_activation_code"
+            android:background="#80000000">
+
+        </RelativeLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_activation_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    >
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/zonapro_bold"
+                        android:gravity="center"
+                        android:textColor="@color/red"
+                        android:text="Activation Code Error"
+                        android:textSize="18dp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/title1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_below="@+id/title"
+                        android:text="We are Sorry!\nThere are no active activation codes registered with 9160377315"
+                        android:fontFamily="@font/zonapro_regular"
+                        android:gravity="center"
+                        android:textSize="18dp">
+
+                    </TextView>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_changeno_cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_below="@+id/title1">
+
+                        <TextView
+                            android:id="@+id/changeno"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="12dp"
+                            android:backgroundTint="@color/blue"
+                            android:background="@drawable/submit_missing_items"
+                            android:gravity="center"
+                            android:fontFamily="@font/zonapro_semibold"
+                            android:text="Change Number"
+                            android:textSize="17dp"
+                            android:textColor="@color/white">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/cancel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:padding="10dp"
+                            android:fontFamily="@font/zonapro_semibold"
+                            android:layout_marginRight="20dp"
+                            android:layout_toRightOf="@+id/changeno"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:textSize="18dp"
+                            android:text="Cancel"
+                            android:textColor="@color/black">
+
+                        </TextView>
+
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

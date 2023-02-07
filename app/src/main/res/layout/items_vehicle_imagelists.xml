@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="80dp"
+    android:layout_height="140dp"
+    android:background="@color/blue">
+
+    <ImageView
+        android:id="@+id/car_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentTop="true"
+        android:padding="10dp"
+        android:background="@drawable/circle_white">
+
+    </ImageView>
+    <TextView
+        android:id="@+id/carname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/car_image"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:maxLines="2"
+        android:text="7 Series Sedan"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:fontFamily="@font/zonapro_bold">
+    </TextView>
+
+</RelativeLayout>

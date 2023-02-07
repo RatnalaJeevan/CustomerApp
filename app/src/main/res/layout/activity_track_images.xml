@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TrackImages">
+
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/blue"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="5dp"
+            android:background="@color/blue"
+            android:padding="5dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/arrow_back">
+
+            </ImageView>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/text_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/rl_back"
+            android:fontFamily="@font/zonapro_regular"
+            android:gravity="center"
+            android:text="Inspection Images"
+            android:textColor="@color/white"
+            android:textSize="18dp">
+
+        </TextView>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/text_heading"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/white"
+            android:visibility="gone">
+
+        </ProgressBar>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_images_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_header">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/label_comments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rv_images_list"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/zonapro_regular"
+        android:gravity="center"
+        android:text="Detailed Description :"
+        android:textColor="@color/black"
+        android:textSize="18dp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/comments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/label_comments"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/cardview_activation_code"
+        android:backgroundTint="@color/add_adress_bg"
+        android:fontFamily="@font/zonapro_semibold"
+        android:gravity="start"
+        android:paddingLeft="30dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black"
+        android:textSize="12dp">
+
+    </TextView>
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/noresults"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/rl_header"
+        android:layout_marginTop="20dp"
+        android:layout_height="30dp"
+        android:text="NO RESULTS FOUND"
+        android:gravity="center">
+    </TextView>
+</RelativeLayout>

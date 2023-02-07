@@ -1,0 +1,940 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ServiceCompletedPage">
+
+
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue">
+
+        <RelativeLayout
+            android:id="@+id/rl_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="21dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/arrow_back">
+
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_back"
+            android:layout_marginLeft="20dp"
+
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/customer_vehicle_cardview">
+
+            <RelativeLayout
+                android:id="@+id/rl_customer_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/customer_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/zonapro_bold"
+                    android:gravity="start"
+                    android:text="RXXX RXXXX"
+                    android:textColor="@color/blue"
+                    android:textSize="18dp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/customer_phoneno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/customer_name"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/zonapro_bold"
+                    android:gravity="start"
+                    android:text="9XXXXXXXXX"
+                    android:textColor="@color/blue"
+                    android:textSize="18dp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/customer_vehname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/customer_phoneno"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/zonapro_semibold"
+                    android:gravity="start"
+                    android:text=" Honda City"
+                    android:textColor="@color/blue"
+                    android:textSize="16dp">
+
+                </TextView>
+
+                <ImageView
+                    android:id="@+id/veh_img"
+                    android:layout_width="91dp"
+                    android:layout_height="75dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/carimage1x">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/customer_vehno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/customer_vehname"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:fontFamily="@font/zonapro_semibold"
+                    android:text="KAXXXXXXXX"
+                    android:textColor="@color/blue"
+                    android:textSize="14dp">
+
+                </TextView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_below="@+id/rl_customer_details"
+                android:background="@drawable/customervehicle_cardview2"
+                android:padding="7dp">
+
+                <TextView
+                    android:id="@+id/warranty_exp_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/zonapro_semibold"
+                    android:text="Expires on 12thOct,2021"
+                    android:textColor="@color/blue"
+                    android:textSize="18dp">
+
+                </TextView>
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/rl1"
+        android:background="@color/orange">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Service completed"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/zonapro_bold">
+
+        </TextView>
+        <TextView
+            android:id="@+id/service_completed_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:text="12th Oct,2022"
+            android:layout_centerVertical="true"
+            android:textSize="14dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/zonapro_semibold"
+            >
+        </TextView>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_1">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/rl_label"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/cardview_lightorange_margined"
+                android:backgroundTint="@color/greywhite"
+                android:elevation="10dp"
+                android:onClick="onservices_include">
+
+                <TextView
+                    android:id="@+id/tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:fontFamily="@font/zonapro_bold"
+                    android:text="Services Included"
+                    android:textColor="@color/blue"
+                    android:textSize="16dp"></TextView>
+
+                <ImageView
+
+                    android:id="@+id/add_services_included"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="21dp"
+                    android:src="@drawable/plus_blue">
+
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/minus_services_included"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="21dp"
+                    android:src="@drawable/minus_blue"
+                    android:visibility="gone">
+
+                </ImageView>
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:visibility="gone"
+                android:id="@+id/rv_all_services"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_label"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <RelativeLayout
+                android:id="@+id/rl_label1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/rv_all_services"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/cardview_lightorange_margined"
+                android:backgroundTint="@color/greywhite"
+                android:elevation="10dp"
+                android:onClick="ontrack_include">
+
+                <TextView
+                    android:id="@+id/tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:fontFamily="@font/zonapro_bold"
+                    android:text="Track Service"
+                    android:textColor="@color/blue"
+                    android:textSize="16dp"></TextView>
+
+                <ImageView
+                    android:id="@+id/add_track"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="21dp"
+                    android:src="@drawable/plus_blue">
+
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/minus_track"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="21dp"
+                    android:src="@drawable/minus_blue"
+                    android:visibility="gone">
+
+                </ImageView>
+            </RelativeLayout>
+            <androidx.cardview.widget.CardView
+                android:visibility="gone"
+                android:id="@+id/cv_service_track"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:layout_below="@+id/rl_label1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:paddingBottom="20dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_track_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+                    <RelativeLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/status1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_toRightOf="@+id/rl_track"
+                            android:fontFamily="@font/zonapro_regular"
+                            android:text="Requested"
+                            android:textColor="@color/lightgrey"
+                            android:textSize="12dp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/req_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/status1"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_toRightOf="@+id/rl_track"
+                            android:fontFamily="@font/zonapro_semibold"
+                            android:textColor="@color/orange"
+                            android:textSize="10dp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/status2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/status3"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="80dp"
+                            android:layout_toRightOf="@+id/rl_track"
+                            android:fontFamily="@font/zonapro_regular"
+                            android:text="In Progress"
+                            android:textColor="@color/lightgrey"
+                            android:textSize="12dp"></TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/status2"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_toRightOf="@+id/rl_track"
+                            android:fontFamily="@font/zonapro_semibold"
+                            android:textColor="@color/orange"
+                            android:textSize="10dp">
+
+                        </TextView>
+
+                        <LinearLayout
+                            android:id="@+id/rl_track"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="10dp"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <RelativeLayout
+                                android:id="@+id/rl_stage1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp">
+
+                                <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/tick_white">
+
+                                </ImageView>
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp">
+
+                                <View
+                                    android:id="@+id/line1"
+                                    android:layout_width="2px"
+                                    android:layout_height="80dp"
+
+                                    android:background="@color/lightgrey">
+
+                                </View>
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rl_stage2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp">
+
+                                <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/tick_white">
+
+                                </ImageView>
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp">
+
+                                <View
+                                    android:id="@+id/line2"
+                                    android:layout_width="2px"
+                                    android:layout_height="70dp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@color/lightgrey">
+
+                                </View>
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rl_stage3"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp">
+
+                                <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/tick_white">
+
+                                </ImageView>
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp">
+
+                                <View
+                                    android:id="@+id/line3"
+                                    android:layout_width="2px"
+                                    android:layout_height="70dp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@color/lightgrey">
+
+                                </View>
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rl_stage4"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp">
+
+                                <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/tick_white">
+
+                                </ImageView>
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/status3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/status1"
+                            android:layout_marginTop="90dp"
+                            android:layout_toRightOf="@+id/rl_track"
+                            android:fontFamily="@font/zonapro_regular"
+                            android:text="Confirmed"
+                            android:textColor="@color/lightgrey"
+                            android:textSize="12dp">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/status3"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_toRightOf="@+id/rl_track"
+                            android:fontFamily="@font/zonapro_semibold"
+                            android:textColor="@color/orange"
+                            android:textSize="10dp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/status4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/status2"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="80dp"
+                            android:layout_toRightOf="@+id/rl_track"
+                            android:fontFamily="@font/zonapro_regular"
+                            android:text="Delivered"
+                            android:textColor="@color/lightgrey"
+                            android:textSize="12dp">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/status4"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_toRightOf="@+id/rl_track"
+                            android:fontFamily="@font/zonapro_semibold"
+                            android:textColor="@color/orange"
+                            android:textSize="10dp">
+
+                        </TextView>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/rl_prepaid_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp">
+
+                <ImageView
+                    android:id="@+id/iv1"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:src="@drawable/prepaid">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/label1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/iv1"
+                    android:fontFamily="@font/zonapro_semibold"
+                    android:text="Prepaid Service"
+                    android:textColor="@color/black"
+                    android:textSize="20dp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/label3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/label1"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toRightOf="@+id/iv1"
+                    android:fontFamily="@font/zonapro_semibold"
+                    android:maxLines="2"
+                    android:text="Your Service is completed with high quality"
+                    android:textColor="@color/black"
+                    android:textSize="13dp">
+
+                </TextView>
+            </RelativeLayout>
+    <View
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:id="@+id/tv8"
+        android:layout_below="@+id/rl_prepaid_service"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:background="@color/text_color1">
+
+    </View>
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rl_addon_services"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_below="@+id/tv8">
+         <ImageView
+             android:id="@+id/iv_paid"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/postpaid"
+            >
+
+        </ImageView>
+        <TextView
+            android:id="@+id/label4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Add-on Service"
+            android:layout_toRightOf="@+id/iv_paid"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/zonapro_bold">
+
+        </TextView>
+        <TextView
+            android:id="@+id/label5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text="You Have paid Rs.3,450 for the add on services"
+            android:layout_toRightOf="@+id/iv_paid"
+            android:layout_below="@+id/label4"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/zonapro_semibold">
+
+        </TextView>
+
+    </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_need_help"
+            android:layout_below="@+id/cv_service_track">
+
+            <TextView
+                android:id="@+id/tv_help"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/zonapro_bold"
+                android:gravity="start"
+                android:text="Need help for this service?"
+                android:textColor="@color/black"
+                android:textSize="17dp">
+
+            </TextView>
+    <RelativeLayout
+        android:id="@+id/rl_contact"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/tv_help"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp">
+
+        <View
+            android:id="@+id/tv_line1"
+            android:layout_width="2px"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="5dp"
+            android:background="@color/line2"
+           >
+
+        </View>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@+id/tv_line1"
+            android:fontFamily="@font/zonapro_semibold"
+            android:gravity="end"
+            android:text="Contact Support"
+            android:textColor="@color/black"
+            android:textSize="15dp">
+
+        </TextView>
+
+        <ImageView
+            android:id="@+id/iv_arrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/visible_forward_icon"
+            >
+
+        </ImageView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/black"
+            >
+
+        </View>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/rl_contact"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp">
+
+        <View
+            android:id="@+id/tv_line_2"
+            android:layout_width="2px"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="5dp"
+            android:background="@color/line2"
+            >
+
+        </View>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_line_2"
+            android:layout_marginLeft="12dp"
+            android:text="Provide Service Feedback"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:fontFamily="@font/zonapro_semibold">
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/visible_forward_icon"
+            >
+
+        </ImageView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/black"
+            >
+
+        </View>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_lostitems"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/rl_feedback"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp">
+
+        <View
+            android:id="@+id/tv_line5"
+            android:layout_width="2px"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="5dp"
+            android:background="@color/line2"
+            >
+
+        </View>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@+id/tv_line5"
+            android:fontFamily="@font/zonapro_semibold"
+            android:gravity="center"
+            android:text="Report Lost Items"
+            android:textColor="@color/black"
+            android:textSize="15dp">
+
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/visible_forward_icon"
+            >
+
+        </ImageView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/black"
+            >
+        </View>
+    </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+    </ScrollView>
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rl_contact_support"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/rl_transparent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/cv_contact_support"
+            android:background="#80000000">
+
+        </RelativeLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_contact_support"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    >
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/zonapro_bold"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:text="Contact Support"
+                        android:textSize="18dp">
+
+                    </TextView>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_wisedrive_contact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_title"
+                        android:layout_marginTop="12dp"
+                        android:padding="10dp"
+                        android:backgroundTint="@color/blue"
+                        android:background="@drawable/submit_missing_items">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/zonapro_bold"
+                            android:gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="@color/white"
+                            android:text="Wise Drive"
+                            android:textSize="18dp"
+                            >
+
+                        </TextView>
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/telephone_call"
+                            android:layout_centerVertical="true">
+
+                        </ImageView>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/rl_wisedrive_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rl_wisedrive_contact"
+                        android:layout_marginTop="12dp"
+                        android:padding="10dp"
+                        android:backgroundTint="@color/blue"
+                        android:background="@drawable/submit_missing_items">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/zonapro_bold"
+                            android:gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="@color/white"
+                            android:text="Wise Drive"
+                            android:textSize="18dp"
+                            >
+
+                        </TextView>
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/send_mail"
+                            android:layout_centerVertical="true">
+
+                        </ImageView>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+</RelativeLayout>
