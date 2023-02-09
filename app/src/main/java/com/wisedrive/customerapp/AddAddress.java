@@ -177,7 +177,8 @@ public class AddAddress extends AppCompatActivity  {
         hideKeybaord();
         entered_pincode.setText("");
         cancel_btn.setVisibility(View.GONE);
-        entered_city.setText("");entered_state.setText("");
+        entered_city.setText("");
+        entered_state.setText("");
 
     }
     public  void get_pincode_details(){
