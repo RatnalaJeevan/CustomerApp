@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Plans_Fragments">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/rl_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/text_plans"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Extended Warranty Plan"
+        android:layout_marginLeft="15dp"
+        android:textSize="20dp"
+        android:fontFamily="@font/gillroy_bold"
+        android:textColor="@color/heading" />
+        <View
+            android:id="@+id/view1"
+            android:layout_width="40dp"
+            android:layout_height="2dp"
+            android:background="@color/violet"
+            android:layout_below="@id/text_plans"
+            android:layout_marginLeft="15dp" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_warranty_plan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view1" />
+
+    <TextView
+        android:id="@+id/text_combo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Services &amp; Maintanance Plans "
+        android:layout_marginTop="20dp"
+        android:textColor="@color/heading"
+        android:textSize="20dp"
+        android:fontFamily="@font/gillroy_bold"
+        android:layout_below="@id/recycler_view_warranty_plan"
+        android:layout_marginLeft="15dp"/>
+        <View
+            android:id="@+id/view2"
+            android:layout_width="40dp"
+            android:layout_height="2dp"
+            android:background="@color/violet"
+            android:layout_below="@id/text_combo"
+            android:layout_marginLeft="15dp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_service_maintanance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view2"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
+
+
+        <TextView
+            android:id="@+id/text_comprehensive_plans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:text="Comprehensive Plans"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/gillroy_bold"
+            android:layout_below="@id/recycler_service_maintanance"
+            android:layout_marginLeft="15dp"
+            android:visibility="gone"/>
+
+        <View
+            android:id="@+id/view_addon"
+            android:layout_width="40dp"
+            android:layout_height="2dp"
+            android:background="@color/violet"
+            android:layout_below="@id/text_comprehensive_plans"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:visibility="gone"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_v_addon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view_addon"
+            android:layout_marginTop="20dp"
+            android:visibility="gone"/>
+
+
+
+        <TextView
+            android:id="@+id/tv_combo_plans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/heading"
+            android:textSize="20dp"
+            android:text="Combo Plans"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/gillroy_bold"
+            android:layout_below="@id/recycler_service_maintanance"
+            android:layout_marginLeft="15dp" />
+
+        <View
+            android:id="@+id/view_combo_plan"
+            android:layout_width="40dp"
+            android:layout_height="2dp"
+            android:background="@color/violet"
+            android:layout_below="@id/tv_combo_plans"
+            android:layout_marginLeft="15dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle_combo_plan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view_combo_plan"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+    </RelativeLayout>
+    </RelativeLayout>
+    </ScrollView>
+
+
+
+</FrameLayout>

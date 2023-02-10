@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Create_Account">
+    <ImageView
+        android:id="@+id/image_logo"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/wisedrive_logo_for_sign_in_page"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/text_view1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create "
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:textSize="50dp"
+        android:layout_below="@id/image_logo"
+        android:includeFontPadding="false"
+        android:paddingTop="10dp"
+        android:fontFamily="@font/gillroy_regular"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/text_view2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="new account"
+        android:layout_below="@id/text_view1"
+        android:layout_marginLeft="20dp"
+        android:textSize="50dp"
+        android:layout_marginTop="10dp"
+        android:includeFontPadding="false"
+        android:fontFamily="@font/gillroy_regular"
+        android:textColor="@color/black" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="40dp"
+        android:layout_height="2dp"
+        android:background="@color/violet"
+        android:layout_below="@id/text_view2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/text_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Full Name"
+        android:textSize="15dp"
+        android:layout_below="@id/view1"
+        android:textColor="@color/text_color"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/gillroy_regular"/>
+    <FrameLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+      android:layout_below="@id/text_name"
+        android:layout_marginTop="5dp">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/edittext_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/text_name"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="@drawable/edit_text_background" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/check1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/green_check"
+          android:layout_gravity="center"
+            android:layout_marginLeft="150dp"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/text_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email Id"
+        android:layout_below="@id/layout"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/text_color"
+        android:textSize="15dp"
+        android:fontFamily="@font/gillroy_regular"/>
+    <FrameLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_email"
+        android:layout_marginTop="5dp">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <EditText
+        android:id="@+id/edittext_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/text_email"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="@drawable/edit_text_background" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/check2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/green_check"
+            android:layout_gravity="center"
+            android:layout_marginLeft="150dp"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/text_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone Number"
+        android:layout_below="@id/layout1"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/text_color"
+        android:textSize="15dp"
+        android:fontFamily="@font/gillroy_regular"/>
+    <FrameLayout
+        android:id="@+id/layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_password"
+        android:layout_marginTop="5dp">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <EditText
+        android:id="@+id/edittext_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/text_password"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_text_background"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/check3"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/green_check"
+            android:layout_gravity="center"
+            android:layout_marginLeft="150dp"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/layout2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/text_view4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="By creating an account , you agree to our"
+        android:textColor="@color/text_color"
+        android:textSize="12dp"
+        android:layout_below="@id/layout2"
+        android:layout_toRightOf="@id/checkbox"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/gillroy_regular"/>
+
+    <TextView
+        android:id="@+id/text_view5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Terms and conditions."
+        android:textSize="12dp"
+        android:textColor="@color/violet"
+        android:layout_below="@id/text_view4"
+        android:layout_toRightOf="@id/checkbox"
+        android:fontFamily="@font/gillroy_regular"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp">
+
+    <RelativeLayout
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/create_account_button">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/gillroy_bold"
+            android:text="Create account"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+    </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_dont_have_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Have an account?"
+            android:textColor="@color/text_color"
+            android:layout_marginTop="10dp"
+            android:textSize="14dp"
+            android:layout_marginLeft="100dp"
+            android:layout_below="@id/button"
+            android:fontFamily="@font/gillroy_regular"/>
+        <TextView
+            android:id="@+id/tv_sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textColor="@color/blue"
+            android:textSize="14dp"
+            android:layout_toRightOf="@id/tv_dont_have_account"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/button"
+            android:fontFamily="@font/gillroy_semibold"/>
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:cardCornerRadius="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_mycar"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/gradients_mycars">
+
+            <ImageView
+                android:id="@+id/car_image"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:src="@drawable/blue_car_image" />
+
+            <TextView
+                android:id="@+id/text_make"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/car_image"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/gillroy_bold"
+                android:text="DATSUN-"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/text_model"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/car_image"
+                android:layout_toRightOf="@id/text_make"
+                android:fontFamily="@font/gillroy_bold"
+                android:text="Cross"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/text_make"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="5dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/image_kms"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/kms_logo"
+                        android:layout_marginLeft="10dp"/>
+
+                    <TextView
+                        android:id="@+id/text_kms"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:fontFamily="@font/gillroy_semibold"
+                        android:text="4000kms"
+                        android:textSize="13dp"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/image_transmission"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/transmission"
+                        android:layout_marginLeft="5dp"/>
+
+                    <TextView
+                        android:id="@+id/text_transmission"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:fontFamily="@font/gillroy_semibold"
+                        android:text="Manual"
+                        android:textSize="13dp"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/image_fuel"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/transmission"
+                        android:layout_marginLeft="5dp"/>
+
+                    <TextView
+                        android:id="@+id/text_fuel_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:fontFamily="@font/gillroy_semibold"
+                        android:text="Petrol"
+                        android:textSize="13dp"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rl_request"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/imv_request"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:src="@drawable/service_image"/>
+        <View
+            android:id="@+id/view_request"
+            android:layout_width="2dp"
+            android:layout_height="45dp"
+            android:layout_below="@id/imv_request"
+            android:background="@color/green"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="5dp"/>
+            <TextView
+                android:id="@+id/tv_request"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/imv_request"
+                android:layout_marginTop="25dp"
+                android:text="Request"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/green"
+                android:textSize="17dp"
+                android:fontFamily="@font/gillroy_semibold"/>
+
+            <TextView
+                android:id="@+id/tv_request_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_request"
+                android:layout_toRightOf="@id/imv_request"
+                android:text="Booking request recieved"
+                android:textColor="@color/green"
+                android:layout_marginLeft="10dp"
+                android:textSize="14dp"
+                android:fontFamily="@font/gillroy_regular"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_otp"
+                android:layout_width="145dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+               android:layout_toRightOf="@id/view_request"
+                android:paddingRight="5dp"
+                android:layout_below="@id/tv_request_description"
+                android:background="@drawable/rl_date_background">
+
+                <TextView
+                    android:id="@+id/tv_otp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12345"
+                    android:layout_centerInParent="true"
+                    android:textSize="25dp"
+                    android:fontFamily="@font/gillroy_semibold"
+                    android:textColor="@color/black"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12 Feb,Wed"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/green"
+                android:textSize="12dp"
+                android:fontFamily="@font/gillroy_semibold"/>
+        </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>
+</RelativeLayout>

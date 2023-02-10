@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Verification_code">
+
+    <ImageView
+        android:id="@+id/back_button_1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/back_arrow"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="25dp"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_verification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:id="@+id/text_verification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter"
+            android:textColor="@color/black"
+            android:textSize="50dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/gillroy_regular"
+            android:layout_marginLeft="20dp" />
+        <TextView
+            android:id="@+id/text_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="One Time"
+            android:textColor="@color/black"
+            android:textSize="50dp"
+            android:fontFamily="@font/gillroy_regular"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/text_verification" />
+
+        <TextView
+            android:id="@+id/tv_passcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Passcode"
+            android:textColor="@color/black"
+            android:textSize="50dp"
+            android:fontFamily="@font/gillroy_regular"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/text_code" />
+        <View
+            android:id="@+id/view"
+            android:layout_width="30dp"
+            android:layout_height="2dp"
+            android:layout_below="@id/tv_passcode"
+            android:background="@color/violet"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="-10dp"/>
+
+          </RelativeLayout>
+
+
+       <TextView
+        android:id="@+id/text_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Phone Number"
+        android:layout_below="@id/rl_verification"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/text_color"
+        android:textSize="15dp"
+        android:fontFamily="@font/gillroy_regular"/>
+
+    <TextView
+        android:id="@+id/text_phone_number_field"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/text_phone"
+        android:text="6361131647"
+        android:background="@drawable/edit_text_background"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:fontFamily="@font/gillroy_bold"
+        android:layout_marginTop="10dp"
+        android:gravity="center|left"
+        android:paddingLeft="20dp"
+        android:textColor="@color/text_color"
+        android:textSize="15dp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_otp_boxes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/text_phone_number_field"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <TextView
+            android:id="@+id/text_otp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OTP"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/gillroy_regular"
+            android:textColor="@color/text_color"
+            android:textSize="15dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/text_otp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edit1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/otp_background"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"/>
+            <EditText
+                android:id="@+id/edit2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/otp_background"
+                android:layout_toRightOf="@id/edit1"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"/>
+            <EditText
+                android:id="@+id/edit3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/otp_background"
+                android:layout_toRightOf="@id/edit2"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"/>
+
+            <EditText
+                android:id="@+id/edit4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/otp_background"
+                android:layout_toRightOf="@id/edit3"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp">
+
+    <RelativeLayout
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/create_account_button">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/gillroy_bold"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/text_resend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resend code in 3:12"
+        android:layout_below="@id/button"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/text_color"
+        android:fontFamily="@font/gillroy_regular"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

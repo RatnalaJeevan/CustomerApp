@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:id="@+id/rl_request"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+            <RelativeLayout
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+            <ImageView
+                android:id="@+id/imv_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/service_image"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/tv_warranty_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/imv_image"
+                android:layout_marginTop="20dp"
+                android:text="Comprehensive warranty with Buyback Guarantee"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="30dp"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:fontFamily="@font/gillroy_semibold"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/tv_expires_on"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/gillroy_regular"
+                    android:text="Expires On"
+                    android:textColor="@color/black"
+                    android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/tv_expire_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_expires_on"
+                android:fontFamily="@font/gillroy_semibold"
+                android:text="04 Feb,2023"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+

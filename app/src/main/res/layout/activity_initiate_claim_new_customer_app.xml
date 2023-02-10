@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Initiate_Claim_Activity_New_Customer_App"
+    android:background="@color/car_background">
+
+    <RelativeLayout
+        android:id="@+id/Action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_back_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp">
+
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/back" />
+
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_initiate_claims"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Initiate Claim"
+            android:textSize="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/gillroy_regular"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@id/rl_back_button"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pay_button"
+            android:layout_width="120dp"
+            android:layout_height="45dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="15dp"
+            android:text="SUBMIT"
+            android:textSize="16dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/gillroy_semibold"
+            android:background="@drawable/pay_now_button_black" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Action_bar">
+
+        <RelativeLayout
+            android:id="@+id/rl_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+    <RelativeLayout
+        android:id="@+id/rl_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/plans_details_background">
+
+        <TextView
+            android:id="@+id/tv_select_your_vehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Your Vehicle"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textSize="14dp"
+            android:textColor="@color/middle_gray"
+            android:fontFamily="@font/gillroy_medium"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_select_vehicle_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@id/tv_select_your_vehicle" />
+
+        <TextView
+            android:id="@+id/tv_claim_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Claim Type"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textSize="14dp"
+            android:layout_below="@id/rv_select_vehicle_no"
+            android:textColor="@color/middle_gray"
+            android:fontFamily="@font/gillroy_medium"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_select_claim_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_claim_type"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/tv_Select_symptoms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Symptoms"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textSize="14dp"
+            android:layout_below="@id/rv_select_claim_type"
+            android:textColor="@color/middle_gray"
+            android:fontFamily="@font/gillroy_medium"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_symptoms_of_issue"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/slect_symptoms_background"
+            android:layout_below="@id/tv_Select_symptoms"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Symptoms of the issue"
+                android:layout_marginLeft="20dp"
+                android:textSize="14dp"
+                android:textColor="@color/middle_gray"
+                android:fontFamily="@font/gillroy_medium"
+                android:layout_centerVertical="true"/>
+
+            <ImageView
+                android:id="@+id/imv_right_icon"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/right_a"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="20dp"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_place_of_breakdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Place Of Breakdown"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textSize="14dp"
+            android:layout_below="@id/rl_symptoms_of_issue"
+            android:textColor="@color/middle_gray"
+            android:fontFamily="@font/gillroy_medium"/>
+
+        <EditText
+            android:id="@+id/edittext_place_of_breakdown"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_below="@id/tv_place_of_breakdown"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="20dp"
+            android:textSize="14dp"
+            android:fontFamily="@font/gillroy_medium"
+            android:hint="Ex.Whitefield"
+            android:background="@drawable/slect_symptoms_background" />
+
+        <TextView
+            android:id="@+id/tv_date_of_breakdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date Of Breakdown"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textSize="14dp"
+            android:layout_below="@id/edittext_place_of_breakdown"
+            android:textColor="@color/middle_gray"
+            android:fontFamily="@font/gillroy_medium"/>
+
+        <TextView
+            android:id="@+id/tv_calender"
+            android:layout_width="169dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="20dp"
+            android:text="Selct Date"
+            android:paddingTop="20dp"
+            android:paddingLeft="20dp"
+            android:textSize="14dp"
+            android:textColor="@color/middle_gray"
+            android:fontFamily="@font/gillroy_medium"
+           android:layout_below="@id/tv_date_of_breakdown"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edit_background"/>
+
+        <TextView
+            android:id="@+id/tv_photos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Photos"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textSize="15dp"
+            android:layout_below="@id/tv_calender"
+            android:textColor="@color/middle_gray"
+            android:fontFamily="@font/gillroy_medium"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_photos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_photos"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/tv_share_more_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Share More Details About Claims"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textSize="14dp"
+            android:layout_below="@id/rv_photos"
+            android:textColor="@color/middle_gray"
+            android:fontFamily="@font/gillroy_medium"/>
+
+
+        <EditText
+            android:id="@+id/edittext_share_more_details"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/tv_share_more_details"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/slect_symptoms_background" />
+
+    </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

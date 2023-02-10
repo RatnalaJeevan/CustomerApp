@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Customer_Home_page_bottom_navigation">
+
+    <RelativeLayout
+        android:id="@+id/relative_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/relative_layout1"
+        android:layout_above="@id/card_btm_nav">
+
+    </FrameLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_btm_nav"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:elevation="5dp"
+        android:layout_alignParentBottom="true"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="horizontal">
+    <LinearLayout
+        android:id="@+id/linear_layout_plans"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_weight="1"
+        android:layout_marginTop="11dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        android:background="@drawable/rounded_background"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/image_plans"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/plans_2" />
+        <TextView
+            android:id="@+id/text_plans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plans"
+            android:textColor="@color/orange"
+            android:layout_marginLeft="10dp"
+            android:textSize="12dp"
+            android:visibility="visible"
+            android:fontFamily="@font/gillroy_regular"/>
+
+    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linear_layout_mycar"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:layout_marginTop="11dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/image_mycar"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/mycar"/>
+            <TextView
+                android:id="@+id/text_mycar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MyCar"
+                android:textColor="@color/defaultColor"
+                android:textSize="12dp"
+                android:layout_marginLeft="10dp"
+                android:visibility="gone"
+                android:fontFamily="@font/gillroy_regular"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linear_layout_activate"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:layout_marginTop="11dp"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/image_activate"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/gray_star"/>
+            <TextView
+                android:id="@+id/text_activate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Activate"
+                android:textSize="12dp"
+                android:textColor="@color/defaultColor"
+                android:layout_marginLeft="10dp"
+                android:visibility="gone"
+                android:fontFamily="@font/gillroy_regular"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linear_layout_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:layout_marginTop="11dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/image_profile"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/profile"/>
+            <TextView
+                android:id="@+id/text_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textSize="12dp"
+                android:textColor="@color/defaultColor"
+                android:layout_marginLeft="10dp"
+                android:visibility="gone"
+                android:fontFamily="@font/gillroy_regular"/>
+
+        </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:src="@drawable/wisedrive"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"/>
+
+    <ImageView
+        android:id="@+id/image_bell"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/bell"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_add_car_button"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toLeftOf="@id/image_bell"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/add_car_bg"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/image_plus"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/blue_plus"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+
+        <ImageView
+            android:id="@+id/image_car"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+
+            android:layout_toRightOf="@id/image_plus"
+            android:src="@drawable/blue_car" />
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
