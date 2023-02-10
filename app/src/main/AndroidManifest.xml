@@ -166,6 +166,36 @@
             android:name=".PackageActivation"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".Customer_Home_page_bottom_navigation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Create_Account"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Add_New_Car"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Addons"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Confirmation_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Warranty_Description"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity_Showroom_Services"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Comprehensive_Warranty"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Sign_In_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Verification_code"
+            android:screenOrientation="portrait" />
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
