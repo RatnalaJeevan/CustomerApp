@@ -21,8 +21,6 @@ public class Addons extends AppCompatActivity {
      RecyclerView rv_addons_plan;
     Adapter_Addons_list adapter_addons_list;
     ArrayList<Pojo_Class_Addons_List> pojo_class_addons_listArrayList;
-    Context context;
-    View view;
     AppCompatButton pay_button;
     RelativeLayout rl_back_button;
 
@@ -31,9 +29,7 @@ public class Addons extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addons);
-
         rv_addons_plan= findViewById(R.id.rv_addons_plan);
-
         pojo_class_addons_listArrayList = new ArrayList<>();
         pojo_class_addons_listArrayList.add(new Pojo_Class_Addons_List("Recommended","Select","Comprehensive Warranty","Shafts,Gears,Brake/Clutch Bands,Oil Pump, Bearings, Bushes, Valves, DrivesPlate ,Transfer Gear...","INR 10,000","10,000","30%","1"));
         pojo_class_addons_listArrayList.add(new Pojo_Class_Addons_List("New","Select","Comprehensive Warranty","Shafts,Gears,Brake/Clutch Bands,Oil Pump, Bearings, Bushes, Valves, DrivesPlate ,Transfer Gear...","INR 10,000","10,000","30%","2"));
@@ -46,7 +42,6 @@ public class Addons extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(Addons.this, LinearLayoutManager.VERTICAL, false);
         rv_addons_plan.setLayoutManager(linearLayoutManager);
         rv_addons_plan.setAdapter(adapter_addons_list);
-
         pay_button=findViewById(R.id.pay_button);
         pay_button.setOnClickListener(new View.OnClickListener() {
             @Override
