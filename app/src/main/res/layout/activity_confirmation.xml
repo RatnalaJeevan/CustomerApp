@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Confirmation_Activity"
+    android:background="@color/brown">
+
+
+    <TextView
+        android:id="@+id/tv_confirmation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirmation"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:fontFamily="@font/gillroy_regular"/>
+
+
+        <RelativeLayout
+        android:id="@+id/rl_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_confirmation"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/confirmation_background">
+
+
+
+                    <RelativeLayout
+                android:id="@+id/rl_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/imv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+               android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/right"/>
+
+            <TextView
+                android:id="@+id/tv_amount_recieved"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amount Recieved"
+                android:layout_toRightOf="@id/imv"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/gillroy_regular"/>
+
+            <TextView
+                android:id="@+id/tv_inr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_amount_recieved"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/imv"
+                android:fontFamily="@font/gillroy_regular"
+                android:text="INR"
+                android:textColor="@color/black"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/tv_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12,000"
+                android:layout_below="@id/tv_amount_recieved"
+                android:layout_toRightOf="@id/tv_inr"
+                android:textColor="@color/black"
+                android:textSize="26dp"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/gillroy_semibold"/>
+
+            <TextView
+                android:id="@+id/tv_incl_gst"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(Incl.GST)"
+                android:layout_below="@id/tv_amount_recieved"
+                android:layout_toRightOf="@id/tv_amount"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/gillroy_regular"/>
+
+            <TextView
+                android:id="@+id/confir_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confirmation Number:"
+                android:textColor="@color/black"
+                android:layout_below="@id/tv_amount"
+                android:layout_toRightOf="@id/imv"
+                android:textSize="14dp"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/gillroy_regular"/>
+
+            <TextView
+                android:id="@+id/number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="87469746321"
+                android:textColor="@color/black"
+                android:layout_below="@id/tv_amount"
+                android:layout_toRightOf="@id/confir_number"
+                android:textSize="14dp"
+                android:fontFamily="@font/gillroy_regular"
+                android:layout_marginLeft="2dp"/>
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/number"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/view" />
+            </RelativeLayout>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_amount">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                    <TextView
+                android:id="@+id/tv_service_includes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Service Includes"
+                android:textColor="@color/heading"
+                android:textSize="17dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/gillroy_semibold"
+                android:layout_marginLeft="10dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_service_incluedes_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/tv_service_includes" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/rv_service_incluedes_list"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/view" />
+            
+            <RelativeLayout
+                android:id="@+id/rl_description"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_below="@id/view1"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/rl_light_pink_backg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="13dp"
+                    android:fontFamily="@font/gillroy_regular"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:text="Please check your Email for payment reciept and warranty agreement.your car will start once by clicking the link in email"/>
+            </RelativeLayout>
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </ScrollView>
+
+            <RelativeLayout
+                android:id="@+id/relative_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp">
+                <RelativeLayout
+                    android:id="@+id/request_inspection"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/addons_pay_bacground">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/gillroy_bold"
+                        android:text="Request Inspection"
+                        android:textColor="@color/blue"
+                        android:textSize="15dp" />
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/text_do_later"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I'll Do Later"
+                    android:layout_below="@id/request_inspection"
+                    android:fontFamily="@font/gillroy_regular"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/text_color"/>
+
+                <View
+                    android:id="@+id/view_do_later"
+                    android:layout_width="72dp"
+                    android:layout_height="1dp"
+                    android:background="@color/text_color"
+                    android:layout_below="@id/text_do_later"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_centerHorizontal="true"/>
+            </RelativeLayout>
+        </RelativeLayout>
+        </RelativeLayout>
+

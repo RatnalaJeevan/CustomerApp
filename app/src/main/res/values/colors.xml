@@ -23,8 +23,50 @@
     <color name="bg_missing_items1">#C7C7C7</color>
     <color name="adress_bg">#F5FAFF</color>
     <color name="bg_missing_item_txt">#606060</color>
+    <color name="violet">#6A5FF4</color>
+    <color name="light_gray">#D3D3D3</color>
+    <color name="heading">#c7c7cc</color>
+    <color name="light_blue">#dce4ff</color>
+    <color name="yellow">#efdfb4</color>
+    <color name="car_background">#e5e5ea</color>
+    <color name="description">#9a9a9a</color>
+    <color name="dark_pink">#de3163</color>
+    <color name="light_pink">#ffb6c1</color>
+    <color name="red_1">#ff3b30</color>
+    <color name="middle_gray">#aeaeb2</color>
+    <color name="brown">#e5e5ea</color>
+    <color name="rl_pink">#FFF2FD</color>
+    <color name="additional_service">#efdfff</color>
+    <color name="transperant">#80000000</color>
+    <color name="light_green">#d7ffd7</color>
+    <color name="dark_gray">#5A5A5A</color>
+    <color name="dark_green">#4bae4f</color>
+    <color name="dark_orange">#ff6739</color>
+    <color name="dark_bluu">#aeaeb2</color>
+    <color name="orange_light">#ffd2b3</color>
+    <color name="background">#f5f5f5</color>
+
+    <color name="dark_purple">#5e17eb</color>
+    <color name="place_holder">#c7c7cc</color>
+    <color name="dark_blue_1">#2f1ca4</color>
+    <color name="text">#f9e9f2</color>
+    <color name="teal_green">#1fd655</color>
+    <color name="profile_text">#667085</color>
+    <color name="light_green_1">#32d583</color>
+    <color name="light_green_2">#a6f4c5</color>
+    <color name="service_list">#f4f4f2</color>
+    <color name="violet_1">#835ff4</color>
+    <color name="orange_dark">#ff6739</color>
+    <color name="view">#f2f2f7</color>
 
 
+<!--    <color name="light_blue">#93bfcf</color>-->
+   <color name="pink">#fea1bf</color>-->
+
+   <color name="defaultColor">#fea1bf</color>-->
+
+
+    defaultColor
 
 
 

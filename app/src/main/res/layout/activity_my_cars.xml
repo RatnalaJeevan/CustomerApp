@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".My_Cars"
+    android:background="@color/car_background">
+
+    <RelativeLayout
+        android:id="@+id/Action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_back_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp">
+
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/back" />
+
+        </RelativeLayout>
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/Action_bar"
+        android:background="@drawable/plans_details_background">
+
+        <TextView
+            android:id="@+id/text_plans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Cars"
+            android:layout_marginLeft="20dp"
+            android:textSize="20dp"
+            android:fontFamily="@font/gillroy_bold"
+            android:textColor="@color/heading"
+            android:layout_marginTop="10dp"/>
+        <View
+            android:id="@+id/view1"
+            android:layout_width="70dp"
+            android:layout_height="2dp"
+            android:background="@color/violet"
+            android:layout_below="@id/text_plans"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_mycars"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view1"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"/>
+
+    </RelativeLayout>
+
+
+    </RelativeLayout>

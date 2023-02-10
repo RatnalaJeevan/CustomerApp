@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Upgrade_and_Save"
+    android:background="@color/dark_blue_1">
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:id="@+id/back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/white_back" />
+
+    </RelativeLayout>
+
+
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/crown_1"/>
+
+        <TextView
+            android:id="@+id/tv_upgrade_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UPGRADE and SAVE up to Rs 4,00,000 on Engine &amp; Transmission failures"
+            android:textColor="@color/text"
+            android:layout_below="@id/image"
+            android:gravity="center"
+            android:layout_marginRight="18dp"
+            android:layout_marginLeft="18dp"
+            android:textSize="24dp"
+            android:fontFamily="@font/gillroy_bold"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_upgrade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/tv_upgrade_save"/>
+            </RelativeLayout>
+
+     </RelativeLayout>
+    </ScrollView>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+        <RelativeLayout
+            android:id="@+id/rl_upgrade_button"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:background="@drawable/upgrade_back"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/tv_inr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INR "
+                android:fontFamily="@font/gillroy_regular"
+                android:textColor="@color/blue"
+                android:textSize="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:id="@+id/tv_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/gillroy_bold"
+                android:text="7,999"
+                android:layout_toRightOf="@id/tv_inr"
+                android:textColor="@color/blue"
+                android:textSize="26dp" />
+
+            <TextView
+                android:id="@+id/tv_ONLY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="only"
+                android:fontFamily="@font/gillroy_semibold"
+                android:textColor="@color/blue"
+                android:textSize="15dp"
+                android:layout_toRightOf="@id/tv_amount"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"/>
+
+            <TextView
+                android:id="@+id/tv_amount_buy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(Incl.18% GST)"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:textSize="13dp"
+                android:fontFamily="@font/gillroy_semibold"
+                android:layout_below="@id/tv_amount"
+                android:textColor="@color/blue" />
+
+            <TextView
+                android:id="@+id/tv_upgrade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UPGRADE"
+                android:textSize="17dp"
+                android:fontFamily="@font/gillroy_bold"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/blue"/>
+              </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I Want to Know more,call me"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/rl_upgrade_button"
+                android:textColor="@color/text"
+                android:layout_marginBottom="20dp"
+                android:textSize="15dp"
+                android:fontFamily="@font/gillroy_regular"/>
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>

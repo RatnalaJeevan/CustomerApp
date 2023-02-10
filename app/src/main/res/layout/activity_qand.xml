@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity_Q_And_A">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+           android:id="@+id/action_bar"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:background="@color/light_blue">
+
+        <RelativeLayout
+            android:id="@+id/rl_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp">
+
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/blue_left" />
+        </RelativeLayout>
+
+
+
+        <TextView
+            android:id="@+id/tv_q_and_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Q&amp;A"
+            android:layout_marginTop="25dp"
+            android:layout_toRightOf="@id/rl_back"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:fontFamily="@font/gillroy_regular"
+            android:layout_marginLeft="10dp"/>
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/action_bar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <RelativeLayout
+                android:id="@+id/rl_light_blue"
+                android:layout_width="match_parent"
+                android:layout_height="225dp"
+                android:background="@color/light_blue">
+
+
+        <RelativeLayout
+            android:id="@+id/rl_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Let's get started."
+            android:textColor="@color/blue"
+            android:textSize="35dp"
+            android:fontFamily="@font/gillroy_semibold"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_heading"
+            android:text="Is there any sound from the engine or transmidsion or engine compartment ares before the car got stopped?"
+            android:textColor="@color/blue"
+            android:textSize="14dp"
+            android:fontFamily="@font/gillroy_regular"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"/>
+
+    </RelativeLayout>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_q_and_a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-80dp"
+        android:layout_below="@id/rl_light_blue" />
+
+    </RelativeLayout>
+        </RelativeLayout>
+        </ScrollView>
+        </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>
+
+
+
+
+

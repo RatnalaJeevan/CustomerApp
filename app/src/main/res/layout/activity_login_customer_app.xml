@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login_customer_app"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/wise_drive_logo"
+        android:visibility="invisible"/>
+
+
+    
+    <RelativeLayout
+        android:id="@+id/rl_sign_in"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_above="@id/rl_create_account"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/sign_in_button_backg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/gillroy_bold"
+            android:text="Sign in"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_create_account"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="90dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/create_account_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/gillroy_bold"
+            android:text="Create an account"
+            android:textColor="@color/violet_1"
+            android:textSize="16dp" />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_above="@id/rl_sign_in"
+        android:layout_marginBottom="30dp">
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome To "
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        android:layout_marginLeft="40dp"
+        android:fontFamily="@font/gillroy_bold"/>
+
+    <TextView
+        android:id="@+id/text4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wisedrive "
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        android:layout_below="@id/text3"
+        android:layout_marginLeft="40dp"
+        android:fontFamily="@font/gillroy_bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_text_welcome"
+        android:layout_width="match_parent"
+        android:layout_above="@id/rl_sign_in"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp">
+
+        <ImageView
+            android:layout_width="390dp"
+            android:layout_height="85dp"
+            android:src="@drawable/wisedrive"
+            android:layout_centerInParent="true"/>
+
+
+
+
+    </RelativeLayout>
+
+    
+    
+
+</RelativeLayout>

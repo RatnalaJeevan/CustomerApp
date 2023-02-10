@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Request_Inspection"
+    android:background="@drawable/request_inspection_back">
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/bacxk_arrow_white"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:id="@+id/text_inspection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Your Car Inspected before activating"
+        android:textColor="@color/white"
+        android:layout_below="@id/back"
+        android:textSize="36dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="30dp"
+        android:fontFamily="@font/gillroy_regular"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
+
+    <ScrollView
+        android:id="@+id/scroo_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_inspection">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+        
+        <RelativeLayout
+            android:id="@+id/rl_vehicle_no"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/image_vehicle_no"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/image_vehicle_number"
+                android:layout_marginLeft="20dp" />
+
+            <TextView
+                android:id="@+id/tv_vehicle_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vehicle Num"
+                android:layout_toRightOf="@id/image_vehicle_no"
+               android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:textSize="15dp"
+                android:textColor="@color/lightgrey"
+                android:fontFamily="@font/gillroy_semibold"/>
+
+            <EditText
+                android:id="@+id/edit_vehicle_no"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:layout_marginRight="20dp"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/gillroy_bold"
+                android:layout_alignParentEnd="true"
+                android:paddingLeft="20dp"
+                android:textColor="@color/black"
+                android:background="@drawable/edit_background"/>
+              </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_select_date"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_below="@id/rl_vehicle_no"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/image_select_date"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/calender"
+                android:layout_marginLeft="20dp"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/tv_select_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Date"
+                android:layout_toRightOf="@id/image_select_date"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:textSize="15dp"
+                android:textColor="@color/lightgrey"
+                android:fontFamily="@font/gillroy_semibold"/>
+
+            <TextView
+                android:id="@+id/select_date"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:textSize="15dp"
+                android:background="@drawable/edit_background"
+                android:textColor="@color/lightgrey"
+                android:fontFamily="@font/gillroy_bold"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_name"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_below="@id/rl_select_date"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/image_name"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/image_no_of_owners"
+                android:layout_marginLeft="20dp"
+               android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:layout_toRightOf="@id/image_name"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:textSize="15dp"
+                android:textColor="@color/lightgrey"
+                android:fontFamily="@font/gillroy_semibold"/>
+
+            <EditText
+                android:id="@+id/edit_name"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:layout_marginRight="20dp"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/gillroy_bold"
+                android:layout_alignParentEnd="true"
+                android:paddingLeft="20dp"
+                android:textColor="@color/black"
+                android:background="@drawable/edit_background"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_phone"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_below="@id/rl_name"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/image_phone"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/image_no_of_owners"
+                android:layout_marginLeft="20dp"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/tv_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone"
+                android:layout_toRightOf="@id/image_phone"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:textSize="15dp"
+                android:textColor="@color/lightgrey"
+                android:fontFamily="@font/gillroy_semibold"/>
+
+            <EditText
+                android:id="@+id/edit_phone"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:layout_marginRight="20dp"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/gillroy_bold"
+                android:layout_alignParentEnd="true"
+                android:paddingLeft="20dp"
+                android:textColor="@color/black"
+                android:background="@drawable/edit_background"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_location"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_below="@id/rl_phone"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/image_location"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/pin"
+                android:layout_marginLeft="20dp"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:layout_toRightOf="@id/image_location"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:textSize="15dp"
+                android:textColor="@color/lightgrey"
+                android:fontFamily="@font/gillroy_semibold"/>
+
+            <EditText
+                android:id="@+id/edit_location"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:layout_marginRight="20dp"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/gillroy_bold"
+                android:layout_alignParentEnd="true"
+                android:paddingLeft="20dp"
+                android:textColor="@color/black"
+                android:background="@drawable/edit_background"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_location">
+
+            <ImageView
+                android:id="@+id/image_address"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/pin"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:layout_toRightOf="@id/image_address"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="15dp"
+                android:textColor="@color/lightgrey"
+                android:fontFamily="@font/gillroy_semibold"/>
+
+            <EditText
+                android:id="@+id/edit_address"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/gillroy_regular"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_below="@id/tv_address"
+                android:textColor="@color/black"
+                android:background="@drawable/edit_background"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/registration_card"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/rl_address">
+
+            <TextView
+                android:id="@+id/tv_registration_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registration Card"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="40dp"
+                android:textSize="15dp"
+                android:textColor="@color/lightgrey"
+                android:fontFamily="@font/gillroy_semibold"/>
+
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/image_upload"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/tv_registration_card"/>
+
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/tv_registration_card"
+                android:src="@drawable/image_upload"
+                android:layout_marginRight="40dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/adhaar_card"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/rl_address"
+            android:layout_alignParentEnd="true">
+
+            <TextView
+                android:id="@+id/tv_adhaar_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adhaar Card"
+                android:layout_marginTop="25dp"
+                android:textSize="15dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="40dp"
+                android:textColor="@color/lightgrey"
+                android:fontFamily="@font/gillroy_semibold"/>
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/image_upload"
+                android:layout_marginLeft="40dp"
+                android:layout_below="@id/tv_adhaar_card"/>
+
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/tv_adhaar_card"
+                android:src="@drawable/image_upload"
+                android:layout_marginRight="40dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_insurnce_copy"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/adhaar_card">
+
+            <TextView
+                android:id="@+id/tv_insurance_cpoy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Insurance Cpoy"
+                android:layout_marginTop="25dp"
+                android:textSize="15dp"
+                android:layout_marginLeft="40dp"
+                android:textColor="@color/lightgrey"
+                android:fontFamily="@font/gillroy_semibold"/>
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/image_upload"
+                android:layout_marginLeft="40dp"
+                android:layout_below="@id/tv_insurance_cpoy"/>
+        </RelativeLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pay_button"
+            android:layout_width="125dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+           android:layout_below="@id/rl_insurnce_copy"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
+            android:text="Submit"
+            android:textSize="17dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/gillroy_semibold"
+            android:background="@drawable/submit_button"/>
+
+
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

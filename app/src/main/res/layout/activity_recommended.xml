@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Recommended_Activity">
+
+    <RelativeLayout
+        android:id="@+id/rl_recommended"
+        android:layout_width="145dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="95dp"
+        android:background="@drawable/recommended_back">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/gillroy_medium"
+            android:text="Recommended"
+            android:textColor="@color/blue"
+            android:textSize="16dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/rl_recommended">
+
+
+        <TextView
+            android:id="@+id/tv_dont_spend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't spend"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="28dp"
+            android:textColor="@color/red"
+            android:fontFamily="@font/gillroy_bold"/>
+
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="money"
+            android:textSize="28dp"
+            android:fontFamily="@font/gillroy_regular"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@id/tv_dont_spend"/>
+
+        <TextView
+            android:id="@+id/tv_expensive_repairs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="on expensive repairs"
+            android:textSize="28dp"
+            android:layout_marginTop="-10dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/red"
+            android:fontFamily="@font/gillroy_bold"
+            android:layout_below="@id/tv_dont_spend"/>
+
+        <TextView
+            android:id="@+id/tv_engine_repairs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="like Engine repairs, gearbox repairs, AC Compressor repairs and untimely breakdown of your cars."
+            android:layout_below="@id/tv_expensive_repairs"
+            android:textSize="28dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="-5dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/gillroy_regular"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_activate_code"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@id/rl_description"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rl_take_risk_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/gillroy_regular"
+            android:text="No,I'll take risk"
+            android:textColor="@color/red"
+            android:textSize="20dp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_upgrade_save_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/rl_activate_code"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/upgrade_button_bg"
+        android:layout_marginTop="21dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/gillroy_regular"
+            android:text="Upgrade,Save my money"
+            android:textColor="@color/blue"
+            android:textSize="20dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_did_you_know"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_upgrade_save_button"
+        android:layout_marginTop="46dp">
+
+        <ImageView
+            android:id="@+id/imv_did_u_know"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/did_u_know"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="657 Honda City owners have secured their cars in last 30days."
+            android:layout_toRightOf="@id/imv_did_u_know"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="30dp"
+            android:textSize="15dp"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/gillroy_regular"/>
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+</RelativeLayout>

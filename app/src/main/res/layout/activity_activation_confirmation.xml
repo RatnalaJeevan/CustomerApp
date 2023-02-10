@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activation_Confirmation_Activity"
+    android:background="@color/brown">
+
+    <TextView
+        android:id="@+id/tv_confirmation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirmation"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:fontFamily="@font/gillroy_regular"/>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_warranty_list"
+        android:layout_width="match_parent"
+        android:layout_height="440dp"
+        android:layout_below="@id/tv_confirmation"
+            android:layout_marginTop="55dp"
+            android:background="@drawable/green_back_rl"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:id="@+id/tv_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thank You for Activating package"
+                android:textSize="18dp"
+                android:fontFamily="@font/gillroy_semibold"
+                android:layout_marginTop="36dp"
+                android:textColor="@color/black"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/tv_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_1"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:gravity="center"
+                android:text="your package will be activated by midnight today"
+                android:textSize="13dp"
+                android:fontFamily="@font/gillroy_regular"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_warranty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_2"
+                android:layout_marginTop="-10dp"
+                android:layout_marginBottom="40dp"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_check_email"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/check_email_bg">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                <ImageView
+                    android:id="@+id/image_email"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:src="@drawable/email"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gillroy_regular"
+                    android:text="Check your email for warranty aggreement"
+                    android:textColor="@color/black"
+                    android:textSize="13dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="3dp"
+                    android:layout_toRightOf="@id/image_email"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+
+</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/light_green_circle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp">
+
+        <ImageView
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/tick_mark" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_my_car_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/rl_back_my_cars">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/gillroy_semibold"
+            android:text="MY CARS"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

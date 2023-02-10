@@ -4,5 +4,8 @@
     <string name="engine_name">Engine &amp; Transmission Warranty worth</string>
     <string name="happycode">Please provide this code to service advisor when your car is ready for delivery and you are satisfied with the work performed on your car. </string>
     <string name="app_version_name">1.2</string>
+    <string name="title_home">Wisedrive</string>
+    <string name="title_dashboard">Wisedrive</string>
+    <string name="title_notifications">Wisedrive</string>
 
 </resources>

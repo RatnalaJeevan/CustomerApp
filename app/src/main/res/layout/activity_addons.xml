@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Addons"
+    android:background="@color/background">
+
+    <RelativeLayout
+        android:id="@+id/rl_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/rl_back_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp">
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/back"
+            android:layout_marginLeft="20dp"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_addons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add-On's"
+            android:layout_toRightOf="@id/rl_back_button"
+            android:layout_marginTop="25dp"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/gillroy_regular"/>
+
+        <TextView
+            android:id="@+id/tv_skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skip"
+            android:textColor="@color/blue"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="20dp"
+            android:textSize="15dp"
+            android:fontFamily="@font/gillroy_semibold"/>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="30dp"
+            android:layout_height="2dp"
+            android:layout_below="@id/tv_skip"
+            android:layout_alignParentEnd="true"
+            android:background="@color/violet"
+            android:layout_marginRight="20dp" />
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_pay_button"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_below="@id/rl_heading"
+            android:background="@drawable/addons_pay_bacground"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:id="@+id/tv_starts_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/gillroy_regular"
+                android:text="Amount"
+                android:textColor="@color/blue"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tv_inr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INR "
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/gillroy_regular"
+                android:layout_below="@id/tv_starts_from"
+                android:textColor="@color/blue"
+                android:textSize="15dp"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:id="@+id/tv_amount_buy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10,000 "
+                android:layout_toRightOf="@id/tv_inr"
+                android:fontFamily="@font/gillroy_semibold"
+                android:layout_below="@id/tv_starts_from"
+                android:textSize="26dp"
+                android:textColor="@color/blue"
+                android:layout_marginLeft="5dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/pay_button"
+                android:layout_width="120dp"
+                android:layout_height="45dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:text="Confirm"
+                android:textSize="17dp"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/gillroy_semibold"
+                android:background="@drawable/confirm_button"/>
+        </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_addons_plan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_pay_button" />
+</RelativeLayout>
+

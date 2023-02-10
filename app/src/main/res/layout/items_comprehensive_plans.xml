@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="20dp">
+        <RelativeLayout
+            android:id="@+id/slanted_text_basic"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/gradient_addon">
+
+         <!--  <com.haozhang.lib.SlantedTextView
+                   android:layout_width="70dp"
+                   android:layout_height="70dp"
+                   android:layout_alignParentTop="true"
+                   app:slantedBackgroundColor="@color/colorprimary"
+                   app:slantedLength="40dp"
+                   app:slantedMode="left"
+                   app:slantedText="Basic"
+                   app:slantedTextColor="@color/white"
+                   app:slantedTextSize="16sp" />!-->
+
+
+
+
+
+        <View
+            android:id="@+id/slanted_view"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:orientation="vertical"
+            android:rotation="-80"
+            android:layout_marginTop="100dp"
+            android:background="@color/white">
+        </View>
+
+        <LinearLayout
+            android:layout_width="380dp"
+            android:layout_height="200dp"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="190dp"
+                android:layout_height="200dp"
+                android:layout_weight="1">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp">
+
+                    <TextView
+                        android:id="@+id/extended_warranty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Extended Warranty"
+                        android:layout_marginLeft="50dp"
+                        android:textSize="18dp"
+                        android:layout_marginTop="30dp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/poppins_bold"/>
+
+                    <ImageView
+                        android:id="@+id/image_dot_basic"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/dot"
+                        android:layout_below="@id/extended_warranty"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/text_basic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Basic Service"
+                        android:fontFamily="@font/poppins_regular"
+                        android:layout_below="@id/extended_warranty"
+                        android:layout_toRightOf="@id/image_dot_basic"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="10dp"
+                        android:textSize="10dp" />
+
+                    <ImageView
+                        android:id="@+id/image_dot_upto"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/dot"
+                        android:layout_below="@id/image_dot_basic"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"/>
+
+                    <TextView
+                        android:id="@+id/text_upto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Upto Rs 5L Engine &amp; transmission warranty"
+                        android:layout_below="@id/text_basic"
+                        android:layout_toRightOf="@id/image_dot_upto"
+                        android:textColor="@color/white"
+                        android:textSize="10dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="5dp"/>
+                </RelativeLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="190dp"
+                android:layout_height="200dp"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp">
+
+                    <TextView
+                        android:id="@+id/text_service_maintanance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Service &amp; Maintanance"
+                        android:layout_marginRight="15dp"
+                        android:textSize="18dp"
+                        android:layout_marginTop="30dp"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft="20dp"
+                        android:fontFamily="@font/poppins_bold"/>
+                    <ImageView
+                        android:id="@+id/image_dot_basic_service"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/dot"
+                        android:layout_marginLeft="10dp"
+                        android:layout_below="@id/text_service_maintanance"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/text_basic_service"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Basic Service"
+                        android:layout_below="@id/text_service_maintanance"
+                        android:layout_toRightOf="@id/image_dot_basic_service"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/poppins_regular"
+                        android:layout_marginTop="10dp"
+                        android:textSize="10dp"/>
+
+                    <ImageView
+                        android:id="@+id/image_dot_upto_service"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/dot"
+                        android:layout_below="@id/image_dot_basic_service"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="10dp"/>
+
+                    <TextView
+                        android:id="@+id/text_upto_service"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Upto Rs 5L Engine &amp; transmission warranty"
+                        android:layout_below="@id/text_basic_service"
+                        android:layout_toRightOf="@id/image_dot_upto_service"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="10dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="5dp"/>
+
+                    <TextView
+                        android:id="@+id/text_view_rupee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹1000"
+                        android:textSize="18dp"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_below="@id/text_upto_service"/>
+
+                    <TextView
+                        android:id="@+id/text_save"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Save"
+                        android:layout_below="@id/text_view_rupee"
+                        android:textColor="@color/white"
+                        android:textSize="13dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/poppins_regular"/>
+
+                    <TextView
+                        android:id="@+id/text_view_percent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="68%"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="15dp"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/poppins_regular"
+                        android:layout_below="@id/text_view_rupee"
+                        android:layout_toRightOf="@id/text_save"/>
+
+                    <ImageView
+                        android:id="@+id/right_arrow"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/right_arrow"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+         <!--   <RelativeLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/half_circle">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/check_green" />
+
+            </RelativeLayout>!-->
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

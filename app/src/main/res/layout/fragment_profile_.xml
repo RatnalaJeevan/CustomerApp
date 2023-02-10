@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile_Fragment"
+    android:background="@color/white">
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/rl_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rl_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rl_my_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_my_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MY DETAILS"
+                    android:textColor="@color/profile_text"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/gillroy_bold"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="55dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_my_cars"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_my_details"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:id="@+id/image_my_cars"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="21dp"
+                        android:src="@drawable/my_car"/>
+
+                    <TextView
+                        android:id="@+id/tv_my_car"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="My Cars"
+                        android:textColor="@color/profile_text"
+                        android:textSize="15dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/image_my_cars"
+                        android:fontFamily="@font/gillroy_semibold"
+                        android:layout_marginLeft="8dp"/>
+
+                    <RelativeLayout
+                        android:layout_width="45dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/rounded_corner_blue_button"
+                       android:layout_toRightOf="@id/tv_my_car"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginTop="-10dp"
+                            android:fontFamily="@font/gillroy_semibold"
+                            android:text="00"
+                            android:textColor="@color/white"
+                            android:textSize="13dp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_package_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_my_cars"
+                    android:layout_marginTop="15dp">
+                    <ImageView
+                        android:id="@+id/image_package_service"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="21dp"
+                        android:src="@drawable/package_service"/>
+
+                    <TextView
+                        android:id="@+id/tv_package"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Package &amp; Services"
+                        android:textColor="@color/profile_text"
+                        android:textSize="15dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/image_package_service"
+                        android:fontFamily="@font/gillroy_semibold"
+                        android:layout_marginLeft="8dp"/>
+
+                    <RelativeLayout
+                        android:layout_width="45dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/rounded_corner_orange_button"
+                        android:layout_toRightOf="@id/tv_package"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginTop="-10dp"
+                            android:fontFamily="@font/gillroy_semibold"
+                            android:text="BUY"
+                            android:textColor="@color/white"
+                            android:textSize="13dp" />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+
+
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/rl_offers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_my_details">
+
+                <TextView
+                    android:id="@+id/tv_offers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="OFFERS"
+                    android:textColor="@color/profile_text"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/gillroy_bold"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="55dp"/>
+
+                       <RelativeLayout
+                           android:id="@+id/rl_refer_earn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                           android:layout_below="@id/tv_offers"
+                           android:layout_marginTop="10dp">
+
+                           <ImageView
+                               android:id="@+id/image_refer_earn"
+                               android:layout_width="30dp"
+                               android:layout_height="30dp"
+                               android:layout_marginLeft="21dp"
+                               android:src="@drawable/refer"/>
+
+                           <ImageView
+                               android:id="@+id/image_coming_soon_1"
+                               android:layout_width="65dp"
+                               android:layout_height="35dp"
+                               android:layout_alignParentEnd="true"
+                               android:layout_marginRight="20dp"
+                               android:src="@drawable/coming_soon"/>
+
+
+                           <TextView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="Refer &amp; Earn "
+                               android:textColor="@color/profile_text"
+                               android:textSize="15dp"
+                               android:layout_centerVertical="true"
+                               android:layout_toRightOf="@id/image_refer_earn"
+                               android:fontFamily="@font/gillroy_semibold"
+                               android:layout_marginLeft="8dp"/>
+                            </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_offer_discount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_refer_earn"
+                    android:layout_marginTop="15dp">
+
+                    <ImageView
+                        android:id="@+id/image_offer_discount"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="21dp"
+                        android:src="@drawable/discounts"/>
+                    <ImageView
+                        android:id="@+id/image_coming_soon_2"
+                        android:layout_width="65dp"
+                        android:layout_height="35dp"
+                       android:layout_alignParentEnd="true"
+                        android:src="@drawable/coming_soon"
+                        android:layout_marginRight="20dp"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Offers &amp; Discounts"
+                        android:textColor="@color/profile_text"
+                        android:textSize="15dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/image_offer_discount"
+                        android:fontFamily="@font/gillroy_semibold"
+                        android:layout_marginLeft="8dp"/>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_company"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_offers">
+
+                <TextView
+                    android:id="@+id/tv_company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="COMPANY"
+                    android:textColor="@color/profile_text"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/gillroy_bold"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="55dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_warranty_policy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_company"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:id="@+id/image_warranty_policy"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="21dp"
+                        android:src="@drawable/warranty_policy_icon" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Warranty Policy"
+                        android:textColor="@color/profile_text"
+                        android:textSize="15dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/image_warranty_policy"
+                        android:fontFamily="@font/gillroy_semibold"
+                        android:layout_marginLeft="8dp"/>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_bbg_policy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_warranty_policy"
+                    android:layout_marginTop="15dp">
+
+                    <ImageView
+                        android:id="@+id/image_bbg_policy"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="21dp"
+                        android:src="@drawable/buy_back"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Buyback Guarantee Policy"
+                        android:textColor="@color/profile_text"
+                        android:textSize="15dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/image_bbg_policy"
+                        android:fontFamily="@font/gillroy_semibold"
+                        android:layout_marginLeft="8dp"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_terms_condition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_bbg_policy"
+                    android:layout_marginTop="15dp">
+
+                    <ImageView
+                        android:id="@+id/image_terms_condition"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="21dp"
+                        android:src="@drawable/terms"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_toRightOf="@id/image_terms_condition"
+                        android:fontFamily="@font/gillroy_semibold"
+                        android:text="Terms &amp; Conditions"
+                        android:textColor="@color/profile_text"
+                        android:textSize="15dp"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_privacy_policy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_terms_condition"
+                    android:layout_marginTop="20dp">
+
+                    <ImageView
+                        android:id="@+id/image_privacy_policy"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="21dp"
+                        android:src="@drawable/policy"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_toRightOf="@id/image_privacy_policy"
+                        android:fontFamily="@font/gillroy_semibold"
+                        android:text="Privacy Policy"
+                        android:textColor="@color/profile_text"
+                        android:textSize="15dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_help_support"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_privacy_policy"
+                    android:layout_marginTop="15dp">
+
+                    <ImageView
+                        android:id="@+id/image_help_support"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="21dp"
+                        android:src="@drawable/help_support_icon"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Help &amp; Support"
+                        android:textColor="@color/profile_text"
+                        android:textSize="15dp"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/gillroy_semibold"
+                        android:layout_marginLeft="8dp"
+                        android:layout_toRightOf="@id/image_help_support"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_help_support"
+                    android:layout_marginTop="15dp">
+
+                    <ImageView
+                        android:id="@+id/image_logout"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="21dp"
+                        android:src="@drawable/logout"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Logout"
+                        android:textColor="@color/violet"
+                        android:textSize="15dp"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/gillroy_semibold"
+                        android:layout_marginLeft="8dp"
+                        android:layout_toRightOf="@id/image_logout"/>
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+    </FrameLayout>
