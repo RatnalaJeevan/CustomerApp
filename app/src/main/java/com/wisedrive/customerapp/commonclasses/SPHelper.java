@@ -2,8 +2,6 @@ package com.wisedrive.customerapp.commonclasses;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-
-import com.wisedrive.customerapp.adapters.AdapterCustomerVehicleList;
 import com.wisedrive.customerapp.pojos.PojoVehDetails;
 
 import java.util.ArrayList;

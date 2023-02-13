@@ -61,9 +61,9 @@ public class CustomerFeedBack extends AppCompatActivity
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(CustomerFeedBack.this, ServiceCompletedPage.class);
-                startActivity(intent);
-                finish();
+//                Intent intent=new Intent(CustomerFeedBack.this, ServiceCompletedPage.class);
+//                startActivity(intent);
+//                finish();
             }
         });
         submit.setOnClickListener(new View.OnClickListener() {
@@ -78,14 +78,12 @@ public class CustomerFeedBack extends AppCompatActivity
                     else{
                     post_feedback();
                 }
-
             }
         });
         servicecall_getFeedback();
         feedback_menu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
                 TextView tv = (TextView) view;
                 String item = parent.getItemAtPosition(position).toString();
                 if (position == 0) {
@@ -97,7 +95,6 @@ public class CustomerFeedBack extends AppCompatActivity
                     tv.setTextSize(15);
                     tv.setTypeface(Typeface.DEFAULT);
                 }
-
 
                  if(feedback_menu.getSelectedItemPosition()>=0){
                     selectedstatusid=statusid.get(position);
@@ -180,9 +177,9 @@ public class CustomerFeedBack extends AppCompatActivity
                         AppResponse data = response.body();
                         if (data.getResponseType().equalsIgnoreCase("200")) {
                             Toast.makeText(CustomerFeedBack.this, "Thank you for your valuable feedback!", Toast.LENGTH_SHORT).show();
-                            Intent intent=new Intent(CustomerFeedBack.this, ServiceCompletedPage.class);
-                            startActivity(intent);
-                            finish();
+//                            Intent intent=new Intent(CustomerFeedBack.this, ServiceCompletedPage.class);
+//                            startActivity(intent);
+//                            finish();
                         } else {
                             Toast.makeText(CustomerFeedBack.this, data.getMessage(), Toast.LENGTH_SHORT).show();
                         }

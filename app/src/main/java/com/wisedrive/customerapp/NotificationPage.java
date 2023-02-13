@@ -91,19 +91,19 @@ public class NotificationPage extends AppCompatActivity {
                             SPHelper.comingfrom="";
                             if(SPHelper.getSPData(NotificationPage.this, SPHelper.package_activated, "").equals("y"))
                             {
-                                Intent intent=new Intent(NotificationPage.this, VehiclePackageDetails.class);
-                                startActivity(intent);
+//                                Intent intent=new Intent(NotificationPage.this, VehiclePackageDetails.class);
+//                                startActivity(intent);
                                 finish();
 
                             }else if(SPHelper.getSPData(NotificationPage.this, SPHelper.otp_activated, "").equals("y")){
-                                Intent intent=new Intent(NotificationPage.this, PackageActivation.class);
-                                startActivity(intent);
+//                                Intent intent=new Intent(NotificationPage.this, PackageActivation.class);
+//                                startActivity(intent);
                                 finish();
 
                             }else{
-                                Intent intent=new Intent(NotificationPage.this, LoginNewPage.class);
-                                startActivity(intent);
-                                finish();
+//                                Intent intent=new Intent(NotificationPage.this, LoginNewPage.class);
+//                                startActivity(intent);
+//                                finish();
 
                             }
 

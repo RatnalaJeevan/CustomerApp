@@ -15,8 +15,6 @@
         android:src="@drawable/wise_drive_logo"
         android:visibility="invisible"/>
 
-
-    
     <RelativeLayout
         android:id="@+id/rl_sign_in"
         android:layout_width="match_parent"
@@ -60,6 +58,7 @@
 
 
     </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/rl_3"
         android:layout_width="match_parent"
@@ -99,15 +98,8 @@
         <ImageView
             android:layout_width="390dp"
             android:layout_height="85dp"
-            android:src="@drawable/wisedrive"
-            android:layout_centerInParent="true"/>
-
-
-
-
+            android:layout_centerInParent="true"
+            android:src="@drawable/wisedrive" />
     </RelativeLayout>
-
-    
-    
 
 </RelativeLayout>

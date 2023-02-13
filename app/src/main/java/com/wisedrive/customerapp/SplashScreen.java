@@ -127,24 +127,24 @@ public class SplashScreen extends AppCompatActivity {
                             SPHelper.saveSPdata(SplashScreen.this, SPHelper.customer_support_phoneno, customer_support_no);
                             SPHelper.saveSPdata(SplashScreen.this, SPHelper.customer_support_email, customer_support_email);
                             SPHelper.comingfrom="";
-                            if(SPHelper.getSPData(SplashScreen.this, SPHelper.package_activated, "").equals("y"))
-                            {
-                                intent.setClass(SplashScreen.this,
-                                        VehiclePackageDetails.class);
-                                SplashScreen.this.startActivity(intent);
-                                SplashScreen.this.finish();
+//                            if(SPHelper.getSPData(SplashScreen.this, SPHelper.package_activated, "").equals("y"))
+//                            {
+//                                intent.setClass(SplashScreen.this,
+//                                        VehiclePackageDetails.class);
+//                                SplashScreen.this.startActivity(intent);
+//                                SplashScreen.this.finish();
 
-                            }else if(SPHelper.getSPData(SplashScreen.this, SPHelper.otp_activated, "").equals("y")){
-                                intent.setClass(SplashScreen.this,
-                                        PackageActivation.class);
-                                SplashScreen.this.startActivity(intent);
-                                SplashScreen.this.finish();
-                            }else{
-                                intent.setClass(SplashScreen.this,
-                                        LoginNewPage.class);
-                                SplashScreen.this.startActivity(intent);
-                                SplashScreen.this.finish();
-                            }
+//                            }else if(SPHelper.getSPData(SplashScreen.this, SPHelper.otp_activated, "").equals("y")){
+//                                intent.setClass(SplashScreen.this,
+//                                        PackageActivation.class);
+//                                SplashScreen.this.startActivity(intent);
+//                                SplashScreen.this.finish();
+//                            }else{
+//                                intent.setClass(SplashScreen.this,
+//                                        LoginNewPage.class);
+//                                SplashScreen.this.startActivity(intent);
+//                                SplashScreen.this.finish();
+//                            }
 
                         } else if (appResponse.getResponseType().equals("300")) {
                             progressDialog.dismiss();
