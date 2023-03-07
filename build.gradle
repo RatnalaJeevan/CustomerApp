@@ -5,8 +5,10 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:4.2.2"
-     classpath "com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin:2.0.0"
+//        classpath "com.android.tools.build:gradle:4.2.2"
+//     classpath "com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin:2.0.0"
+        classpath 'com.android.tools.build:gradle:7.3.0'
+        classpath 'com.google.gms:google-services:4.3.14'
     }
 }
 
@@ -15,6 +17,11 @@ allprojects {
         google()
         mavenCentral()
         jcenter()
+
+        maven {
+            url 'https://maven.cashfree.com/release'
+
+        }
     }
 }
 

@@ -10,8 +10,8 @@
 
         <ImageView
             android:id="@+id/image"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginLeft="20dp"
             android:layout_centerVertical="true"
             android:src="@drawable/up_arrow"/>
@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:text="Free upgrade to 1 year Comprehensive Warranty with Buy back guarantee worth Rs 6000 "
             android:layout_toRightOf="@id/image"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="10dp"
             android:textSize="15dp"
             android:textColor="@color/text"
             android:layout_marginRight="20dp"

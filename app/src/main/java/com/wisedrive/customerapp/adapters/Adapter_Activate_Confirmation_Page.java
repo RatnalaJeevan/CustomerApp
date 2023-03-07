@@ -11,17 +11,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.wisedrive.customerapp.R;
+import com.wisedrive.customerapp.commonclasses.Common;
 import com.wisedrive.customerapp.pojos.Pojo_Activate_Confirmation_Page;
+import com.wisedrive.customerapp.pojos.Pojo_My_Car_page_package_list;
 
 import java.util.ArrayList;
 
 public class Adapter_Activate_Confirmation_Page extends RecyclerView.Adapter<Adapter_Activate_Confirmation_Page.MyViewHolder> {
     Context context;
     private View view;
-    ArrayList<Pojo_Activate_Confirmation_Page> pojo_activate_confirmation_pageArrayList;
+    ArrayList<Pojo_My_Car_page_package_list> pojo_activate_confirmation_pageArrayList;
 
-    public Adapter_Activate_Confirmation_Page(Context context, ArrayList<Pojo_Activate_Confirmation_Page> pojo_activate_confirmation_pageArrayList) {
+    public Adapter_Activate_Confirmation_Page(Context context, ArrayList<Pojo_My_Car_page_package_list> pojo_activate_confirmation_pageArrayList) {
         this.context = context;
         this.pojo_activate_confirmation_pageArrayList = pojo_activate_confirmation_pageArrayList;
     }
@@ -35,15 +38,12 @@ public class Adapter_Activate_Confirmation_Page extends RecyclerView.Adapter<Ada
 
     @Override
     public void onBindViewHolder(@NonNull Adapter_Activate_Confirmation_Page.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        Pojo_Activate_Confirmation_Page list = pojo_activate_confirmation_pageArrayList.get(position);
-        holder.imv_image.setImageResource(list.getImv_image());
-        holder. tv_warranty_name.setText(list.getTv_warranty_name());
-        holder.tv_expire_date.setText(list.getTv_expire_date());
-
-
-            }
-
-
+        Pojo_My_Car_page_package_list list = pojo_activate_confirmation_pageArrayList.get(position);
+        //holder.imv_image.setImageResource(list.getImv_image());
+        holder. tv_warranty_name.setText(list.getProduct_name());
+        holder.tv_expire_date.setText(Common.getDateFromString(list.getValid_to()));
+        Glide.with(context).load(list.getProduct_icon()).placeholder(R.drawable.service_image).into(holder.imv_image);
+         }
 
 
     @Override

@@ -13,6 +13,18 @@ public class PojoWebLinks {
     String copy_right;
     @SerializedName("view_policy")
     String view_policy;
+    @SerializedName("warranty_policy")
+    String warranty_policy;
+    @SerializedName("buyback_policy")
+    String buyback_policy;
+
+    public String getWarranty_policy() {
+        return warranty_policy;
+    }
+
+    public String getBuyback_policy() {
+        return buyback_policy;
+    }
 
     public String getPrivacy_policy() {
         return privacy_policy;

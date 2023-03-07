@@ -20,7 +20,6 @@ public class WebPage extends AppCompatActivity {
         mWebview.getSettings().setLoadWithOverviewMode(true);
         mWebview.getSettings().setUseWideViewPort(true);
         mWebview.getSettings().setBuiltInZoomControls(true);
-        mWebview.getSettings().setAppCacheEnabled(false);
         mWebview.clearCache(true);
 
         if(SPHelper.comingfrom.equals("tnc")){
@@ -31,6 +30,10 @@ public class WebPage extends AppCompatActivity {
                 mWebview .loadUrl(SPHelper.copyrights);
         }else if(SPHelper.comingfrom.equals("vp")){
             mWebview .loadUrl(SPHelper.viewpolicy);
+        }else if(SPHelper.comingfrom.equals("wp")){
+            mWebview .loadUrl(SPHelper.warr_policy);
+        }else if(SPHelper.comingfrom.equals("bbg")){
+            mWebview .loadUrl(SPHelper.bbg_policy);
         }
 
     }

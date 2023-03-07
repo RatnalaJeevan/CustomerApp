@@ -7,11 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.wisedrive.customerapp.R;
 import com.wisedrive.customerapp.pojos.Pojo_Select_Date;
 import com.wisedrive.customerapp.pojos.Pojo_Tracking_page;
@@ -37,49 +39,53 @@ public class Adapter_Tracking_page extends RecyclerView.Adapter<Adapter_Tracking
     @Override
     public void onBindViewHolder(@NonNull Adapter_Tracking_page.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Pojo_Tracking_page list =  pojo_tracking_pageArrayList.get(position);
-        holder.tv_request.setText(list.getTv_request());
-        holder.tv_request_description.setText(list.getTv_request_description());
-        holder.tv_date.setText(list.getTv_date());
-        holder.imv_request.setImageResource(list.getImv_request());
-        holder.tv_otp.setText(list.getTv_otp());
-        if (pojo_tracking_pageArrayList.get(position).getId().equals("1")) {
-            holder.  tv_request.setTextColor(Color.parseColor("#008000"));
-            holder. tv_request_description.setTextColor(Color.parseColor("#008000"));
-            holder. tv_date.setTextColor(Color.parseColor("#008000"));
-            holder.view_request.setBackgroundResource(R.color.green);
+        holder.tv_status.setText(list.getStatus_name());
+        holder.tv_request_description.setText(list.getDescription());
+        holder.tv_date.setText(list.getService_flow_date());
 
+        Glide.with(context).load(list.getIcon()).placeholder(R.drawable.icon_noimage).into(holder.imv_request);
 
+       if(list.getOtp()==null||list.getOtp().equals("null")||list.getOtp().equals("")){
+           holder.rl_otp.setVisibility(View.GONE);
+           holder.view_request.setVisibility(View.VISIBLE);
+           holder.view_request1.setVisibility(View.INVISIBLE);
+       }else{
+           holder.view_request.setVisibility(View.INVISIBLE);
+           holder.view_request1.setVisibility(View.VISIBLE);
+           holder.rl_otp.setVisibility(View.VISIBLE);
+           holder.tv_otp.setText(list.getOtp());
+       }
 
-
-        } else if (pojo_tracking_pageArrayList.get(position).getId().equals("2")) {
-            holder.  tv_request.setTextColor(Color.parseColor("#008000"));
-            holder. tv_request_description.setTextColor(Color.parseColor("#008000"));
-            holder. tv_date.setTextColor(Color.parseColor("#008000"));
-            holder.view_request.setBackgroundResource(R.color.green);
-
-        } else if (pojo_tracking_pageArrayList.get(position).getId().equals("3")) {
-            holder.  tv_request.setTextColor(Color.parseColor("#f68b33"));
-            holder. tv_request_description.setTextColor(Color.parseColor("#f68b33"));
-            holder. tv_date.setTextColor(Color.parseColor("#f68b33"));
-            holder.view_request.setBackgroundResource(R.color.orange);
-
-        } else if (pojo_tracking_pageArrayList.get(position).getId().equals("4")) {
-            holder.  tv_request.setTextColor(Color.parseColor("#aeaeb2"));
-            holder. tv_request_description.setTextColor(Color.parseColor("#aeaeb2"));
-            holder. tv_date.setTextColor(Color.parseColor("#aeaeb2"));
-            holder.view_request.setBackgroundResource(R.color.middle_gray);
-
-
-
-
-
-
+        if(position==pojo_tracking_pageArrayList.size()-1){
+            holder.view_request.setVisibility(View.INVISIBLE);
+            holder.view_request1.setVisibility(View.INVISIBLE);
+        }else{
+            holder.view_request.setVisibility(View.VISIBLE);
+            holder.view_request1.setVisibility(View.VISIBLE);
         }
+       if(list.getIs_active().equalsIgnoreCase("y")){
+           if(list.getService_status_id().equals("8")){
+               holder. tv_status.setTextColor(Color.parseColor("#FF3B30"));
+               holder. tv_request_description.setTextColor(Color.parseColor("#FF3B30"));
+               holder. tv_date.setTextColor(Color.parseColor("#FF3B30"));
+               holder.view_request.setBackgroundResource(R.color.red_1);
+               holder.view_request1.setBackgroundResource(R.color.red_1);
 
+           }else{
+               holder. tv_status.setTextColor(Color.parseColor("#008000"));
+               holder. tv_request_description.setTextColor(Color.parseColor("#008000"));
+               holder. tv_date.setTextColor(Color.parseColor("#008000"));
+               holder.view_request.setBackgroundResource(R.color.green);
+               holder.view_request1.setBackgroundResource(R.color.green);
+           }
 
-
-
-
+       }else{
+           holder.  tv_status.setTextColor(Color.parseColor("#aeaeb2"));
+           holder. tv_request_description.setTextColor(Color.parseColor("#aeaeb2"));
+           holder. tv_date.setTextColor(Color.parseColor("#aeaeb2"));
+           holder.view_request.setBackgroundResource(R.color.middle_gray);
+           holder.view_request1.setBackgroundResource(R.color.green);
+       }
 
     }
 
@@ -90,20 +96,21 @@ public class Adapter_Tracking_page extends RecyclerView.Adapter<Adapter_Tracking
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tv_request,tv_request_description,tv_date,tv_otp;
+        TextView tv_status,tv_request_description,tv_date,tv_otp;
         ImageView imv_request;
-        View view_request;
-
+        View view_request,view_request1;
+        RelativeLayout rl_otp;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            tv_request= itemView.findViewById(R.id.tv_request);
+            tv_status= itemView.findViewById(R.id.tv_status);
             tv_request_description= itemView.findViewById(R.id.tv_request_description);
             tv_date= itemView.findViewById(R.id.tv_date);
             imv_request= itemView.findViewById(R.id.imv_request);
             view_request=itemView.findViewById(R.id.view_request);
+            view_request1=itemView.findViewById(R.id.view_request1);
             tv_otp=itemView.findViewById(R.id.tv_otp);
-
+            rl_otp=itemView.findViewById(R.id.rl_otp);
         }
     }
 }

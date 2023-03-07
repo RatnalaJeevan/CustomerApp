@@ -1,76 +1,56 @@
 package com.wisedrive.customerapp.pojos;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Pojo_Showroom_services {
-    String text_service_name,tv_description,tv_booked_on,tv_date,tv_track,id;
-    int image_logo;
 
+    @SerializedName("package_name")
+    String package_name;
+    @SerializedName("package_type")
+    String package_type;
+    @SerializedName("icon_url")
+    String icon_url;
+    @SerializedName("status_id")
+    String status_id;
+    @SerializedName("status_name")
+    String status_name;
+    @SerializedName("service_id")
+    String service_id;
+    @SerializedName("package_id")
+    String package_id;
 
-    public Pojo_Showroom_services(String text_service_name, String tv_description, String tv_booked_on, String tv_date, String tv_track, int image_logo,String id) {
-        this.text_service_name = text_service_name;
-        this.tv_description = tv_description;
-        this.tv_booked_on = tv_booked_on;
-        this.tv_date = tv_date;
-        this.tv_track = tv_track;
-        this.image_logo = image_logo;
-        this.id=id;
+    @SerializedName("description")
+    String description;
 
+    public String getDescription() {
+        return description;
     }
 
-    public String getText_service_name() {
-        return text_service_name;
+    public String getPackage_name() {
+        return package_name;
     }
 
-    public void setText_service_name(String text_service_name) {
-        this.text_service_name = text_service_name;
+    public String getPackage_type() {
+        return package_type;
     }
 
-    public String getTv_description() {
-        return tv_description;
+    public String getIcon_url() {
+        return icon_url;
     }
 
-    public void setTv_description(String tv_description) {
-        this.tv_description = tv_description;
+    public String getStatus_id() {
+        return status_id;
     }
 
-    public String getTv_booked_on() {
-        return tv_booked_on;
+    public String getStatus_name() {
+        return status_name;
     }
 
-    public void setTv_booked_on(String tv_booked_on) {
-        this.tv_booked_on = tv_booked_on;
+    public String getService_id() {
+        return service_id;
     }
 
-    public String getTv_date() {
-        return tv_date;
-    }
-
-    public void setTv_date(String tv_date) {
-        this.tv_date = tv_date;
-    }
-
-    public String getTv_track() {
-        return tv_track;
-    }
-
-    public void setTv_track(String tv_track) {
-        this.tv_track = tv_track;
-    }
-
-    public int getImage_logo() {
-        return image_logo;
-    }
-
-    public void setImage_logo(int image_icon) {
-        this.image_logo = image_logo;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-
-
-    public void setId(String id) {
-        this.id = id;
+    public String getPackage_id() {
+        return package_id;
     }
 }

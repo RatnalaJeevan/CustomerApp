@@ -28,8 +28,6 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/confirmation_background">
 
-
-
                     <RelativeLayout
                 android:id="@+id/rl_amount"
                 android:layout_width="match_parent"
@@ -126,23 +124,12 @@
                 android:layout_marginTop="8dp"
                 android:background="@color/view" />
             </RelativeLayout>
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/rl_amount">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
 
                     <TextView
                 android:id="@+id/tv_service_includes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                        android:layout_below="@+id/rl_amount"
                 android:text="Service Includes"
                 android:textColor="@color/heading"
                 android:textSize="17dp"
@@ -153,33 +140,38 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_service_incluedes_list"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
+                android:layout_above="@+id/view1"
                 android:layout_below="@id/tv_service_includes" />
 
             <View
                 android:id="@+id/view1"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_below="@id/rv_service_incluedes_list"
+                android:layout_above="@+id/rl_description"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="8dp"
                 android:background="@color/view" />
-            
+
+
+
             <RelativeLayout
                 android:id="@+id/rl_description"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_below="@id/view1"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/relative_layout"
                 android:layout_marginTop="12dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginBottom="40dp"
+                android:layout_marginBottom="10dp"
+                android:padding="8dp"
                 android:background="@drawable/rl_light_pink_backg">
 
                 <TextView
+                    android:id="@+id/tv_descptn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="13dp"
@@ -189,11 +181,6 @@
                     android:layout_marginRight="12dp"
                     android:text="Please check your Email for payment reciept and warranty agreement.your car will start once by clicking the link in email"/>
             </RelativeLayout>
-                    </RelativeLayout>
-
-                </RelativeLayout>
-            </ScrollView>
-
             <RelativeLayout
                 android:id="@+id/relative_layout"
                 android:layout_width="match_parent"
@@ -207,6 +194,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="30dp"
+                    android:layout_marginBottom="10dp"
                     android:background="@drawable/addons_pay_bacground">
 
                     <TextView
@@ -218,12 +206,18 @@
                         android:textColor="@color/blue"
                         android:textSize="15dp" />
                 </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_i_ll_do_later"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/request_inspection">
                 <TextView
                     android:id="@+id/text_do_later"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="I'll Do Later"
-                    android:layout_below="@id/request_inspection"
                     android:fontFamily="@font/gillroy_regular"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="5dp"
@@ -238,7 +232,42 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="5dp"
                     android:layout_centerHorizontal="true"/>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/rl_my_car_button"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/rl_back_my_cars">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/gillroy_semibold"
+                    android:text="MY CARS"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+
             </RelativeLayout>
         </RelativeLayout>
-        </RelativeLayout>
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/idPBLoading"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
 

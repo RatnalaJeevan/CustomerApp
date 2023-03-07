@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.wisedrive.customerapp.commonclasses.Connectivity;
 import com.wisedrive.customerapp.commonclasses.SPHelper;
-import com.wisedrive.customerapp.pojos.AppResponse;
+import com.wisedrive.customerapp.commonclasses.AppResponse;
 import com.wisedrive.customerapp.services.ApiClient;
 import com.wisedrive.customerapp.services.ApiInterface;
 
@@ -65,6 +65,7 @@ public class SplashScreen extends AppCompatActivity {
                             SPHelper.app_url=appResponse.getResponseModel().getAppUpdateDetails().getApp_url();
                             SPHelper.can_skip=appResponse.getResponseModel().getAppUpdateDetails().getCan_skip();
                             app_version=appResponse.getResponseModel().getAppUpdateDetails().getAppversion();
+                            SPHelper.tnc=appResponse.getResponseModel().getAppUpdateDetails().getTerms();
                             appResponse.getResponseModel().getAppUpdateDetails().getIs_current();
                             show_update();
                         }
@@ -127,24 +128,27 @@ public class SplashScreen extends AppCompatActivity {
                             SPHelper.saveSPdata(SplashScreen.this, SPHelper.customer_support_phoneno, customer_support_no);
                             SPHelper.saveSPdata(SplashScreen.this, SPHelper.customer_support_email, customer_support_email);
                             SPHelper.comingfrom="";
-//                            if(SPHelper.getSPData(SplashScreen.this, SPHelper.package_activated, "").equals("y"))
-//                            {
-//                                intent.setClass(SplashScreen.this,
-//                                        VehiclePackageDetails.class);
-//                                SplashScreen.this.startActivity(intent);
-//                                SplashScreen.this.finish();
+                            String lead_id=SPHelper.getSPData(SplashScreen.this, SPHelper.lead_id, "");
+                            String c_id=SPHelper.getSPData(SplashScreen.this, SPHelper.customer_id, "");
+                            String pack_activated=SPHelper.getSPData(SplashScreen.this, SPHelper.package_activated, "");
 
-//                            }else if(SPHelper.getSPData(SplashScreen.this, SPHelper.otp_activated, "").equals("y")){
-//                                intent.setClass(SplashScreen.this,
-//                                        PackageActivation.class);
-//                                SplashScreen.this.startActivity(intent);
-//                                SplashScreen.this.finish();
-//                            }else{
-//                                intent.setClass(SplashScreen.this,
-//                                        LoginNewPage.class);
-//                                SplashScreen.this.startActivity(intent);
-//                                SplashScreen.this.finish();
-//                            }
+                            if(!lead_id.equals("")||!c_id.equals(""))
+                            {
+                                if(!c_id.equals("")&&pack_activated.equalsIgnoreCase("n")){
+                                    SPHelper.fragment_is="act";
+                                }else{
+                                    SPHelper.fragment_is="plans";
+                                }
+                                Intent intent=new Intent(SplashScreen.this, CustomerHomepage.class);
+                                startActivity(intent);
+                                finish();
+                            }else{
+                                SPHelper.fragment_is="plans";
+                                Intent intent=new Intent(SplashScreen.this, Login_customer_app.class);
+                                startActivity(intent);
+                                finish();
+                            }
+
 
                         } else if (appResponse.getResponseType().equals("300")) {
                             progressDialog.dismiss();

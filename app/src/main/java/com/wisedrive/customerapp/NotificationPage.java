@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.wisedrive.customerapp.commonclasses.Connectivity;
 import com.wisedrive.customerapp.commonclasses.SPHelper;
-import com.wisedrive.customerapp.pojos.AppResponse;
+import com.wisedrive.customerapp.commonclasses.AppResponse;
 import com.wisedrive.customerapp.services.ApiClient;
 import com.wisedrive.customerapp.services.ApiInterface;
 
@@ -89,23 +89,29 @@ public class NotificationPage extends AppCompatActivity {
                             SPHelper.saveSPdata(NotificationPage.this, SPHelper.customer_support_phoneno, customer_support_no);
                             SPHelper.saveSPdata(NotificationPage.this, SPHelper.customer_support_email, customer_support_email);
                             SPHelper.comingfrom="";
-                            if(SPHelper.getSPData(NotificationPage.this, SPHelper.package_activated, "").equals("y"))
+
+
+                            String lead_id=SPHelper.getSPData(NotificationPage.this, SPHelper.lead_id, "");
+                            String c_id=SPHelper.getSPData(NotificationPage.this, SPHelper.customer_id, "");
+                            String pack_activated=SPHelper.getSPData(NotificationPage.this, SPHelper.package_activated, "");
+
+                            if(!lead_id.equals("")||!c_id.equals(""))
                             {
-//                                Intent intent=new Intent(NotificationPage.this, VehiclePackageDetails.class);
-//                                startActivity(intent);
+                                if(!c_id.equals("")&&pack_activated.equalsIgnoreCase("n")){
+                                    SPHelper.fragment_is="act";
+                                }else{
+                                    SPHelper.fragment_is="plans";
+                                }
+                                Intent intent=new Intent(NotificationPage.this, CustomerHomepage.class);
+                                startActivity(intent);
                                 finish();
-
-                            }else if(SPHelper.getSPData(NotificationPage.this, SPHelper.otp_activated, "").equals("y")){
-//                                Intent intent=new Intent(NotificationPage.this, PackageActivation.class);
-//                                startActivity(intent);
-                                finish();
-
                             }else{
-//                                Intent intent=new Intent(NotificationPage.this, LoginNewPage.class);
-//                                startActivity(intent);
-//                                finish();
-
+                                SPHelper.fragment_is="plans";
+                                Intent intent=new Intent(NotificationPage.this, Login_customer_app.class);
+                                startActivity(intent);
+                                finish();
                             }
+//
 
                         } else if (appResponse.getResponseType().equals("300")) {
                             progressDialog.dismiss();

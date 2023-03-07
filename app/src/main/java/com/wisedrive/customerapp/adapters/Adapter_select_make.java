@@ -10,7 +10,9 @@ import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.wisedrive.customerapp.R;
+import com.wisedrive.customerapp.commonclasses.SPHelper;
 import com.wisedrive.customerapp.pojos.Pojo_Select_Make_list;
 
 import java.util.ArrayList;
@@ -34,8 +36,9 @@ public class Adapter_select_make extends RecyclerView.Adapter<Adapter_select_mak
 
     @Override
     public void onBindViewHolder(@NonNull Adapter_select_make.MyViewHolder holder,final int position) {
-        Pojo_Select_Make_list list = pojo_select_make_listArrayList.get(position);
-        holder.make_logo.setImageResource(list.getMake_logo());
+        Pojo_Select_Make_list recyclerdata = pojo_select_make_listArrayList.get(position);
+        Glide.with(context).load(recyclerdata.getBrand_icon()).placeholder(R.drawable.icon_noimage).into(holder.make_logo);
+
         if (selectedPosition == position) {
             holder.make_logo.setSelected(true); //using selector drawable
             holder.rl_select_make.setBackgroundResource(R.drawable.make_background_bg);
@@ -49,11 +52,12 @@ public class Adapter_select_make extends RecyclerView.Adapter<Adapter_select_mak
             @Override
             public void onClick(View view) {
                // holder.rl_select_make.setBackgroundResource(R.drawable.make_background_bg);
+                SPHelper.carbrandid=recyclerdata.getId();
+                SPHelper.brand_name=recyclerdata.getCar_brand();
                 if (selectedPosition >= 0)
                     notifyItemChanged(selectedPosition);
                 selectedPosition = holder.getAdapterPosition();
                 notifyItemChanged(selectedPosition);
-
 
             }
         });

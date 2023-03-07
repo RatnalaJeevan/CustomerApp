@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.wisedrive.customerapp">
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission
         android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
@@ -16,13 +17,27 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/appicon1"
+        android:icon="@drawable/wd_appicon1"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/appicon1"
+        android:roundIcon="@drawable/wd_appicon1"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat"
         android:usesCleartextTraffic="true">
 
+        <activity
+            android:name=".MyPayments"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ApplyCouponList"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".Request_Inspection"
             android:exported="false">
@@ -66,7 +81,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Initiate_Claim_Activity_New_Customer_App"
+            android:name=".InitiateNewClaim"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -76,16 +91,11 @@
             android:name=".NotificationPage"
             android:exported="false"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".WebPage"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".SplashScreen"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Login_customer_app"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -94,18 +104,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
+        <activity
+            android:name=".Login_customer_app"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".HelpCentre"
             android:screenOrientation="portrait" />
         <activity
             android:name=".CustomerFeedBack"
             android:screenOrientation="portrait" />
-
-      
         <activity
-            android:name=".Customer_Home_page_bottom_navigation"
+            android:name=".CustomerHomepage"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Create_Account"
@@ -134,6 +144,7 @@
         <activity
             android:name=".Verification_code"
             android:screenOrientation="portrait" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"

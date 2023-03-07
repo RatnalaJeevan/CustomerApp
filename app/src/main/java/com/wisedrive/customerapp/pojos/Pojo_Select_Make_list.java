@@ -1,17 +1,25 @@
 package com.wisedrive.customerapp.pojos;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Pojo_Select_Make_list {
-    int make_logo;
 
-    public Pojo_Select_Make_list(int make_logo) {
-        this.make_logo = make_logo;
+    @SerializedName("brand_icon")
+    String brand_icon;
+    @SerializedName("id")
+    String id;
+    @SerializedName("car_brand")
+    String car_brand;
+
+    public String getCar_brand() {
+        return car_brand;
     }
 
-    public int getMake_logo() {
-        return make_logo;
+    public String getBrand_icon() {
+        return brand_icon;
     }
 
-    public void setMake_logo(int make_logo) {
-        this.make_logo = make_logo;
+    public String getId() {
+        return id;
     }
 }

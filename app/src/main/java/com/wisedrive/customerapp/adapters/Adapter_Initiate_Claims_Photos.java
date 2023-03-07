@@ -2,6 +2,7 @@ package com.wisedrive.customerapp.adapters;
 
 import static android.app.Activity.RESULT_OK;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -21,6 +22,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.wisedrive.customerapp.Activity_Showroom_Services;
+import com.wisedrive.customerapp.Add_New_Car;
+import com.wisedrive.customerapp.InitiateNewClaim;
 import com.wisedrive.customerapp.R;
 import com.wisedrive.customerapp.pojos.Pojo_Upload_Image;
 import com.wisedrive.customerapp.pojos.Pojo_initiate_Claims_Photos;
@@ -32,6 +36,7 @@ public class Adapter_Initiate_Claims_Photos extends RecyclerView.Adapter< Adapte
     private final int CAMERA_REQ_CODE = 100;
     Context context;
     private View view;
+    public int adapter_position=0;
     ArrayList<Pojo_initiate_Claims_Photos> pojo_initiate_claims_photosArrayList;
 
     public Adapter_Initiate_Claims_Photos(Context context, ArrayList<Pojo_initiate_Claims_Photos> pojo_initiate_claims_photosArrayList) {
@@ -46,49 +51,25 @@ public class Adapter_Initiate_Claims_Photos extends RecyclerView.Adapter< Adapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Adapter_Initiate_Claims_Photos.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull Adapter_Initiate_Claims_Photos.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Pojo_initiate_Claims_Photos list =pojo_initiate_claims_photosArrayList.get(position);
-        holder.uplaod_image.setImageResource(list.getUplaod_image());
-        holder.tv_image_name.setText(list.getTv_image_name());
-        holder.rl_items_upload.setOnClickListener(new View.OnClickListener() {
+
+        if (list.getImage() == null) {
+            //uploaded_image.setImageURI(carImageLists.get(i).getImage());
+        } else {
+            holder.uplaod_image.setImageURI(list.getImage());
+        }
+        holder.tv_image_name.setText(list.getImage_type());
+        holder.rl_items_upload.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View view) {
-                final Dialog dialog = new Dialog(context);
-                dialog.setContentView(R.layout.customized_photo_alert_dialogue);
-                TextView cancel = (TextView) dialog.findViewById(R.id.textcancel);
-                cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.dismiss();
-                    }
-                });
-                TextView textView1 = (TextView) dialog.findViewById(R.id.textgallery);
-                textView1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        holder.takepicturefromgallery();
-                        dialog.cancel();
-
-                    }
-                });
-                TextView textView = (TextView) dialog.findViewById(R.id.textcapture);
-                textView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        holder.takepicturefromcamera();
-                        dialog.cancel();
-
-                    }
-
-
-                });
-
-
-                dialog.show();
-
+            public void onClick(View view)
+            {
+                adapter_position=position;
+                ((InitiateNewClaim)context).selectedObject=position;
+                ((InitiateNewClaim)context).open_dialog();
 
             }
-
 
         });
 
@@ -112,42 +93,6 @@ public class Adapter_Initiate_Claims_Photos extends RecyclerView.Adapter< Adapte
             rl_items_upload = (RelativeLayout) view.findViewById(R.id.rl_items_upload);
         }
 
-        protected void takepicturefromgallery() {
-            Intent picphoto = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-            ((Activity) context).startActivityForResult(picphoto, GALLERY_REQ_CODE);
-        }
-
-        protected void takepicturefromcamera() {
-            Intent takepicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            ((Activity) context).startActivityForResult(takepicture, CAMERA_REQ_CODE);
-
-        }
-
-        public void ABCD(int requestCode, int resultCode, @Nullable Intent data) {
-
-            switch (requestCode) {
-                case 1:
-                    if (requestCode == RESULT_OK) {
-                        Uri selectedimageUri = data.getData();
-                        uplaod_image.setImageURI(selectedimageUri);
-                    }
-                    break;
-                case 2:
-                    if (resultCode == RESULT_OK) {
-                        Bundle bundle = data.getExtras();
-                        Bitmap bitmapImage = (Bitmap) bundle.get("data");
-                        uplaod_image.setImageBitmap(bitmapImage);
-                    }
-                    break;
-
-            }
-
-        }
-
-
-
     }
-
-
 
 }

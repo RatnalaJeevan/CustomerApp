@@ -1,27 +1,55 @@
 package com.wisedrive.customerapp.pojos;
 
+import android.graphics.Bitmap;
+import android.net.Uri;
+
+import com.google.gson.annotations.SerializedName;
+
 public class Pojo_Upload_Image {
-    String tv_image_name;
-    int uplaod_image;
 
-    public Pojo_Upload_Image(String tv_image_name, int uplaod_image) {
-        this.tv_image_name = tv_image_name;
-        this.uplaod_image = uplaod_image;
+    @SerializedName("id")
+    private String id;
+    @SerializedName("name")
+    private String name;
+    private Uri image = null;
+    private  String filename = "";
+    private  String imageurl = "";
+    private Bitmap bitmap;
+
+
+    public String getId() {
+        return id;
     }
 
-    public String getTv_image_name() {
-        return tv_image_name;
+    public String getName() {
+        return name;
     }
 
-    public void setTv_image_name(String tv_image_name) {
-        this.tv_image_name = tv_image_name;
+    public Uri getImage() {
+        return image;
     }
 
-    public int getUplaod_image() {
-        return uplaod_image;
+    public String getFilename() {
+        return filename;
     }
 
-    public void setUplaod_image(int uplaod_image) {
-        this.uplaod_image = uplaod_image;
+    public String getImageurl() {
+        return imageurl;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
+
+    public Bitmap getBitmap() {
+        return bitmap;
+    }
+
+    public void setImage(Uri image) {
+        this.image = image;
+    }
+
+    public void setImageurl(String imageurl) {
+        this.imageurl = imageurl;
     }
 }

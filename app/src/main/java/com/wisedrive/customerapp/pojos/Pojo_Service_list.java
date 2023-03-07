@@ -1,16 +1,42 @@
 package com.wisedrive.customerapp.pojos;
 
+import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
+
 public class Pojo_Service_list {
-    String Service_name,tv_description,tv_description_lines;
-    int image_logo;
+
+
+    @SerializedName("icon_url")
+    String icon_url;
+    @SerializedName("package_name")
+    String package_name;
+    @SerializedName("package_id")
+    String package_id;
+    @SerializedName("final_price")
+    double final_price;
+    @SerializedName("description")
+    String description;
+    @SerializedName("package_description")
+    String package_description;
+
+    @SerializedName("is_expired")
+    String is_expired;
+    @SerializedName("ServiceIncludes")
+    ArrayList<Pojo_Description_lines> ServiceIncludes;
+
     public boolean isVisible ;
 
-    public Pojo_Service_list(String service_name, String tv_description, String tv_description_lines, int image_logo) {
-        Service_name = service_name;
-        this.tv_description= tv_description;
-        this.tv_description_lines = tv_description_lines;
-        this.image_logo = image_logo;
-        this.isVisible=false;
+    public String getIs_expired() {
+        return is_expired;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getPackage_description() {
+        return package_description;
     }
 
     public boolean isVisible() {
@@ -22,35 +48,23 @@ public class Pojo_Service_list {
 
     }
 
-    public String getService_name() {
-        return Service_name;
+    public double getFinal_price() {
+        return final_price;
     }
 
-    public void setService_name(String service_name) {
-        Service_name = service_name;
+    public String getIcon_url() {
+        return icon_url;
     }
 
-    public String getTv_description() {
-        return tv_description;
+    public String getPackage_name() {
+        return package_name;
     }
 
-    public void setTv_description(String tv_description) {
-        this.tv_description=tv_description;
+    public String getPackage_id() {
+        return package_id;
     }
 
-    public String getTv_description_lines() {
-        return tv_description_lines;
-    }
-
-    public void setTv_description_lines(String tv_description_lines) {
-        this.tv_description_lines = tv_description_lines;
-    }
-
-    public int getImage_logo() {
-        return image_logo;
-    }
-
-    public void setImage_logo(int image_logo) {
-        this.image_logo = image_logo;
+    public ArrayList<Pojo_Description_lines> getServiceIncludes() {
+        return ServiceIncludes;
     }
 }

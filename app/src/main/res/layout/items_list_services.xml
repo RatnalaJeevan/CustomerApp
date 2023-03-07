@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-           <RelativeLayout
-            android:id="@+id/relative_layout_services"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/includes_background"
-               android:layout_marginTop="15dp">
-
             <RelativeLayout
+                android:id="@+id/rl_max"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:layout_marginBottom="12dp">
+                android:layout_marginBottom="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:background="@drawable/includes_background"
+                >
 
                 <RelativeLayout
                     android:id="@+id/rl_image"
                     android:layout_width="55dp"
                     android:layout_height="55dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_centerVertical="true"
                     android:background="@drawable/background_rl">
 
                     <ImageView
@@ -37,6 +36,7 @@
                 android:id="@+id/text_service_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:text="General Service Standard"
                 android:layout_marginLeft="10dp"
                 android:textSize="15dp"
@@ -52,7 +52,7 @@
                 android:layout_below="@id/text_service_name"
                 android:layout_marginLeft="10dp"
                 android:textSize="14dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/gillroy_regular"
                 android:textColor="@color/heading"
                 android:layout_toRightOf="@id/rl_image" />
@@ -61,8 +61,8 @@
                     android:id="@+id/plus_icon"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                   android:layout_centerVertical="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
                     android:layout_marginRight="20dp"
                     android:src="@drawable/plus" />
 
@@ -70,36 +70,27 @@
                     android:id="@+id/minus_icon"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    android:layout_centerVertical="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginRight="20dp"
                     android:src="@drawable/minus"
                     android:visibility="invisible"/>
 
 
-                <RelativeLayout
+            </RelativeLayout>
+            <RelativeLayout
+                    android:visibility="gone"
                     android:id="@+id/description_page"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_description"
-                    android:layout_marginTop="13dp"
-                    android:visibility="gone">
+                    android:layout_below="@+id/rl_max"
+                    >
 
-                    <TextView
-                        android:id="@+id/tv_description_lines"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:visibility="gone"
-                        android:textSize="15dp"
-                        android:fontFamily="@font/gillroy_regular"
-                        android:text="Oil pump,Crank shaft &amp;Pulley ,big end &amp; main bearing ,Connecting rods"/>
-
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_description_lines"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
                 </RelativeLayout>
-            </RelativeLayout>
-
-
-        </RelativeLayout>
 
 </RelativeLayout>

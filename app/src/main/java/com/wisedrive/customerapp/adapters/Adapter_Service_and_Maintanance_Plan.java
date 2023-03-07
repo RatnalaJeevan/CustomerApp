@@ -12,26 +12,31 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.wisedrive.customerapp.Warranty_Description;
 import com.wisedrive.customerapp.R;
+import com.wisedrive.customerapp.commonclasses.SPHelper;
+import com.wisedrive.customerapp.pojos.PojoServiceDetails;
 import com.wisedrive.customerapp.pojos.Pojo_Service_and_Maintanance_Plans;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Adapter_Service_and_Maintanance_Plan extends RecyclerView.Adapter<Adapter_Service_and_Maintanance_Plan.MyViewHolder> {
 
+    private DecimalFormat IndianCurrencyFormat;
     Context context;
     private View view;
     CardView cardview;
     ArrayList<Pojo_Service_and_Maintanance_Plans> pojo_service_and_maintanance_plansArrayList;
-
+    ArrayList<PojoServiceDetails> serviceDetails;
+    AdapterServiceDetails adapterServiceDetails;
+    RecyclerView rv_service_details;
     public Adapter_Service_and_Maintanance_Plan(Context context, ArrayList<Pojo_Service_and_Maintanance_Plans> pojo_service_and_maintanance_plansArrayList) {
         this.context = context;
         this.pojo_service_and_maintanance_plansArrayList = pojo_service_and_maintanance_plansArrayList;
-
-
     }
 
     @Override
@@ -43,35 +48,35 @@ public class Adapter_Service_and_Maintanance_Plan extends RecyclerView.Adapter<A
 
     @Override
     public void onBindViewHolder(@NonNull Adapter_Service_and_Maintanance_Plan.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        Pojo_Service_and_Maintanance_Plans list = pojo_service_and_maintanance_plansArrayList.get(position);
-        holder.tv_general_service_name.setText(list.getTv_general_service_name());
-        holder.tv_general_service_description.setText(list.getTv_general_service_description());
-        holder. tv_ac_service.setText(list.getTv_ac_service());
-        holder.tv_ac_service_description.setText(list.getTv_ac_service_description());
-        holder.tv_health_checkup.setText(list.getTv_health_checkup());
-        holder.  tv_health_checkup_dscription.setText(list.getTv_health_checkup_dscription());
-        holder.tv_maintanance_plan.setText(list.getTv_maintanance_plan());
-        holder.tv_amount_buy.setText(list.getTv_amount_buy());
-        holder.tv_rupee.setText(list.getTv_rupee());
-        holder.image_1.setImageResource(list.getImage_1());
-        holder.image_2.setImageResource(list.getImage_2());
-        holder.image_3.setImageResource(list.getImage_3());
+        Pojo_Service_and_Maintanance_Plans recyclerdata = pojo_service_and_maintanance_plansArrayList.get(position);
+        IndianCurrencyFormat = new DecimalFormat("##,##,###");
+        holder.tv_maintanance_plan.setText(recyclerdata.getDisplay_name());
+        if((int)recyclerdata.getAmount_saved()==0){
+            holder.rl1.setVisibility(View.GONE);
+        }else{
+            holder.rl1.setVisibility(View.VISIBLE);
+            holder.tv_rupee.setText(IndianCurrencyFormat.format((int)recyclerdata.getAmount_saved()));
+        }
+
+        holder.tv_amount_buy.setText(IndianCurrencyFormat.format((int)recyclerdata.getFinal_price()));
+        serviceDetails=new ArrayList<>();
+        serviceDetails=recyclerdata.getServiceDetails();
+        adapterServiceDetails = new AdapterServiceDetails(serviceDetails, context);
+        LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false);
+        rv_service_details.setLayoutManager(linearLayoutManager1);
+        rv_service_details.setAdapter(adapterServiceDetails);
+        adapterServiceDetails.notifyDataSetChanged();
         holder.rl_view_details_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SPHelper.package_id=recyclerdata.getPackage_id();
+                SPHelper.package_name=recyclerdata.getPackage_name();
+                SPHelper.main_pack_id=recyclerdata.getMain_package_id();
+                SPHelper.pack_amount=0;
                 Intent intent=new Intent(view.getContext(), Warranty_Description.class);
                 view.getContext().startActivity(intent);
-
-
             }
         });
-
-
-
-
-
-
-
     }
 
     @Override
@@ -81,27 +86,18 @@ public class Adapter_Service_and_Maintanance_Plan extends RecyclerView.Adapter<A
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tv_general_service_name,tv_general_service_description,tv_ac_service,
-                tv_ac_service_description,tv_health_checkup,tv_health_checkup_dscription,
-                tv_maintanance_plan,tv_amount_buy,tv_rupee;
+        TextView tv_maintanance_plan,tv_rupee,tv_amount_buy;
         ImageView image_1,image_2,image_3;
-        RelativeLayout rl_view_details_button;
+        RelativeLayout rl_view_details_button,rl1;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            tv_general_service_name  = itemView.findViewById(R.id.tv_general_service_name);
-            tv_general_service_description = (TextView) itemView.findViewById(R.id.tv_general_service_description);
-            tv_ac_service= (TextView) itemView.findViewById(R.id.tv_ac_service);
-            tv_ac_service_description=(TextView) itemView.findViewById(R.id.tv_ac_service_description);
-            tv_health_checkup= (TextView) itemView.findViewById(R.id.tv_health_checkup);
-            tv_health_checkup_dscription= (TextView) itemView.findViewById(R.id.tv_health_checkup_dscription);
+            rv_service_details=itemView.findViewById(R.id.rv_service_details);
             tv_maintanance_plan= (TextView) itemView.findViewById(R.id.tv_maintanance_plan);
-            tv_amount_buy= (TextView) itemView.findViewById(R.id.tv_amount_buy);
             tv_rupee= (TextView) itemView.findViewById(R.id.tv_rupee);
-            image_1= itemView.findViewById(R.id.image_1);
-            image_2= itemView.findViewById(R.id.image_2);
-            image_3= itemView.findViewById(R.id.image_3);
-            rl_view_details_button=(RelativeLayout) view.findViewById(R.id.rl_view_details_button);
+            rl_view_details_button=itemView.findViewById(R.id.rl_view_details_button);
+            tv_amount_buy=itemView.findViewById(R.id.tv_amount_buy);
+            rl1=itemView.findViewById(R.id.rl1);
 
 
 

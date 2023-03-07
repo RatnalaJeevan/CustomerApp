@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.wisedrive.customerapp.R;
+import com.wisedrive.customerapp.commonclasses.SPHelper;
 import com.wisedrive.customerapp.pojos.Pojo_Claim_Type_New_Cus_App;
 
 import java.util.ArrayList;
@@ -37,7 +38,7 @@ public class Adapter_Claim_Type_New_Cus_App extends RecyclerView.Adapter<Adapter
     @Override
     public void onBindViewHolder(@NonNull Adapter_Claim_Type_New_Cus_App.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Pojo_Claim_Type_New_Cus_App list = pojo_claim_typeArrayList.get(position);
-        holder. tv_claim_type.setText(list.getTv_claim_type());
+        holder. tv_claim_type.setText(list.getClaim_name());
         if (selectedPosition == position) {
             holder.rl_select_claim.setSelected(true); //using selector drawable
             holder.rl_select_claim.setBackgroundResource(R.drawable.vehicle_blue_back);
@@ -53,6 +54,10 @@ public class Adapter_Claim_Type_New_Cus_App extends RecyclerView.Adapter<Adapter
         holder.rl_select_claim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SPHelper.claim_type_id= list.getClaim_type_id();
+                SPHelper.qa_list=new ArrayList<>();
+                SPHelper.answer_details=new ArrayList<>();
+                SPHelper.answerlist=new ArrayList<>();
                 if (selectedPosition >= 0)
                     notifyItemChanged(selectedPosition);
                 selectedPosition = holder.getAdapterPosition();

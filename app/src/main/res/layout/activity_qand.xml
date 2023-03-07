@@ -7,23 +7,23 @@
     tools:context=".Activity_Q_And_A">
 
 
-
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
 
-            <RelativeLayout
+           <RelativeLayout
            android:id="@+id/action_bar"
            android:layout_width="match_parent"
-           android:layout_height="wrap_content"
+           android:layout_height="50dp"
+           android:paddingTop="2dp"
            android:background="@color/light_blue">
 
         <RelativeLayout
             android:id="@+id/rl_back"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginTop="20dp"
+           android:layout_centerVertical="true"
             android:layout_marginLeft="20dp">
 
 
@@ -34,24 +34,24 @@
                 android:src="@drawable/blue_left" />
         </RelativeLayout>
 
-
-
         <TextView
             android:id="@+id/tv_q_and_a"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Q&amp;A"
-            android:layout_marginTop="25dp"
+            android:layout_centerVertical="true"
             android:layout_toRightOf="@id/rl_back"
             android:textSize="20dp"
             android:textColor="@color/blue"
             android:fontFamily="@font/gillroy_regular"
             android:layout_marginLeft="10dp"/>
+
         </RelativeLayout>
 
-        <ScrollView
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/submit"
             android:layout_below="@id/action_bar">
 
         <RelativeLayout
@@ -108,13 +108,25 @@
 
     </RelativeLayout>
         </RelativeLayout>
-        </ScrollView>
+        </androidx.core.widget.NestedScrollView>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/submit"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="SUBMIT"
+                android:textSize="16dp"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/gillroy_semibold"
+                android:background="@drawable/pay_now_button_black"
+                android:backgroundTint="@color/blue"/>
+
         </RelativeLayout>
-
-
-
-
-
 </RelativeLayout>
 
 

@@ -12,7 +12,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.wisedrive.customerapp.R;
+import com.wisedrive.customerapp.commonclasses.Common;
+import com.wisedrive.customerapp.pojos.Pojo_My_Car_page_package_list;
 import com.wisedrive.customerapp.pojos.Pojo_Service_Includes;
 import com.wisedrive.customerapp.pojos.Pojo_Service_list;
 
@@ -21,9 +24,9 @@ import java.util.ArrayList;
 public class Adapter_Service_Includes extends RecyclerView.Adapter<Adapter_Service_Includes.MyViewHolder> {
     Context context;
     private View view;
-    ArrayList<Pojo_Service_Includes> pojo_service_includesArrayList;
+    ArrayList<Pojo_My_Car_page_package_list> pojo_service_includesArrayList;
 
-    public Adapter_Service_Includes(Context context, ArrayList<Pojo_Service_Includes> pojo_service_includesArrayList) {
+    public Adapter_Service_Includes(Context context, ArrayList<Pojo_My_Car_page_package_list> pojo_service_includesArrayList) {
         this.context = context;
         this.pojo_service_includesArrayList = pojo_service_includesArrayList;
     }
@@ -36,10 +39,13 @@ public class Adapter_Service_Includes extends RecyclerView.Adapter<Adapter_Servi
 
     @Override
     public void onBindViewHolder(@NonNull Adapter_Service_Includes.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        Pojo_Service_Includes list =pojo_service_includesArrayList.get(position);
-        holder.text_service_name.setText(list.getText_service_name());
-        holder.tv_description.setText(list.getTv_description());
-        holder.image_logo.setImageResource(list.getImage_logo());
+        Pojo_My_Car_page_package_list list =pojo_service_includesArrayList.get(position);
+        holder.text_service_name.setText(list.getProduct_name());
+        holder.tv_description.setText(list.getDescription());
+        holder.tv_exp_on.setText(Common.getDateFromString(list.getValid_to()));
+        //holder.image_logo.setImageResource(list.getImage_logo());
+        Glide.with(context).load(list.getProduct_icon()).placeholder(R.drawable.service_image).into(holder.image_logo);
+
 
     }
 
@@ -50,7 +56,7 @@ public class Adapter_Service_Includes extends RecyclerView.Adapter<Adapter_Servi
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView text_service_name,tv_description;
+        TextView text_service_name,tv_description,tv_exp_on;
         ImageView image_logo;
 
 
@@ -60,6 +66,7 @@ public class Adapter_Service_Includes extends RecyclerView.Adapter<Adapter_Servi
             text_service_name = itemView.findViewById(R.id.text_service_name);
             tv_description= itemView.findViewById(R.id.tv_description);
             image_logo = itemView.findViewById(R.id.image_logo);
+            tv_exp_on=itemView.findViewById(R.id.tv_exp_on);
 
 
 

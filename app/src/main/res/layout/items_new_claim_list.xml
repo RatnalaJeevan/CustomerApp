@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginLeft="15dp"
+        app:cardMaxElevation="20dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+            <RelativeLayout
+                android:id="@+id/rl_warranty_name"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:background="@drawable/edit_background"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="12dp">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_image"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/background_rl">
+
+                        <ImageView
+                            android:id="@+id/image_logo"
+                            android:layout_width="31dp"
+                            android:layout_height="31dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/service_image" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/veh_make_model"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Renault Capture"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="15dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/gillroy_semibold"
+                        android:layout_toRightOf="@id/rl_image"/>
+
+                    <TextView
+                        android:id="@+id/veh_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="KL00KL0000"
+                        android:layout_marginEnd="5dp"
+                        android:textSize="13dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/gillroy_semibold"
+                        />
+                    <TextView
+                        android:id="@+id/claim_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Engine and Transmission claim"
+                        android:layout_below="@id/veh_make_model"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="14dp"
+                        android:fontFamily="@font/gillroy_regular"
+                        android:textColor="@color/text_color"
+                        android:layout_toRightOf="@id/rl_image" />
+
+                    <ImageView
+                        android:id="@+id/plus_icon"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp"
+                        android:src="@drawable/plus"
+                        android:visibility="gone"/>
+
+                    <ImageView
+                        android:id="@+id/minus_icon"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="20dp"
+                        android:src="@drawable/minus"
+                        android:visibility="gone"/>
+                </RelativeLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rl_status"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_below="@id/rl_warranty_name"
+                android:background="@color/dark_green">
+
+                <RelativeLayout
+                    android:id="@+id/rl_book_service"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_toStartOf="@+id/tv_track">
+
+                    <TextView
+                        android:id="@+id/tv_booked_on"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Status"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/gillroy_regular"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="inprogress"
+                        android:layout_below="@id/tv_booked_on"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/gillroy_semibold"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_track"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TRACK ClAIM"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/gillroy_semibold"/>
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

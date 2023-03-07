@@ -3,6 +3,7 @@ package com.wisedrive.customerapp.adapters;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,16 +15,22 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.wisedrive.customerapp.R;
+import com.wisedrive.customerapp.commonclasses.Common;
 import com.wisedrive.customerapp.pojos.Pojo_Additional_Services;
 import com.wisedrive.customerapp.pojos.Pojo_Select_Date;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 public class Adapter_Select_Date  extends RecyclerView.Adapter<Adapter_Select_Date.MyViewHolder> {
     Context context;
     private View view;
     ArrayList<Pojo_Select_Date> pojo_select_dateArrayList;
     private int selectedPosition = -1;
+    public String server_date="";
 
     public Adapter_Select_Date(Context context, ArrayList<Pojo_Select_Date> pojo_select_dateArrayList) {
         this.context = context;
@@ -38,8 +45,14 @@ public class Adapter_Select_Date  extends RecyclerView.Adapter<Adapter_Select_Da
 
     @Override
     public void onBindViewHolder(@NonNull Adapter_Select_Date.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        Pojo_Select_Date list = pojo_select_dateArrayList.get(position);
-        holder.tv_date.setText(list.getTv_date());
+        Pojo_Select_Date recyclerdata = pojo_select_dateArrayList.get(position);
+
+        if(position==0||position==1){
+            holder.tv_date.setText(recyclerdata.getDate());
+        }else{
+            holder.tv_date.setText(Common.getDateFromString(recyclerdata.getDate()));
+        }
+
         if (selectedPosition == position) {
             holder. rl_select_date.setSelected(true); //using selector drawable
             holder. rl_select_date.setBackgroundResource(R.drawable.select_green);
@@ -51,23 +64,19 @@ public class Adapter_Select_Date  extends RecyclerView.Adapter<Adapter_Select_Da
             holder. rl_select_date.setBackgroundResource(R.drawable.rl_date_background);
             holder.tv_date.setTextColor(Color.parseColor("#c7c7cc"));
             holder.white_check.setVisibility(View.INVISIBLE);
-
-
         }
 
         holder. rl_select_date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                server_date=recyclerdata.getDisplay_date();
                 if (selectedPosition >= 0)
                     notifyItemChanged(selectedPosition);
                 selectedPosition = holder.getAdapterPosition();
                 notifyItemChanged(selectedPosition);
-
             }
         });
-
-
-
     }
 
     @Override

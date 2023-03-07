@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/orange"
+    tools:context=".EngineTransmissionWarranty">
+
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/engine_warranty_cardview">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/arrow_back"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/claim_warranty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/cardview_activation_code"
+            android:backgroundTint="@color/orange"
+            android:fontFamily="@font/zonapro_bold"
+            android:padding="10dp"
+            android:text="Claim Warranty"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+             />
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/claim_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:padding="10dp"
+                android:text="Claim Status"
+                android:textSize="14dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/zonapro_bold"
+                android:backgroundTint="@color/orange"
+                android:background="@drawable/cardview_activation_code"/>
+                <TextView
+                android:id="@+id/tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/claim_warranty"
+                android:layout_marginTop="20dp"
+                android:text="Engine &amp; Transmission"
+                android:textSize="28dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/zonapro_bold"
+                android:layout_centerHorizontal="true"/>
+            <TextView
+                android:id="@+id/tv3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv2"
+                android:text="Warranty"
+                android:textSize="28dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/zonapro_semibold"
+                android:layout_centerHorizontal="true"/>
+
+
+            </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/centre_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="200dp"
+        android:layout_centerHorizontal="true"
+        android:elevation="10dp"
+        android:background="@drawable/circle_white"
+        >
+
+        <ImageView
+            android:id="@+id/center_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/circle_white">
+
+        </ImageView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl2"
+        android:layout_below="@+id/centre_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/engine_warranty2_cardview">
+
+            <LinearLayout
+                android:id="@+id/linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/engine_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/zonapro_bold"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:onClick="on_engineselect"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="3dp"
+                        android:text="Engine"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                <View
+                    android:layout_weight=".04"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"/>
+
+                    <TextView
+                        android:id="@+id/manual_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:layout_toLeftOf="@+id/automatic_tv"
+                        android:layout_weight="0.30"
+                        android:fontFamily="@font/zonapro_bold"
+                        android:gravity="center"
+                        android:maxLines="2"
+                        android:onClick="onmanualselect"
+                        android:paddingTop="3dp"
+                        android:paddingBottom="3dp"
+                        android:text="Manual \nTransmission"
+                        android:textColor="@color/lightgrey"
+                        android:textSize="14dp">
+
+                    </TextView>
+
+                <TextView
+                    android:id="@+id/automatic_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:layout_alignParentRight="true"
+                    android:layout_weight="0.30"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:text="Automatic \nTransmission"
+                    android:textSize="14dp"
+                    android:textColor="@color/lightgrey"
+                    android:fontFamily="@font/zonapro_bold"
+                    android:onClick="onautomaticselect"
+                    >
+
+                </TextView>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/tv8"
+                android:layout_below="@+id/linear"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="70dp"
+                android:layout_height="2px"
+                android:background="@color/white">
+
+            </View>
+            <View
+                android:id="@+id/tv10"
+                android:layout_below="@+id/linear"
+                android:layout_toLeftOf="@+id/tv9"
+                android:layout_toRightOf="@+id/tv8"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="2px"
+                android:background="@color/orange"
+                >
+            </View>
+            <View
+                android:id="@+id/tv9"
+                android:layout_width="110dp"
+                android:layout_height="2px"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="15dp"
+                android:layout_below="@+id/linear"
+                android:layout_marginTop="5dp"
+                android:background="@color/orange">
+
+            </View>
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv9"
+                android:lineHeight="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="14dp"
+                android:fontFamily="@font/zonapro_semibold"
+                android:textColor="@color/white">
+
+            </TextView>
+            <TextView
+                android:id="@+id/view_policy_link"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:padding="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:layout_alignParentBottom="true"
+                android:text="VIEW POLICY DOCUMENT"
+                android:textSize="14dp"
+                android:fontFamily="@font/zonapro_bold"
+                android:textColor="@color/white"
+                android:background="@color/blue">
+
+            </TextView>
+        </RelativeLayout>
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rl_contact_support"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/rl_transparent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/cv_contact_support"
+            android:background="#80000000">
+
+        </RelativeLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_contact_support"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    >
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/zonapro_bold"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:text="Contact Support"
+                        android:textSize="18dp">
+
+                    </TextView>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_wisedrive_contact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_title"
+                        android:layout_marginTop="12dp"
+                        android:padding="10dp"
+                        android:backgroundTint="@color/blue"
+                        android:background="@drawable/submit_missing_items">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/zonapro_bold"
+                            android:gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="@color/white"
+                            android:text="Wise Drive"
+                            android:textSize="18dp"
+                            >
+
+                        </TextView>
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/telephone_call"
+                            android:layout_centerVertical="true">
+
+                        </ImageView>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+</RelativeLayout>

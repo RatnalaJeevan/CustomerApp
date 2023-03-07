@@ -15,7 +15,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.wisedrive.customerapp.InitiateNewClaim;
 import com.wisedrive.customerapp.R;
+import com.wisedrive.customerapp.commonclasses.SPHelper;
 import com.wisedrive.customerapp.pojos.Pojo_Select_Date;
 import com.wisedrive.customerapp.pojos.Pojo_Select_Your_Vehicle_no;
 
@@ -43,7 +45,7 @@ public class Adapter_Select_Your_Vehicle_No extends RecyclerView.Adapter<Adapter
     @Override
     public void onBindViewHolder(@NonNull Adapter_Select_Your_Vehicle_No.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Pojo_Select_Your_Vehicle_no list = pojo_select_your_vehicle_noArrayList.get(position);
-        holder.tv_vehicle_no.setText(list.getTv_vehicle_no());
+        holder.tv_vehicle_no.setText(list.getVehicle_no());
 
         if (selectedPosition == position) {
             holder.rl_vehicle_background.setSelected(true); //using selector drawable
@@ -60,17 +62,23 @@ public class Adapter_Select_Your_Vehicle_No extends RecyclerView.Adapter<Adapter
         holder.rl_vehicle_background.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SPHelper.veh_no= list.getVehicle_no();
+                SPHelper.claim_type_id="";
+                SPHelper.qa_list=new ArrayList<>();
+                SPHelper.answer_details=new ArrayList<>();
+                SPHelper.answerlist=new ArrayList<>();
+                SPHelper.selcted_veh_id=list.getVehicle_id();
                 if (selectedPosition >= 0)
                     notifyItemChanged(selectedPosition);
                 selectedPosition = holder.getAdapterPosition();
                 notifyItemChanged(selectedPosition);
 
+                ((InitiateNewClaim)context).get_claim_types();
+                ((InitiateNewClaim)context).get_veh_image_list();
+                ((InitiateNewClaim)context).rl.setVisibility(View.VISIBLE);
+
             }
         });
-
-
-
-
 
     }
 

@@ -1,83 +1,96 @@
 package com.wisedrive.customerapp.pojos;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Pojo_Class_Addons_List {
 
-    String tv_status_amount,tv_select,tv_warranty_name,tv_description,tv_scratch_amount,tv_amount,tv_percent,id;
+    @SerializedName("package_discription")
+    String package_discription;
+    @SerializedName("amount_saved")
+    double amount_saved;
+    @SerializedName("percentage_amount_saved")
+    String percentage_amount_saved;
+    @SerializedName("plan_validity")
+    String plan_validity;
+    @SerializedName("package_logo")
+    String package_logo;
+    @SerializedName("actual_price")
+    String actual_price;
+    @SerializedName("sub_pack_id")
+    String sub_pack_id;
+    @SerializedName("final_price")
+    double final_price;
+    @SerializedName("addon_id")
+    String addon_id;
+    @SerializedName("addon_name")
+    String addon_name;
+    @SerializedName("display_name")
+    String display_name;
+    @SerializedName("main_pack_id")
+    String main_pack_id;
 
-    public Pojo_Class_Addons_List(String tv_status_amount, String tv_select, String tv_warranty_name, String tv_description, String tv_scratch_amount, String tv_amount, String tv_percent,String id) {
-        this.tv_status_amount = tv_status_amount;
-        this.tv_select = tv_select;
-        this.tv_warranty_name = tv_warranty_name;
-        this.tv_description = tv_description;
-        this.tv_scratch_amount = tv_scratch_amount;
-        this.tv_amount = tv_amount;
-        this.tv_percent = tv_percent;
-        this.id=id;
+    @SerializedName("is_recommended")
+    String is_recommended;
 
+    String isSelected="n";
+
+    public String getPlan_validity() {
+        return plan_validity;
     }
 
-    public String getTv_status_amount() {
-        return tv_status_amount;
+    public String getIs_recommended() {
+        return is_recommended;
     }
 
-    public void setTv_status_amount(String tv_status_amount) {
-        this.tv_status_amount = tv_status_amount;
+    public String getIsSelected() {
+        return isSelected;
     }
 
-    public String getTv_select() {
-        return tv_select;
+    public void setIsSelected(String isSelected) {
+        this.isSelected = isSelected;
     }
 
-    public void setTv_select(String tv_select) {
-        this.tv_select = tv_select;
+    public String getPackage_discription() {
+        return package_discription;
     }
 
-    public String getTv_warranty_name() {
-        return tv_warranty_name;
+    public String getPercentage_amount_saved() {
+        return percentage_amount_saved;
     }
 
-    public void setTv_warranty_name(String tv_warranty_name) {
-        this.tv_warranty_name = tv_warranty_name;
+    public double getAmount_saved() {
+        return amount_saved;
     }
 
-    public String getTv_description() {
-        return tv_description;
+    public String getPackage_logo() {
+        return package_logo;
     }
 
-    public void setTv_description(String tv_description) {
-        this.tv_description = tv_description;
+    public String getActual_price() {
+        return actual_price;
     }
 
-    public String getTv_scratch_amount() {
-        return tv_scratch_amount;
+    public String getSub_pack_id() {
+        return sub_pack_id;
     }
 
-    public void setTv_scratch_amount(String tv_scratch_amount) {
-        this.tv_scratch_amount = tv_scratch_amount;
+    public double getFinal_price() {
+        return final_price;
     }
 
-    public String getTv_amount() {
-        return tv_amount;
+    public String getAddon_id() {
+        return addon_id;
     }
 
-    public void setTv_amount(String tv_amount) {
-        this.tv_amount = tv_amount;
+    public String getAddon_name() {
+        return addon_name;
     }
 
-    public String getTv_percent() {
-        return tv_percent;
+    public String getDisplay_name() {
+        return display_name;
     }
 
-    public void setTv_percent(String tv_percent) {
-        this.tv_percent = tv_percent;
+    public String getMain_pack_id() {
+        return main_pack_id;
     }
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-
 }

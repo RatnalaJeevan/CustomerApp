@@ -11,10 +11,13 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.wisedrive.customerapp.R;
 import com.wisedrive.customerapp.pojos.Pojo_Class_Plan_2;
+import com.wisedrive.customerapp.pojos.Pojo_Description_lines;
 import com.wisedrive.customerapp.pojos.Pojo_Service_list;
 
 import java.util.ArrayList;
@@ -23,7 +26,9 @@ public class Adapter_Service_List extends RecyclerView.Adapter<Adapter_Service_L
     Context context;
     private View view;
     ArrayList<Pojo_Service_list> pojo_service_listArrayList;
-
+    ArrayList<Pojo_Description_lines> pojo_description_linesArrayList;
+    Adapter_Description_lines adapter_description_lines;
+    RecyclerView rv_description_lines;
     public Adapter_Service_List(Context context, ArrayList<Pojo_Service_list> pojo_service_listArrayList) {
         this.context = context;
         this.pojo_service_listArrayList = pojo_service_listArrayList;
@@ -37,36 +42,40 @@ public class Adapter_Service_List extends RecyclerView.Adapter<Adapter_Service_L
 
     @Override
     public void onBindViewHolder(@NonNull Adapter_Service_List.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        Pojo_Service_list list = pojo_service_listArrayList.get(position);
-        holder.text_service_name.setText(list.getService_name());
-        holder.tv_description.setText(list.getTv_description());
-        holder.tv_description_lines.setText(list.getTv_description_lines());
-        holder.image_logo.setImageResource(list.getImage_logo());
-        holder.relative_layout_services.setOnClickListener(new View.OnClickListener() {
+        Pojo_Service_list recyclerdata = pojo_service_listArrayList.get(position);
+        holder.text_service_name.setText(recyclerdata.getPackage_name());
+       holder.tv_description.setText(recyclerdata.getPackage_description());
+
+        Glide.with(context).load(recyclerdata.getIcon_url()).placeholder(R.drawable.service_image).into(holder.image_logo);
+
+        // holder.image_logo.setImageResource(list.getImage_logo());
+        holder.rl_max.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(pojo_service_listArrayList.get(position).isVisible){
-                    holder.tv_description_lines.setVisibility(View.GONE);
+
                     holder.description_page.setVisibility(View.GONE);
-                    holder.tv_description.setVisibility(View.VISIBLE);
                     pojo_service_listArrayList.get(position).isVisible=false;
                     holder.plus_icon.setVisibility(View.VISIBLE);
                     holder.minus_icon.setVisibility(View.INVISIBLE);
-
-
                 }
                 else {
-                    holder.tv_description_lines.setVisibility(View.VISIBLE);
+
                     holder.description_page.setVisibility(View.VISIBLE);
-                    holder.tv_description.setVisibility(View.VISIBLE);
                     pojo_service_listArrayList.get(position).isVisible=true;
-                   holder.plus_icon.setVisibility(View.INVISIBLE);
+                    holder.plus_icon.setVisibility(View.INVISIBLE);
                     holder.minus_icon.setVisibility(View.VISIBLE);
 
                 }
             }
         });
-
+        pojo_description_linesArrayList = new ArrayList();
+        pojo_description_linesArrayList=recyclerdata.getServiceIncludes();
+        adapter_description_lines= new Adapter_Description_lines(context, pojo_description_linesArrayList);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
+        rv_description_lines.setLayoutManager(linearLayoutManager);
+        rv_description_lines.setAdapter(adapter_description_lines);
+        adapter_description_lines.notifyDataSetChanged();
     }
 
     @Override
@@ -78,17 +87,18 @@ public class Adapter_Service_List extends RecyclerView.Adapter<Adapter_Service_L
 
         TextView text_service_name, tv_description,tv_description_lines;
         ImageView image_logo,plus_icon,minus_icon;
-        RelativeLayout relative_layout_services,description_page;
+        RelativeLayout rl_max,description_page;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            rv_description_lines=itemView.findViewById(R.id.rv_description_lines);
             text_service_name= itemView.findViewById(R.id.text_service_name);
             tv_description= itemView.findViewById(R.id.tv_description);
             tv_description_lines = itemView.findViewById(R.id.tv_description_lines);
             image_logo = itemView.findViewById(R.id.image_logo);
-            relative_layout_services=(RelativeLayout) view.findViewById(R.id.relative_layout_services);
-            description_page=(RelativeLayout) view.findViewById(R.id.description_page);
+            rl_max=itemView.findViewById(R.id.rl_max);
+            description_page=itemView.findViewById(R.id.description_page);
             plus_icon = itemView.findViewById(R.id.plus_icon);
             minus_icon = itemView.findViewById(R.id.minus_icon);
 

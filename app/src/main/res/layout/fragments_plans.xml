@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Plans_Fragments">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -39,7 +39,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_warranty_plan"
+        android:id="@+id/rv_warranty_pac_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/view1" />
@@ -48,12 +48,12 @@
         android:id="@+id/text_combo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Services &amp; Maintanance Plans "
+        android:text="Services &amp; Maintenance Plans "
         android:layout_marginTop="20dp"
         android:textColor="@color/heading"
         android:textSize="20dp"
         android:fontFamily="@font/gillroy_bold"
-        android:layout_below="@id/recycler_view_warranty_plan"
+        android:layout_below="@id/rv_warranty_pac_list"
         android:layout_marginLeft="15dp"/>
         <View
             android:id="@+id/view2"
@@ -63,7 +63,7 @@
             android:layout_below="@id/text_combo"
             android:layout_marginLeft="15dp" />
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_service_maintanance"
+        android:id="@+id/rv_service_pac_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/view2"
@@ -80,7 +80,7 @@
             android:text="Comprehensive Plans"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/gillroy_bold"
-            android:layout_below="@id/recycler_service_maintanance"
+            android:layout_below="@id/rv_service_pac_list"
             android:layout_marginLeft="15dp"
             android:visibility="gone"/>
 
@@ -114,7 +114,7 @@
             android:text="Combo Plans"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/gillroy_bold"
-            android:layout_below="@id/recycler_service_maintanance"
+            android:layout_below="@id/rv_service_pac_list"
             android:layout_marginLeft="15dp" />
 
         <View
@@ -126,7 +126,7 @@
             android:layout_marginLeft="15dp" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycle_combo_plan"
+            android:id="@+id/rv_combo_pac_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/view_combo_plan"
@@ -135,8 +135,19 @@
 
     </RelativeLayout>
     </RelativeLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/idPBLoading"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:elevation="10dp"
+        android:indeterminateTint="@color/blue">
 
-</FrameLayout>
+    </ProgressBar>
+
+</RelativeLayout>

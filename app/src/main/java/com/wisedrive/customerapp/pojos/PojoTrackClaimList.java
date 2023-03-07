@@ -14,23 +14,13 @@ public class PojoTrackClaimList {
         return status_id;
     }
 
-    public void setStatus_id(String status_id) {
-        this.status_id = status_id;
-    }
 
     public String getStatus_name() {
         return status_name;
-    }
-
-    public void setStatus_name(String status_name) {
-        this.status_name = status_name;
     }
 
     public String getDate_1() {
         return date_1;
     }
 
-    public void setDate_1(String date_1) {
-        this.date_1 = date_1;
-    }
 }

@@ -9,10 +9,11 @@
 
         <TextView
             android:id="@+id/textcapture"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Capture"
             android:textSize="20dp"
+            android:gravity="center"
             android:fontFamily="@font/poppins_regular"
             android:textColor="@color/black"
             android:layout_centerHorizontal="true"
@@ -20,10 +21,11 @@
 
         <TextView
             android:id="@+id/textgallery"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Gallery"
             android:textSize="20dp"
+            android:gravity="center"
             android:textColor="@color/black"
             android:fontFamily="@font/poppins_regular"
             android:layout_centerHorizontal="true"
@@ -32,9 +34,10 @@
 
         <TextView
             android:id="@+id/textcancel"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Cancel"
+            android:gravity="center"
             android:textColor="@color/green"
             android:textSize="20dp"
             android:fontFamily="@font/poppins_regular"

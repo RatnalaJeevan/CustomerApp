@@ -42,6 +42,7 @@
                 </RelativeLayout>
 
                 <View
+                    android:visibility="invisible"
                     android:id="@+id/view"
                     android:layout_width="1dp"
                     android:layout_height="50dp"
@@ -52,7 +53,7 @@
 
                 <TextView
                     android:id="@+id/text_warranty_name"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="15dp"
@@ -117,7 +118,7 @@
                     android:layout_marginBottom="18dp"
                     android:layout_toRightOf="@id/tv_inr"
                     android:fontFamily="@font/gillroy_bold"
-                    android:text="15,000"
+                    android:text=""
                     android:textColor="@color/white"
                     android:textSize="20dp" />
 
@@ -126,16 +127,18 @@
                     android:layout_width="1dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="15dp"
                     android:layout_toLeftOf="@id/rl_validity_save"
                     android:background="@color/light_gray" />
 
                 <RelativeLayout
                     android:id="@+id/rl_validity_save"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/plan_validity"
+                    android:layout_marginBottom="5dp"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginTop="20dp">
+                    android:layout_marginTop="15dp">
 
                     <TextView
                         android:id="@+id/tv_save"
@@ -147,31 +150,44 @@
                         android:textSize="12dp" />
 
 
-                    <TextView
-                        android:id="@+id/tv_inr_save"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/tv_save"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/gillroy_regular"
-                        android:text="INR "
-                        android:textColor="@color/white"
-                        android:textSize="13dp" />
+<!--                    <TextView-->
+<!--                        android:visibility="gone"-->
+<!--                        android:id="@+id/tv_inr_save"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_below="@id/tv_save"-->
+<!--                        android:layout_marginTop="7dp"-->
+<!--                        android:fontFamily="@font/gillroy_regular"-->
+<!--                        android:text="INR "-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="13dp" />-->
 
                     <TextView
                         android:id="@+id/text_save_amount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/tv_save"
-                        android:layout_alignParentEnd="true"
                         android:layout_marginRight="10dp"
                         android:fontFamily="@font/gillroy_semibold"
-                        android:text="₹10000"
+                        android:text="INR 1,00,000"
                         android:textColor="@color/white"
                         android:textSize="20dp" />
 
 
                 </RelativeLayout>
+
+                 <TextView
+                 android:id="@+id/plan_validity"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentBottom="true"
+                 android:layout_alignParentEnd="true"
+                 android:layout_marginRight="20dp"
+                 android:layout_marginBottom="15dp"
+                 android:fontFamily="@font/gillroy_semibold"
+                 android:text="6 months "
+                 android:textColor="@color/white"
+                 android:textSize="14dp" />
 
             </RelativeLayout>
 

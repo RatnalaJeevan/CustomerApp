@@ -1,126 +1,88 @@
 package com.wisedrive.customerapp.pojos;
 
+import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
+
 public class Pojo_Service_and_Maintanance_Plans {
-    String tv_general_service_name,tv_general_service_description,
-            tv_ac_service,tv_ac_service_description,tv_health_checkup,
-            tv_health_checkup_dscription,tv_maintanance_plan,tv_amount_buy,tv_rupee;
-    int image_1;
-    int image_2;
-    int image_3;
 
-    public String getTv_general_service_name() {
-        return tv_general_service_name;
+    @SerializedName("is_starter_pack")
+    String is_starter_pack;
+    @SerializedName("amount_saved")
+    double amount_saved;
+    @SerializedName("start_color")
+    String start_color;
+    @SerializedName("display_name")
+    String display_name;
+    @SerializedName("package_id")
+    String package_id;
+    @SerializedName("end_color")
+    String end_color;
+    @SerializedName("original_price")
+    String original_price;
+    @SerializedName("percentage_amount_saved")
+    String percentage_amount_saved;
+    @SerializedName("package_type")
+    String package_type;
+    @SerializedName("main_package_id")
+    String main_package_id;
+    @SerializedName("final_price")
+    double final_price;
+    @SerializedName("package_name")
+    String package_name;
+    @SerializedName("ServiceDetails")
+    ArrayList<PojoServiceDetails> ServiceDetails;
+
+    public String getPackage_name() {
+        return package_name;
     }
 
-    public void setTv_general_service_name(String tv_general_service_name) {
-        this.tv_general_service_name = tv_general_service_name;
+    public ArrayList<PojoServiceDetails> getServiceDetails() {
+        return ServiceDetails;
     }
 
-    public String getTv_general_service_description() {
-        return tv_general_service_description;
+    public String getMain_package_id() {
+        return main_package_id;
     }
 
-    public void setTv_general_service_description(String tv_general_service_description) {
-        this.tv_general_service_description = tv_general_service_description;
+    public String getIs_starter_pack() {
+        return is_starter_pack;
     }
 
-    public String getTv_ac_service() {
-        return tv_ac_service;
+    public double getAmount_saved() {
+        return amount_saved;
     }
 
-    public void setTv_ac_service(String tv_ac_service) {
-        this.tv_ac_service = tv_ac_service;
+    public double getFinal_price() {
+        return final_price;
     }
 
-    public String getTv_ac_service_description() {
-        return tv_ac_service_description;
+    public String getStart_color() {
+        return start_color;
     }
 
-    public void setTv_ac_service_description(String tv_ac_service_description) {
-        this.tv_ac_service_description = tv_ac_service_description;
+    public String getDisplay_name() {
+        return display_name;
     }
 
-    public String getTv_health_checkup() {
-        return tv_health_checkup;
+    public String getPackage_id() {
+        return package_id;
     }
 
-    public void setTv_health_checkup(String tv_health_checkup) {
-        this.tv_health_checkup = tv_health_checkup;
+    public String getEnd_color() {
+        return end_color;
     }
 
-    public String getTv_health_checkup_dscription() {
-        return tv_health_checkup_dscription;
+    public String getOriginal_price() {
+        return original_price;
     }
 
-    public void setTv_health_checkup_dscription(String tv_health_checkup_dscription) {
-        this.tv_health_checkup_dscription = tv_health_checkup_dscription;
+    public String getPercentage_amount_saved() {
+        return percentage_amount_saved;
     }
 
-    public String getTv_maintanance_plan() {
-        return tv_maintanance_plan;
-    }
-
-    public void setTv_maintanance_plan(String tv_maintanance_plan) {
-        this.tv_maintanance_plan = tv_maintanance_plan;
-    }
-
-
-
-    public String getTv_amount_buy() {
-        return tv_amount_buy;
-    }
-
-    public void setTv_amount_buy(String tv_amount_buy) {
-        this.tv_amount_buy = tv_amount_buy;
-    }
-
-    public int getImage_1() {
-        return image_1;
-    }
-
-    public void setImage_1(int image_1) {
-        this.image_1 = image_1;
-    }
-
-    public int getImage_2() {
-        return image_2;
-    }
-
-    public void setImage_2(int image_2) {
-        this.image_2 = image_2;
-    }
-
-    public int getImage_3() {
-        return image_3;
-    }
-
-    public void setImage_3(int image_3) {
-        this.image_3 = image_3;
-    }
-
-    public String getTv_rupee() {
-        return tv_rupee;
-    }
-
-    public void setTv_rupee(String tv_rupee) {
-        this.tv_rupee = tv_rupee;
-    }
-
-    public Pojo_Service_and_Maintanance_Plans(String tv_general_service_name, String tv_general_service_description, String tv_ac_service, String tv_ac_service_description, String tv_health_checkup, String tv_health_checkup_dscription, String tv_maintanance_plan, String tv_rupee, String tv_amount_buy, int image_1, int image_2, int image_3) {
-        this.tv_general_service_name = tv_general_service_name;
-        this.tv_general_service_description = tv_general_service_description;
-        this.tv_ac_service = tv_ac_service;
-        this.tv_ac_service_description = tv_ac_service_description;
-        this.tv_health_checkup = tv_health_checkup;
-        this.tv_health_checkup_dscription = tv_health_checkup_dscription;
-        this.tv_maintanance_plan = tv_maintanance_plan;
-        this.tv_amount_buy = tv_amount_buy;
-        this.image_1 = image_1;
-        this.image_2 = image_2;
-        this.image_3 = image_3;
-        this.tv_rupee=tv_rupee;
-
-
+    public String getPackage_type() {
+        return package_type;
     }
 }
 

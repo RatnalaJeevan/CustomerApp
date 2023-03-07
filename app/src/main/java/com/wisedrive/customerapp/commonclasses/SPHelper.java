@@ -2,7 +2,14 @@ package com.wisedrive.customerapp.commonclasses;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+
+import com.wisedrive.customerapp.adapters.AdapterCustomerVehicleList;
+import com.wisedrive.customerapp.adapters.Adapter_Yes_No;
+import com.wisedrive.customerapp.pojos.PojoAnswerDetails;
 import com.wisedrive.customerapp.pojos.PojoVehDetails;
+import com.wisedrive.customerapp.pojos.Pojo_Class_Addons_List;
+import com.wisedrive.customerapp.pojos.Pojo_Q_And_A;
+import com.wisedrive.customerapp.pojos.Pojo_yes_no;
 
 import java.util.ArrayList;
 
@@ -12,6 +19,7 @@ public class SPHelper {
     public static String package_activated="package_activated";
     public static String otp_activated="otp_activated";
     public static String customer_id="customer_id";
+    public static String cust_name="cust_name";
     public static String customer_veh_id="";
     public static String customer_exp_kms="";
     public static String veh_valid_from="";
@@ -54,6 +62,47 @@ public class SPHelper {
     public static String veh_name="";
     public static String claim_type="";
     public static String claim_code="";
+    public static String lead_id="lead_id";
+    public static String is_pack_activated="is_pack_activated";
+    public static String carbrandid="";
+    public static String carmodelid="";
+    public static String imagestaken="imagestaken";
+    public static String product_id="";
+    public static String main_pack_id="";
+    public static String cat_id="";
+    public static double pack_amount;
+    public static String selected_addon_id="";
+    public static double final_amount;
+    public static String cust_mail="cust_mail";
+    public static String isSuccess="";
+    public static String lead_veh_id="";
+    public static String veh_no="";
+
+    public static ArrayList<PojoAnswerDetails> answer_details=new ArrayList<>();
+    public static ArrayList<Pojo_Q_And_A> quest_list=new ArrayList<>();
+
+    public  static ArrayList<Pojo_Class_Addons_List> addon_list=new ArrayList<>();
+    public static String cf_msg="";
+    public static String car_model_name="";
+    public static String dpp_id="";
+    public static double upgrade_amount;
+    public static String bbg_policy="";
+    public static String warr_policy="";
+    public static String brand_name="";
+    public static String fragment_is="";
+    public static String coupon_code="";
+    public static String coupon_type="";
+    public static double disc_amount;
+    public static String coupon_id="";
+    public static String actcode="";
+    public static String product_name="";
+    public static ArrayList<Pojo_Q_And_A> qa_list=new ArrayList<>();
+    public static ArrayList<Pojo_yes_no> answerlist=new ArrayList<>();
+    public static String selcted_veh_id="";
+    public static String pack_type="";
+    public static String msg="";
+    public static String is_active="";
+    public static String is_exp="";
 
     private  static String spName="CustomerApp";
 

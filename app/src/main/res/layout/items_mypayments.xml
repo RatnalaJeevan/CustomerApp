@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background">
+
+            <RelativeLayout
+                android:id="@+id/rl_warranty_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/tv_warranty_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Comprehensive Warranty"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/gillroy_semibold"/>
+
+                <TextView
+                    android:id="@+id/tv_make"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Honda-City-KA1212AS2222"
+                    android:fontFamily="@font/gillroy_medium"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/tv_warranty_name"/>
+
+                <TextView
+                    android:id="@+id/tv_paid_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paid Amount"
+                    android:textSize="15dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/gillroy_regular"
+                    android:layout_below="@id/tv_make"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/tv_inr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="INR"
+                    android:layout_marginTop="6dp"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/gillroy_regular"
+                    android:layout_below="@id/tv_paid_amount"
+                    android:textColor="@color/light_green_1"/>
+
+                <TextView
+                    android:id="@+id/tv_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5,000"
+                    android:layout_marginTop="5dp"
+                    android:textSize="17dp"
+                    android:fontFamily="@font/gillroy_semibold"
+                    android:layout_below="@id/tv_paid_amount"
+                    android:layout_toRightOf="@id/tv_inr"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/light_green_1"/>
+
+
+                <TextView
+                    android:id="@+id/tv_paidon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paid On"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/gillroy_regular"
+                    android:textColor="@color/black"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@id/tv_make"/>
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="23 Feb 2023"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@id/tv_paidon"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/gillroy_semibold"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_addons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_warranty_details"
+                android:text="Add Ons"
+                android:textSize="15dp"
+                android:fontFamily="@font/gillroy_semibold"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/orange_dark"/>
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="55dp"
+                android:layout_height="2dp"
+                android:layout_below="@id/tv_addons"
+                android:background="@color/orange_dark"
+                android:layout_marginLeft="10dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_service_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/view"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

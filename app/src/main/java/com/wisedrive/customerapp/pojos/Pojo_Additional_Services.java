@@ -1,27 +1,48 @@
 package com.wisedrive.customerapp.pojos;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Pojo_Additional_Services {
-    int image_logo;
-    String tv_additional_service_plan;
+    @SerializedName("product_id")
+    String product_id;
+    @SerializedName("package_id")
+    String package_id;
+    @SerializedName("description")
+    String description;
+    @SerializedName("year_id")
+    String year_id;
+    @SerializedName("validity")
+    String validity;
+    @SerializedName("product_name")
+    String product_name;
+    @SerializedName("product_icon")
+    String product_icon;
 
-    public Pojo_Additional_Services(int image_logo, String tv_additional_service_plan) {
-        this.image_logo = image_logo;
-        this.tv_additional_service_plan = tv_additional_service_plan;
+    public String getProduct_icon() {
+        return product_icon;
     }
 
-    public int getImage_logo() {
-        return image_logo;
+    public String getProduct_id() {
+        return product_id;
     }
 
-    public void setImage_logo(int image_logo) {
-        this.image_logo = image_logo;
+    public String getPackage_id() {
+        return package_id;
     }
 
-    public String getTv_additional_service_plan() {
-        return tv_additional_service_plan;
+    public String getDescription() {
+        return description;
     }
 
-    public void setTv_additional_service_plan(String tv_additional_service_plan) {
-        this.tv_additional_service_plan = tv_additional_service_plan;
+    public String getYear_id() {
+        return year_id;
+    }
+
+    public String getValidity() {
+        return validity;
+    }
+
+    public String getProduct_name() {
+        return product_name;
     }
 }

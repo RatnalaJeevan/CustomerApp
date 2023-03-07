@@ -5,61 +5,79 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Add_New_Car"
-    android:background="@drawable/gradient_add_car_background">
+    >
 
-    <ImageView
-        android:id="@+id/back"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/bacxk_arrow_white"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"/>
+    <RelativeLayout
+        android:id="@+id/rl_label"
+        android:layout_width="match_parent"
+        android:background="#000066"
+        android:layout_height="50dp">
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:src="@drawable/bacxk_arrow_white"
+            android:layout_marginLeft="5dp"/>
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Car"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/back"
+            android:textSize="18dp"
+            android:layout_marginLeft="20dp">
 
-    <TextView
-        android:id="@+id/tv_inspection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="You are adding a new car ..."
-        android:textColor="@color/white"
-        android:layout_below="@id/back"
-        android:textSize="55dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="40dp"
-        android:fontFamily="@font/gillroy_regular"
-        android:layout_marginTop="20dp"/>
+        </TextView>
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_inspection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You are adding a new car ..."
+            android:textColor="@color/white"
+            android:layout_below="@id/label"
+            android:textSize="55dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="40dp"
+            android:fontFamily="@font/gillroy_regular"
+            android:layout_marginTop="20dp"/>
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/tv_inspection"
-        android:layout_marginTop="20dp"
+        android:layout_below="@id/rl_label"
         android:background="@drawable/gradient_rl_select_details_background">
 
         <RelativeLayout
             android:id="@+id/rl_labels"
             android:layout_width="match_parent"
-            android:layout_height="60dp">
+            android:layout_height="50dp">
 
         <TextView
             android:id="@+id/tv_make"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Make"
-            android:textColor="@color/lightgrey"
+            android:textColor="@color/blue"
             android:layout_marginLeft="35dp"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/gillroy_bold"
             android:textSize="15dp"/>
 
-            <View
-                android:id="@+id/view_make"
-                android:layout_width="28dp"
-                android:layout_height="2dp"
-                android:layout_below="@id/tv_make"
-                android:layout_marginTop="5dp"
-                android:background="@color/blue"
-                android:layout_marginLeft="35dp"
-                android:visibility="invisible"/>
+        <View
+            android:id="@+id/view_make"
+            android:layout_width="28dp"
+            android:layout_height="2dp"
+            android:layout_below="@id/tv_make"
+            android:background="@color/blue"
+            android:layout_marginLeft="35dp"
+            />
 
         <TextView
             android:id="@+id/tv_basic"
@@ -73,40 +91,38 @@
             android:fontFamily="@font/gillroy_bold"
             android:textColor="@color/lightgrey"/>
 
-            <View
+        <View
                 android:id="@+id/view_basic"
                 android:layout_width="28dp"
                 android:layout_height="2dp"
                 android:layout_below="@id/tv_basic"
                 android:layout_toRightOf="@id/view_make"
-                android:layout_marginTop="5dp"
                 android:background="@color/blue"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="45dp"
                 android:visibility="invisible"/>
 
 
-            <TextView
-            android:id="@+id/tv_photos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Photos"
-            android:layout_toRightOf="@id/tv_basic"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="20dp"
-            android:textSize="15dp"
-            android:fontFamily="@font/gillroy_bold"
-            android:textColor="@color/lightgrey"/>
+        <TextView
+        android:id="@+id/tv_photos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Photos"
+        android:layout_toRightOf="@id/tv_basic"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="20dp"
+        android:textSize="15dp"
+        android:fontFamily="@font/gillroy_bold"
+        android:textColor="@color/lightgrey"/>
 
-            <View
-                android:id="@+id/view_photos"
-                android:layout_width="28dp"
-                android:layout_height="2dp"
-                android:layout_below="@id/tv_photos"
-                android:layout_toRightOf="@id/view_basic"
-                android:layout_marginTop="5dp"
-                android:background="@color/blue"
-                android:layout_marginLeft="55dp"
-                android:visibility="invisible"/>
+        <View
+            android:id="@+id/view_photos"
+            android:layout_width="28dp"
+            android:layout_height="2dp"
+            android:layout_below="@id/tv_photos"
+            android:layout_toRightOf="@id/view_basic"
+            android:background="@color/blue"
+            android:layout_marginLeft="45dp"
+            android:visibility="invisible"/>
 
         <TextView
             android:id="@+id/tv_insurance"
@@ -120,63 +136,54 @@
             android:fontFamily="@font/gillroy_bold"
             android:textColor="@color/lightgrey"/>
 
-            <View
-                android:id="@+id/view_insurance"
-                android:layout_width="28dp"
-                android:layout_height="2dp"
-                android:layout_below="@id/tv_insurance"
-                android:layout_toRightOf="@id/view_photos"
-                android:layout_marginTop="5dp"
-                android:background="@color/blue"
-                android:layout_marginLeft="55dp"
-                android:visibility="invisible"/>
+        <View
+            android:id="@+id/view_insurance"
+            android:layout_width="28dp"
+            android:layout_height="2dp"
+            android:layout_below="@id/tv_insurance"
+            android:layout_toRightOf="@id/view_photos"
+            android:background="@color/blue"
+            android:layout_marginLeft="50dp"
+            android:visibility="invisible"/>
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/rl_select_make"
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/rl_labels"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:visibility="invisible">
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rl_labels"
+            android:layout_above="@+id/rl_bottom">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
 
 
         <androidx.recyclerview.widget.RecyclerView
+            android:visibility="gone"
             android:id="@+id/recycler_view_select_make"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"/>
-        </RelativeLayout>
-        <RelativeLayout
-            android:id="@+id/rl_select_model"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/rl_labels"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:visibility="invisible">
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+           />
+
 
         <androidx.recyclerview.widget.RecyclerView
+            android:visibility="gone"
             android:id="@+id/recycler_view_select_model"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"/>
-        </RelativeLayout>
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+           />
+
 
         <RelativeLayout
+            android:visibility="gone"
             android:id="@+id/rl_fuel_transmission_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/rl_labels"
-            android:visibility="invisible">
+            >
 
         <TextView
             android:id="@+id/tv_fuel"
@@ -337,22 +344,41 @@
 
 
             <Spinner
+                android:id="@+id/spinner_year"
                 android:layout_width="120dp"
                 android:layout_height="35dp"
-                android:id="@+id/spinner"
-                android:layout_below="@id/check_box_manual"
-                android:background="@color/light_gray"
+                android:layout_below="@+id/tv_automatic"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginLeft="20dp" />
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="16dp"
+                android:gravity="center"
+                android:maxLength="4"
+                android:background="@color/lightgrey"
+                >
+
+            </Spinner>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_below="@+id/tv_automatic"
+                android:layout_marginTop="38dp"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/label_year"
+                android:src="@drawable/arrow_drop_down">
+
+            </ImageView>
 
             <TextView
+                android:id="@+id/label_year"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Year"
                 android:textColor="@color/black"
                 android:layout_below="@id/check_box_automatic"
-                android:layout_toRightOf="@id/spinner"
-                android:layout_marginTop="40dp"
+                android:layout_toRightOf="@id/spinner_year"
+                android:layout_marginTop="30dp"
                 android:layout_marginLeft="5dp"
                 android:textSize="15dp"
                 android:fontFamily="@font/gillroy_bold"/>
@@ -360,21 +386,23 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:visibility="gone"
             android:id="@+id/rl_basic_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/rl_labels"
-            android:visibility="invisible">
+           >
 
             <RelativeLayout
                 android:id="@+id/rl_vehicle_number"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
 
             <ImageView
                 android:id="@+id/image_vehicle_no"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:layout_centerVertical="true"
                 android:src="@drawable/image_vehicle_number"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"/>
@@ -388,68 +416,36 @@
                     android:layout_marginTop="25dp"
                     android:layout_marginLeft="10dp"
                     android:textSize="15dp"
+                    android:layout_centerVertical="true"
                     android:textColor="@color/lightgrey"
                     android:fontFamily="@font/gillroy_bold"/>
 
                 <EditText
-                    android:id="@+id/edit_vehicle_no"
+                    android:id="@+id/selected_vehno"
                     android:layout_width="180dp"
                     android:layout_height="44dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/gillroy_bold"
                     android:layout_alignParentEnd="true"
-                    android:paddingLeft="20dp"
+                    android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:inputType="textCapCharacters"
+                    android:maxLength="15"
+                    android:maxLines="1"
+                    android:paddingStart="20dp"
+                    android:layout_centerVertical="true"
                     android:textColor="@color/black"
                     android:background="@drawable/edit_background"/>
 
             </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/rl_selling_price"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/rl_vehicle_number">
-
-                <ImageView
-                    android:id="@+id/image_selling_price"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/image_selling_price"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="20dp"/>
-
-                <TextView
-                    android:id="@+id/tv_selling_price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Selling Price"
-                    android:layout_toRightOf="@id/image_selling_price"
-                    android:layout_marginTop="25dp"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="15dp"
-                    android:textColor="@color/lightgrey"
-                    android:fontFamily="@font/gillroy_bold"/>
-
-                <EditText
-                    android:id="@+id/edit_selling_price"
-                    android:layout_width="180dp"
-                    android:layout_height="44dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="15dp"
-                    android:fontFamily="@font/gillroy_bold"
-                    android:layout_alignParentEnd="true"
-                    android:paddingLeft="20dp"
-                    android:textColor="@color/black"
-                    android:background="@drawable/edit_background"/>
-
-            </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/rl_kms_driven"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/rl_selling_price">
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/rl_vehicle_number">
 
                 <ImageView
                     android:id="@+id/image_kms_driven"
@@ -457,6 +453,7 @@
                     android:layout_height="30dp"
                     android:src="@drawable/image_kms_driven"
                     android:layout_marginLeft="30dp"
+                    android:layout_centerVertical="true"
                     android:layout_marginTop="20dp"/>
                 <TextView
                     android:id="@+id/tv_kms_driven"
@@ -467,11 +464,12 @@
                     android:layout_marginTop="25dp"
                     android:layout_marginLeft="10dp"
                     android:textSize="15dp"
+                    android:layout_centerVertical="true"
                     android:textColor="@color/lightgrey"
                     android:fontFamily="@font/gillroy_bold"/>
 
                 <EditText
-                    android:id="@+id/edit_kms_driven"
+                    android:id="@+id/selected_kms"
                     android:layout_width="180dp"
                     android:layout_height="44dp"
                     android:layout_marginRight="20dp"
@@ -479,6 +477,10 @@
                     android:fontFamily="@font/gillroy_bold"
                     android:layout_alignParentEnd="true"
                     android:paddingLeft="20dp"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:maxLines="1"
+                    android:layout_centerVertical="true"
                     android:textColor="@color/black"
                     android:background="@drawable/edit_background"/>
             </RelativeLayout>
@@ -486,12 +488,14 @@
                 android:id="@+id/rl_no_of_ownres"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_below="@id/rl_kms_driven">
 
                 <ImageView
                     android:id="@+id/image_no_of_owners"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    android:layout_centerVertical="true"
                     android:src="@drawable/image_no_of_owners"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="20dp"/>
@@ -505,11 +509,12 @@
                     android:layout_marginTop="25dp"
                     android:layout_marginLeft="10dp"
                     android:textSize="15dp"
+                    android:layout_centerVertical="true"
                     android:textColor="@color/lightgrey"
                     android:fontFamily="@font/gillroy_bold"/>
 
                 <EditText
-                    android:id="@+id/edit_no_of_owners"
+                    android:id="@+id/selected_owners"
                     android:layout_width="180dp"
                     android:layout_height="44dp"
                     android:layout_marginRight="20dp"
@@ -517,6 +522,10 @@
                     android:fontFamily="@font/gillroy_bold"
                     android:layout_alignParentEnd="true"
                     android:paddingLeft="20dp"
+                    android:maxLength="1"
+                    android:digits="123456789"
+                    android:inputType="number"
+                    android:layout_centerVertical="true"
                     android:textColor="@color/black"
                     android:background="@drawable/edit_background"/>
             </RelativeLayout>
@@ -525,6 +534,7 @@
                 android:id="@+id/rl_color"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_below="@id/rl_no_of_ownres">
 
                 <ImageView
@@ -532,6 +542,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/color"
+                    android:layout_centerVertical="true"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="20dp"/>
 
@@ -544,11 +555,12 @@
                     android:layout_marginTop="25dp"
                     android:layout_marginLeft="10dp"
                     android:textSize="15dp"
+                    android:layout_centerVertical="true"
                     android:textColor="@color/lightgrey"
                     android:fontFamily="@font/gillroy_bold"/>
 
                 <EditText
-                    android:id="@+id/edit_color"
+                    android:id="@+id/selected_clr"
                     android:layout_width="180dp"
                     android:layout_height="44dp"
                     android:layout_marginRight="20dp"
@@ -556,6 +568,11 @@
                     android:fontFamily="@font/gillroy_bold"
                     android:layout_alignParentEnd="true"
                     android:paddingLeft="20dp"
+                    android:maxLength="10"
+                    android:maxLines="1"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:inputType="textCapCharacters"
+                    android:layout_centerVertical="true"
                     android:textColor="@color/black"
                     android:background="@drawable/edit_background"/>
             </RelativeLayout>
@@ -566,10 +583,9 @@
             android:id="@+id/rl_photos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-           android:layout_marginRight="20dp"
+            android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:layout_below="@id/rl_labels"
-            android:visibility="invisible">
+            android:visibility="gone">
 
             <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_view_upload_images"
@@ -580,10 +596,10 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:visibility="gone"
             android:id="@+id/rl_insurance"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/rl_labels">
+            android:layout_height="wrap_content">
             <RelativeLayout
                 android:id="@+id/rl_type"
                 android:layout_width="match_parent"
@@ -595,7 +611,8 @@
                 android:layout_height="30dp"
                 android:src="@drawable/type"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="20dp"
+                android:layout_centerVertical="true"/>
 
             <TextView
                 android:id="@+id/tv_insurance_details"
@@ -606,6 +623,7 @@
                 android:layout_marginTop="25dp"
                 android:layout_marginLeft="10dp"
                 android:textSize="15dp"
+                android:layout_centerVertical="true"
                 android:textColor="@color/lightgrey"
                 android:fontFamily="@font/gillroy_bold"/>
 
@@ -614,7 +632,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_marginRight="20dp"
-                    android:layout_marginTop="20dp">
+                    android:layout_marginTop="20dp"
+                    android:layout_centerVertical="true">
 
             <Spinner
                 android:id="@+id/spinner_insurance_type"
@@ -648,7 +667,8 @@
                     android:layout_height="30dp"
                     android:src="@drawable/provider"
                     android:layout_marginLeft="30dp"
-                    android:layout_marginTop="25dp"/>
+                    android:layout_marginTop="25dp"
+                    android:layout_centerVertical="true"/>
 
                 <TextView
                     android:id="@+id/tv_provider"
@@ -659,6 +679,7 @@
                     android:layout_marginTop="30dp"
                     android:layout_marginLeft="10dp"
                     android:textSize="15dp"
+                    android:layout_centerVertical="true"
                     android:textColor="@color/lightgrey"
                     android:fontFamily="@font/gillroy_bold"/>
 
@@ -668,7 +689,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_marginRight="20dp"
-                    android:layout_marginTop="20dp">
+                    android:layout_marginTop="20dp"
+                    android:layout_centerVertical="true">
 
 
                 <Spinner
@@ -702,7 +724,8 @@
                     android:layout_height="30dp"
                     android:src="@drawable/policy_no"
                     android:layout_marginLeft="30dp"
-                    android:layout_marginTop="25dp"/>
+                    android:layout_marginTop="25dp"
+                    android:layout_centerVertical="true"/>
 
                 <TextView
                     android:id="@+id/tv_policy_no"
@@ -713,6 +736,7 @@
                     android:layout_marginTop="30dp"
                     android:layout_marginLeft="10dp"
                     android:textSize="15dp"
+                    android:layout_centerVertical="true"
                     android:textColor="@color/lightgrey"
                     android:fontFamily="@font/gillroy_bold"/>
 
@@ -725,7 +749,10 @@
                     android:fontFamily="@font/gillroy_bold"
                     android:layout_alignParentEnd="true"
                     android:paddingLeft="20dp"
+                    android:inputType="number"
+                    android:maxLength="15"
                     android:textColor="@color/black"
+                    android:layout_centerVertical="true"
                     android:background="@drawable/edit_background"/>
 
             </RelativeLayout>
@@ -741,7 +768,8 @@
                     android:layout_height="30dp"
                     android:src="@drawable/calender"
                     android:layout_marginLeft="30dp"
-                    android:layout_marginTop="30dp"/>
+                    android:layout_marginTop="30dp"
+                    android:layout_centerVertical="true"/>
 
                 <TextView
                     android:id="@+id/tv_expiry_date"
@@ -753,11 +781,12 @@
                     android:layout_marginLeft="10dp"
                     android:textSize="15dp"
                     android:textColor="@color/lightgrey"
-                    android:fontFamily="@font/gillroy_bold"/>
+                    android:fontFamily="@font/gillroy_bold"
+                    android:layout_centerVertical="true"/>
 
                 <TextView
                     android:id="@+id/tv_calender"
-                    android:layout_width="150dp"
+                    android:layout_width="200dp"
                     android:layout_height="44dp"
                    android:paddingTop="10dp"
                     android:paddingLeft="20dp"
@@ -767,73 +796,122 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="20dp"
+                    android:layout_centerVertical="true"
                     android:background="@drawable/edit_background"/>
             </RelativeLayout>
-        </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rl_ins_copy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_below="@+id/rl_expiry_date">
 
+                <TextView
+                    android:id="@+id/tv_image_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Insurance Copy"
+                    android:fontFamily="@font/gillroy_bold"
+                    android:textColor="@color/lightgrey"
+                    android:textSize="14dp" />
+                <ImageView
+                    android:id="@+id/iv_ins"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/tv_image_name"
+                    android:src="@drawable/upload_image_icon" />
+            </RelativeLayout>
+        </RelativeLayout>
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
 
 
     <RelativeLayout
+        android:id="@id/rl_bottom"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true">
 
-
-        <TextView
-            android:id="@+id/tv_back"
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/rl_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Back"
-            android:textColor="@color/black"
-            android:layout_marginLeft="20dp"
-            android:layout_centerVertical="true"
-            android:fontFamily="@font/gillroy_semibold"
-            android:textSize="15dp"/>
+            android:layout_centerVertical="true">
+            <TextView
+                android:id="@+id/tv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"
 
-        <View
-            android:id="@+id/view_back"
-            android:layout_width="28dp"
-            android:layout_height="2dp"
-            android:layout_below="@id/tv_back"
-            android:background="@color/black"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"/>
+                android:fontFamily="@font/gillroy_semibold"
+                android:textSize="15dp"/>
 
-        <TextView
-            android:id="@+id/tv_next"
+            <View
+                android:id="@+id/view_back"
+                android:layout_width="28dp"
+                android:layout_height="2dp"
+                android:layout_below="@id/tv_back"
+                android:background="@color/black"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Next"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="20dp"
-            android:textSize="15dp"
-            android:layout_centerVertical="true"
-            android:fontFamily="@font/gillroy_semibold"
-            android:textColor="@color/blue"/>
+            android:layout_centerVertical="true">
 
-        <View
-            android:id="@+id/view_next"
-            android:layout_width="28dp"
-            android:layout_height="2dp"
-            android:layout_below="@id/tv_next"
-            android:layout_alignParentEnd="true"
-            android:background="@color/blue"
-            android:layout_marginRight="25dp"
-            android:layout_marginTop="5dp"/>
+            <TextView
+                android:id="@+id/tv_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Next"
+                android:textSize="15dp"
+                android:fontFamily="@font/gillroy_semibold"
+                android:textColor="@color/blue"/>
+
+            <View
+                android:id="@+id/view_next"
+                android:layout_width="28dp"
+                android:layout_height="2dp"
+                android:layout_below="@id/tv_next"
+                android:background="@color/blue"
+                android:layout_marginTop="5dp"/>
+        </RelativeLayout>
+
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/add_car_button"
             android:layout_width="100dp"
             android:layout_height="35dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="10dp"
+            android:layout_centerVertical="true"
             android:text="Add Car"
             android:textColor="@color/white"
             android:fontFamily="@font/gillroy_bold"
             android:layout_marginRight="20dp"
             android:background="@drawable/back_ground_add_car"
-            android:visibility="invisible"/>
+            android:visibility="gone"/>
 
     </RelativeLayout>
 </RelativeLayout>
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/idPBLoading"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 </RelativeLayout>

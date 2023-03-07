@@ -59,6 +59,7 @@
             android:id="@+id/tv_expensive_repairs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:lineSpacingExtra="2dp"
             android:text="on expensive repairs"
             android:textSize="28dp"
             android:layout_marginTop="-10dp"
@@ -73,6 +74,7 @@
             android:layout_height="wrap_content"
             android:text="like Engine repairs, gearbox repairs, AC Compressor repairs and untimely breakdown of your cars."
             android:layout_below="@id/tv_expensive_repairs"
+            android:lineSpacingExtra="2dp"
             android:textSize="28dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="25dp"
@@ -83,7 +85,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/rl_activate_code"
+        android:id="@+id/rl_no_thanks"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginBottom="20dp"
@@ -109,7 +111,7 @@
         android:id="@+id/rl_upgrade_save_button"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/rl_activate_code"
+        android:layout_below="@id/rl_no_thanks"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
         android:background="@drawable/upgrade_button_bg"
@@ -141,6 +143,7 @@
             android:src="@drawable/did_u_know"/>
 
         <TextView
+            android:id="@+id/do_u_know"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="657 Honda City owners have secured their cars in last 30days."
@@ -156,11 +159,12 @@
 
     </RelativeLayout>
 
-
-
-
-
-
-
-
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/idPBLoading"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </RelativeLayout>

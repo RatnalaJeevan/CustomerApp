@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/rl1"
+        android:layout_marginTop="5dp"
+        app:cardCornerRadius="10dp"
+        android:elevation="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+    <TextView
+        android:id="@+id/tv_adresses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:lineSpacingExtra="5dp"
+        android:padding="5dp"
+        android:gravity="start"
+        android:text="EPIP ZONE,631,aecs layout,near temple road,560066,Bengaluru,karntaka,India"
+        android:textColor="@color/blue"
+        android:textSize="18dp"
+        android:fontFamily="@font/zonapro_regular"
+        >
+    </TextView>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+    <!--<View
+        android:id="@+id/tv8"
+        android:layout_alignParentLeft="true"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/lightgrey"
+        android:layout_below="@+id/rl1">
+
+    </View>-->
+</RelativeLayout>

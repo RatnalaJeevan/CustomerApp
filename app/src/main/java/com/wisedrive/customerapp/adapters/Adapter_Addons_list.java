@@ -13,13 +13,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.wisedrive.customerapp.Addons;
 import com.wisedrive.customerapp.R;
+import com.wisedrive.customerapp.commonclasses.SPHelper;
 import com.wisedrive.customerapp.pojos.Pojo_Class_Addons_List;
 import com.wisedrive.customerapp.pojos.Pojo_Combo_Plans;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Adapter_Addons_list  extends RecyclerView.Adapter<Adapter_Addons_list.MyViewHolder> {
+    private DecimalFormat IndianCurrencyFormat;
     Context context;
     private View view;
     ArrayList<Pojo_Class_Addons_List> pojo_class_addons_listArrayList;
@@ -37,87 +41,75 @@ public class Adapter_Addons_list  extends RecyclerView.Adapter<Adapter_Addons_li
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Adapter_Addons_list.MyViewHolder holder,  int position) {
+    public void onBindViewHolder(@NonNull Adapter_Addons_list.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        IndianCurrencyFormat = new DecimalFormat("##,##,###");
         Pojo_Class_Addons_List list = pojo_class_addons_listArrayList.get(position);
-        holder.tv_status_amount.setText(list.getTv_status_amount());
-        holder.tv_select.setText(list.getTv_select());
-        holder.tv_warranty_name.setText(list.getTv_warranty_name());
-        holder. tv_description.setText(list.getTv_description());
-        holder.tv_scratch_amount.setText(list.getTv_scratch_amount());
-        holder.tv_amount.setText(list.getTv_amount());
-        holder.tv_percent.setText(list.getTv_percent());
-        if (pojo_class_addons_listArrayList.get(position).getId().equals("1")) {
-            holder.r_l_status.setBackgroundResource(R.drawable.rl_background_1);
-           ;
-
-
-        } else if (pojo_class_addons_listArrayList.get(position).getId().equals("2")) {
-            holder.r_l_status.setBackgroundResource(R.drawable.blue_background);
-
-
-
-
-        } else if (pojo_class_addons_listArrayList.get(position).getId().equals("3")) {
-            holder.r_l_status.setBackgroundResource(R.drawable.rl_background_1);
-
-
-
-        } else if (pojo_class_addons_listArrayList.get(position).getId().equals("4")) {
-            holder.r_l_status.setBackgroundResource(R.drawable.blue_background);
-
-
-
-        } else if (pojo_class_addons_listArrayList.get(position).getId().equals("5")) {
-            holder.r_l_status.setBackgroundResource(R.drawable.rl_background_1);
-
-
-
-
-        } else if (pojo_class_addons_listArrayList.get(position).getId().equals("6")) {
-            holder.r_l_status.setBackgroundResource(R.drawable.rl_background_1);
-
-
-
-
-        } else if (pojo_class_addons_listArrayList.get(position).getId().equals("7")) {
-            holder.r_l_status.setBackgroundResource(R.drawable.rl_background_1);
-
-
-
+        holder.add_on_validity.setText(list.getPlan_validity());
+        holder.tv_warranty_name.setText(list.getAddon_name());
+        holder. tv_description.setText(list.getPackage_discription());
+        if((int)list.getAmount_saved()==0){
+            holder.tv_scratch_amount.setVisibility(View.GONE);
+        }else {
+            holder.tv_scratch_amount.setVisibility(View.VISIBLE);
+            holder.tv_scratch_amount.setText("INR "+IndianCurrencyFormat.format((int)list.getAmount_saved()));
+        }
+        holder.tv_amount.setText(IndianCurrencyFormat.format(list.getFinal_price()));
+        if(list.getPercentage_amount_saved().startsWith("0")){
+            holder.tv_percent.setVisibility(View.GONE);
+        }else{
+            holder.tv_percent.setVisibility(View.VISIBLE);
+            holder.tv_percent.setText(Integer.parseInt(list.getPercentage_amount_saved())+"%"+"\toff");
         }
 
-        if (selectedPosition == position) {
-            holder.rl_select_button.setSelected(true); //using selector drawable
+        if (list.getIs_recommended().equalsIgnoreCase("y")) {
+            holder.r_l_status.setBackgroundResource(R.drawable.rl_background_1);
+            holder.label_rec.setText("Recommended");
+            holder.label_rec.setTextColor(Color.parseColor("#cc8899"));
+        } else  {
+            holder.r_l_status.setBackgroundResource(R.drawable.blue_background);
+            holder.label_rec.setText("New");
+            holder.label_rec.setTextColor(Color.parseColor("#0619C3"));
+        }
+
+
+        if(list.getIsSelected().equals("y")){
+           // holder.rl_select_button.setSelected(true); //using selector drawable
             holder.rl_select_button.setBackgroundResource(R.drawable.select_green);
             holder.tv_select.setTextColor(Color.parseColor("#FFFFFFFF"));
             holder.white_check.setVisibility(View.VISIBLE);
-
-        } else {
-            holder.rl_select_button.setSelected(false);
+        }
+        else{
             holder.rl_select_button.setBackgroundResource(R.drawable.select);
             holder.tv_select.setTextColor(Color.parseColor("#aeaeb2"));
             holder.white_check.setVisibility(View.INVISIBLE);
-
-
         }
-
         holder.rl_select_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (selectedPosition >= 0)
-                    notifyItemChanged(selectedPosition);
-                selectedPosition = holder.getAdapterPosition();
-                notifyItemChanged(selectedPosition);
-
+                    if(list.getIsSelected().equals("y")){
+                        SPHelper.disc_amount=0;
+                        SPHelper.coupon_code="";
+                        SPHelper.coupon_type="";
+                        SPHelper.coupon_id="";
+                        Addons.getInstance().tv_dis_amount.setText("0");
+                        Addons.getInstance().coupon_label.setVisibility(View.GONE);
+                        Addons.getInstance().rl_coupon_applied.setVisibility(View.INVISIBLE);
+                        Addons.getInstance().rl_coupon_label.setVisibility(View.VISIBLE);
+                        SPHelper.final_amount=SPHelper.final_amount-list.getFinal_price();
+                        Addons.getInstance().tv_total_amount.setText(String.valueOf(IndianCurrencyFormat.format((int) (SPHelper.final_amount-SPHelper.disc_amount))));
+                        Addons.getInstance().tv_amount_buy.setText(String.valueOf(IndianCurrencyFormat.format((int) SPHelper.final_amount)));
+                        list.setIsSelected("n");
+                        SPHelper.addon_list.get(position).setIsSelected("n");
+                    }else{
+                        list.setIsSelected("y");
+                        SPHelper.final_amount=SPHelper.final_amount+list.getFinal_price();
+                        Addons.getInstance().tv_total_amount.setText(String.valueOf(IndianCurrencyFormat.format((int)(SPHelper.final_amount-SPHelper.disc_amount))));
+                        Addons.getInstance().tv_amount_buy.setText(String.valueOf(IndianCurrencyFormat.format((int) SPHelper.final_amount)));
+                        SPHelper.addon_list.get(position).setIsSelected("y");
+                    }
+                    notifyDataSetChanged();
             }
         });
-
-
-
-
-
-
-
 
     }
 
@@ -128,13 +120,14 @@ public class Adapter_Addons_list  extends RecyclerView.Adapter<Adapter_Addons_li
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tv_status_amount,tv_warranty_name,tv_select,tv_description,tv_scratch_amount,tv_amount,tv_percent;
+        TextView label_rec,tv_warranty_name,tv_select,tv_description,tv_scratch_amount,tv_amount,tv_percent,add_on_validity;
         RelativeLayout r_l_status;
         RelativeLayout rl_select_button;
         ImageView white_check;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            tv_status_amount = itemView.findViewById(R.id.tv_status_amount);
+            add_on_validity=itemView.findViewById(R.id.add_on_validity);
+            label_rec = itemView.findViewById(R.id.label_rec);
             tv_warranty_name = (TextView) itemView.findViewById(R.id.tv_warranty_name);
             tv_select = (TextView) itemView.findViewById(R.id.tv_select);
             tv_description = (TextView) itemView.findViewById(R.id.tv_description);
@@ -144,8 +137,6 @@ public class Adapter_Addons_list  extends RecyclerView.Adapter<Adapter_Addons_li
             r_l_status= (RelativeLayout) itemView.findViewById(R.id.r_l_status);
             rl_select_button= (RelativeLayout) itemView.findViewById(R.id.rl_select_button);
             white_check= (ImageView) itemView.findViewById(R.id.white_check);
-
-
 
         }
     }

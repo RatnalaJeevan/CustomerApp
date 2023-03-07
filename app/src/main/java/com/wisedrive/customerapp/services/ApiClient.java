@@ -15,9 +15,9 @@ public class ApiClient {
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
         retrofit = new Retrofit.Builder()
                 //test
-                .baseUrl("http://164.52.217.96:30022/")
+                //.baseUrl("http://164.52.217.96:30022/")
                 //live with domain name  and without domain name
-                //.baseUrl("https://customerappapis.wisedrive.in/")
+                .baseUrl("https://customerappapis.wisedrive.in/")
                 //.baseUrl("http://164.52.208.170:30030")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)

@@ -1,6 +1,7 @@
 package com.wisedrive.customerapp.pojos;
 
 import com.google.gson.annotations.SerializedName;
+import com.wisedrive.customerapp.commonclasses.AppResponse;
 
 public class PojoVehDetails extends AppResponse {
 

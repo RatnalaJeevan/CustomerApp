@@ -6,24 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".Upgrade_and_Save"
     android:background="@color/dark_blue_1">
+    <androidx.core.widget.NestedScrollView
 
-
-
-
-    <ScrollView
+        android:id="@+id/nsv"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <RelativeLayout
+
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
 
     <RelativeLayout
-        android:id="@+id/back"
+        android:id="@+id/rl_back"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginLeft="20dp"
@@ -36,8 +32,6 @@
             android:src="@drawable/white_back" />
 
     </RelativeLayout>
-
-
 
         <ImageView
             android:id="@+id/image"
@@ -59,7 +53,6 @@
             android:textSize="24dp"
             android:fontFamily="@font/gillroy_bold"/>
 
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_upgrade"
             android:layout_width="match_parent"
@@ -68,100 +61,337 @@
             android:layout_marginRight="10dp"
             android:layout_marginTop="30dp"
             android:layout_below="@id/tv_upgrade_save"/>
-            </RelativeLayout>
-
-     </RelativeLayout>
-    </ScrollView>
-
 
         <RelativeLayout
+            android:id="@+id/rl_bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true">
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/rv_upgrade"
+            >
 
-        <RelativeLayout
-            android:id="@+id/rl_upgrade_button"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:background="@drawable/upgrade_back"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="18dp"
-            android:layout_marginBottom="10dp">
-
-            <TextView
-                android:id="@+id/tv_inr"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="INR "
-                android:fontFamily="@font/gillroy_regular"
-                android:textColor="@color/blue"
-                android:textSize="15dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"/>
-
-            <TextView
-                android:id="@+id/tv_amount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/gillroy_bold"
-                android:text="7,999"
-                android:layout_toRightOf="@id/tv_inr"
-                android:textColor="@color/blue"
-                android:textSize="26dp" />
-
-            <TextView
-                android:id="@+id/tv_ONLY"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="only"
-                android:fontFamily="@font/gillroy_semibold"
-                android:textColor="@color/blue"
-                android:textSize="15dp"
-                android:layout_toRightOf="@id/tv_amount"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="5dp"/>
-
-            <TextView
-                android:id="@+id/tv_amount_buy"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="(Incl.18% GST)"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="20dp"
-                android:textSize="13dp"
-                android:fontFamily="@font/gillroy_semibold"
-                android:layout_below="@id/tv_amount"
-                android:textColor="@color/blue" />
-
-            <TextView
-                android:id="@+id/tv_upgrade"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="UPGRADE"
-                android:textSize="17dp"
-                android:fontFamily="@font/gillroy_bold"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
+            <RelativeLayout
+                android:id="@+id/rl_coupon_label"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingBottom="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:background="@drawable/addons_pay_bacground"
+                android:backgroundTint="@color/v_lightorange"
                 android:layout_marginRight="20dp"
-                android:textColor="@color/blue"/>
-              </RelativeLayout>
+                android:layout_marginLeft="20dp">
 
+                <ImageView
+                    android:id="@+id/iv1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/coupon_image_orange"
+                    android:layout_centerVertical="true">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/apply_coupon_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apply Coupon"
+                    android:layout_toEndOf="@+id/iv1"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/gillroy_semibold"
+                    android:textSize="20dp"
+                    android:textColor="@color/orange_dark"
+                    android:layout_marginLeft="5dp"/>
+
+                <ImageView
+                    android:id="@+id/iv2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/right_icon_orange"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true">
+
+                </ImageView>
+            </RelativeLayout>
+            <RelativeLayout
+                android:visibility="invisible"
+                android:id="@+id/rl_coupon_applied"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingBottom="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:background="@drawable/addons_pay_bacground"
+                android:backgroundTint="@color/v_lightorange"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp">
+
+                <ImageView
+                    android:id="@+id/iv3"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/coupon_image_orange"
+                    android:layout_centerVertical="true">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/coupon_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="WISE1234"
+                    android:layout_toEndOf="@+id/iv3"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/gillroy_semibold"
+                    android:textSize="20dp"
+                    android:textColor="@color/orange_dark"
+                    android:layout_marginLeft="5dp"/>
+
+                <ImageView
+                    android:id="@+id/iv4"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/cross_red"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true">
+
+                </ImageView>
+            </RelativeLayout>
             <TextView
+                android:id="@+id/coupon_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_coupon_applied"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/gillroy_regular"
+                android:text="Coupon applied successfully"
+                android:textColor="@color/white"
+                android:textSize="14dp" />
+
+            <RelativeLayout
+
+                android:id="@+id/rl_upgrade_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/coupon_label"
+                android:layout_marginTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:background="@drawable/upgrade_back"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:id="@+id/tv_starts_from"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/gillroy_regular"
+                    android:text="Amount"
+                    android:textColor="@color/blue"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/tv_discount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_starts_from"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/gillroy_regular"
+                    android:text="Discount Amount"
+                    android:textColor="@color/blue"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/tv_inr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="INR "
+                    android:layout_marginTop="14dp"
+                    android:layout_toStartOf="@+id/tv_amount_buy"
+                    android:fontFamily="@font/gillroy_regular"
+                    android:textColor="@color/blue"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="20dp"/>
+
+                <TextView
+                    android:id="@+id/tv_amount_buy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10,000"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/gillroy_semibold"
+                    android:textSize="20dp"
+                    android:textColor="@color/blue"
+                    android:layout_marginLeft="5dp"/>
+
+                <TextView
+                    android:id="@+id/tv_inr1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="INR "
+                    android:layout_below="@+id/tv_amount_buy"
+                    android:layout_marginTop="5dp"
+                    android:layout_toStartOf="@+id/tv_dis_amount"
+                    android:fontFamily="@font/gillroy_regular"
+                    android:textColor="@color/blue"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="20dp"/>
+
+                <TextView
+                    android:id="@+id/tv_dis_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_below="@+id/tv_amount_buy"
+                    android:layout_marginTop="2dp"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/gillroy_semibold"
+                    android:textSize="20dp"
+                    android:textColor="@color/blue"
+                    android:layout_marginLeft="5dp"/>
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:background="@color/white"
+                    android:layout_marginTop="8dp"
+                    android:layout_below="@+id/tv_discount">
+
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_total_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/gillroy_regular"
+                    android:text="Total Amount"
+                    android:textColor="@color/blue"
+                    android:textSize="16dp" />
+                <TextView
+                    android:id="@+id/tv_inr2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="INR "
+                    android:layout_below="@+id/view1"
+                    android:layout_marginTop="12dp"
+                    android:layout_toStartOf="@+id/tv_total_amount"
+                    android:fontFamily="@font/gillroy_regular"
+                    android:textColor="@color/blue"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="20dp"/>
+
+                <TextView
+                    android:id="@+id/tv_total_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10,000"
+                    android:layout_below="@+id/view1"
+                    android:layout_marginTop="8dp"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/gillroy_semibold"
+                    android:textSize="20dp"
+                    android:textColor="@color/blue"
+                    android:layout_marginLeft="5dp"/>
+
+                <TextView
+                    android:id="@+id/gst_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(Incl.18% GST)"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="13dp"
+                    android:fontFamily="@font/gillroy_semibold"
+                    android:layout_below="@id/tv_total_amount"
+                    android:textColor="@color/blue" />
+                <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/pay_button"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/tv_total_amount"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="15dp"
+                    android:text="UPGRADE"
+                    android:textSize="15dp"
+
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/gillroy_semibold"
+                    android:background="@drawable/confirm_button"/>
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/call_me"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="I Want to Know more,call me"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/rl_upgrade_button"
                 android:textColor="@color/text"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
                 android:textSize="15dp"
                 android:fontFamily="@font/gillroy_regular"/>
 
         </RelativeLayout>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rl_no_upgrade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/crown_1"/>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UPGRADE and SAVE up to Rs 4,00,000 on Engine &amp; Transmission failures"
+            android:textColor="@color/text"
+            android:layout_below="@id/iv"
+            android:gravity="center"
+            android:layout_marginRight="18dp"
+            android:layout_marginLeft="18dp"
+            android:textSize="18dp"
+            android:fontFamily="@font/gillroy_regular"/>
 
 
+
+            <TextView
+                android:id="@+id/ok"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:text="My Cars"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:background="@drawable/addons_pay_bacground"
+                android:backgroundTint="@color/v_lightorange"
+                android:layout_below="@+id/description"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/gillroy_semibold"
+                android:textSize="20dp"
+                android:textColor="@color/orange_dark"
+                android:layout_marginLeft="5dp"/>
+    </RelativeLayout>
 
     </RelativeLayout>

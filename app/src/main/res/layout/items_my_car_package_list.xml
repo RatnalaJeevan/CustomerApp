@@ -1,32 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         app:cardCornerRadius="20dp"
-        app:cardUseCompatPadding="true">
+        android:layout_margin="5dp"
+       >
 
         <RelativeLayout
             android:id="@+id/relative_layout_services"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:background="@drawable/blue_background">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="12dp">
+                >
 
 
                 <ImageView
                     android:id="@+id/image_logo"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
                     android:src="@drawable/blue_right" />
 
@@ -34,27 +37,50 @@
 
                 <TextView
                     android:id="@+id/text_warranty_name"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/right_icon"
                     android:text="Comprehensive Warranty"
                     android:layout_marginLeft="10dp"
-                    android:textSize="17dp"
+                    android:textSize="16dp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/gillroy_semibold"
                     android:layout_toRightOf="@id/image_logo"/>
 
                 <TextView
+                    android:id="@+id/label_inactive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="INACTIVE"
+                    android:layout_below="@id/text_warranty_name"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/gillroy_semibold"
+                    android:textColor="@color/dark_orange"
+                    android:layout_toRightOf="@id/image_logo" />
+                <TextView
                     android:id="@+id/tv_description"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No claims pending"
-                    android:layout_below="@id/text_warranty_name"
+                    android:layout_below="@id/label_inactive"
                     android:layout_marginLeft="10dp"
                     android:textSize="13dp"
                     android:fontFamily="@font/gillroy_regular"
                     android:textColor="@color/heading"
                     android:layout_toRightOf="@id/image_logo" />
 
+                <TextView
+                    android:id="@+id/expires_on"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Expires on :"
+                    android:layout_below="@id/tv_description"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="13dp"
+                    android:fontFamily="@font/gillroy_semibold"
+                    android:textColor="@color/dark_orange"
+                    android:layout_toRightOf="@id/image_logo" />
                 <ImageView
                     android:id="@+id/right_icon"
                     android:layout_width="25dp"

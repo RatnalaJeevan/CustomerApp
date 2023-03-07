@@ -15,12 +15,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.wisedrive.customerapp.Warranty_Description;
 import com.wisedrive.customerapp.R;
+import com.wisedrive.customerapp.commonclasses.SPHelper;
 import com.wisedrive.customerapp.pojos.Pojo_Extended_Warranty_Plan;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Adapter_Exteneded_Warranty_Plan extends RecyclerView.Adapter<Adapter_Exteneded_Warranty_Plan.MyViewHolder> {
 
+    private DecimalFormat IndianCurrencyFormat;
     Context context;
     private View view;
     ArrayList<Pojo_Extended_Warranty_Plan>pojo_extended_warranty_planArrayList;
@@ -40,22 +43,30 @@ public class Adapter_Exteneded_Warranty_Plan extends RecyclerView.Adapter<Adapte
 
     @Override
     public void onBindViewHolder(@NonNull Adapter_Exteneded_Warranty_Plan.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        Pojo_Extended_Warranty_Plan list = pojo_extended_warranty_planArrayList.get(position);
-        holder. text_warranty_name.setText(list.getText_warranty_name());
-        holder.text_amount.setText(list.getText_amount());
-        holder.text_save_amount.setText(list.getText_save_amount());
+        Pojo_Extended_Warranty_Plan recyclerdata = pojo_extended_warranty_planArrayList.get(position);
+        IndianCurrencyFormat = new DecimalFormat("##,##,###");
+        holder. text_warranty_name.setText(recyclerdata.getDisplay_name());
+        holder.text_amount.setText(IndianCurrencyFormat.format((int)recyclerdata.getFinal_price()));
+        holder.plan_validity.setText(recyclerdata.getPlan_validity());
+        if((int)recyclerdata.getAmount_saved()==0){
+            holder.rl_validity_save.setVisibility(View.INVISIBLE);
+        }else{
+            holder.rl_validity_save.setVisibility(View.VISIBLE);
+            holder.text_save_amount.setText("INR \t"+IndianCurrencyFormat.format((int)recyclerdata.getAmount_saved()));
+        }
+
         holder.rl_amount.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
+                SPHelper.package_id=recyclerdata.getPackage_id();
+                SPHelper.package_name=recyclerdata.getDisplay_name();
+                SPHelper.main_pack_id=recyclerdata.getMain_package_id();
+                SPHelper.pack_amount=0;
                 Intent intent=new Intent(view.getContext(), Warranty_Description.class);
-            //Bundle b = ActivityOptions.makeSceneTransitionAnimation((Plans_Activity_Page)context).toBundle();
                 view.getContext().startActivity(intent);
             }
         });
-
-
-
     }
 
     @Override
@@ -65,24 +76,16 @@ public class Adapter_Exteneded_Warranty_Plan extends RecyclerView.Adapter<Adapte
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView image_icon;
-        TextView text_warranty_name,text_amount,text_save_amount;
-        RelativeLayout rl_amount;
-
-
-
+        TextView text_warranty_name,text_amount,text_save_amount,plan_validity;
+        RelativeLayout rl_amount,rl_validity_save;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-
+            rl_amount=itemView.findViewById(R.id.rl_amount);
             text_warranty_name = (TextView) itemView.findViewById(R.id.text_warranty_name);
             text_amount = (TextView) itemView.findViewById(R.id.text_amount);
             text_save_amount = (TextView) itemView.findViewById(R.id.text_save_amount);
-            rl_amount=(RelativeLayout) view.findViewById(R.id.rl_amount);
-
-
-
-
-
-
+            rl_validity_save=itemView.findViewById(R.id.rl_validity_save);
+            plan_validity=itemView.findViewById(R.id.plan_validity);
         }
 
     }

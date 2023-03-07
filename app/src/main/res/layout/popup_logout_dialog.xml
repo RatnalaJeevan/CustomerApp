@@ -63,7 +63,7 @@
                         android:layout_height="30dp"
                         android:layout_marginLeft="10dp"
                         android:layout_toRightOf="@+id/yes"
-                        android:backgroundTint="@color/orange"
+                        android:backgroundTint="@color/lightgrey"
                         android:background="@drawable/submit_cardview"
                         android:gravity="center"
                         android:text="NO"

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
   <androidx.cardview.widget.CardView
       android:id="@+id/cardview"
       android:layout_width="match_parent"
-      android:layout_height="205dp"
+      android:layout_height="wrap_content"
      app:cardCornerRadius="20dp"
       app:cardElevation="5dp"
       android:layout_marginLeft="15dp"
@@ -17,7 +17,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="205dp">
+        android:layout_height="wrap_content">
 
       <TextView
         android:id="@+id/tv_question"
@@ -32,7 +32,8 @@
         android:fontFamily="@font/gillroy_semibold"/>
 
       <TextView
-        android:id="@+id/tv_select_option"
+          android:visibility="gone"
+          android:id="@+id/tv_select_option"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text="You may select more than one option"

@@ -9,13 +9,14 @@
     <RelativeLayout
         android:id="@+id/rl_heading"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_marginTop="10dp"
+        android:layout_height="50dp">
 
         <RelativeLayout
             android:id="@+id/rl_back"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginTop="20dp">
+            android:layout_centerVertical="true">
         <ImageView
             android:id="@+id/back"
             android:layout_width="35dp"
@@ -26,18 +27,34 @@
 
         <TextView
             android:id="@+id/tv_showroom_services"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Comprehensive Warranty"
             android:layout_toRightOf="@id/rl_back"
-            android:layout_marginTop="25dp"
+            android:layout_toLeftOf="@+id/expired"
+            android:layout_centerVertical="true"
             android:textSize="20dp"
             android:layout_marginLeft="20dp"
             android:textColor="@color/black"
             android:fontFamily="@font/gillroy_regular"/>
+
+        <TextView
+            android:id="@+id/expired"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EXPIRED"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textSize="15dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/red_1"
+            android:fontFamily="@font/gillroy_semibold"/>
+
     </RelativeLayout>
 
     <RelativeLayout
+
         android:id="@+id/rl_imv"
         android:layout_width="match_parent"
         android:layout_height="240dp"
@@ -68,12 +85,21 @@
         </RelativeLayout>
     </RelativeLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:visibility="gone"
+        android:id="@+id/rv_claim_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_heading"
+        android:layout_above="@+id/rl_request_claim">
+
+    </androidx.recyclerview.widget.RecyclerView>
     <RelativeLayout
         android:id="@+id/rl_request_claim"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-       android:layout_marginBottom="50dp"
+       android:layout_marginBottom="30dp"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
         android:background="@drawable/request_claims">
@@ -90,6 +116,74 @@
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rl_track_claim_status"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transperant"
+        android:elevation="10dp"
+        >
 
+        <RelativeLayout
+            android:id="@+id/rl_transperant1"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"/>
+
+        <RelativeLayout
+            android:id="@+id/rl1_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rl_back"
+            android:layout_below="@id/rl_transperant1">
+
+            <RelativeLayout
+                android:id="@+id/rl_select_service"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/rl_service_status_bg">
+
+                <TextView
+                    android:id="@+id/tv_select_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Claim Status"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/gillroy_regular"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_call"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/rl_circle_call">
+
+                    <ImageView
+                        android:id="@+id/call_icon"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/call_2"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_claim_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/rl_select_service"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
 
 </RelativeLayout>

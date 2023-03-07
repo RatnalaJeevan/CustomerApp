@@ -17,6 +17,12 @@ public class PojoAppUpdateDetails {
     String app_name;
     @SerializedName("application_id")
     String application_id;
+    @SerializedName("terms")
+    String terms;
+
+    public String getTerms() {
+        return terms;
+    }
 
     public String getCan_skip() {
         return can_skip;

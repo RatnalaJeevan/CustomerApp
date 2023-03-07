@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
@@ -21,26 +21,27 @@
             <RelativeLayout
                 android:id="@+id/rl_white_card"
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
+                android:layout_height="wrap_content"
                 android:background="@color/white">
 
                 <TextView
                     android:id="@+id/tv_super_saver_plan"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="All-in-One Super Saver Plan"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="180dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_toStartOf="@+id/rl1"
+                    android:layout_marginStart="20dp"
+                    android:layout_centerVertical="true"
                     android:textColor="@color/black"
                     android:textSize="17dp"
                     android:fontFamily="@font/gillroy_semibold" />
 
 
                 <RelativeLayout
+
+                    android:id="@+id/rl1"
                     android:layout_width="150dp"
                     android:layout_height="90dp"
-                    android:layout_centerHorizontal="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginRight="-20dp">
 
@@ -79,10 +80,10 @@
                         android:id="@+id/tv_save_rupee"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="10000"
+                        android:text="1,00,000"
                         android:layout_below="@id/tv_sav"
                         android:layout_marginBottom="10dp"
-                        android:textSize="17dp"
+                        android:textSize="15dp"
                         android:layout_toRightOf="@id/tv_inr"
                         android:fontFamily="@font/gillroy_semibold"
                         android:textColor="@color/white"
@@ -95,180 +96,31 @@
             <RelativeLayout
                 android:id="@+id/rl_green_card"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/rl_white_card"
+                android:layout_height="300dp"
+                android:layout_marginTop="-10dp"
+                android:layout_below="@+id/rl_white_card"
                 android:background="@drawable/background_yellow">
 
-                <RelativeLayout
-                    android:id="@+id/rl_service_one"
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_combo_products"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent"
 
-                    <TextView
-                        android:id="@+id/tv_comprehensive_warranty"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="General Service"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="20dp"
-                        android:textSize="18dp"
-                        android:includeFontPadding="false"
-                        android:fontFamily="@font/gillroy_bold" />
+                    android:layout_above="@+id/rl_view_details_button"
+                    android:padding="10dp">
 
-                    <TextView
-                        android:id="@+id/tv_comprehensive_warranty_description"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="general Service Standard"
-                        android:textColor="@color/black"
-                        android:layout_below="@id/tv_comprehensive_warranty"
-                        android:textSize="12dp"
-                        android:layout_marginTop="7dp"
-                        android:includeFontPadding="false"
-                        android:fontFamily="@font/gillroy_regular"
-                        android:layout_marginLeft="20dp" />
-
-
-                    <ImageView
-                        android:id="@+id/image_1"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="30dp"
-                        android:src="@drawable/house"
-                        android:layout_marginTop="20dp"
-                        android:visibility="gone" />
-
-
-                    <View
-                        android:id="@+id/view_service_one"
-                        android:layout_width="match_parent"
-                        android:layout_height="0.1dp"
-                        android:layout_below="@id/tv_comprehensive_warranty_description"
-                        android:background="@color/grey"
-                        android:layout_marginTop="10dp" />
-
-                </RelativeLayout>
-
-
-                <RelativeLayout
-                    android:id="@+id/rl_ac_service"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/rl_service_one">
-
-                    <TextView
-                        android:id="@+id/tv_service_maintanance"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="20dp"
-                        android:fontFamily="@font/gillroy_bold"
-                        android:text="Ac Service"
-                        android:textColor="@color/black"
-                        android:textSize="18dp"
-                        android:includeFontPadding="false" />
-
-                    <TextView
-                        android:id="@+id/tv_service_maintanance_description"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Ac doorstep service"
-                        android:textColor="@color/black"
-                        android:layout_below="@id/tv_service_maintanance"
-                        android:textSize="12dp"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/gillroy_regular"
-                        android:layout_marginLeft="20dp"
-                        android:includeFontPadding="false" />
-
-
-                    <ImageView
-                        android:id="@+id/image_2"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/house"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="30dp"
-                        android:layout_marginTop="20dp"
-                        android:visibility="gone" />
-
-
-                    <View
-                        android:id="@+id/view_ac_service"
-                        android:layout_width="match_parent"
-                        android:layout_height="0.1dp"
-                        android:layout_below="@id/tv_service_maintanance_description"
-                        android:background="@color/lightgrey"
-                        android:layout_marginTop="15dp" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/rl_health_service"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/rl_ac_service">
-
-                    <TextView
-                        android:id="@+id/tv_Roadside_Assis"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Health checkup"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="20dp"
-                        android:textSize="18dp"
-                        android:includeFontPadding="false"
-                        android:fontFamily="@font/gillroy_bold" />
-
-                    <TextView
-                        android:id="@+id/tv_roadsideassis_dscription"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Ac doorstep service"
-                        android:textColor="@color/black"
-                        android:layout_below="@id/tv_Roadside_Assis"
-                        android:textSize="12dp"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/gillroy_regular"
-                        android:layout_marginLeft="20dp"
-                        android:includeFontPadding="false" />
-
-                    <ImageView
-                        android:id="@+id/image_3"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/house"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="30dp"
-                        android:layout_marginTop="20dp"
-                        android:visibility="gone" />
-
-
-                    <View
-                        android:id="@+id/view_health_service"
-                        android:layout_width="match_parent"
-                        android:layout_height="0.1dp"
-                        android:layout_below="@id/tv_roadsideassis_dscription"
-                        android:background="@color/lightgrey"
-                        android:layout_marginTop="15dp" />
-
-                </RelativeLayout>
-
+                </androidx.recyclerview.widget.RecyclerView>
 
                 <RelativeLayout
                     android:id="@+id/rl_view_details_button"
                     android:layout_width="match_parent"
                     android:layout_height="72dp"
-                    android:layout_below="@id/rl_health_service"
+                    android:layout_alignParentBottom="true"
                     android:background="@drawable/view_details_2"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="20dp">
 
                     <TextView
@@ -298,7 +150,7 @@
                         android:id="@+id/tv_amount_buy"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="₹100000"
+                        android:text=""
                         android:layout_marginTop="6dp"
                         android:fontFamily="@font/gillroy_medium"
                         android:layout_below="@id/tv_starts_from"
@@ -321,6 +173,9 @@
 
                 </RelativeLayout>
             </RelativeLayout>
+
+
+
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>

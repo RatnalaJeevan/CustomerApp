@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Customer_Home_page_bottom_navigation">
+    tools:context=".CustomerHomepage">
 
     <RelativeLayout
         android:id="@+id/relative_layout1"
@@ -51,7 +51,7 @@
             android:id="@+id/image_plans"
             android:layout_width="22dp"
             android:layout_height="22dp"
-            android:src="@drawable/plans_2" />
+            android:src="@drawable/plans_selected" />
         <TextView
             android:id="@+id/text_plans"
             android:layout_width="wrap_content"
@@ -80,14 +80,15 @@
             android:layout_height="22dp"
             android:src="@drawable/mycar"/>
             <TextView
+                android:visibility="gone"
                 android:id="@+id/text_mycar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MyCar"
+                android:text="MyCars"
                 android:textColor="@color/defaultColor"
                 android:textSize="12dp"
-                android:layout_marginLeft="10dp"
-                android:visibility="gone"
+                android:layout_marginLeft="13dp"
+
                 android:fontFamily="@font/gillroy_regular"/>
         </LinearLayout>
         <LinearLayout
@@ -156,6 +157,7 @@
         android:layout_marginTop="15dp"/>
 
     <ImageView
+        android:visibility="invisible"
         android:id="@+id/image_bell"
         android:layout_width="20dp"
         android:layout_height="20dp"
@@ -173,7 +175,7 @@
         android:layout_toLeftOf="@id/image_bell"
         android:layout_marginRight="10dp"
         android:background="@drawable/add_car_bg"
-        android:visibility="invisible">
+        >
 
         <ImageView
             android:id="@+id/image_plus"
@@ -188,16 +190,8 @@
             android:layout_width="70dp"
             android:layout_height="45dp"
             android:layout_centerVertical="true"
-
             android:layout_toRightOf="@id/image_plus"
             android:src="@drawable/blue_car" />
-
-
-
-
-
-
-
     </RelativeLayout>
 
 

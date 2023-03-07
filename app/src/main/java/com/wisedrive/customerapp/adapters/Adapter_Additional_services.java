@@ -2,6 +2,7 @@ package com.wisedrive.customerapp.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -12,9 +13,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.wisedrive.customerapp.R;
+import com.wisedrive.customerapp.Warranty_Description;
+import com.wisedrive.customerapp.commonclasses.SPHelper;
 import com.wisedrive.customerapp.pojos.Pojo_Additional_Services;
 import com.wisedrive.customerapp.pojos.Pojo_Combo_Plans;
 
@@ -24,6 +29,7 @@ public class Adapter_Additional_services extends RecyclerView.Adapter<Adapter_Ad
     Context context;
     private View view;
     ArrayList<Pojo_Additional_Services> pojoAdditionalServicesArrayList;
+    private int selectedPosition = 0;
 
     public Adapter_Additional_services(Context context, ArrayList<Pojo_Additional_Services> pojoAdditionalServicesArrayList) {
         this.context = context;
@@ -39,11 +45,33 @@ public class Adapter_Additional_services extends RecyclerView.Adapter<Adapter_Ad
 
     @Override
     public void onBindViewHolder(@NonNull Adapter_Additional_services.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        Pojo_Additional_Services list = pojoAdditionalServicesArrayList.get(position);
-        holder.tv_additional_service_plan.setText(list.getTv_additional_service_plan());
-        holder.image_logo.setImageResource(list.getImage_logo());
+        Pojo_Additional_Services recyclerdata = pojoAdditionalServicesArrayList.get(position);
+        holder.tv_additional_service_plan.setText(recyclerdata.getProduct_name());
+        holder.expires_on.setText("Validity:\t"+recyclerdata.getValidity());
+       // holder.image_logo.setImageResource(list.getImage_logo());
+        Glide.with(context).load(recyclerdata.getProduct_icon()).placeholder(R.drawable.icon_noimage).into(holder.image_logo);
 
+        if (selectedPosition == position) {
 
+            holder. select.setBackgroundResource(R.drawable.select_back);
+            holder.select.setTextColor(Color.parseColor("#FFFFFFFF"));
+
+        } else {
+
+            holder. select.setBackgroundResource(R.drawable.select_white);
+            holder.select.setTextColor(Color.parseColor("#6A5FF4"));
+        }
+        holder.select.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SPHelper.product_id=recyclerdata.getProduct_id();
+                if (selectedPosition >= 0)
+                    notifyItemChanged(selectedPosition);
+                selectedPosition = holder.getAdapterPosition();
+                notifyItemChanged(selectedPosition);
+                Warranty_Description.getInstance().get_pack_description();
+            }
+        });
     }
 
     @Override
@@ -53,13 +81,18 @@ public class Adapter_Additional_services extends RecyclerView.Adapter<Adapter_Ad
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tv_additional_service_plan;
+        TextView tv_additional_service_plan,expires_on;
         ImageView image_logo;
+        AppCompatButton select;
+
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             tv_additional_service_plan = itemView.findViewById(R.id.tv_additional_service_plan);
             image_logo = itemView.findViewById(R.id.image_logo);
+            select = itemView.findViewById(R.id. select);
+            expires_on=itemView.findViewById(R.id.expires_on);
+
 
 
         }

@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Warranty_Description"
-    android:background="@color/car_background">
+    >
 
     <RelativeLayout
         android:id="@+id/Action_bar"
         android:layout_width="match_parent"
-        android:layout_height="70dp">
+        android:layout_height="80dp"
+        android:background="@color/car_background">
 
         <RelativeLayout
             android:id="@+id/rl_back_button"
@@ -28,6 +30,7 @@
         </RelativeLayout>
 
         <androidx.appcompat.widget.AppCompatButton
+            android:visibility="gone"
             android:id="@+id/pay_button"
             android:layout_width="120dp"
             android:layout_height="45dp"
@@ -41,22 +44,26 @@
             android:background="@drawable/pay_now_button_black" />
     </RelativeLayout>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
+
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-15dp"
         android:layout_below="@id/Action_bar">
 
         <RelativeLayout
             android:id="@+id/rl_scroll_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/white"
             android:fillViewport="true">
 
     <RelativeLayout
         android:id="@+id/rl_parent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingBottom="10dp"
         android:background="@drawable/plans_details_background">
 
         <RelativeLayout
@@ -70,8 +77,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="INR "
-                android:layout_toLeftOf="@id/text_amount"
+                android:layout_alignParentEnd="true"
                 android:layout_marginTop="27dp"
+                android:layout_marginRight="10dp"
                 android:fontFamily="@font/gillroy_regular"
                 android:textColor="@color/black"
                 android:textSize="13dp" />
@@ -79,145 +87,93 @@
         <TextView
             android:id="@+id/text_amount"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="20dp"
+            android:layout_below="@+id/tv_inr"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/gillroy_bold"
-            android:text="1000"
+            android:text=""
             android:layout_marginRight="10dp"
             android:textColor="@color/black"
             android:textSize="20dp" />
 
-            <RelativeLayout
-                android:id="@+id/rl_validity_button"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:layout_below="@id/text_amount"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="-5dp"
-                android:layout_toRightOf="@id/view">
 
-                <RelativeLayout
-                    android:id="@+id/rl_six_month_validity"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_toLeftOf="@id/rl_one_year_validity"
-                    android:background="@drawable/circular_relative_layout_validity_1">
 
-                    <TextView
-                        android:id="@+id/tv_six_month"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:fontFamily="@font/gillroy_regular"
-                        android:text="6M"
-                        android:textColor="@color/violet"
-                        android:textSize="10dp" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/rl_one_year_validity"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_alignParentEnd="true"
-                    android:background="@drawable/circular_layout_1y">
-
-                    <TextView
-                        android:id="@+id/tv_1y"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:fontFamily="@font/gillroy_regular"
-                        android:text="1Y"
-                        android:textColor="@color/white"
-                        android:textSize="10dp" />
-                </RelativeLayout>
-            </RelativeLayout>
-
-               <View
-                android:id="@+id/view"
-                android:layout_width="2dp"
+            <View
+                android:id="@+id/view_rupee"
+                android:layout_width="1dp"
                 android:layout_height="48dp"
                 android:background="@color/light_gray"
                 android:layout_toLeftOf="@id/text_amount"
                 android:layout_marginTop="28dp"
-                   android:visibility="gone"/>
-
-            <View
-                android:id="@+id/view_rupee"
-                android:layout_width="2dp"
-                android:layout_height="48dp"
-                android:background="@color/light_gray"
-                android:layout_toLeftOf="@id/tv_inr"
-                android:layout_marginTop="28dp"
-                android:layout_marginRight="15dp" />
+                android:layout_marginRight="25dp" />
 
         <TextView
             android:id="@+id/text_heading"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/view_rupee"
+            android:layout_marginRight="10dp"
             android:text="Extended Warranty &amp; Buyback Guarantee"
             android:layout_marginTop="26dp"
-            android:layout_toLeftOf="@id/view"
             android:textSize="20dp"
             android:textColor="@color/black"
             android:fontFamily="@font/gillroy_bold" />
 
     </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/relative_layout_mycar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/relative_package_name">
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/relative_layout_mycar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_below="@id/relative_package_name">-->
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_view_mycars"
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/view_pager_2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="200dp"
+                android:layout_below="@id/relative_package_name"/>
 
-        </RelativeLayout>
+      <!-- // </RelativeLayout>-->
 
+        <TextView
+            android:id="@+id/label_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view_pager_2"
+            android:text="Description :"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/gillroy_bold"/>
+        <TextView
+            android:id="@+id/description_lines"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/label_description"
+            android:text=" "
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="15dp"
+            android:textColor="@color/description"
+            android:fontFamily="@font/gillroy_regular"/>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_additional_plan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/relative_layout_mycar"
-            android:layout_marginTop="20dp" />
-
-
-        <TextView
-        android:id="@+id/label_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rv_additional_plan"
-        android:text="Description :"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:textSize="15dp"
-        android:textColor="@color/black"
-        android:fontFamily="@font/gillroy_bold"/>
-    <TextView
-        android:id="@+id/description_lines"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/label_description"
-        android:text="Wisedrive is India's first extended warranty company for used cars. Any car which is out of manufacturer warranty is eligible for warranty "
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:textSize="15dp"
-        android:textColor="@color/description"
-        android:fontFamily="@font/gillroy_regular"/>
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/description_lines"
+            />
 
         <TextView
         android:id="@+id/inclued"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Includes:"
-        android:layout_below="@id/description_lines"
+        android:layout_below="@id/rv_additional_plan"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -238,5 +194,39 @@
 
 
         </RelativeLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rl_add_car"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        >
+
+        <ImageView
+            android:id="@+id/add_car"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/add_car" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD CAR"
+            android:layout_below="@id/add_car"
+            android:layout_centerHorizontal="true"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:fontFamily="@font/gillroy_bold"
+            android:layout_marginTop="10dp"/>
+    </RelativeLayout>
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/idPBLoading"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </RelativeLayout>

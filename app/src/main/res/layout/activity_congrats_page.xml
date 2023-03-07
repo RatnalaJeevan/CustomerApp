@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CongratsPage">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/nsv3"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginBottom="-10dp"
+        app:cardCornerRadius="25dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/rl_cf_response"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/iv_anim"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="70dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/success_anim"
+                >
+
+            </pl.droidsonroids.gif.GifImageView>
+
+            <TextView
+                android:id="@+id/label1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="35dp"
+                android:layout_below="@+id/iv_anim"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="40dp"
+                android:gravity="center"
+                android:fontFamily="@font/poppins_semibold"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="17dp">
+
+            </TextView>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/rl_retry"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginTop="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/label1"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/cv_req_insp"
+                >
+
+                <TextView
+                    android:id="@+id/tv_retry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Retry"
+                    android:textColor="@color/white"
+                    android:textSize="17dp">
+
+                </TextView>
+            </RelativeLayout>
+            <ImageView
+                android:id="@+id/close"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/close_veh_info"
+                android:layout_alignParentEnd="true"
+                >
+
+            </ImageView>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

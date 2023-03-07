@@ -8,6 +8,19 @@ public class CustomerLoginDetails {
     private String phone_no_1;
     @SerializedName("customer_id_1")
     private String customer_id_1;
+    @SerializedName("customer_id")
+    private String customer_id;
+    @SerializedName("customer_name")
+    private String customer_name;
+    @SerializedName("customer_no")
+    private String customer_no;
+
+    @SerializedName("lead_id")
+    String lead_id;
+    @SerializedName("is_package_activated")
+    String is_package_activated;
+    @SerializedName("email_id")
+    String email_id;
 
     @SerializedName("aws_secret")
     String aws_secret;
@@ -19,6 +32,26 @@ public class CustomerLoginDetails {
     String comet_region;
     @SerializedName("comet_app_id")
     String comet_app_id;
+
+    public String getCustomer_no() {
+        return customer_no;
+    }
+
+    public String getEmail_id() {
+        return email_id;
+    }
+
+    public String getCustomer_name() {
+        return customer_name;
+    }
+
+    public String getIs_package_activated() {
+        return is_package_activated;
+    }
+
+    public String getLead_id() {
+        return lead_id;
+    }
 
     public String getAws_secret() {
         return aws_secret;
@@ -69,6 +102,10 @@ public class CustomerLoginDetails {
 
     public String getCustomer_id_1() {
         return customer_id_1;
+    }
+
+    public String getCustomer_id() {
+        return customer_id;
     }
 
     public void setCustomer_id_1(String customer_id_1) {

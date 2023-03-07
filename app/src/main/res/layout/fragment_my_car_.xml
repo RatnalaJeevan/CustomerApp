@@ -3,14 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyCar_Fragment">
+    tools:context=".MyCar_Fragment"
+   >
 
     <RelativeLayout
+        android:id="@+id/rl_main"
         android:layout_width="match_parent"
+        android:clickable="false"
         android:layout_height="match_parent">
-
-    <RelativeLayout
-        android:id="@+id/relative_layout"
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/idPBLoading"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/blue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+      <RelativeLayout
+        android:id="@+id/rl_my_cars"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -30,61 +40,89 @@
             android:background="@color/violet"
             android:layout_below="@id/text_plans"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="2dp"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_mycars"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-       android:layout_below="@id/view1"/>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager_2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/view1"/>
 
 
         <androidx.recyclerview.widget.RecyclerView
+            android:visibility="gone"
             android:id="@+id/rv_service_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_below="@id/recycler_view_mycars" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_below="@id/recycler_view_mycars"
-            android:visibility="gone">
-
-            <ImageView
-                android:layout_width="350dp"
-                android:layout_height="284dp"
-                android:layout_centerInParent="true"
-                android:src="@drawable/empty_package" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-               android:layout_centerHorizontal="true"
-               android:layout_marginTop="10dp"
-                android:fontFamily="@font/gillroy_bold"
-                android:text="NO ACTIVE SERVICES"
-                android:textColor="@color/heading"
-                android:textSize="24dp" />
-            </RelativeLayout>
-        </RelativeLayout>
+            android:layout_below="@id/view_pager_2" />
 
 
+          <RelativeLayout
+              android:visibility="gone"
+              android:id="@+id/rl_no_packages"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_below="@id/rv_service_list"
+              >
+
+              <ImageView
+                  android:id="@+id/iv1"
+                  android:layout_width="350dp"
+                  android:layout_height="284dp"
+                  android:layout_centerInParent="true"
+                  android:src="@drawable/empty_package" />
+
+              <RelativeLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_centerInParent="true">
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_centerHorizontal="true"
+                      android:layout_marginTop="10dp"
+                      android:fontFamily="@font/gillroy_bold"
+                      android:text="NO ACTIVE SERVICES"
+                      android:textColor="@color/heading"
+                      android:textSize="24dp" />
+              </RelativeLayout>
+
+          </RelativeLayout>
+          <RelativeLayout
+              android:visibility="gone"
+              android:id="@+id/buy_packages"
+              android:layout_width="match_parent"
+              android:layout_height="45dp"
+              android:layout_marginTop="10dp"
+              android:layout_marginLeft="20dp"
+              android:layout_marginRight="20dp"
+              android:layout_below="@+id/rl_no_packages"
+              android:background="@drawable/addons_pay_bacground"
+              >
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_centerInParent="true"
+                  android:fontFamily="@font/gillroy_semibold"
+                  android:text="BUY PACKAGE"
+                  android:textColor="@color/blue"
+                  android:textSize="20dp" />
+          </RelativeLayout>
 
     </RelativeLayout>
         <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/rl_add_car"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:visibility="gone">
+            >
 
         <ImageView
             android:id="@+id/add_car"
@@ -103,29 +141,8 @@
             android:fontFamily="@font/gillroy_bold"
             android:layout_marginTop="10dp"/>
     </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/request_inspection"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="30dp"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/addons_pay_bacground"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:fontFamily="@font/gillroy_semibold"
-                android:text="BUY PACKAGE"
-                android:textColor="@color/blue"
-                android:textSize="20dp" />
-        </RelativeLayout>
-        
-      
     </RelativeLayout>
+
+
 </FrameLayout>
 

@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.wisedrive.customerapp.R;
+import com.wisedrive.customerapp.commonclasses.SPHelper;
 import com.wisedrive.customerapp.pojos.Pojo_Select_Model;
 
 import java.util.ArrayList;
@@ -22,9 +23,6 @@ public class Adapter_Select_Model extends RecyclerView.Adapter<Adapter_Select_Mo
     private View view;
     ArrayList<Pojo_Select_Model> pojo_select_modelArrayList;
     private int selectedPosition = -1;
-
-
-
 
 
     public Adapter_Select_Model(Context context, ArrayList<Pojo_Select_Model> pojo_select_modelArrayList) {
@@ -39,8 +37,8 @@ public class Adapter_Select_Model extends RecyclerView.Adapter<Adapter_Select_Mo
 
     @Override
     public void onBindViewHolder(@NonNull Adapter_Select_Model.MyViewHolder holder,  int position) {
-        Pojo_Select_Model list = pojo_select_modelArrayList.get(position);
-        holder.tv_model.setText(list.getTv_model());
+        Pojo_Select_Model recyclerdata = pojo_select_modelArrayList.get(position);
+        holder.tv_model.setText(recyclerdata.getCar_model());
         if (selectedPosition == position) {
             holder.rl_select_model.setSelected(true); //using selector drawable
             holder.rl_select_model.setBackgroundResource(R.drawable.select_model_bg);
@@ -56,6 +54,8 @@ public class Adapter_Select_Model extends RecyclerView.Adapter<Adapter_Select_Mo
         holder.rl_select_model.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SPHelper.carmodelid=recyclerdata.getModel_id();
+                SPHelper.car_model_name=recyclerdata.getCar_model();
                 if (selectedPosition >= 0)
                     notifyItemChanged(selectedPosition);
                 selectedPosition = holder.getAdapterPosition();

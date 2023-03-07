@@ -28,6 +28,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.wisedrive.customerapp.Add_New_Car;
 import com.wisedrive.customerapp.R;
 import com.wisedrive.customerapp.pojos.Pojo_Select_Make_list;
@@ -36,12 +37,11 @@ import com.wisedrive.customerapp.pojos.Pojo_Upload_Image;
 import java.util.ArrayList;
 
 public class Adapter_Uplaod_Image extends RecyclerView.Adapter<Adapter_Uplaod_Image.MyViewHolder> {
-    private final int GALLERY_REQ_CODE = 1000;
-    private final int CAMERA_REQ_CODE = 100;
+
     Context context;
     private View view;
     ArrayList<Pojo_Upload_Image> pojo_upload_imageArrayList;
-
+    public int sel_position=0;
     public Adapter_Uplaod_Image(Context context, ArrayList<Pojo_Upload_Image> pojo_upload_imageArrayList) {
         this.context = context;
         this.view = view;
@@ -54,50 +54,27 @@ public class Adapter_Uplaod_Image extends RecyclerView.Adapter<Adapter_Uplaod_Im
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Adapter_Uplaod_Image.MyViewHolder holder, int position) {
-        Pojo_Upload_Image list = pojo_upload_imageArrayList.get(position);
-        holder.uplaod_image.setImageResource(list.getUplaod_image());
-        holder.tv_image_name.setText(list.getTv_image_name());
+    public void onBindViewHolder(@NonNull Adapter_Uplaod_Image.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        Pojo_Upload_Image recyclerdata = pojo_upload_imageArrayList.get(position);
+
+        holder.tv_image_name.setText(recyclerdata.getName());
+        if (recyclerdata.getImage() == null) {
+            //uploaded_image.setImageURI(carImageLists.get(i).getImage());
+        } else {
+            holder.uplaod_image.setImageURI(recyclerdata.getImage());
+        }
+//        if (recyclerdata.getVehicle_images() != null && !carImageLists.get(position).getVehicle_images().isEmpty() && !carImageLists.get(position).getVehicle_images().equals("null")) {
+//            Glide.with(context).load(carImageLists.get(position).getVehicle_images()).placeholder(R.drawable.icon_noimage).into(holder.car_image_position);
+//        }
         holder.rl_items_upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final Dialog dialog = new Dialog(context);
-                dialog.setContentView(R.layout.customized_photo_alert_dialogue);
-                TextView cancel = (TextView) dialog.findViewById(R.id.textcancel);
-                cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.dismiss();
-                    }
-                });
-                TextView textView1 = (TextView) dialog.findViewById(R.id.textgallery);
-                textView1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                     holder.takepicturefromgallery();
-                        dialog.cancel();
-
-                    }
-                });
-                TextView textView = (TextView) dialog.findViewById(R.id.textcapture);
-                textView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        holder.takepicturefromcamera();
-                        dialog.cancel();
-
-                    }
-
-
-                });
-
-
-                dialog.show();
-
-
+                sel_position=position;
+                Add_New_Car.getInstance().selectedObject=position;
+                Add_New_Car.getInstance().onclick="";
+                Add_New_Car.getInstance().finalids.add(recyclerdata.getId());
+                Add_New_Car.getInstance().open_dialog();
             }
-
-
         });
 
 
@@ -120,46 +97,7 @@ public class Adapter_Uplaod_Image extends RecyclerView.Adapter<Adapter_Uplaod_Im
             rl_items_upload = (RelativeLayout) view.findViewById(R.id.rl_items_upload);
         }
 
-        protected void takepicturefromgallery() {
-            Intent picphoto = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-            ((Activity) context).startActivityForResult(picphoto, GALLERY_REQ_CODE);
         }
-
-        protected void takepicturefromcamera() {
-            Intent takepicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            ((Activity) context).startActivityForResult(takepicture, CAMERA_REQ_CODE);
-
-        }
-
-        public void ABCD(int requestCode, int resultCode, @Nullable Intent data) {
-
-            switch (requestCode) {
-                case 1:
-                    if (requestCode == RESULT_OK) {
-                        Uri selectedimageUri = data.getData();
-                        uplaod_image.setImageURI(selectedimageUri);
-                    }
-                    break;
-                case 2:
-                    if (resultCode == RESULT_OK) {
-                        Bundle bundle = data.getExtras();
-                        Bitmap bitmapImage = (Bitmap) bundle.get("data");
-                        uplaod_image.setImageBitmap(bitmapImage);
-                    }
-                    break;
-
-            }
-
-        }
-
-
-
-        }
-
-
-
-
-
     }
 
 

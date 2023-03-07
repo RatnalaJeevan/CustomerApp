@@ -11,12 +11,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.wisedrive.customerapp.R;
 import com.wisedrive.customerapp.pojos.Pojo_Class_Mycar;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Adapter_Class_My_Car_page extends RecyclerView.Adapter<Adapter_Class_My_Car_page.MyViewHolder> {
+    private DecimalFormat IndianCurrencyFormat;
     Context context;
     private View view;
     ArrayList<Pojo_Class_Mycar> pojo_class_mycarArrayList;
@@ -36,16 +39,13 @@ public class Adapter_Class_My_Car_page extends RecyclerView.Adapter<Adapter_Clas
     @Override
     public void onBindViewHolder(@NonNull Adapter_Class_My_Car_page.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Pojo_Class_Mycar list = pojo_class_mycarArrayList.get(position);
-        holder.text_make.setText(list.getText_make());
-        holder.text_model.setText(list.getText_model());
-        holder.text_kms.setText(list.getText_kms());
-        holder.text_transmission.setText(list.getText_transmission());
-        holder.text_fuel_type.setText(list.getText_fuel_type());
-        holder.car_image.setImageResource(list.getCar_image());
-        holder.image_kms.setImageResource(list.getImage_kms());
-        holder.image_transmission.setImageResource(list.getImage_transmission());
-        holder.image_fuel.setImageResource(list.getImage_fuel());
-
+        IndianCurrencyFormat = new DecimalFormat("##,##,###");
+        Glide.with(context).load(list.getImage()).placeholder(R.drawable.blue_car_image).into(holder.car_image);
+        holder.text_make.setText(list.getVehicle_make()+"-");
+        holder.text_model.setText(list.getVehicle_model()+"-"+list.getVehicle_no().toUpperCase());
+        holder.text_kms.setText(IndianCurrencyFormat.format(Integer.parseInt(list.getOdometer()))+"\tkms");
+        holder.text_transmission.setText(list.getTransmission_type());
+        holder.text_fuel_type.setText(list.getFuel_type());
     }
 
     @Override
@@ -61,10 +61,10 @@ public class Adapter_Class_My_Car_page extends RecyclerView.Adapter<Adapter_Clas
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             text_make = itemView.findViewById(R.id.text_make);
-            text_model = (TextView) itemView.findViewById(R.id.text_model);
-            text_kms = (TextView) itemView.findViewById(R.id.text_kms);
-            text_transmission = (TextView) itemView.findViewById(R.id.text_transmission);
-            text_fuel_type= (TextView) itemView.findViewById(R.id.text_fuel_type);
+            text_model =itemView.findViewById(R.id.text_model);
+            text_kms =  itemView.findViewById(R.id.text_kms);
+            text_transmission =itemView.findViewById(R.id.text_transmission);
+            text_fuel_type=  itemView.findViewById(R.id.text_fuel_type);
             car_image = itemView.findViewById(R.id.car_image);
             image_kms = itemView.findViewById(R.id.image_kms);
             image_transmission = itemView.findViewById(R.id.image_transmission);

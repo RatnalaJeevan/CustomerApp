@@ -14,6 +14,7 @@
     <color name="greywhite">#f8f8f8</color>
     <color name="orange">#f68b33</color>
     <color name="lightorange">#FFA371</color>
+    <color name="v_lightorange">#ffd2b3</color>
     <color name="add_adress_bg">#EDEDF2</color>
     <color name="text_color">#707070</color>
     <color name="text_color1">#E5E5EA</color>
@@ -30,8 +31,8 @@
     <color name="yellow">#efdfb4</color>
     <color name="car_background">#e5e5ea</color>
     <color name="description">#9a9a9a</color>
-    <color name="dark_pink">#de3163</color>
-    <color name="light_pink">#ffb6c1</color>
+    <color name="dark_pink">#cc8899</color>
+    <color name="light_pink">#EFDCF9</color>
     <color name="red_1">#ff3b30</color>
     <color name="middle_gray">#aeaeb2</color>
     <color name="brown">#e5e5ea</color>

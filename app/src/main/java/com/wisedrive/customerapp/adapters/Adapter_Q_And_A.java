@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.wisedrive.customerapp.R;
+import com.wisedrive.customerapp.commonclasses.SPHelper;
 import com.wisedrive.customerapp.pojos.Pojo_Q_And_A;
 import com.wisedrive.customerapp.pojos.Pojo_yes_no;
 
@@ -39,26 +40,21 @@ public class Adapter_Q_And_A  extends RecyclerView.Adapter<Adapter_Q_And_A .MyVi
 
     @Override
     public Adapter_Q_And_A .MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.items_q_and_a,null );
+        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.items_q_and_a,parent,false );
         return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull Adapter_Q_And_A .MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Pojo_Q_And_A list = pojo_q_and_aArrayList.get(position);
-        holder.tv_question.setText(list.getTv_question());
-        holder.tv_select_option.setText(list.getTv_select_option());
-
+        holder.tv_question.setText(list.getSymptom_name());
 
         pojo_yes_noArrayList = new ArrayList();
-        pojo_yes_noArrayList.add(new Pojo_yes_no("Yes"));
-        pojo_yes_noArrayList.add(new Pojo_yes_no("No"));
+        pojo_yes_noArrayList=list.getAnswerlist();
         adapter_yes_no= new Adapter_Yes_No(context,  pojo_yes_noArrayList);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
         rv_yes_no.setLayoutManager(linearLayoutManager);
         rv_yes_no.setAdapter(adapter_yes_no);
-
-
 
     }
 

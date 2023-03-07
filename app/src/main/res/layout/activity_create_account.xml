@@ -50,13 +50,22 @@
         android:layout_marginLeft="20dp"
         android:layout_marginBottom="10dp"/>
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/view1"
+        android:layout_above="@+id/rl_bottom">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
     <TextView
         android:id="@+id/text_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Full Name"
         android:textSize="15dp"
-        android:layout_below="@id/view1"
         android:textColor="@color/text_color"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="20dp"
@@ -65,34 +74,23 @@
         android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-      android:layout_below="@id/text_name"
+        android:layout_below="@id/text_name"
         android:layout_marginTop="5dp">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
     <EditText
-        android:id="@+id/edittext_name"
+        android:id="@+id/lead_name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/text_name"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="10dp"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:digits=" abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:background="@drawable/edit_text_background" />
-    </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageView
-            android:id="@+id/check1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/green_check"
-          android:layout_gravity="center"
-            android:layout_marginLeft="150dp"
-            android:visibility="gone"/>
 
     </FrameLayout>
 
@@ -114,32 +112,22 @@
         android:layout_below="@id/text_email"
         android:layout_marginTop="5dp">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+
 
 
     <EditText
-        android:id="@+id/edittext_email"
+        android:id="@+id/lead_email_id"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/text_email"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="10dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
+        android:maxLines="1"
+        android:inputType="text"
+        android:imeOptions="actionNext"
         android:background="@drawable/edit_text_background" />
-    </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageView
-            android:id="@+id/check2"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/green_check"
-            android:layout_gravity="center"
-            android:layout_marginLeft="150dp"
-            android:visibility="gone"/>
 
     </FrameLayout>
 
@@ -161,42 +149,37 @@
         android:layout_below="@id/text_password"
         android:layout_marginTop="5dp">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
     <EditText
-        android:id="@+id/edittext_password"
+        android:id="@+id/lead_no"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/text_password"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="10dp"
+        android:inputType="number"
+        android:maxLength="10"
         android:background="@drawable/edit_text_background"
         android:paddingRight="20dp"
         android:paddingLeft="20dp"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-        <ImageView
-            android:id="@+id/check3"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/green_check"
-            android:layout_gravity="center"
-            android:layout_marginLeft="150dp"
-            android:visibility="gone"/>
-
     </FrameLayout>
 
-    <CheckBox
-        android:id="@+id/checkbox"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+    <RelativeLayout
+        android:id="@+id/rl_check"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_below="@id/layout2"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/background_checkbox">
+
+        <ImageView
+            android:id="@+id/checked"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/green_check"
+            android:visibility="gone" />
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/text_view4"
@@ -206,29 +189,34 @@
         android:textColor="@color/text_color"
         android:textSize="12dp"
         android:layout_below="@id/layout2"
-        android:layout_toRightOf="@id/checkbox"
-        android:layout_marginTop="25dp"
+        android:layout_toRightOf="@id/rl_check"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/gillroy_regular"/>
 
     <TextView
-        android:id="@+id/text_view5"
+        android:id="@+id/tv_tnc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Terms and conditions."
         android:textSize="12dp"
         android:textColor="@color/violet"
         android:layout_below="@id/text_view4"
-        android:layout_toRightOf="@id/checkbox"
+        android:layout_toRightOf="@id/rl_check"
         android:fontFamily="@font/gillroy_regular"/>
 
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
     <RelativeLayout
+        android:id="@+id/rl_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="40dp">
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="15dp">
 
     <RelativeLayout
-        android:id="@+id/button"
+        android:id="@+id/create_account"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginLeft="20dp"
@@ -254,10 +242,10 @@
             android:layout_marginTop="10dp"
             android:textSize="14dp"
             android:layout_marginLeft="100dp"
-            android:layout_below="@id/button"
+            android:layout_below="@id/create_account"
             android:fontFamily="@font/gillroy_regular"/>
         <TextView
-            android:id="@+id/tv_sign_up"
+            android:id="@+id/tv_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Login"
@@ -266,7 +254,7 @@
             android:layout_toRightOf="@id/tv_dont_have_account"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
-            android:layout_below="@id/button"
+            android:layout_below="@id/create_account"
             android:fontFamily="@font/gillroy_semibold"/>
     </RelativeLayout>
 

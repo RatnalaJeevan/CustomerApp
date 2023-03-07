@@ -4,32 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity_Showroom_Services"
-    android:background="@color/brown">
+    android:background="@color/text_color1"
+    tools:context=".Activity_Showroom_Services">
 
     <RelativeLayout
         android:id="@+id/rl_heading"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="60dp"
+        android:background="@color/brown">
         <ImageView
             android:id="@+id/back"
             android:layout_width="25dp"
             android:layout_height="25dp"
+            android:layout_centerVertical="true"
             android:src="@drawable/back"
-            android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"/>
 
         <TextView
             android:id="@+id/tv_showroom_services"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Showroom Services"
+            android:layout_toLeftOf="@+id/expired"
             android:layout_toRightOf="@id/back"
-            android:layout_marginTop="20dp"
+            android:layout_centerVertical="true"
             android:textSize="20dp"
             android:layout_marginLeft="20dp"
             android:textColor="@color/black"
             android:fontFamily="@font/gillroy_regular"/>
+
+        <TextView
+            android:id="@+id/expired"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EXPIRED"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textSize="15dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/red_1"
+            android:fontFamily="@font/gillroy_semibold"/>
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -37,89 +53,38 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/rl_heading"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/confirmation_background">
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_showroom_services"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp" />
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/rl_transperant"
+        android:visibility="gone"
+        android:id="@+id/rl_track_service_status"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/transperant"
-        android:visibility="gone">
+        android:elevation="10dp"
+        >
 
         <RelativeLayout
-            android:id="@+id/rl_transperant_date_page"
-            android:layout_width="match_parent"
-            android:layout_height="350dp"/>
-
-        <RelativeLayout
-            android:id="@+id/rl_select_date"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/rl_transperant_date_page"
-            android:background="@drawable/rl_select_date_background"
-            android:visibility="gone">
-
-            <TextView
-                android:id="@+id/tv_select_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Select Date"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/gillroy_regular"/>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_select_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_below="@id/tv_select_date"/>
-
-            <RelativeLayout
-                android:id="@+id/confirm"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                android:layout_alignParentBottom="true"
-                android:background="@drawable/addons_pay_bacground">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:fontFamily="@font/poppins_bold"
-                    android:text="CONFIRM"
-                    android:textColor="@color/blue"
-                    android:textSize="15dp" />
-            </RelativeLayout>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/rl_transperant_select_status_page"
+            android:id="@+id/rl_transperant1"
             android:layout_width="match_parent"
             android:layout_height="240dp"/>
 
         <RelativeLayout
-            android:id="@+id/rl_track_service_status"
+            android:id="@+id/rl1_bottom"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/rl_back"
-            android:layout_below="@id/rl_transperant_select_status_page">
+            android:layout_below="@id/rl_transperant1">
 
             <RelativeLayout
                 android:id="@+id/rl_select_service"
@@ -165,12 +130,81 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
                 android:layout_below="@id/rl_select_service"/>
         </RelativeLayout>
 
-
-
-
         </RelativeLayout>
 
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rl_select_dates"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="10dp"
+        android:background="@color/transperant">
+        <RelativeLayout
+            android:id="@+id/rl_transperant2"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_select_date"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/rl_transperant2"
+            android:background="@drawable/rl_select_date_background"
+            >
+
+            <TextView
+                android:id="@+id/tv_select_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Date"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/gillroy_regular"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_select_date"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_above="@+id/confirm"
+                android:layout_below="@id/tv_select_date"/>
+
+            <RelativeLayout
+                android:id="@+id/confirm"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/addons_pay_bacground">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="CONFIRM"
+                    android:textColor="@color/blue"
+                    android:textSize="15dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/idPBLoading"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
     </RelativeLayout>

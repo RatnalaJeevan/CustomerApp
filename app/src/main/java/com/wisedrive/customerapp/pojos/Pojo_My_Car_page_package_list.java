@@ -1,67 +1,138 @@
 package com.wisedrive.customerapp.pojos;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Pojo_My_Car_page_package_list {
-    int image_logo,right_icon;
-    String text_warranty_name,tv_description,id;
-    private int color;
 
+    @SerializedName("product_id")
+    String product_id;
+    @SerializedName("package_id")
+    String package_id;
+    @SerializedName("product_name")
+    String product_name;
+    @SerializedName("description")
+    String description;
+    @SerializedName("valid_to")
+    String valid_to;
+    @SerializedName("product_icon")
+    String product_icon;
+    @SerializedName("final_amount")
+    String final_amount;
+    @SerializedName("validity_days")
+    String validity_days;
+    @SerializedName("is_warranty")
+    String is_warranty;
+    @SerializedName("expiry_date")
+    String expiry_date;
+    @SerializedName("is_active")
+    String is_active;
+    @SerializedName("is_service")
+    String is_service;
+    @SerializedName("InspectionRequested")
+    String InspectionRequested;
+    @SerializedName("color")
+    String color;
+    @SerializedName("error_msg")
+    String error_msg;
+    @SerializedName("package_type")
+    String package_type;
+    @SerializedName("expired")
+    String expired;
+    @SerializedName("AcivationCode")
+    String AcivationCode;
+    @SerializedName("ServiceCount")
+    PojoServiceCount ServiceCount;
 
-    public int getImage_logo() {
-        return image_logo;
+    public String getExpired() {
+        return expired;
     }
 
-    public void setImage_logo(int image_logo) {
-        this.image_logo = image_logo;
+    public String getAcivationCode() {
+        return AcivationCode;
     }
 
-    public String getText_warranty_name() {
-        return text_warranty_name;
+    public String getPackage_type() {
+        return package_type;
     }
 
-    public void setText_warranty_name(String text_warranty_name) {
-        this.text_warranty_name = text_warranty_name;
+    public PojoServiceCount getServiceCount() {
+        return ServiceCount;
     }
 
-    public String getTv_description() {
-        return tv_description;
-    }
-
-
-
-    public void setTv_description(String tv_description) {
-        this.tv_description = tv_description;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public int getColor() {
+    public String getColor() {
         return color;
     }
 
-    public void setColor(int color) {
-        this.color = color;
+    public String getError_msg() {
+        return error_msg;
     }
 
-    public int getRight_icon() {
-        return right_icon;
+    public String getInspectionRequested() {
+        return InspectionRequested;
     }
 
-    public void setRight_icon(int right_icon) {
-        this.right_icon = right_icon;
+    public String getIs_active() {
+        return is_active;
     }
 
-    public Pojo_My_Car_page_package_list(int image_logo, String text_warranty_name, String tv_description, String id, int color , int right_icon) {
-        this.image_logo = image_logo;
-        this.text_warranty_name = text_warranty_name;
-        this.tv_description = tv_description;
-        this.id=id;
-        this.color = color;
-        this.right_icon=right_icon;
+    public String getExpiry_date() {
+        return expiry_date;
+    }
+
+    public String getIs_service() {
+        return is_service;
+    }
+
+    public String getIs_warranty() {
+        return is_warranty;
+    }
+
+    public String getValid_to() {
+        return valid_to;
+    }
+
+    public String getProduct_icon() {
+        return product_icon;
+    }
+
+    public String getFinal_amount() {
+        return final_amount;
+    }
+
+    public String getValidity_days() {
+        return validity_days;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getProduct_id() {
+        return product_id;
+    }
+
+    public String getPackage_id() {
+        return package_id;
+    }
+
+    public String getProduct_name() {
+        return product_name;
+    }
+
+
+    public class PojoServiceCount {
+
+        @SerializedName("pending_count")
+        String pending_count;
+        @SerializedName("product_name")
+        String product_name;
+
+        public String getPending_count() {
+            return pending_count;
+        }
+
+        public String getProduct_name() {
+            return product_name;
+        }
     }
 }

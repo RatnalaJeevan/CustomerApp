@@ -1,40 +1,103 @@
 package com.wisedrive.customerapp.pojos;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Pojo_Extended_Warranty_Plan {
 
-    String text_warranty_name,text_amount,text_save_amount;
+    @SerializedName("is_starter_pack")
+    String is_starter_pack;
+    @SerializedName("id")
+    String id;
+    @SerializedName("amount_saved")
+    double amount_saved;
+    @SerializedName("start_color")
+    String start_color;
+    @SerializedName("final_price")
+    double final_price;
+    @SerializedName("display_name")
+    String display_name;
+    @SerializedName("package_id")
+    String package_id;
+    @SerializedName("end_color")
+    String end_color;
+    @SerializedName("package_logo")
+    String package_logo;
+    @SerializedName("original_price")
+    String original_price;
+    @SerializedName("percentage_amount_saved")
+    String percentage_amount_saved;
+    @SerializedName("package_type")
+    String package_type;
+    @SerializedName("main_package_id")
+    String main_package_id;
+    @SerializedName("main_package_name")
+    String main_package_name;
+    @SerializedName("package_name")
+    String package_name;
+    @SerializedName("plan_validity")
+    String plan_validity;
 
-
-    public Pojo_Extended_Warranty_Plan(String text_warranty_name, String text_amount, String text_save_amount) {
-        this.text_warranty_name = text_warranty_name;
-        this.text_amount = text_amount;
-        this.text_save_amount =text_save_amount;
-
+    public String getPlan_validity() {
+        return plan_validity;
     }
 
-    public String getText_warranty_name() {
-        return text_warranty_name;
+    public String getIs_starter_pack() {
+        return is_starter_pack;
     }
 
-    public void setText_warranty_name(String text_warranty_name) {
-        this.text_warranty_name = text_warranty_name;
+    public String getId() {
+        return id;
     }
 
-    public String getText_amount() {
-        return text_amount;
+    public double getAmount_saved() {
+        return amount_saved;
     }
 
-    public void setText_amount(String text_amount) {
-        this.text_amount = text_amount;
+    public String getStart_color() {
+        return start_color;
     }
 
-    public String getText_save_amount() {
-        return text_save_amount;
+    public double getFinal_price() {
+        return final_price;
     }
 
-    public void setText_save_amount(String text_save_amount) {
-        this.text_save_amount = text_save_amount;
+    public String getDisplay_name() {
+        return display_name;
     }
 
+    public String getPackage_id() {
+        return package_id;
+    }
 
+    public String getEnd_color() {
+        return end_color;
+    }
+
+    public String getPackage_logo() {
+        return package_logo;
+    }
+
+    public String getOriginal_price() {
+        return original_price;
+    }
+
+    public String getPercentage_amount_saved() {
+        return percentage_amount_saved;
+    }
+
+    public String getPackage_type() {
+        return package_type;
+    }
+
+    public String getMain_package_id() {
+        return main_package_id;
+    }
+
+    public String getMain_package_name() {
+        return main_package_name;
+    }
+
+    public String getPackage_name() {
+        return package_name;
+    }
 }

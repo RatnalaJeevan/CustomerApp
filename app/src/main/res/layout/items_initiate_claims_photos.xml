@@ -7,7 +7,7 @@
         android:id="@+id/rl_items_upload"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp">
 
         <ImageView
@@ -21,6 +21,8 @@
             android:id="@+id/tv_image_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
             android:text="Front Side Visible Car Number"
             android:layout_below="@id/uplaod_image"
             android:fontFamily="@font/gillroy_medium"

@@ -1,74 +1,101 @@
 package com.wisedrive.customerapp.pojos;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Pojo_Tracking_page {
-    int imv_request;
-    String tv_request,tv_request_description,tv_date,id,tv_otp;
-    private int color;
 
+    @SerializedName("service_flow_date")
+    String service_flow_date;
+    @SerializedName("status_id")
+    String status_id;
+    @SerializedName("status_name")
+    String status_name;
+    @SerializedName("created_on")
+    String created_on;
+    @SerializedName("service_type")
+    String service_type;
+    @SerializedName("happy_code")
+    String happy_code;
+    @SerializedName("package_id")
+    String package_id;
+    @SerializedName("comments")
+    String comments;
+    @SerializedName("service_status_id")
+    String service_status_id;
+    @SerializedName("service_date")
+    String service_date;
+    @SerializedName("package_name")
+    String package_name;
+    @SerializedName("otp")
+    String otp;
+    @SerializedName("icon")
+    String icon;
+    @SerializedName("description")
+    String description;
+    @SerializedName("is_active")
+    String is_active;
 
-    public Pojo_Tracking_page(int imv_request, String tv_request, String tv_request_description, String tv_date ,String id,int color,String tv_otp) {
-        this.imv_request = imv_request;
-        this.tv_request = tv_request;
-        this.tv_request_description = tv_request_description;
-        this.tv_date = tv_date;
-        this.id=id;
-        this.color = color;
-        this.tv_otp=tv_otp;
+    public String getIs_active() {
+        return is_active;
     }
 
-    public int getImv_request() {
-        return imv_request;
+    public String getDescription() {
+        return description;
     }
 
-    public void setImv_request(int imv_request) {
-        this.imv_request = imv_request;
+    public String getIcon() {
+        return icon;
     }
 
-    public String getTv_request() {
-        return tv_request;
+    public String getService_status_id() {
+        return service_status_id;
     }
 
-    public void setTv_request(String tv_request) {
-        this.tv_request = tv_request;
+    public String getOtp() {
+        return otp;
     }
 
-    public String getTv_request_description() {
-        return tv_request_description;
+    public String getService_flow_date() {
+        return service_flow_date;
     }
 
-    public void setTv_request_description(String tv_request_description) {
-        this.tv_request_description = tv_request_description;
+    public String getStatus_id() {
+        return status_id;
     }
 
-    public String getTv_date() {
-        return tv_date;
+    public String getStatus_name() {
+        return status_name;
     }
 
-    public void setTv_date(String tv_date) {
-        this.tv_date = tv_date;
+    public String getCreated_on() {
+        return created_on;
+    }
+
+    public String getService_type() {
+        return service_type;
+    }
+
+    public String getHappy_code() {
+        return happy_code;
+    }
+
+    public String getPackage_id() {
+        return package_id;
+    }
+
+    public String getComments() {
+        return comments;
     }
 
     public String getId() {
-        return id;
+        return service_status_id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public String getService_date() {
+        return service_date;
     }
 
-    public int getColor() {
-        return color;
-    }
-
-    public String getTv_otp() {
-        return tv_otp;
-    }
-
-    public void setTv_otp(String tv_otp) {
-        this.tv_otp = tv_otp;
-    }
-
-    public void setColor(int color) {
-        this.color = color;
+    public String getPackage_name() {
+        return package_name;
     }
 }

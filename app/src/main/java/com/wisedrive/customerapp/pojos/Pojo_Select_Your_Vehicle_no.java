@@ -1,22 +1,18 @@
 package com.wisedrive.customerapp.pojos;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Pojo_Select_Your_Vehicle_no {
-    String tv_vehicle_no;
+    @SerializedName("vehicle_no")
+    String vehicle_no;
+    @SerializedName("vehicle_id")
+    String vehicle_id;
 
-
-    public Pojo_Select_Your_Vehicle_no(String tv_vehicle_no) {
-
-        this.tv_vehicle_no = tv_vehicle_no;
-
+    public String getVehicle_no() {
+        return vehicle_no;
     }
 
-    public String getTv_vehicle_no() {
-        return tv_vehicle_no;
+    public String getVehicle_id() {
+        return vehicle_id;
     }
-
-    public void setTv_vehicle_no(String tv_vehicle_no) {
-        this.tv_vehicle_no = tv_vehicle_no;
-    }
-
-
 }

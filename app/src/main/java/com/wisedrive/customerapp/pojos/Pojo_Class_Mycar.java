@@ -1,92 +1,104 @@
 package com.wisedrive.customerapp.pojos;
 
-public class Pojo_Class_Mycar {
-    String text_make,text_model,text_kms,text_transmission,text_fuel_type;
-    int car_image,image_kms,image_transmission,image_fuel;
+import com.google.gson.annotations.SerializedName;
 
-    public Pojo_Class_Mycar(String text_make,String text_model,String text_kms,String text_transmission,String text_fuel_type,int car_image,int image_kms,int image_transmission,int image_fuel) {
-        this.text_make = text_make;
-        this.text_model=text_model;
-        this.text_kms=text_kms;
-        this.text_transmission=text_transmission;
-        this.text_fuel_type=text_fuel_type;
-        this.car_image=car_image;
-        this.image_kms=image_kms;
-        this.image_transmission=image_transmission;
-        this.image_fuel=image_fuel;
+public class
+Pojo_Class_Mycar {
+
+    @SerializedName("image")
+    String image;
+    @SerializedName("model_id")
+    String model_id;
+    @SerializedName("lead_veicle_id")
+    String lead_veicle_id;
+    @SerializedName("manufacturing_year")
+    String manufacturing_year;
+    @SerializedName("transmission_type")
+    String transmission_type;
+    @SerializedName("vehicle_make")
+    String vehicle_make;
+    @SerializedName("odometer")
+    String odometer;
+    @SerializedName("color")
+    String color;
+    @SerializedName("vehicle_model")
+    String vehicle_model;
+    @SerializedName("image_type_id")
+    String image_type_id;
+    @SerializedName("category_id")
+    String category_id;
+    @SerializedName("vehicle_no")
+    String vehicle_no;
+    @SerializedName("fuel_type")
+    String fuel_type;
+    @SerializedName("vehicle_id")
+    String vehicle_id;
+    @SerializedName("count")
+    String count;
+    @SerializedName("packExist")
+    String packExist;
+
+    public String getPackExist() {
+        return packExist;
     }
 
-    public String getText_make() {
-        return text_make;
+    public String getCount() {
+        return count;
     }
 
-    public void setText_make(String text_make) {
-        this.text_make = text_make;
+    public String getImage() {
+        return image;
     }
 
-    public String getText_model() {
-        return text_model;
+    public String getModel_id() {
+        return model_id;
     }
 
-    public void setText_model(String text_model) {
-        this.text_model = text_model;
+    public String getLead_veicle_id() {
+        return lead_veicle_id;
     }
 
-    public String getText_kms() {
-        return text_kms;
+    public String getManufacturing_year() {
+        return manufacturing_year;
     }
 
-    public void setText_kms(String text_kms) {
-        this.text_kms = text_kms;
+    public String getTransmission_type() {
+        return transmission_type;
     }
 
-    public String getText_transmission() {
-        return text_transmission;
+    public String getVehicle_make() {
+        return vehicle_make;
     }
 
-    public void setText_transmission(String text_transmission) {
-        this.text_transmission = text_transmission;
+    public String getOdometer() {
+        return odometer;
     }
 
-    public String getText_fuel_type() {
-        return text_fuel_type;
+    public String getColor() {
+        return color;
     }
 
-    public void setText_fuel_type(String text_date) {
-        this.text_fuel_type = text_fuel_type;
+    public String getVehicle_model() {
+        return vehicle_model;
     }
 
-    public int getCar_image() {
-        return car_image;
+    public String getImage_type_id() {
+        return image_type_id;
     }
 
-    public void setCar_image(int car_image) {
-        this.car_image = car_image;
+    public String getCategory_id() {
+        return category_id;
     }
 
-    public int getImage_kms() {
-        return image_kms;
+    public String getVehicle_no() {
+        return vehicle_no;
     }
 
-    public void setImage_kms(int image_kms) {
-        this.image_kms = image_kms;
+    public String getFuel_type() {
+        return fuel_type;
     }
 
-    public int getImage_transmission() {
-        return image_transmission;
+    public String getVehicle_id() {
+        return vehicle_id;
     }
-
-    public void setImage_transmission(int image_transmission) {
-        this.image_transmission = image_transmission;
-    }
-    public int getImage_fuel() {
-        return image_fuel;
-    }
-
-    public void setImage_fuel(int image_fuel) {
-        this.image_fuel = image_fuel;
-    }
-
-
-
 }

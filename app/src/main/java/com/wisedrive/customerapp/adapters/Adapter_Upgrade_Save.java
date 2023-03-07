@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.wisedrive.customerapp.R;
 import com.wisedrive.customerapp.pojos.Pojo_Service_Includes;
 import com.wisedrive.customerapp.pojos.Pojo_Upgrade_Save;
@@ -36,8 +37,16 @@ public class Adapter_Upgrade_Save extends RecyclerView.Adapter<Adapter_Upgrade_S
     @Override
     public void onBindViewHolder(@NonNull Adapter_Upgrade_Save.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Pojo_Upgrade_Save list = pojo_upgrade_saveArrayList.get(position);
-        holder.upgrade_list.setText(list.getUpgrade_list());
-        holder.image.setImageResource(list.getImage());
+
+        if(list.getDescription()==null||list.getDescription().equals("null")){
+            holder.upgrade_list.setText(list.getPackage_description());
+        }else{
+            holder.upgrade_list.setText(list.getDescription());
+        }
+
+      //  holder.image.setImageResource(list.getImage());
+        Glide.with(context).load(list.getIcon_url()).placeholder(R.drawable.service_image).into(holder.image);
+
 
     }
 

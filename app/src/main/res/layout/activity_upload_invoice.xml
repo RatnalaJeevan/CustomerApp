@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddInvoice">
+
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/blue"
+        android:padding="10dp">
+        <RelativeLayout
+            android:id="@+id/rl_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="5dp"
+            android:background="@color/blue"
+            android:padding="5dp">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/arrow_back">
+
+            </ImageView>
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/text_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/rl_back"
+            android:fontFamily="@font/zonapro_regular"
+            android:gravity="center"
+            android:text="Upload Invoice"
+            android:textColor="@color/white"
+            android:textSize="18dp">
+
+        </TextView>
+    </RelativeLayout>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_header"
+        android:layout_centerVertical="true">
+
+        <RelativeLayout
+            android:id="@+id/rl_upload1"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toLeftOf="@+id/line_centre"
+            android:background="@drawable/cardview_lightorange_margined"
+            android:backgroundTint="@color/greywhite"
+            android:elevation="10dp">
+
+
+            <ImageView
+                android:id="@+id/upload_iv1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/upload_grey">
+
+            </ImageView>
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/iv1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_noimage">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/label1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="18dp"
+                android:fontFamily="@font/zonapro_semibold"
+                android:gravity="start"
+                android:lineSpacingExtra="5dp"
+                android:text="upload"
+                android:textColor="@color/lightgrey"
+                android:textSize="18dp"
+                android:visibility="gone">
+
+            </TextView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_upload2"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toRightOf="@+id/line_centre"
+            android:background="@drawable/cardview_lightorange_margined"
+            android:backgroundTint="@color/greywhite"
+            android:elevation="10dp">
+
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/upload_grey">
+
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/iv2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_noimage"
+                android:visibility="gone">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/label2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="18dp"
+                android:fontFamily="@font/zonapro_semibold"
+                android:gravity="start"
+                android:lineSpacingExtra="5dp"
+                android:text="upload"
+                android:textColor="@color/lightgrey"
+                android:textSize="18dp"
+                android:visibility="gone">
+
+            </TextView>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/line_centre"
+            android:layout_width="1px"
+            android:layout_height="1px"
+            android:layout_centerInParent="true"
+            android:background="@color/orange">
+
+        </View>
+
+        <View
+            android:id="@+id/line_centre2"
+            android:layout_width="1px"
+            android:layout_height="1px"
+            android:layout_below="@+id/rl_upload1"
+            android:layout_centerHorizontal="true"
+            android:background="@color/orange">
+
+        </View>
+
+        <RelativeLayout
+            android:id="@+id/rl_upload3"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_below="@+id/line_centre2"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toLeftOf="@+id/line_centre"
+            android:background="@drawable/cardview_lightorange_margined"
+            android:backgroundTint="@color/greywhite"
+            android:elevation="10dp">
+
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/upload_grey">
+
+            </ImageView>
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/iv3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_noimage">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/label3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="18dp"
+                android:fontFamily="@font/zonapro_semibold"
+                android:gravity="start"
+                android:lineSpacingExtra="5dp"
+                android:text="upload"
+                android:textColor="@color/lightgrey"
+                android:textSize="18dp"
+                android:visibility="gone">
+
+            </TextView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_upload4"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_below="@+id/line_centre2"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toRightOf="@+id/line_centre"
+            android:background="@drawable/cardview_lightorange_margined"
+            android:backgroundTint="@color/greywhite"
+            android:elevation="10dp">
+
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/upload_grey">
+
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/iv4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_noimage"
+                android:visibility="gone">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/label4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="18dp"
+                android:fontFamily="@font/zonapro_semibold"
+                android:gravity="start"
+                android:lineSpacingExtra="5dp"
+                android:text="upload"
+                android:textColor="@color/lightgrey"
+                android:textSize="18dp"
+                android:visibility="gone">
+
+            </TextView>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_upload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/cardview_dealership"
+            android:fontFamily="@font/zonapro_semibold"
+            android:gravity="center"
+            android:paddingLeft="65dp"
+            android:paddingTop="10dp"
+            android:paddingRight="65dp"
+            android:paddingBottom="10dp"
+            android:text="Submit"
+            android:textColor="@color/white"
+            android:textSize="18dp">
+
+        </TextView>
+
+    </RelativeLayout>
+</RelativeLayout>

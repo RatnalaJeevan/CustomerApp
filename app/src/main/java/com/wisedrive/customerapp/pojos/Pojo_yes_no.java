@@ -1,20 +1,35 @@
 package com.wisedrive.customerapp.pojos;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Pojo_yes_no {
-    String tv_yes;
+   @SerializedName("answer")
+    String answer;
+    @SerializedName("answer_id")
+    String answer_id;
 
-    public Pojo_yes_no(String tv_yes ) {
-        this.tv_yes = tv_yes;
-
+    String isSelected="n";
+    public String getAnswer() {
+        return answer;
     }
 
-    public String getTv_yes() {
-        return tv_yes;
+    public String getAnswer_id() {
+        return answer_id;
     }
 
-    public void setTv_yes(String tv_yes) {
-        this.tv_yes = tv_yes;
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 
+    public void setAnswer_id(String answer_id) {
+        this.answer_id = answer_id;
+    }
 
+    public String getIsSelected() {
+        return isSelected;
+    }
+
+    public void setIsSelected(String isSelected) {
+        this.isSelected = isSelected;
+    }
 }

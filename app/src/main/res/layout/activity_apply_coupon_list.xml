@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ApplyCouponList">
+
+    <RelativeLayout
+        android:id="@+id/rl_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/rl_back_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp">
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/back"
+                android:layout_marginLeft="20dp"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_addons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coupons for you"
+            android:layout_toRightOf="@id/rl_back_button"
+            android:layout_marginTop="25dp"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/gillroy_regular"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_coupon_label"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/rl_heading"
+        android:paddingBottom="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:background="@drawable/addons_pay_bacground"
+        android:backgroundTint="@color/white"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp">
+
+
+        <EditText
+            android:id="@+id/entered_coupon_code"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@+id/apply"
+            android:layout_centerVertical="true"
+            android:maxLines="1"
+            android:capitalize="characters"
+            android:fontFamily="@font/gillroy_semibold"
+            android:textColorHint="@color/cement"
+            android:hint="Type coupon code here..."
+            android:background="@null">
+
+        </EditText>
+
+        <TextView
+            android:id="@+id/apply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="APPLY"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/gillroy_semibold"
+            android:textSize="20dp"
+            android:textColor="@color/cement"
+            android:layout_marginLeft="5dp"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/label2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="10dp"
+        android:text="Coupon code GPAY is invalid.Please try another code"
+        android:layout_below="@+id/rl_coupon_label"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/gillroy_regular"
+        android:textSize="13dp"
+        android:textColor="@color/red"
+        android:layout_marginLeft="5dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_coupon_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/label2">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

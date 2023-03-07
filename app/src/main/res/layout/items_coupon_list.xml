@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginLeft="15dp"
+        app:cardMaxElevation="20dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+            <RelativeLayout
+                android:id="@+id/rl_warranty_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/rl_apply"
+                android:background="@drawable/edit_background"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="5dp"
+                    >
+
+                    <RelativeLayout
+                        android:id="@+id/rl_image"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="10dp"
+                        >
+
+                        <ImageView
+                            android:id="@+id/image_logo"
+                            android:layout_width="31dp"
+                            android:layout_height="31dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/coupon_image_blue" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/coupon_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PAYTM"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="18dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/gillroy_semibold"
+                        android:layout_toRightOf="@id/rl_image"/>
+
+                    <TextView
+                        android:id="@+id/per_off"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="500"
+                        android:layout_marginEnd="5dp"
+                        android:textSize="18dp"
+                        android:textColor="@color/green"
+                        android:fontFamily="@font/gillroy_semibold"
+                        />
+                    <TextView
+                        android:id="@+id/description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Get upto INR20 cashback with this coupon code"
+                        android:layout_below="@id/coupon_code"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:textSize="14dp"
+                        android:fontFamily="@font/gillroy_regular"
+                        android:textColor="@color/text_color"
+                        android:layout_toRightOf="@id/rl_image" />
+
+                    <TextView
+                        android:id="@+id/valid_days"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentEnd="true"
+                        android:text="Valid : 45 days"
+                        android:layout_marginEnd="10dp"
+                        android:textSize="13dp"
+                        android:textColor="@color/red"
+                        android:fontFamily="@font/gillroy_semibold"
+                        />
+                </RelativeLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rl_apply"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/light_blue">
+
+
+                <TextView
+                    android:id="@+id/tv_track"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TAP TO APPLY"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/blue"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/gillroy_semibold"/>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rl_not_apply"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/cement">
+
+
+                <TextView
+                    android:id="@+id/tv_not_appluy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NOT APPLICABLE"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/text_color"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/gillroy_semibold"/>
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

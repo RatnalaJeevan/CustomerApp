@@ -3,17 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Profile_Fragment"
-    android:background="@color/white">
+    tools:context=".Profile_Fragment">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
         <RelativeLayout
             android:id="@+id/rl_scroll"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
         <RelativeLayout
             android:id="@+id/rl_parent"
@@ -37,11 +36,69 @@
                     android:layout_marginLeft="55dp"/>
 
                 <RelativeLayout
-                    android:id="@+id/rl_my_cars"
+                    android:id="@+id/rl_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_my_details"
                     android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:id="@+id/iv1"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="21dp"
+                        android:src="@drawable/c_name"/>
+                <TextView
+                    android:id="@+id/c_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gillroy_semibold"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@+id/iv1"
+                    android:text="Sagar"
+                    android:textColor="@color/profile_text"
+                    android:textSize="15dp">
+
+                </TextView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_name"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:id="@+id/iv2"
+                        android:layout_width="25dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:src="@drawable/c_no"/>
+                    <TextView
+                        android:id="@+id/c_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/iv2"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/gillroy_semibold"
+                        android:text="9000000000"
+                        android:textColor="@color/profile_text"
+                        android:textSize="15dp">
+
+                    </TextView>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_my_cars"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_no"
+                    android:layout_marginTop="15dp">
 
                     <ImageView
                         android:id="@+id/image_my_cars"
@@ -65,17 +122,19 @@
                     <RelativeLayout
                         android:layout_width="45dp"
                         android:layout_height="25dp"
+                       android:layout_centerVertical="true"
                         android:background="@drawable/rounded_corner_blue_button"
                        android:layout_toRightOf="@id/tv_my_car"
                         android:layout_marginLeft="10dp">
 
                         <TextView
+                            android:id="@+id/tv_my_car_count"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
                             android:layout_marginTop="-10dp"
                             android:fontFamily="@font/gillroy_semibold"
-                            android:text="00"
+                            android:text="0"
                             android:textColor="@color/white"
                             android:textSize="13dp" />
 
@@ -128,15 +187,54 @@
 
                     </RelativeLayout>
                 </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_mypayments"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_package_service"
+                    android:layout_marginTop="15dp">
+                    <ImageView
+                        android:id="@+id/iv_payments"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="21dp"
+                        android:src="@drawable/package_service"/>
+
+                    <TextView
+                        android:id="@+id/label_payments"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="My Payments"
+                        android:textColor="@color/profile_text"
+                        android:textSize="15dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/iv_payments"
+                        android:fontFamily="@font/gillroy_semibold"
+                        android:layout_marginLeft="8dp"/>
+
+                    <RelativeLayout
+                        android:layout_width="45dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/rounded_corner_blue_button"
+                        android:layout_toRightOf="@id/label_payments"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:id="@+id/count_payments"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginTop="-10dp"
+                            android:fontFamily="@font/gillroy_semibold"
+                            android:text="00"
+                            android:textColor="@color/white"
+                            android:textSize="13dp" />
+
+                    </RelativeLayout>
+                </RelativeLayout>
             </RelativeLayout>
-
-
-
-
-
-
-
-
             <RelativeLayout
                 android:id="@+id/rl_offers"
                 android:layout_width="match_parent"
@@ -228,8 +326,9 @@
             <RelativeLayout
                 android:id="@+id/rl_company"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/rl_offers">
+                android:layout_height="match_parent"
+                android:layout_below="@id/rl_offers"
+                android:paddingBottom="15dp">
 
                 <TextView
                     android:id="@+id/tv_company"
@@ -399,28 +498,43 @@
                         android:layout_marginLeft="8dp"
                         android:layout_toRightOf="@id/image_logout"/>
                 </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_logout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:text="version :"
+                    android:textColor="@color/profile_text"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/gillroy_semibold"
+                    android:layout_marginLeft="8dp" />
+                <TextView
+                    android:id="@+id/version"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_logout"
+                    android:layout_toRightOf="@+id/label"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/app_version_name"
+                    android:textColor="@color/profile_text"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/gillroy_semibold"
+                    android:layout_marginLeft="8dp" />
             </RelativeLayout>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </RelativeLayout>
+            <ProgressBar
+                android:visibility="gone"
+                android:id="@+id/idPBLoading"
+                android:layout_centerInParent="true"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </RelativeLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
     </FrameLayout>
