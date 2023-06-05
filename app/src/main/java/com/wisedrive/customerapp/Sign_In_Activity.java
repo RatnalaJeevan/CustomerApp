@@ -346,12 +346,13 @@ public class Sign_In_Activity extends AppCompatActivity {
                         if(comingfrom.equals("create")){
                             create_account();
                         }else{
-                            if(SPHelper.getSPData(Sign_In_Activity.this, SPHelper.package_activated, "").equalsIgnoreCase("y"))
-                            {
-                                SPHelper.fragment_is="plans";
-                            }else{
-                                SPHelper.fragment_is="act";
-                            }
+//                            if(SPHelper.getSPData(Sign_In_Activity.this, SPHelper.package_activated, "").equalsIgnoreCase("y"))
+//                            {
+//                                SPHelper.fragment_is="plans";
+//                            }else{
+//                                SPHelper.fragment_is="act";
+//                            }
+                            SPHelper.fragment_is="plans";
                             Intent intent = new Intent(Sign_In_Activity.this, CustomerHomepage.class);
                             startActivity(intent);
                             finish();

@@ -11,6 +11,35 @@ public class PojoSupportDetails {
     private String phone_no;
     @SerializedName("email_id")
     private String email_id;
+    @SerializedName("customer_name")
+    private String customer_name;
+
+    @SerializedName("lead_id")
+    private String lead_id;
+    @SerializedName("is_active")
+    private String is_active;
+    @SerializedName("customer_id")
+    private String customer_id;
+
+    public String getCustomer_name() {
+        return customer_name;
+    }
+
+    public String getPhone_no() {
+        return phone_no;
+    }
+
+    public String getLead_id() {
+        return lead_id;
+    }
+
+    public String getIs_active() {
+        return is_active;
+    }
+
+    public String getCustomer_id() {
+        return customer_id;
+    }
 
     public String getCustomer_support_name() {
         return customer_support_name;

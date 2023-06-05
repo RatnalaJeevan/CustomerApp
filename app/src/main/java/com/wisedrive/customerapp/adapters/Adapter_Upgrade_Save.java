@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.wisedrive.customerapp.R;
-import com.wisedrive.customerapp.pojos.Pojo_Service_Includes;
 import com.wisedrive.customerapp.pojos.Pojo_Upgrade_Save;
 
 import java.util.ArrayList;
@@ -45,8 +44,7 @@ public class Adapter_Upgrade_Save extends RecyclerView.Adapter<Adapter_Upgrade_S
         }
 
       //  holder.image.setImageResource(list.getImage());
-        Glide.with(context).load(list.getIcon_url()).placeholder(R.drawable.service_image).into(holder.image);
-
+       // Glide.with(context).load(pojo_upgrade_saveArrayList.get(0).getIcon_url()).placeholder(R.drawable.service_image).into(holder.image);
 
     }
 

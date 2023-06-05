@@ -3,95 +3,189 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardview"
+
+    <carbon.widget.LinearLayout
+        android:id="@+id/l1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="20dp"
-        android:layout_margin="5dp"
-       >
+        android:layout_below="@+id/rl2"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        app:carbon_cornerRadius="5dp"
 
-        <RelativeLayout
-            android:id="@+id/relative_layout_services"
+        app:carbon_elevationShadowColor="@color/new_app_bg">
+
+        <carbon.widget.RelativeLayout
+            android:id="@+id/rl_item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:background="@drawable/blue_background">
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/white"
+            android:elevation="20dp"
 
-            <RelativeLayout
+            app:carbon_cornerRadius="5dp"
+            app:carbon_elevationShadowColor="@color/new_app_bg">
+
+
+            <carbon.widget.RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                >
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="7dp"
 
+                >
 
                 <ImageView
                     android:id="@+id/image_logo"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
                     android:src="@drawable/blue_right" />
-
-
 
                 <TextView
                     android:id="@+id/text_warranty_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_toLeftOf="@+id/right_icon"
-                    android:text="Comprehensive Warranty"
                     android:layout_marginLeft="10dp"
-                    android:textSize="16dp"
+                    android:layout_toLeftOf="@+id/right_icon"
+                    android:layout_toRightOf="@id/image_logo"
+                    android:fontFamily="@font/bold"
+                    android:text="Comprehensive Warranty\nRSA"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/gillroy_semibold"
-                    android:layout_toRightOf="@id/image_logo"/>
+                    android:textSize="16dp" />
 
                 <TextView
-                    android:id="@+id/label_inactive"
+                    android:visibility="gone"
+                    android:id="@+id/label_inactive1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="INACTIVE"
                     android:layout_below="@id/text_warranty_name"
                     android:layout_marginLeft="10dp"
-                    android:textSize="16dp"
-                    android:fontFamily="@font/gillroy_semibold"
+                    android:layout_toRightOf="@id/image_logo"
+                    android:fontFamily="@font/semibold"
+                    android:text="INACTIVE"
                     android:textColor="@color/dark_orange"
-                    android:layout_toRightOf="@id/image_logo" />
+                    android:textSize="16dp" />
+
                 <TextView
+                    android:visibility="gone"
                     android:id="@+id/tv_description"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No claims pending"
-                    android:layout_below="@id/label_inactive"
+                    android:layout_marginTop="7dp"
+                    android:lineSpacingExtra="2dp"
+                    android:layout_below="@id/label_inactive1"
                     android:layout_marginLeft="10dp"
-                    android:textSize="13dp"
-                    android:fontFamily="@font/gillroy_regular"
-                    android:textColor="@color/heading"
-                    android:layout_toRightOf="@id/image_logo" />
+                    android:layout_toRightOf="@id/image_logo"
+                    android:fontFamily="@font/semibold"
+                    android:text="No claims pending"
+                    android:textColor="@color/text_color"
+                    android:textSize="15dp" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@+id/tv_description"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toRightOf="@+id/image_logo"
+                    android:background="@color/cement">
+
+                </View>
 
                 <TextView
+
                     android:id="@+id/expires_on"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Expires on :"
-                    android:layout_below="@id/tv_description"
+                    android:layout_below="@+id/view"
+                    android:layout_marginTop="7dp"
                     android:layout_marginLeft="10dp"
-                    android:textSize="13dp"
-                    android:fontFamily="@font/gillroy_semibold"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toRightOf="@id/image_logo"
+                    android:fontFamily="@font/semibold"
+                    android:text="Expires on :"
+                    android:textColor="@color/black"
+                    android:textSize="13dp" />
+                <TextView
+
+                    android:id="@+id/label_inactive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/image_logo"
+                    android:fontFamily="@font/semibold"
+                    android:text="INACTIVE"
                     android:textColor="@color/dark_orange"
-                    android:layout_toRightOf="@id/image_logo" />
+                    android:textSize="15dp" />
+
                 <ImageView
+                    android:visibility="gone"
                     android:id="@+id/right_icon"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
                     android:layout_marginRight="20dp"
-                    android:src="@drawable/right_arrow_blue"
-                    android:layout_centerVertical="true"/>
+                    android:src="@drawable/right_arrow_blue" />
 
-            </RelativeLayout>
+            </carbon.widget.RelativeLayout>
+        </carbon.widget.RelativeLayout>
+    </carbon.widget.LinearLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rl2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/bl_vio">
+
+        <TextView
+            android:id="@+id/text_name1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/rl_cancel1"
+            android:text="Schedule  car for inspection to activate your warranty."
+            android:textSize="13dp"
+            android:lineSpacingExtra="2dp"
+            android:textColor="@color/dar_or"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/medium"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_cancel1"
+            android:layout_width="70dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/background"
+            android:backgroundTint="@color/dar_or"
+            >
+
+            <TextView
+
+                android:id="@+id/schedule_insp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Schedule"
+                android:textSize="12dp"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/semibold"
+                android:textColor="@color/white"
+                android:layout_centerVertical="true"
+                />
         </RelativeLayout>
-    </androidx.cardview.widget.CardView>
-
+    </RelativeLayout>
 </RelativeLayout>

@@ -4,20 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Activity_Q_And_A">
 
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-           <RelativeLayout
            android:id="@+id/action_bar"
            android:layout_width="match_parent"
            android:layout_height="50dp"
            android:paddingTop="2dp"
-           android:background="@color/light_blue">
+           android:background="@color/white">
 
         <RelativeLayout
             android:id="@+id/rl_back"
@@ -28,10 +24,10 @@
 
 
             <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_centerInParent="true"
-                android:src="@drawable/blue_left" />
+                android:src="@drawable/back_new_black" />
         </RelativeLayout>
 
         <TextView
@@ -41,45 +37,27 @@
             android:text="Q&amp;A"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/rl_back"
-            android:textSize="20dp"
-            android:textColor="@color/blue"
-            android:fontFamily="@font/gillroy_regular"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/regular"
             android:layout_marginLeft="10dp"/>
 
         </RelativeLayout>
 
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/submit"
-            android:layout_below="@id/action_bar">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            <RelativeLayout
-                android:id="@+id/rl_light_blue"
-                android:layout_width="match_parent"
-                android:layout_height="225dp"
-                android:background="@color/light_blue">
-
-
         <RelativeLayout
             android:id="@+id/rl_1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/action_bar"
+            >
         <TextView
             android:id="@+id/tv_heading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Let's get started."
-            android:textColor="@color/blue"
-            android:textSize="35dp"
-            android:fontFamily="@font/gillroy_semibold"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:fontFamily="@font/semibold"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"/>
 
@@ -88,27 +66,40 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_heading"
-            android:text="Is there any sound from the engine or transmidsion or engine compartment ares before the car got stopped?"
-            android:textColor="@color/blue"
+            android:lineSpacingExtra="3dp"
+            android:text="Is there any sound from the engine or transmission or engine compartment area before the car got stopped?"
+            android:textColor="@color/black"
             android:textSize="14dp"
-            android:fontFamily="@font/gillroy_regular"
+            android:fontFamily="@font/regular"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="5dp"/>
 
     </RelativeLayout>
-    </RelativeLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_q_and_a"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-80dp"
-        android:layout_below="@id/rl_light_blue" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="80dp"
+        android:layout_below="@id/rl_1" />
 
-    </RelativeLayout>
-        </RelativeLayout>
-        </androidx.core.widget.NestedScrollView>
+    <ExpandableListView
+        android:visibility="gone"
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="80dp"
+        android:layout_below="@id/rl_1"
+        android:divider="@null"
+
+        >
+
+    </ExpandableListView>
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/submit"
                 android:layout_width="match_parent"
@@ -122,11 +113,11 @@
                 android:textSize="16dp"
                 android:layout_marginRight="20dp"
                 android:textColor="@color/white"
-                android:fontFamily="@font/gillroy_semibold"
+                android:fontFamily="@font/semibold"
                 android:background="@drawable/pay_now_button_black"
-                android:backgroundTint="@color/blue"/>
+                android:backgroundTint="@color/black"/>
 
-        </RelativeLayout>
+
 </RelativeLayout>
 
 

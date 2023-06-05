@@ -61,6 +61,7 @@
                 android:layout_below="@+id/label1"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/cv_req_insp"
+                android:backgroundTint="@color/black"
                 >
 
                 <TextView

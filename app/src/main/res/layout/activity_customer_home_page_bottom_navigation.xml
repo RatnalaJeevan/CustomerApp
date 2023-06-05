@@ -4,13 +4,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CustomerHomepage">
+    tools:context=".CustomerHomepage"
+    android:background="@color/new_app_bg">
 
     <RelativeLayout
         android:id="@+id/relative_layout1"
         android:layout_width="match_parent"
-        android:layout_height="56dp">
+        android:layout_height="58dp"
+        android:paddingTop="3dp"
+        android:background="@color/new_app_bg">
 
+        <RelativeLayout
+            android:id="@+id/rl_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/menu" />
+        </RelativeLayout>
+        <ImageView
+            android:id="@+id/wd_logo"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:src="@drawable/wd_neu"
+            android:layout_toRightOf="@+id/rl_back"
+           android:layout_centerVertical="true"/>
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/image_bell"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/bell"
+            android:layout_toLeftOf="@+id/rl_mycars"
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"/>
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/rl_add_car_button"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:layout_toLeftOf="@id/image_bell"
+            android:layout_marginRight="20dp"
+
+            android:background="@drawable/add_car_bg"
+            >
+
+            <ImageView
+                android:id="@+id/image_plus"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/add_white"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+
+                android:id="@+id/image_car"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Car"
+                android:textSize="14dp"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/semibold"
+                android:textColor="@color/white"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/image_plus"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/rl_mycars"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/add_car_bg"
+            >
+
+            <TextView
+                android:id="@+id/labekl_mycars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/semibold"
+                android:text="My Cars"
+                android:textColor="@color/white"
+                android:textSize="14dp" />
+        </RelativeLayout>
     </RelativeLayout>
 
     <FrameLayout
@@ -22,8 +116,8 @@
 
     </FrameLayout>
 
-
     <androidx.cardview.widget.CardView
+        android:visibility="gone"
         android:id="@+id/card_btm_nav"
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -36,7 +130,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:orientation="horizontal">
-    <LinearLayout
+       <LinearLayout
         android:id="@+id/linear_layout_plans"
         android:layout_width="wrap_content"
         android:layout_height="37dp"
@@ -61,7 +155,7 @@
             android:layout_marginLeft="10dp"
             android:textSize="12dp"
             android:visibility="visible"
-            android:fontFamily="@font/gillroy_regular"/>
+            android:fontFamily="@font/regular"/>
 
     </LinearLayout>
         <LinearLayout
@@ -89,7 +183,7 @@
                 android:textSize="12dp"
                 android:layout_marginLeft="13dp"
 
-                android:fontFamily="@font/gillroy_regular"/>
+                android:fontFamily="@font/regular"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/linear_layout_activate"
@@ -115,7 +209,7 @@
                 android:textColor="@color/defaultColor"
                 android:layout_marginLeft="10dp"
                 android:visibility="gone"
-                android:fontFamily="@font/gillroy_regular"/>
+                android:fontFamily="@font/regular"/>
 
         </LinearLayout>
         <LinearLayout
@@ -141,59 +235,12 @@
                 android:textColor="@color/defaultColor"
                 android:layout_marginLeft="10dp"
                 android:visibility="gone"
-                android:fontFamily="@font/gillroy_regular"/>
+                android:fontFamily="@font/regular"/>
 
         </LinearLayout>
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:src="@drawable/wisedrive"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"/>
-
-    <ImageView
-        android:visibility="invisible"
-        android:id="@+id/image_bell"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:src="@drawable/bell"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="20dp"/>
-
-    <RelativeLayout
-        android:id="@+id/rl_add_car_button"
-        android:layout_width="90dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_toLeftOf="@id/image_bell"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/add_car_bg"
-        >
-
-        <ImageView
-            android:id="@+id/image_plus"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:src="@drawable/blue_plus"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"/>
-
-        <ImageView
-            android:id="@+id/image_car"
-            android:layout_width="70dp"
-            android:layout_height="45dp"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/image_plus"
-            android:src="@drawable/blue_car" />
-    </RelativeLayout>
-
-
 
 </RelativeLayout>

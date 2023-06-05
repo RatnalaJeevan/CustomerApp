@@ -38,6 +38,7 @@ import retrofit2.Response;
 
 public class ApplyCouponList extends AppCompatActivity {
     ArrayList<PojoCouponList> pojoCouponLists;
+    ArrayList<PojoCouponList> app_coupon_list;
     AdapterCouponList adapterCouponList;
     RecyclerView rv_coupon_list;
     private ApiInterface apiInterface;
@@ -56,6 +57,7 @@ public class ApplyCouponList extends AppCompatActivity {
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
         rl_back_button=findViewById(R.id.rl_back_button);
 
+        getWindow().setStatusBarColor(getColor(R.color.new_app_bg));
         Intent intent=getIntent();
         coming_from=intent.getStringExtra("comingfrom");
         if(coming_from.equals("addon")){
@@ -125,7 +127,7 @@ public class ApplyCouponList extends AppCompatActivity {
             //idPBLoading.setVisibility(View.VISIBLE);
             Call<AppResponse> call = apiInterface.get_coupon_list(SPHelper.getSPData(ApplyCouponList.this, SPHelper.lead_id, ""),
                     SPHelper.getSPData(ApplyCouponList.this, SPHelper.customer_id, ""), SPHelper.package_id,
-                    SPHelper.cat_id, SPHelper.main_pack_id,SPHelper.final_amount,is_upgrade);
+                    SPHelper.cat_id, SPHelper.main_pack_id,SPHelper.upgrade_amount,is_upgrade);
             call.enqueue(new Callback<AppResponse>() {
                 @Override
                 public void onResponse(@NotNull Call<AppResponse> call, @NotNull Response<AppResponse> response) {
@@ -136,8 +138,23 @@ public class ApplyCouponList extends AppCompatActivity {
                         if (response_code.equals("200")) {
                             // idPBLoading.setVisibility(View.GONE);
                             pojoCouponLists = new ArrayList<>();
+                            app_coupon_list=new ArrayList<>();
                             pojoCouponLists = appResponse.getResponseModel().getCouponCodeList();
-                            adapterCouponList = new AdapterCouponList( pojoCouponLists,ApplyCouponList.this);
+//                            for(int i=0;i<pojoCouponLists.size();i++)
+//                            {
+//                                if(pojoCouponLists.get(i).getIs_valid().equalsIgnoreCase("y")){
+//                                    PojoCouponList obj=new PojoCouponList();
+//                                    obj.setCoupon_code(pojoCouponLists.get(i).getCoupon_code());
+//                                    obj.setCoupon_id(pojoCouponLists.get(i).getCoupon_id());
+//                                    obj.setCoupon_type(pojoCouponLists.get(i).getCoupon_type());
+//                                    obj.setDescription(pojoCouponLists.get(i).getDescription());
+//                                    obj.setExpiration_date(pojoCouponLists.get(i).getExpiration_date());
+//                                    obj.setDiscount_amount(pojoCouponLists.get(i).getDiscount_amount());
+//                                    app_coupon_list.add(obj);
+//                                }
+//                            }
+
+                            adapterCouponList = new AdapterCouponList(pojoCouponLists,ApplyCouponList.this);
                             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(ApplyCouponList.this, LinearLayoutManager.VERTICAL, false);
                             rv_coupon_list.setLayoutManager(linearLayoutManager);
                             rv_coupon_list.setAdapter(adapterCouponList);
@@ -177,7 +194,7 @@ public class ApplyCouponList extends AppCompatActivity {
             //idPBLoading.setVisibility(View.VISIBLE);
             Call<AppResponse> call = apiInterface.get_coupon_details(SPHelper.getSPData(ApplyCouponList.this, SPHelper.lead_id, ""),
                     SPHelper.getSPData(ApplyCouponList.this, SPHelper.customer_id, ""), SPHelper.package_id,
-                    SPHelper.cat_id, SPHelper.main_pack_id,SPHelper.final_amount,entered_coupon_code.getText().toString().toUpperCase());
+                    SPHelper.cat_id, SPHelper.main_pack_id,SPHelper.upgrade_amount,entered_coupon_code.getText().toString().toUpperCase());
             call.enqueue(new Callback<AppResponse>() {
                 @Override
                 public void onResponse(@NotNull Call<AppResponse> call, @NotNull Response<AppResponse> response) {

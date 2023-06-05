@@ -35,6 +35,49 @@ public class Pojo_Tracking_page {
     @SerializedName("is_active")
     String is_active;
 
+    @SerializedName("image")
+    String image;
+    @SerializedName("service_type_name")
+    String service_type_name;
+    @SerializedName("service_assigned_mgs_no")
+    String service_assigned_mgs_no;
+    @SerializedName("service_on_date")
+    String service_on_date;
+    @SerializedName("service_assigned_by_name")
+    String service_assigned_by_name;
+    @SerializedName("service_assigned_mgs_name")
+    String service_assigned_mgs_name;
+    @SerializedName("service_assigned_by_no")
+    String service_assigned_by_no;
+
+    public String getService_assigned_by_no() {
+        return service_assigned_by_no;
+    }
+
+    public String getService_assigned_mgs_name() {
+        return service_assigned_mgs_name;
+    }
+
+    public String getService_assigned_by_name() {
+        return service_assigned_by_name;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public String getService_type_name() {
+        return service_type_name;
+    }
+
+    public String getService_assigned_mgs_no() {
+        return service_assigned_mgs_no;
+    }
+
+    public String getService_on_date() {
+        return service_on_date;
+    }
+
     public String getIs_active() {
         return is_active;
     }

@@ -5,14 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Create_Account">
-    <ImageView
-        android:id="@+id/image_logo"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="20dp"
-        android:src="@drawable/wisedrive_logo_for_sign_in_page"
-        android:visibility="gone"/>
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rl_back"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/image_logo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/back_new_black"
+            />
+    </RelativeLayout>
+
 
     <TextView
         android:id="@+id/text_view1"
@@ -22,10 +29,10 @@
         android:layout_marginLeft="20dp"
         android:textColor="@color/black"
         android:textSize="50dp"
-        android:layout_below="@id/image_logo"
+        android:layout_below="@id/rl_back"
         android:includeFontPadding="false"
         android:paddingTop="10dp"
-        android:fontFamily="@font/gillroy_regular"
+        android:fontFamily="@font/regular"
         android:layout_marginTop="20dp" />
 
     <TextView
@@ -38,10 +45,11 @@
         android:textSize="50dp"
         android:layout_marginTop="10dp"
         android:includeFontPadding="false"
-        android:fontFamily="@font/gillroy_regular"
+        android:fontFamily="@font/regular"
         android:textColor="@color/black" />
 
     <View
+        android:visibility="gone"
         android:id="@+id/view1"
         android:layout_width="40dp"
         android:layout_height="2dp"
@@ -69,7 +77,7 @@
         android:textColor="@color/text_color"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/gillroy_regular"/>
+        android:fontFamily="@font/regular"/>
     <FrameLayout
         android:id="@+id/layout"
         android:layout_width="match_parent"
@@ -104,7 +112,7 @@
         android:layout_marginTop="20dp"
         android:textColor="@color/text_color"
         android:textSize="15dp"
-        android:fontFamily="@font/gillroy_regular"/>
+        android:fontFamily="@font/regular"/>
     <FrameLayout
         android:id="@+id/layout1"
         android:layout_width="match_parent"
@@ -141,7 +149,7 @@
         android:layout_marginTop="20dp"
         android:textColor="@color/text_color"
         android:textSize="15dp"
-        android:fontFamily="@font/gillroy_regular"/>
+        android:fontFamily="@font/regular"/>
     <FrameLayout
         android:id="@+id/layout2"
         android:layout_width="match_parent"
@@ -191,7 +199,7 @@
         android:layout_below="@id/layout2"
         android:layout_toRightOf="@id/rl_check"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/gillroy_regular"/>
+        android:fontFamily="@font/regular"/>
 
     <TextView
         android:id="@+id/tv_tnc"
@@ -199,10 +207,10 @@
         android:layout_height="wrap_content"
         android:text="Terms and conditions."
         android:textSize="12dp"
-        android:textColor="@color/violet"
+        android:textColor="@color/black"
         android:layout_below="@id/text_view4"
         android:layout_toRightOf="@id/rl_check"
-        android:fontFamily="@font/gillroy_regular"/>
+        android:fontFamily="@font/regular"/>
 
 
         </RelativeLayout>
@@ -221,13 +229,14 @@
         android:layout_height="45dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="@drawable/create_account_button">
+        android:background="@drawable/create_account_button"
+        android:backgroundTint="@color/black">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:fontFamily="@font/gillroy_bold"
+            android:fontFamily="@font/bold"
             android:text="Create account"
             android:textColor="@color/white"
             android:textSize="15dp" />
@@ -243,21 +252,42 @@
             android:textSize="14dp"
             android:layout_marginLeft="100dp"
             android:layout_below="@id/create_account"
-            android:fontFamily="@font/gillroy_regular"/>
+            android:fontFamily="@font/regular"/>
         <TextView
             android:id="@+id/tv_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Login"
-            android:textColor="@color/blue"
+            android:textColor="@color/black"
             android:textSize="14dp"
             android:layout_toRightOf="@id/tv_dont_have_account"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
             android:layout_below="@id/create_account"
-            android:fontFamily="@font/gillroy_semibold"/>
+            android:fontFamily="@font/semibold"/>
     </RelativeLayout>
 
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/edit_account"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/create_account_button"
+        android:backgroundTint="@color/black">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/bold"
+            android:text="Request For Edit"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+    </RelativeLayout>
 
 
 

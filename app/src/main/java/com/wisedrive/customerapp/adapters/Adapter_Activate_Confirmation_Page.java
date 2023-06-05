@@ -54,22 +54,13 @@ public class Adapter_Activate_Confirmation_Page extends RecyclerView.Adapter<Ada
     public class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView imv_image;
         TextView tv_warranty_name,tv_expire_date;
-
-
-
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             imv_image  = itemView.findViewById(R.id.imv_image);
             tv_warranty_name = (TextView) itemView.findViewById(R.id.tv_warranty_name);
             tv_expire_date = (TextView) itemView.findViewById(R.id.tv_expire_date);
-
-
-
         }
-
     }
-
-
 
     }
 

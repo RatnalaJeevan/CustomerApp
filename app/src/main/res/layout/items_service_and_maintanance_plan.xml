@@ -1,44 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardview"
+    <carbon.widget.LinearLayout
+        android:id="@+id/l1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="20dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp">
-        <RelativeLayout
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        app:carbon_cornerRadius="5dp"
+        >
+        <carbon.widget.RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:elevation="20dp"
+            app:carbon_cornerRadius="5dp"
+            android:background="@color/white"
+            app:carbon_elevationShadowColor="@color/bl_gre">
+<!--            android:background="#dbdcfa"-->
         <RelativeLayout
            android:id="@+id/rl_white_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:background="@color/white">
+            android:paddingBottom="5dp">
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/iv1"
+                android:layout_width="90dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/icons_ss" />
+            <TextView
+                android:id="@+id/plan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Service &amp; Maintenance Plan"
+                android:layout_below="@+id/iv1"
+                android:layout_toStartOf="@+id/rl1"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:fontFamily="@font/semibold" />
 
             <TextView
                 android:id="@+id/tv_maintanance_plan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toStartOf="@+id/rl1"
-                android:layout_centerVertical="true"
+                android:layout_below="@+id/plan"
                 android:text="Service &amp; Maintanance Plan"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="7dp"
                 android:textColor="@color/black"
-                android:textSize="17dp"
-                android:fontFamily="@font/gillroy_semibold"/>
+                android:textSize="18dp"
+                android:fontFamily="@font/medium"/>
 
             <RelativeLayout
-
+                android:visibility="gone"
                 android:id="@+id/rl1"
                 android:layout_width="140dp"
                 android:layout_height="90dp"
@@ -56,7 +86,7 @@
                     android:layout_height="wrap_content"
                     android:text="Save"
                     android:textSize="13dp"
-                    android:fontFamily="@font/gillroy_regular"
+                    android:fontFamily="@font/regular"
                     android:layout_marginTop="18dp"
                     android:layout_marginLeft="40dp"
                     android:textColor="@color/white"
@@ -71,7 +101,7 @@
                     android:layout_marginLeft="35dp"
                     android:textSize="13dp"
                     android:layout_marginTop="10dp"
-                    android:fontFamily="@font/gillroy_regular"
+                    android:fontFamily="@font/regular"
                     android:textColor="@color/white"
                     android:rotation="-10"/>
 
@@ -83,7 +113,7 @@
                     android:layout_below="@id/tv_sav"
                     android:layout_marginBottom="10dp"
                     android:textSize="17dp"
-                    android:fontFamily="@font/gillroy_semibold"
+                    android:fontFamily="@font/semibold"
                     android:textColor="@color/white"
                     android:rotation="-10"
                     android:layout_toRightOf="@id/tv_inr"/>
@@ -91,90 +121,225 @@
 
         </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/rl_blue"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_marginTop="-10dp"
-                android:layout_below="@+id/rl_white_card"
-                android:background="@drawable/blue_back_rl">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_service_details"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_above="@+id/rl_view_details_button"
-                    android:padding="10dp"
-                    >
-
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@+id/rl_white_card"
+                    android:padding="10dp">
                 </androidx.recyclerview.widget.RecyclerView>
 
-                <RelativeLayout
 
-                    android:id="@+id/rl_view_details_button"
+            <TextView
+                android:id="@+id/tv_inr_starts_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INR "
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/regular"
+                android:layout_below="@+id/rv_service_details"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:layout_marginLeft="30dp" />
+
+            <TextView
+                android:id="@+id/label_onwards"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:text="Onwards"
+                android:layout_below="@+id/tv_inr_starts_from"
+                android:layout_marginStart="30dp"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:fontFamily="@font/regular" />
+
+            <TextView
+                android:id="@+id/tv_amount_buy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1000"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/medium"
+                android:layout_below="@+id/rv_service_details"
+                android:textColor="@color/black"
+                android:textSize="26dp"
+                android:layout_toRightOf="@id/tv_inr_starts_from" />
+
+            <carbon.widget.RelativeLayout
+
+                android:id="@+id/rl_view_details_button"
+                android:layout_width="140dp"
+                android:layout_height="35dp"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/tv_inr_starts_from"
+                android:layout_marginRight="20dp"
+                app:carbon_cornerRadius="18dp"
+                android:background="@color/black"
+                >
+
+                <TextView
+                    android:id="@+id/tv_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View Details"
+                    android:layout_marginStart="22dp"
+                    android:fontFamily="@font/medium"
+                    android:layout_centerVertical="true"
+                    android:textSize="13dp"
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:id="@+id/arrow"
+                    android:layout_width="20dp"
+                    android:layout_height="15dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/tv_details"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/r_arrow_white" />
+
+            </carbon.widget.RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/rl_view_details_button"
+                >
+                <View
+                    android:id="@+id/v2"
+                    android:layout_width="50dp"
+                    android:layout_height="1px"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="6dp"
+                    android:background="@color/black">
+
+                </View>
+                <TextView
+                    android:id="@+id/label_rec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recommended for"
+                    android:layout_toRightOf="@+id/v2"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/medium">
+
+                </TextView>
+                <View
+                    android:id="@+id/v1"
                     android:layout_width="match_parent"
-                    android:layout_height="72dp"
-                    android:layout_alignParentBottom="true"
-                    android:background="@drawable/rl_view_details_button"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="20dp">
+                    android:layout_height="1px"
+                    android:layout_marginLeft="6dp"
+                    android:layout_toRightOf="@+id/label_rec"
+                    android:layout_centerVertical="true"
+                    android:background="@color/black">
 
-                    <TextView
-                        android:id="@+id/tv_starts_from"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="15dp"
-                        android:fontFamily="@font/gillroy_regular"
-                        android:text="Starts From"
-                        android:textColor="@color/white"
-                        android:textSize="12dp" />
-                    <TextView
-                        android:id="@+id/tv_inr_starts_from"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="INR "
-                        android:fontFamily="@font/gillroy_regular"
-                        android:layout_below="@id/tv_starts_from"
-                        android:textColor="@color/white"
-                        android:textSize="13dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginLeft="20dp"/>
-
-                    <TextView
-                        android:id="@+id/tv_amount_buy"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=""
-                        android:textSize="15dp"
-                        android:layout_marginTop="6dp"
-                        android:layout_toRightOf="@id/tv_inr_starts_from"
-                        android:fontFamily="@font/gillroy_medium"
-                        android:layout_below="@id/tv_starts_from"
-                        android:textColor="@color/white" />
-
-                    <TextView
-                        android:id="@+id/tv_details"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Details"
-                        android:fontFamily="@font/gillroy_regular"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:textSize="14dp"
-                        android:layout_marginRight="20dp"
-                        android:textColor="@color/white"/>
-
-
-                </RelativeLayout>
-
-
+                </View>
             </RelativeLayout>
 
-        </RelativeLayout>
 
-    </androidx.cardview.widget.CardView>
+            <RelativeLayout
+                android:id="@+id/rl_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl2"
+                android:layout_marginTop="10dp"
+                android:paddingTop="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true">
+
+
+                <RelativeLayout
+                    android:id="@+id/sample1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/blue_border"
+                    >
+
+
+                    <TextView
+                        android:id="@+id/text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/semibold"
+                        android:text="Used car buyers"
+                        android:textColor="@color/blue"
+                        android:textSize="14dp" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/sample"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toRightOf="@+id/sample1"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/blue_border"
+                    >
+
+
+                    <TextView
+                        android:id="@+id/labekl_mycars"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/semibold"
+                        android:text="All car owners"
+                        android:textColor="@color/blue"
+                        android:textSize="14dp" />
+                </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/sample3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_below="@+id/sample"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/blue_border"
+                        >
+
+
+                        <TextView
+                            android:id="@+id/label3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/semibold"
+                            android:text="All cars out of manufacturer warranty"
+                            android:textColor="@color/blue"
+                            android:textSize="14dp" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </carbon.widget.RelativeLayout>
+    </carbon.widget.LinearLayout>
 
 </RelativeLayout>

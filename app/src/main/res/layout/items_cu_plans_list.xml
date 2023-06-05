@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rl_plan"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/background"
+        android:gravity="center">
+
+
+        <TextView
+            android:id="@+id/text_plans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plan1"
+            android:textColor="@color/text_color"
+            android:gravity="center"
+            android:textSize="12dp"
+            android:visibility="visible"
+            android:fontFamily="@font/semibold"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PopupChooseTypeInsp">
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/semibold"
+        android:text="Inspect your car"
+        android:textColor="@color/black"
+        android:textSize="17dp" />
+
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="7dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/label"
+        android:background="@drawable/cardview_lightgrey_margined"
+
+        >
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/rl_6"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/circle_white"
+            android:backgroundTint="@color/light_green"
+            >
+
+            <ImageView
+                android:id="@+id/imv"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/tick_green" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/validity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/rl_6"
+            android:fontFamily="@font/semibold"
+            android:text="Self Inspection"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:id="@+id/plus_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/self_insp" />
+
+        <TextView
+            android:id="@+id/sample"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/plus_icon"
+            android:lineSpacingExtra="3dp"
+            android:gravity="start"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/medium"
+            android:text="@string/si_dscp"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_m"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_below="@+id/rl1"
+        >
+        <View
+            android:id="@+id/v2"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/label_rec"
+            android:layout_marginRight="6dp"
+            android:background="@color/black">
+
+        </View>
+        <TextView
+            android:id="@+id/label_rec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OR"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:fontFamily="@font/medium">
+
+        </TextView>
+        <View
+            android:id="@+id/v1"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@+id/label_rec"
+            android:layout_centerVertical="true"
+            android:background="@color/black">
+
+        </View>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_m"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="80dp"
+        android:padding="7dp"
+        android:background="@drawable/cardview_lightgrey_margined"
+        >
+
+        <RelativeLayout
+            android:id="@+id/rl_1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/circle_white"
+            android:backgroundTint="@color/light_green"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv2"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/tick_green" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/validity1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/rl_1"
+            android:fontFamily="@font/semibold"
+            android:text="Request Inspection From \nWisedrive"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/sample1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/validity1"
+            android:lineSpacingExtra="3dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/medium"
+            android:gravity="start"
+            android:text="You can request for an engineer to inspect your car. Based on slot availability an engineer will be assigned to inspect your car. That\'s it. Our Generative Sound AI will take care of the rest."
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/max_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/mech_insp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -28,10 +28,13 @@ public class SplashScreen extends AppCompatActivity {
     private static final int SPLASH_DISPLAY_TIME = 2000;
     String customer_support_no,customer_support_email;
     public  Intent intent;
+    String lead_id, c_id,pack_activated;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+        getWindow().setStatusBarColor(getColor(R.color.new_blue));
+       // (SplashScreen)getWindow().setStatusBarColor((SplashScreen)getApplicationContext()).getColor(R.color.white));
         SPHelper.sharedPreferenceInitialization(SplashScreen.this);
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
         progressDialog = new ProgressDialog(SplashScreen.this);
@@ -93,12 +96,13 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             public void run()
             {
-                if(!app_version.equals(getString(R.string.app_version_name))){
-                    Intent intent=new Intent(SplashScreen.this, NotificationPage.class);
-                    startActivity(intent);
-                }else{
+//                if(!app_version.equals(getString(R.string.app_version_name)))
+//                {
+//                    Intent intent=new Intent(SplashScreen.this, NotificationPage.class);
+//                    startActivity(intent);
+//                }else{
                     get_support_details();
-                }
+                //}
             }
         }, SPLASH_DISPLAY_TIME);
     }
@@ -128,20 +132,15 @@ public class SplashScreen extends AppCompatActivity {
                             SPHelper.saveSPdata(SplashScreen.this, SPHelper.customer_support_phoneno, customer_support_no);
                             SPHelper.saveSPdata(SplashScreen.this, SPHelper.customer_support_email, customer_support_email);
                             SPHelper.comingfrom="";
-                            String lead_id=SPHelper.getSPData(SplashScreen.this, SPHelper.lead_id, "");
-                            String c_id=SPHelper.getSPData(SplashScreen.this, SPHelper.customer_id, "");
-                            String pack_activated=SPHelper.getSPData(SplashScreen.this, SPHelper.package_activated, "");
+                             lead_id=SPHelper.getSPData(SplashScreen.this, SPHelper.lead_id, "");
+                             c_id=SPHelper.getSPData(SplashScreen.this, SPHelper.customer_id, "");
+                             pack_activated=SPHelper.getSPData(SplashScreen.this, SPHelper.package_activated, "");
 
                             if(!lead_id.equals("")||!c_id.equals(""))
                             {
-                                if(!c_id.equals("")&&pack_activated.equalsIgnoreCase("n")){
-                                    SPHelper.fragment_is="act";
-                                }else{
-                                    SPHelper.fragment_is="plans";
-                                }
-                                Intent intent=new Intent(SplashScreen.this, CustomerHomepage.class);
-                                startActivity(intent);
-                                finish();
+                                //call api
+                                get_customer_act_status();
+
                             }else{
                                 SPHelper.fragment_is="plans";
                                 Intent intent=new Intent(SplashScreen.this, Login_customer_app.class);
@@ -172,4 +171,79 @@ public class SplashScreen extends AppCompatActivity {
             });
         }
     }
+
+
+    public void get_customer_act_status(){
+        if(!Connectivity.isNetworkConnected(SplashScreen.this))
+        {
+            Toast.makeText(getApplicationContext(),
+                    "Please Check Your Internet",
+                    Toast.LENGTH_SHORT).show();
+        }else
+        {
+
+            Call<AppResponse> call =  apiInterface.get_cust_status(c_id,lead_id);
+            call.enqueue(new Callback<AppResponse>() {
+                @Override
+                public void onResponse(@NotNull Call<AppResponse> call, @NotNull Response<AppResponse> response)
+                {
+                    AppResponse appResponse = response.body();
+                    assert appResponse != null;
+                    String response_code = appResponse.getResponseType();
+                    if (response.body()!=null)
+                    {
+                        if (response_code.equals("200"))
+                        {
+                            String is_active=appResponse.getResponseModel().getGetstatus().getIs_active();
+                            SPHelper.saveSPdata(SplashScreen.this, SPHelper.lead_id, appResponse.getResponseModel().getGetstatus().getLead_id());
+                            SPHelper.saveSPdata(SplashScreen.this, SPHelper.customer_id, appResponse.getResponseModel().getGetstatus().getCustomer_id());
+                            SPHelper.saveSPdata(SplashScreen.this, SPHelper.customer_name, appResponse.getResponseModel().getGetstatus().getCustomer_name());
+                            SPHelper.saveSPdata(SplashScreen.this, SPHelper.customer_phoneno, appResponse.getResponseModel().getGetstatus().getPhone_no());
+                            SPHelper.saveSPdata(SplashScreen.this, SPHelper.cust_mail, appResponse.getResponseModel().getGetstatus().getEmail_id());
+
+                            if(is_active.equalsIgnoreCase("y"))
+                            {
+//                                if(!c_id.equals("")&&pack_activated.equalsIgnoreCase("n")){
+//                                    SPHelper.fragment_is="act";
+//                                }else{
+//                                    SPHelper.fragment_is="plans";
+//                                }
+                                if(!app_version.equals(getString(R.string.app_version_name)))
+                                {
+                                    Intent intent=new Intent(SplashScreen.this, NotificationPage.class);
+                                    startActivity(intent);
+                                }else {
+                                    SPHelper.fragment_is="plans";
+                                    Intent intent=new Intent(SplashScreen.this, CustomerHomepage.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+
+                            }else {
+                                SPHelper.fragment_is="plans";
+                                Intent intent=new Intent(SplashScreen.this, Login_customer_app.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        }
+                        else if (response_code.equals("300")) {
+                            Toast.makeText(SplashScreen.this, appResponse.getResponseModel().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    } else{
+
+                        Toast.makeText(SplashScreen.this, "internal server error" , Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(@NotNull Call<AppResponse> call, @NotNull Throwable t) {
+                    Toast.makeText(getApplicationContext(),
+                            t.getMessage(),
+                            Toast.LENGTH_SHORT).show();
+
+                }
+            });
+        }
+    }
+
 }

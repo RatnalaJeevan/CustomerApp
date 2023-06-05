@@ -46,4 +46,32 @@ public class PojoCouponList {
     public String getIs_valid() {
         return is_valid;
     }
+
+    public void setExpiration_date(String expiration_date) {
+        this.expiration_date = expiration_date;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setCoupon_id(String coupon_id) {
+        this.coupon_id = coupon_id;
+    }
+
+    public void setDiscount_amount(double discount_amount) {
+        this.discount_amount = discount_amount;
+    }
+
+    public void setCoupon_code(String coupon_code) {
+        this.coupon_code = coupon_code;
+    }
+
+    public void setCoupon_type(String coupon_type) {
+        this.coupon_type = coupon_type;
+    }
+
+    public void setIs_valid(String is_valid) {
+        this.is_valid = is_valid;
+    }
 }

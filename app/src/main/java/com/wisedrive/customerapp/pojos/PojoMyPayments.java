@@ -20,6 +20,13 @@ public class PojoMyPayments {
     @SerializedName("AddonHistory")
     ArrayList<PojoPaidAddonList> AddonHistory;
 
+    @SerializedName("ProductList")
+    private ArrayList<Pojo_Service_Includes> ProductList;
+
+    public ArrayList<Pojo_Service_Includes> get_product_list() {
+        return ProductList;
+    }
+
     public String getVehicle_make() {
         return vehicle_make;
     }

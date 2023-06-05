@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transperant"
+    tools:context=".AddYourCar">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="620dp"
+        android:layout_centerInParent="true"
+        android:background="@color/white"
+        >
+
+    <RelativeLayout
+        android:id="@+id/rl_label"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/rl_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/back_arrow" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Make"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/rl_back"
+            android:layout_centerVertical="true"
+            android:textSize="18dp"
+            android:fontFamily="@font/medium"
+            android:layout_marginLeft="16dp">
+
+        </TextView>
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:padding="5dp"
+            android:src="@drawable/cancel"
+            android:layout_marginRight="10dp"/>
+
+
+    </RelativeLayout>
+
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rl_label">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:visibility="gone"
+                android:id="@+id/rv_make"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:visibility="gone"
+                android:id="@+id/rv_model"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp" />
+
+    <RelativeLayout
+
+        android:id="@+id/rl_basic_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+        <TextView
+            android:id="@+id/label1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Select Fuel"
+            android:textColor="@color/cement"
+            android:textSize="14dp"
+            android:fontFamily="@font/medium"
+            android:layout_marginLeft="20dp">
+
+        </TextView>
+
+        <RelativeLayout
+            android:id="@+id/rl_petrol"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label1"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/make_background_white">
+
+            <ImageView
+                android:id="@+id/iv_pet"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerHorizontal="true"
+
+                android:src="@drawable/pet_icon"/>
+
+            <TextView
+                android:id="@+id/petrol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_pet"
+                android:text="Petrol"
+                android:textColor="@color/black"
+                android:layout_centerHorizontal="true"
+                android:textSize="13dp"
+                android:fontFamily="@font/medium"
+                android:layout_marginTop="15dp">
+
+            </TextView>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rl_diesel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label1"
+            android:layout_toRightOf="@+id/rl_petrol"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/make_background_white">
+
+            <ImageView
+                android:id="@+id/make_logo"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/diesl_icon"/>
+
+            <TextView
+                android:id="@+id/brand_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/make_logo"
+                android:text="Diesel"
+                android:textColor="@color/black"
+                android:layout_centerHorizontal="true"
+                android:textSize="13dp"
+                android:fontFamily="@font/medium"
+                android:layout_marginTop="15dp">
+
+            </TextView>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/label2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Transmission"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/rl_diesel"
+            android:textColor="@color/cement"
+            android:textSize="14dp"
+            android:fontFamily="@font/medium"
+            android:layout_marginLeft="10dp">
+
+        </TextView>
+
+        <RelativeLayout
+            android:id="@+id/rl_auto"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/label2"
+            android:background="@drawable/make_background_white">
+
+            <ImageView
+                android:id="@+id/iv_auto"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/gear_icon"/>
+
+            <TextView
+                android:id="@+id/auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_auto"
+                android:text="Automatic"
+                android:textColor="@color/black"
+                android:layout_centerHorizontal="true"
+                android:textSize="13dp"
+                android:fontFamily="@font/medium"
+                android:layout_marginTop="15dp">
+
+            </TextView>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rl_trans"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label2"
+            android:layout_toRightOf="@+id/rl_auto"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/make_background_white">
+
+            <ImageView
+                android:id="@+id/trans"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/trans_icon"/>
+
+            <TextView
+                android:id="@+id/label_trans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/trans"
+                android:text="Manual"
+                android:textColor="@color/black"
+                android:layout_centerHorizontal="true"
+                android:textSize="13dp"
+                android:fontFamily="@font/medium"
+                android:layout_marginTop="15dp">
+
+            </TextView>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/label3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Year"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/rl_trans"
+            android:textColor="@color/cement"
+            android:textSize="14dp"
+            android:fontFamily="@font/medium"
+            android:layout_marginLeft="10dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/label4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/cv"
+            android:text="Ownership"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/rl_trans"
+            android:textColor="@color/cement"
+            android:textSize="14dp"
+            android:fontFamily="@font/medium"
+            >
+
+        </TextView>
+
+        <View
+            android:id="@+id/cv"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_centerHorizontal="true">
+
+        </View>
+        <RelativeLayout
+            android:id="@+id/rl_sel_year"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/cv"
+            android:layout_below="@+id/label3"
+            android:layout_marginLeft="10dp">
+
+            <ImageView
+                android:id="@+id/add_y"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:padding="5dp"
+                android:src="@drawable/plus"
+                />
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/sub_y"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:padding="5dp"
+                android:src="@drawable/minus"
+                android:layout_marginRight="10dp"/>
+
+            <TextView
+                android:id="@+id/year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2008"
+                android:textColor="@color/black"
+                android:layout_centerHorizontal="true"
+                android:textSize="15dp"
+                android:fontFamily="@font/semibold"
+                android:layout_centerVertical="true">
+
+            </TextView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rl_sel_owner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_toRightOf="@+id/cv"
+            android:layout_below="@+id/label3"
+           >
+
+            <ImageView
+                android:id="@+id/add_o"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:padding="5dp"
+                android:src="@drawable/plus"
+                />
+
+            <ImageView
+                android:id="@+id/sub_o"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:padding="5dp"
+                android:src="@drawable/minus"
+                android:layout_marginRight="10dp"/>
+
+            <TextView
+                android:id="@+id/owner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textColor="@color/black"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:textSize="15dp"
+                android:fontFamily="@font/semibold">
+
+            </TextView>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/label5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kms"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/rl_sel_owner"
+            android:textColor="@color/cement"
+            android:textSize="14dp"
+            android:fontFamily="@font/medium"
+            android:layout_marginLeft="10dp">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/selected_kms"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_below="@+id/label5"
+            android:layout_toLeftOf="@+id/cv"
+            android:layout_marginRight="10dp"
+            android:textSize="13dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/bold"
+            android:paddingLeft="20dp"
+            android:inputType="number"
+            android:maxLength="6"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:background="@drawable/edit_background"/>
+        <TextView
+            android:id="@+id/label6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/cv"
+            android:text="Color"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/rl_sel_owner"
+            android:textColor="@color/cement"
+            android:textSize="14dp"
+            android:fontFamily="@font/medium">
+
+        </TextView>
+        <EditText
+            android:id="@+id/selected_clr"
+            android:layout_width="100dp"
+            android:layout_height="44dp"
+            android:layout_below="@+id/label6"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/cv"
+            android:textSize="13dp"
+            android:fontFamily="@font/bold"
+            android:layout_alignParentEnd="true"
+            android:paddingLeft="10dp"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:digits=" ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:inputType="textCapCharacters"
+            android:textColor="@color/black"
+            android:background="@drawable/edit_background"/>
+
+        <TextView
+            android:id="@+id/label7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vehicle No."
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/selected_kms"
+            android:textColor="@color/cement"
+            android:textSize="14dp"
+            android:fontFamily="@font/medium"
+            android:layout_marginLeft="10dp">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/selected_vehno"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_below="@+id/label7"
+            android:textSize="13dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/bold"
+            android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:inputType="textCapCharacters"
+            android:maxLength="15"
+            android:maxLines="1"
+            android:paddingStart="20dp"
+            android:textColor="@color/black"
+            android:background="@drawable/edit_background"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_add1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/selected_vehno"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/cardview_lightgrey_margined"
+            android:backgroundTint="@color/black"
+            android:paddingStart="7dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/label_add1_car"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/semibold"
+                android:text="Add Car"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

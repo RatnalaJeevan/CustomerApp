@@ -6,9 +6,8 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-
+import carbon.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,6 +16,8 @@ import com.wisedrive.customerapp.commonclasses.SPHelper;
 import com.wisedrive.customerapp.pojos.Pojo_Claim_Type_New_Cus_App;
 
 import java.util.ArrayList;
+
+
 
 public class Adapter_Claim_Type_New_Cus_App extends RecyclerView.Adapter<Adapter_Claim_Type_New_Cus_App.MyViewHolder> {
     Context context;
@@ -41,14 +42,13 @@ public class Adapter_Claim_Type_New_Cus_App extends RecyclerView.Adapter<Adapter
         holder. tv_claim_type.setText(list.getClaim_name());
         if (selectedPosition == position) {
             holder.rl_select_claim.setSelected(true); //using selector drawable
-            holder.rl_select_claim.setBackgroundResource(R.drawable.vehicle_blue_back);
-            holder. tv_claim_type.setTextColor(Color.parseColor("#0619c3"));
+            holder.rl_select_claim.setBackgroundResource(R.color.black);
+            holder. tv_claim_type.setTextColor(Color.parseColor("#FFFFFFFF"));
 
         } else {
             holder.rl_select_claim.setSelected(false);
-            holder.rl_select_claim.setBackgroundResource(R.drawable.rl_date_background);
-            holder. tv_claim_type.setTextColor(Color.parseColor("#c7c7cc"));
-
+            holder.rl_select_claim.setBackgroundResource(R.drawable.grey_marg);
+            holder. tv_claim_type.setTextColor(Color.parseColor("#252a40"));
         }
 
         holder.rl_select_claim.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +62,6 @@ public class Adapter_Claim_Type_New_Cus_App extends RecyclerView.Adapter<Adapter
                     notifyItemChanged(selectedPosition);
                 selectedPosition = holder.getAdapterPosition();
                 notifyItemChanged(selectedPosition);
-
             }
         });
 

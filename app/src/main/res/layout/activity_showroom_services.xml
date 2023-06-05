@@ -4,20 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/text_color1"
+    android:background="@color/new_app_bg"
     tools:context=".Activity_Showroom_Services">
 
     <RelativeLayout
         android:id="@+id/rl_heading"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/brown">
+        android:layout_height="50dp"
+        >
         <ImageView
             android:id="@+id/back"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_centerVertical="true"
-            android:src="@drawable/back"
+            android:src="@drawable/back_new_black"
             android:layout_marginLeft="20dp"/>
 
         <TextView
@@ -28,12 +28,13 @@
             android:layout_toLeftOf="@+id/expired"
             android:layout_toRightOf="@id/back"
             android:layout_centerVertical="true"
-            android:textSize="20dp"
+            android:textSize="16dp"
             android:layout_marginLeft="20dp"
             android:textColor="@color/black"
-            android:fontFamily="@font/gillroy_regular"/>
+            android:fontFamily="@font/medium"/>
 
         <TextView
+            android:visibility="gone"
             android:id="@+id/expired"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,7 +45,26 @@
             android:textSize="15dp"
             android:layout_marginLeft="20dp"
             android:textColor="@color/red_1"
-            android:fontFamily="@font/gillroy_semibold"/>
+            android:fontFamily="@font/semibold"/>
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/rl_call"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/rl_circle_call">
+
+            <ImageView
+                android:id="@+id/call_icon"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/tele_black" />
+
+        </RelativeLayout>
 
     </RelativeLayout>
 
@@ -54,7 +74,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/rl_heading"
         android:layout_marginTop="10dp"
-        android:background="@drawable/confirmation_background">
+        >
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -74,23 +94,20 @@
         android:elevation="10dp"
         >
 
-        <RelativeLayout
-            android:id="@+id/rl_transperant1"
-            android:layout_width="match_parent"
-            android:layout_height="240dp"/>
 
         <RelativeLayout
             android:id="@+id/rl1_bottom"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/rl_back"
-            android:layout_below="@id/rl_transperant1">
+            >
 
             <RelativeLayout
                 android:id="@+id/rl_select_service"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="@drawable/rl_service_status_bg">
+                android:layout_height="50dp"
+                android:background="@color/new_app_bg"
+                >
 
             <TextView
                 android:id="@+id/tv_select_service"
@@ -98,31 +115,150 @@
                 android:layout_height="wrap_content"
                 android:text="Service Status"
                 android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textSize="16dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/gillroy_regular"/>
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/regular"/>
 
                 <RelativeLayout
-                    android:id="@+id/rl_call"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="10dp"
+                    android:id="@+id/rl_transperant1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
                     android:layout_marginRight="20dp"
-                    android:background="@drawable/rl_circle_call">
+                    android:layout_alignParentRight="true">
 
-                <ImageView
-                    android:id="@+id/call_icon"
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/call_2"/>
+
+                    <ImageView
+                        android:id="@+id/close"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/cf_ic_cf_close" />
+                    />
 
                 </RelativeLayout>
 
             </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rl1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_below="@+id/rl_select_service"
+                android:padding="7dp"
+                >
 
+                <com.wisedrive.customerapp.commonclasses.DottedLineView
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_below="@+id/rl_label"
+                    >
+
+                </com.wisedrive.customerapp.commonclasses.DottedLineView>
+                <carbon.widget.RelativeLayout
+
+                    android:id="@+id/rl_image"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="15dp"
+                    app:carbon_cornerRadius="5dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/image_logo"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_centerInParent="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/sample_advisor" />
+
+                </carbon.widget.RelativeLayout>
+                <RelativeLayout
+
+                    android:id="@+id/rl_label"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_image"
+                    android:layout_marginTop="-10dp"
+                    android:padding="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/add_car_bg"
+                    android:backgroundTint="@color/black"
+                    >
+
+
+                    <TextView
+                        android:id="@+id/image_car"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Call"
+                        android:textSize="10dp"
+                        android:fontFamily="@font/semibold"
+                        android:textColor="@color/white"
+                        android:layout_centerVertical="true"
+                        />
+
+                    <ImageView
+                        android:id="@+id/call"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="8dp"
+                        android:layout_toRightOf="@+id/image_car"
+                        android:src="@drawable/telephone_call" />
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/service_advs_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/rl_image"
+                    android:text="G Murthy"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/semibold"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/service_advs_name"
+                    android:layout_marginTop="2dp"
+                    android:layout_toRightOf="@+id/rl_image"
+                    android:text="Service Advisor"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/semibold"/>
+
+                <carbon.widget.RelativeLayout
+                    android:visibility="gone"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toEndOf="@+id/rl_image"
+                    android:layout_below="@+id/tv_status"
+                    android:background="@drawable/light_grey_mar"
+                    >
+
+                    <ImageView
+                        android:id="@+id/plus_icon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/call_2" />
+                </carbon.widget.RelativeLayout>
+            </RelativeLayout>
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_select_service_status"
                 android:layout_width="match_parent"
@@ -131,7 +267,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="15dp"
-                android:layout_below="@id/rl_select_service"/>
+                android:layout_below="@id/rl1"/>
         </RelativeLayout>
 
         </RelativeLayout>
@@ -141,18 +277,19 @@
         android:id="@+id/rl_select_dates"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:elevation="10dp"
+        android:elevation="20dp"
         android:background="@color/transperant">
         <RelativeLayout
             android:id="@+id/rl_transperant2"
             android:layout_width="match_parent"
-            android:layout_height="350dp"/>
+            android:layout_height="match_parent"
+            android:layout_above="@+id/rl_select_date"/>
 
         <RelativeLayout
             android:id="@+id/rl_select_date"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/rl_transperant2"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             android:background="@drawable/rl_select_date_background"
             >
 
@@ -162,30 +299,264 @@
                 android:layout_height="wrap_content"
                 android:text="Select Date"
                 android:textColor="@color/black"
-                android:textSize="20dp"
-                android:layout_marginLeft="15dp"
+                android:textSize="16dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="15dp"
-                android:fontFamily="@font/gillroy_regular"/>
+                android:fontFamily="@font/regular"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_select_date"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_select_date"
+                android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
-                android:layout_above="@+id/confirm"
-                android:layout_below="@id/tv_select_date"/>
+                />
+
+            <RelativeLayout
+                android:id="@+id/rl_location"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_below="@id/rl_address"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/image_location"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:padding="2dp"
+                    android:src="@drawable/pin"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/tv_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Location"
+                    android:layout_toRightOf="@id/image_location"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="15dp"
+                    android:textColor="@color/bg_missing_item_txt"
+                    android:fontFamily="@font/semibold"/>
+
+                <EditText
+                    android:id="@+id/cust_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/image_location"
+                    android:layout_marginRight="20dp"
+                    android:hint="Enter Location"
+                    android:textColorHint="@color/lightgrey"
+                    android:layout_centerVertical="true"
+                    android:gravity="center|left"
+                    android:digits=" abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:fontFamily="@font/bold"
+                    android:paddingLeft="10dp"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/edit_background"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rv_select_date">
+
+                <ImageView
+                    android:id="@+id/image_address"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:padding="2dp"
+                    android:src="@drawable/pin"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/tv_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enter Address"
+                    android:layout_toRightOf="@id/image_address"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="15dp"
+                    android:textColor="@color/bg_missing_item_txt"
+                    android:fontFamily="@font/semibold"/>
+
+                <TextView
+                    android:id="@+id/change_adress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@+id/tv_address"
+                    android:background="@drawable/addons_pay_bacground"
+                    android:fontFamily="@font/semibold"
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="5dp"
+                    android:text="Change Address"
+                    android:textColor="@color/blue"
+                    android:textSize="12dp" />
+                <EditText
+                    android:id="@+id/cust_adress"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="15dp"
+                    android:paddingStart="8dp"
+                    android:paddingTop="8dp"
+                    android:maxLength="100"
+                    android:maxLines="2"
+                    android:lineSpacingExtra="2dp"
+                    android:textSize="15dp"
+                    android:hint="Enter Dr-no, street, cross, main road"
+                    android:textColorHint="@color/lightgrey"
+                    android:fontFamily="@font/semibold"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:layout_below="@id/tv_address"
+                    android:textColor="@color/black"
+                    android:gravity="start"
+                    android:background="@drawable/edit_background"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_pincode"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/rl_location"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/iv_pincode"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/state_city_icon"
+                    android:padding="5dp">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/label_pincode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toRightOf="@+id/iv_pincode"
+                    android:fontFamily="@font/semibold"
+                    android:gravity="center"
+                    android:text="Pincode"
+                    android:textColor="@color/bg_missing_item_txt"
+                    android:textSize="15dp">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/cust_pincode"
+                    android:layout_width="180dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:paddingStart="8dp"
+                    android:textSize="16dp"
+                    android:gravity="center|left"
+                    android:textColor="@color/black"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:fontFamily="@font/semibold"
+                    android:background="@drawable/edit_background"
+                    >
+
+                </EditText>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/rl_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_pincode"
+                android:layout_toLeftOf="@+id/v1"
+                android:layout_marginTop="10dp">
+
+
+                <TextView
+                    android:id="@+id/selected_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:paddingStart="8dp"
+                    android:fontFamily="@font/semibold"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:background="@drawable/edit_background"
+                    >
+
+                </TextView>
+            </RelativeLayout>
+                <View
+                    android:id="@+id/v1"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
+                    android:layout_centerHorizontal="true">
+
+                </View>
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/rl_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_pincode"
+                android:layout_toRightOf="@+id/v1"
+                android:layout_marginTop="10dp">
+
+
+                <TextView
+                    android:id="@+id/selected_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:paddingStart="8dp"
+                    android:fontFamily="@font/semibold"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:background="@drawable/edit_background"
+                    >
+
+                </TextView>
+            </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/confirm"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
+                android:layout_below="@+id/rl_state"
+                android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
-                android:layout_alignParentBottom="true"
-                android:background="@drawable/addons_pay_bacground">
+                android:background="@drawable/addons_pay_bacground"
+                android:backgroundTint="@color/black">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -193,12 +564,56 @@
                     android:layout_centerInParent="true"
                     android:fontFamily="@font/poppins_bold"
                     android:text="CONFIRM"
-                    android:textColor="@color/blue"
+                    android:textColor="@color/white"
                     android:textSize="15dp" />
             </RelativeLayout>
-        </RelativeLayout>
+            </RelativeLayout>
+
+
     </RelativeLayout>
 
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rl_select_adress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="20dp"
+        android:background="@color/transperant">
+        <RelativeLayout
+            android:id="@+id/rl_transperant3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/rl_select_adreess"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_select_adreess"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_alignParentBottom="true"
+            android:paddingBottom="20dp"
+            android:background="@drawable/rl_select_date_background"
+            >
+
+            <TextView
+                android:id="@+id/tv_select_adress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Address"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/regular"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_select_adres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_select_adress">
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </RelativeLayout>
+    </RelativeLayout>
     <ProgressBar
         android:visibility="gone"
         android:id="@+id/idPBLoading"

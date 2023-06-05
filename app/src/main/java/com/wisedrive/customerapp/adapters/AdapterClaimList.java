@@ -8,11 +8,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.wisedrive.customerapp.Comprehensive_Warranty;
+import com.wisedrive.customerapp.ClaimWarranty;
 import com.wisedrive.customerapp.R;
+import com.wisedrive.customerapp.commonclasses.Common;
 import com.wisedrive.customerapp.commonclasses.SPHelper;
 import com.wisedrive.customerapp.pojos.PojoNewClaimList;
 
@@ -41,20 +41,21 @@ public class AdapterClaimList extends  RecyclerView.Adapter<AdapterClaimList.Rec
         holder.tv_status.setText(recyclerdata.getStatus_name());
         holder.veh_make_model.setText(recyclerdata.getVehicle_make()+"-"+recyclerdata.getVehicle_model());
         holder.veh_no.setText(recyclerdata.getVehicle_no());
+        holder.tv_claim_date.setText(Common.getDateFromString(recyclerdata.getRequested_on()));
 
          if(recyclerdata.getStatus_id().equals("17")||recyclerdata.getStatus_id().equals("18")||
          recyclerdata.getStatus_id().equals("19")){
-            holder.rl_status.setBackgroundColor(ContextCompat.getColor(context, R.color.red_1));
+           // holder.rl_status.setBackgroundColor(ContextCompat.getColor(context, R.color.red_1));
         }
         else  {
-            holder.rl_status.setBackgroundColor(ContextCompat.getColor(context, R.color.dark_green));
+           // holder.rl_status.setBackgroundColor(ContextCompat.getColor(context, R.color.dark_green));
         }
         holder.rl_status.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 SPHelper.claim_id=recyclerdata.getClaim_id();
-                ((Comprehensive_Warranty)context).get_track_list();
-                ((Comprehensive_Warranty)context).rl_track_claim_status.setVisibility(View.VISIBLE);
+                ((ClaimWarranty)context).get_track_list();
+                ((ClaimWarranty)context).rl_track_claim_status.setVisibility(View.VISIBLE);
             }
         });
     }
@@ -65,7 +66,7 @@ public class AdapterClaimList extends  RecyclerView.Adapter<AdapterClaimList.Rec
     }
 
     public class RecyclerViewHolder extends RecyclerView.ViewHolder {
-        TextView veh_make_model,veh_no,claim_type,tv_status;
+        TextView veh_make_model,veh_no,claim_type,tv_status,tv_claim_date;
         RelativeLayout rl_status;
         public RecyclerViewHolder(@NonNull View itemView) {
 
@@ -75,6 +76,7 @@ public class AdapterClaimList extends  RecyclerView.Adapter<AdapterClaimList.Rec
             claim_type=itemView.findViewById(R.id.claim_type);
             tv_status=itemView.findViewById(R.id.tv_status);
             rl_status=itemView.findViewById(R.id.rl_status);
+            tv_claim_date=itemView.findViewById(R.id.tv_claim_date);
         }
     }
 }

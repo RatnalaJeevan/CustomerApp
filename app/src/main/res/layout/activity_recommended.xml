@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:fontFamily="@font/gillroy_medium"
+            android:fontFamily="@font/medium"
             android:text="Recommended"
             android:textColor="@color/blue"
             android:textSize="16dp" />
@@ -43,7 +43,7 @@
             android:layout_marginRight="20dp"
             android:textSize="28dp"
             android:textColor="@color/red"
-            android:fontFamily="@font/gillroy_bold"/>
+            android:fontFamily="@font/bold"/>
 
         <TextView
             android:id="@+id/tv_money"
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:text="money"
             android:textSize="28dp"
-            android:fontFamily="@font/gillroy_regular"
+            android:fontFamily="@font/regular"
             android:textColor="@color/black"
             android:layout_toRightOf="@id/tv_dont_spend"/>
 
@@ -65,7 +65,7 @@
             android:layout_marginTop="-10dp"
             android:layout_marginLeft="20dp"
             android:textColor="@color/red"
-            android:fontFamily="@font/gillroy_bold"
+            android:fontFamily="@font/bold"
             android:layout_below="@id/tv_dont_spend"/>
 
         <TextView
@@ -80,7 +80,7 @@
             android:layout_marginRight="25dp"
             android:layout_marginTop="-5dp"
             android:textColor="@color/black"
-            android:fontFamily="@font/gillroy_regular"/>
+            android:fontFamily="@font/regular"/>
 
     </RelativeLayout>
 
@@ -99,7 +99,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:fontFamily="@font/gillroy_regular"
+            android:fontFamily="@font/regular"
             android:text="No,I'll take risk"
             android:textColor="@color/red"
             android:textSize="20dp" />
@@ -121,7 +121,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:fontFamily="@font/gillroy_regular"
+            android:fontFamily="@font/regular"
             android:text="Upgrade,Save my money"
             android:textColor="@color/blue"
             android:textSize="20dp" />
@@ -152,7 +152,7 @@
             android:layout_marginRight="30dp"
             android:textSize="15dp"
             android:layout_centerVertical="true"
-            android:fontFamily="@font/gillroy_regular"/>
+            android:fontFamily="@font/regular"/>
 
 
 

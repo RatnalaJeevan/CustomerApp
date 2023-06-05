@@ -1,25 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
-        android:id="@+id/rl_vehicle_background"
-        android:layout_width="180dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:background="@drawable/rl_date_background">
+        android:id="@+id/rl_car_info"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+
+        android:layout_marginRight="15dp"
+        android:paddingStart="7dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/cardview_lightgrey_margined"
+        android:backgroundTint="#dbc4d9"
+        >
+
+        <RelativeLayout
+
+            android:id="@+id/rl_select_button"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/circle_margined"
+            >
+
+
+            <ImageView
+                android:id="@+id/white_check"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/tick_wd_bg"
+                android:visibility="invisible" />
+
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/make_model"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/semibold"
+            android:text="Maruthi Dzire"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/tv_vehicle_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:fontFamily="@font/gillroy_medium"
-            android:text="KA01234566"
-            android:textColor="@color/middle_gray"
-            android:textSize="14dp" />
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/make_model"
+            android:fontFamily="@font/medium"
+            android:text="KA00KA0000"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/tv_vehicle_no">
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/more_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/regular"
+                android:text="VDI"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+            <View
+                android:id="@+id/v11"
+                android:layout_width="2dp"
+                android:layout_height="2dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/more_details"
+                android:background="@color/black">
+
+            </View>
+            <TextView
+                android:id="@+id/fuel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/v11"
+                android:fontFamily="@font/regular"
+                android:text="Diesel"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+            <View
+                android:id="@+id/v2"
+                android:layout_width="2dp"
+                android:layout_height="2dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/fuel"
+                android:background="@color/black">
+
+            </View>
+
+            <TextView
+                android:id="@+id/year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/v2"
+                android:fontFamily="@font/regular"
+                android:text="Oct 2018"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+        </RelativeLayout>
+
 
     </RelativeLayout>
 

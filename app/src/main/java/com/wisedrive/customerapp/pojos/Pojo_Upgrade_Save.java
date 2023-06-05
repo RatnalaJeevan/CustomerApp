@@ -32,6 +32,12 @@ public class Pojo_Upgrade_Save {
     String main_package_id;
     @SerializedName("icon_url")
     String icon_url;
+    @SerializedName("original_price")
+    double original_price;
+
+    public double getOriginal_price() {
+        return original_price;
+    }
 
     public String getIcon_url() {
         return icon_url;

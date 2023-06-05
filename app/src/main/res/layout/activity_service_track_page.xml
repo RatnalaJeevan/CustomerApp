@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ServiceTrackPage">
+
+    <RelativeLayout
+
+        android:id="@+id/rl_track_service_status"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transperant"
+        android:elevation="10dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/rl1_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rl_back"
+            >
+
+            <RelativeLayout
+                android:id="@+id/rl_select_service"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                >
+
+                <TextView
+                    android:id="@+id/tv_select_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/rl_transperant1"
+                    android:text="Service Status"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/regular"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_transperant1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_centerVertical="true">
+
+
+                    <ImageView
+                        android:id="@+id/close"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/back_new_black" />
+                    />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/rl_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_select_service">
+
+
+            <TextView
+                android:id="@+id/service_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="General Service Standard"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="30dp"
+                android:textSize="15dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/semibold"
+                />
+
+            <TextView
+                android:id="@+id/tv_service_on"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/service_name"
+                android:layout_marginTop="3dp"
+                android:text="Nandi Toyota, Bangalore"
+                android:layout_marginLeft="30dp"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:fontFamily="@font/medium"/>
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/service_name"
+                android:text="19th Apr '23"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="-5dp"
+                android:textColor="@color/black"
+                android:textSize="12dp"
+                android:fontFamily="@font/semibold"/>
+            <com.wisedrive.customerapp.commonclasses.DottedLineView
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_below="@+id/tv_service_on"
+                >
+
+            </com.wisedrive.customerapp.commonclasses.DottedLineView>
+
+            <RelativeLayout
+                android:id="@+id/rl1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_below="@+id/view1"
+                android:padding="7dp"
+                >
+
+
+                <carbon.widget.RelativeLayout
+
+                    android:id="@+id/rl_image"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="10dp"
+                    app:carbon_cornerRadius="5dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/image_logo"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_centerInParent="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/sample_advisor" />
+
+                </carbon.widget.RelativeLayout>
+                <RelativeLayout
+
+                    android:id="@+id/rl_label"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_image"
+                    android:layout_marginTop="-10dp"
+                    android:padding="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/add_car_bg"
+                    android:backgroundTint="@color/black"
+                    >
+
+
+                    <TextView
+                        android:id="@+id/image_car"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Call"
+                        android:textSize="10dp"
+                        android:fontFamily="@font/semibold"
+                        android:textColor="@color/white"
+                        android:layout_centerVertical="true"
+                        />
+
+                    <ImageView
+                        android:id="@+id/call"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="8dp"
+                        android:layout_toRightOf="@+id/image_car"
+                        android:src="@drawable/telephone_call" />
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/service_advs_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/rl_image"
+                    android:text="G Murthy"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/semibold"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/service_advs_name"
+                    android:layout_marginTop="2dp"
+                    android:layout_toRightOf="@+id/rl_image"
+                    android:text="Service Advisor"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/medium"/>
+
+                <carbon.widget.RelativeLayout
+                    android:visibility="gone"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toEndOf="@+id/rl_image"
+                    android:layout_below="@+id/tv_status"
+                    android:background="@drawable/light_grey_mar"
+                    >
+
+                    <ImageView
+                        android:id="@+id/plus_icon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/call_2" />
+                </carbon.widget.RelativeLayout>
+            </RelativeLayout>
+            <com.wisedrive.customerapp.commonclasses.DottedLineView
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_below="@+id/rl1"
+                >
+
+            </com.wisedrive.customerapp.commonclasses.DottedLineView>
+
+            </RelativeLayout>
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/rl_top">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_select_service_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="30dp"
+                        android:layout_below="@+id/rv_select_service_status"
+                        android:layout_marginLeft="30dp"
+                        >
+
+                        <TextView
+
+                            android:id="@+id/cancel_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cancel Booking"
+                            android:textSize="14dp"
+                            android:fontFamily="@font/semibold"
+                            android:textColor="@color/red_2"
+                            android:layout_centerVertical="true"
+                            />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </androidx.core.widget.NestedScrollView>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

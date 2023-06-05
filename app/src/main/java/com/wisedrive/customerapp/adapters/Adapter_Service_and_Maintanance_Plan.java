@@ -51,12 +51,12 @@ public class Adapter_Service_and_Maintanance_Plan extends RecyclerView.Adapter<A
         Pojo_Service_and_Maintanance_Plans recyclerdata = pojo_service_and_maintanance_plansArrayList.get(position);
         IndianCurrencyFormat = new DecimalFormat("##,##,###");
         holder.tv_maintanance_plan.setText(recyclerdata.getDisplay_name());
-        if((int)recyclerdata.getAmount_saved()==0){
-            holder.rl1.setVisibility(View.GONE);
-        }else{
-            holder.rl1.setVisibility(View.VISIBLE);
-            holder.tv_rupee.setText(IndianCurrencyFormat.format((int)recyclerdata.getAmount_saved()));
-        }
+//        if((int)recyclerdata.getAmount_saved()==0){
+//            holder.rl1.setVisibility(View.GONE);
+//        }else{
+//            holder.rl1.setVisibility(View.VISIBLE);
+//            holder.tv_rupee.setText(IndianCurrencyFormat.format((int)recyclerdata.getAmount_saved()));
+//        }
 
         holder.tv_amount_buy.setText(IndianCurrencyFormat.format((int)recyclerdata.getFinal_price()));
         serviceDetails=new ArrayList<>();
@@ -66,6 +66,7 @@ public class Adapter_Service_and_Maintanance_Plan extends RecyclerView.Adapter<A
         rv_service_details.setLayoutManager(linearLayoutManager1);
         rv_service_details.setAdapter(adapterServiceDetails);
         adapterServiceDetails.notifyDataSetChanged();
+
         holder.rl_view_details_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

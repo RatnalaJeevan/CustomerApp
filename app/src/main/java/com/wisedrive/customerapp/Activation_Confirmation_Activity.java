@@ -59,7 +59,6 @@ public class Activation_Confirmation_Activity extends AppCompatActivity {
             }
         });
         getPayment_confirm_page();
-
     }
 
     public  void getPayment_confirm_page()

@@ -5,39 +5,125 @@
     <RelativeLayout
         android:id="@+id/rl_select_date"
         android:layout_width="120dp"
-        android:layout_height="55dp"
+        android:layout_height="65dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:background="@drawable/rl_date_background">
+
+        <RelativeLayout
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingBottom="5dp">
+
+            <ImageView
+                android:id="@+id/white_check"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/white_tick"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/white_check"
+                android:fontFamily="@font/medium"
+                android:text="04 Feb,Mon"
+                android:textColor="@color/bg_missing_item_txt"
+                android:textSize="12dp" />
+
+            <TextView
+
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_date"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="3dp"
+                android:layout_toRightOf="@id/white_check"
+                android:fontFamily="@font/medium"
+                android:text="09:20 pm"
+                android:textColor="@color/bg_missing_item_txt"
+                android:textSize="10dp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+
+        android:id="@+id/rl_cal"
+        android:layout_width="120dp"
+        android:layout_height="65dp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
-        android:background="@drawable/rl_date_background">
+        android:paddingTop="5dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/rl_date_background"
+        android:backgroundTint="@color/profile_text"
+       >
+
         <RelativeLayout
             android:layout_width="120dp"
-            android:layout_height="55dp"
-            android:layout_centerInParent="true">
-
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingBottom="5dp">
         <ImageView
-            android:id="@+id/white_check"
+            android:id="@+id/white_check1"
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
             android:src="@drawable/white_tick"
-            android:visibility="gone"/>
+             />
 
         <TextView
-            android:id="@+id/tv_date"
+            android:id="@+id/tv_date1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="04 Feb,Mon"
-            android:layout_centerInParent="true"
-            android:textSize="12dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
             android:layout_marginLeft="5dp"
-            android:layout_toRightOf="@id/white_check"
-            android:fontFamily="@font/gillroy_medium"
-            android:textColor="@color/heading"/>
+            android:layout_toRightOf="@id/white_check1"
+            android:fontFamily="@font/medium"
+            android:text="apri 5"
+            android:textColor="@color/white"
+            android:textSize="12dp" />
+        <TextView
+            android:id="@+id/tv_time1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_date1"
+            android:layout_marginLeft="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_toRightOf="@id/white_check1"
+            android:fontFamily="@font/medium"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="10dp" />
         </RelativeLayout>
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/calendar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/calendar_bla">
 
+    </ImageView>
     </RelativeLayout>
 
 </RelativeLayout>

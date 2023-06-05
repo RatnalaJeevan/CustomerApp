@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+
+        android:id="@+id/rl4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="7dp"
+        >
+
+        <ImageView
+            android:id="@+id/image_logo3"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="5dp"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/cb_icon" />
+
+        <TextView
+            android:id="@+id/tv5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/image_logo3"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15dp"
+            android:fontFamily="@font/semibold"
+            android:gravity="start"
+            android:text="Buy Back Gurantee"
+            android:textColor="@color/black"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/tv6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="If your car is under Wisedrive warranty and we cannot get your car repaired within 60 days* from the date you approval, we will buy your car at the invoice price at which you purchased the car."
+            android:textSize="13dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/image_logo3"
+            android:layout_below="@+id/tv5"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/medium"
+            android:textColor="@color/text_color"
+            />
+    </RelativeLayout>
+</RelativeLayout>

@@ -126,6 +126,7 @@ public class SelectAddress extends AppCompatActivity {
             });
         }
     }
+
     public  void check_address(){
         if(!Connectivity.isNetworkConnected(SelectAddress.this))
         {

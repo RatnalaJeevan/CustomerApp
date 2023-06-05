@@ -1,6 +1,7 @@
 package com.wisedrive.customerapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -44,6 +45,7 @@ public class Confirmation_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmation);
+        getWindow().setStatusBarColor(getColor(R.color.new_app_bg));
         IndianCurrencyFormat = new DecimalFormat("##,##,###");
         rl_description=findViewById(R.id.rl_description);
         tv_descptn=findViewById(R.id.tv_descptn);
@@ -60,6 +62,9 @@ public class Confirmation_Activity extends AppCompatActivity {
         String ref_no=intent.getStringExtra("refer_no");
         String iswarranty=intent.getStringExtra("is_warranty");
         String succ_msg=intent.getStringExtra("successmsg");
+        String insp_btn=intent.getStringExtra("insp_btn");
+        double c_final_amount=intent.getDoubleExtra("final_amount",0.0);
+
         number.setText(ref_no);
         if(succ_msg.isEmpty()){
             rl_description.setVisibility(View.GONE);
@@ -69,6 +74,14 @@ public class Confirmation_Activity extends AppCompatActivity {
         }
 
         if(iswarranty.equalsIgnoreCase("y")){
+            relative_layout.setVisibility(View.VISIBLE);
+            rl_my_car_button.setVisibility(View.INVISIBLE);
+        }else{
+            relative_layout.setVisibility(View.INVISIBLE);
+            rl_my_car_button.setVisibility(View.VISIBLE);
+        }
+
+        if(insp_btn.equalsIgnoreCase("y")){
             relative_layout.setVisibility(View.VISIBLE);
             rl_my_car_button.setVisibility(View.INVISIBLE);
         }else{
@@ -86,12 +99,15 @@ public class Confirmation_Activity extends AppCompatActivity {
         request_inspection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Confirmation_Activity.this,Request_Inspection.class);
-                startActivity(intent);
+                PopupChooseTypeInsp bottomSheetDialogFragment = new PopupChooseTypeInsp();
+                bottomSheetDialogFragment.show((Confirmation_Activity.this).getSupportFragmentManager(), bottomSheetDialogFragment.getTag());
+
             }
         });
 
-        tv_amount.setText(IndianCurrencyFormat.format((int)( SPHelper.final_amount-SPHelper.disc_amount)));
+      //  tv_amount.setText(IndianCurrencyFormat.format((int)( SPHelper.final_amount-SPHelper.disc_amount)));
+        tv_amount.setText(IndianCurrencyFormat.format((int)(c_final_amount)));
+
         rl_i_ll_do_later.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

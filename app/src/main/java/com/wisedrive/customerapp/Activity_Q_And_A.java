@@ -7,17 +7,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.Color;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.j256.ormlite.stmt.query.In;
+import com.wisedrive.customerapp.adapters.AdapterAllClaimsList;
+import com.wisedrive.customerapp.adapters.AdapterClaimQues;
+import com.wisedrive.customerapp.adapters.AdapterMyPayments;
 import com.wisedrive.customerapp.adapters.Adapter_Q_And_A;
-import com.wisedrive.customerapp.adapters.Adapter_Select_Your_Vehicle_No;
 import com.wisedrive.customerapp.commonclasses.AppResponse;
 import com.wisedrive.customerapp.commonclasses.Connectivity;
 import com.wisedrive.customerapp.commonclasses.SPHelper;
@@ -27,6 +26,7 @@ import com.wisedrive.customerapp.services.ApiClient;
 import com.wisedrive.customerapp.services.ApiInterface;
 
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONException;
 
 import java.util.ArrayList;
 
@@ -37,11 +37,14 @@ import retrofit2.Response;
 public class Activity_Q_And_A extends AppCompatActivity {
     RecyclerView rv_q_and_a;
     Adapter_Q_And_A adapter_q_and_a;
+    AdapterClaimQues adapterClaimQues;
     ArrayList<Pojo_Q_And_A> pojo_q_and_aArrayList;
     AppCompatButton submit;
     RelativeLayout rl_back;
     private ApiInterface apiInterface;
     public ArrayList<PojoAnswerDetails> answerDetails=new ArrayList<>();
+    public  int currentPage=1,TOTAL_PAGES=30;
+    boolean isLoading,isLastPage;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,9 +66,12 @@ public class Activity_Q_And_A extends AppCompatActivity {
                 getanswered_list();
             }
         });
+
         get_symptom_list();
 
     }
+
+
 
     public  void getanswered_list()
     {
@@ -81,7 +87,6 @@ public class Activity_Q_And_A extends AppCompatActivity {
                     obj.setAnswer_id(SPHelper.qa_list.get(i).getAnswerlist().get(j).getAnswer_id());
                     answerDetails.add(obj);
                 }
-
             }
         }
 
@@ -100,55 +105,62 @@ public class Activity_Q_And_A extends AppCompatActivity {
 
     }
 
-    public void get_symptom_list() {
-        if (!Connectivity.isNetworkConnected(Activity_Q_And_A.this)) {
-            Toast.makeText(Activity_Q_And_A.this,
-                    "Plaese Check Your Internet",
+
+
+    public  void get_symptom_list(){
+        if(!Connectivity.isNetworkConnected(Activity_Q_And_A.this))
+        {
+            Toast.makeText(getApplicationContext(),
+                    "Internet not connected",
                     Toast.LENGTH_SHORT).show();
-        } else {
-            //idPBLoading.setVisibility(View.VISIBLE);
+        }else
+        {
+           // progress.setVisibility(View.VISIBLE);
             Call<AppResponse> call = apiInterface.getNewSymptoms(SPHelper.claim_type_id);
             call.enqueue(new Callback<AppResponse>() {
                 @Override
-                public void onResponse(@NotNull Call<AppResponse> call, @NotNull Response<AppResponse> response) {
+                public void onResponse(Call<AppResponse> call, Response<AppResponse> response)
+                {
                     AppResponse appResponse = response.body();
-                    assert appResponse != null;
-                    String response_code = appResponse.getResponseType();
-                    if (response.body() != null) {
-                        if (response_code.equals("200")) {
-                            // idPBLoading.setVisibility(View.GONE);
 
+                    if (response.body()!=null) {
+                        assert appResponse != null;
+                        if (appResponse.getResponseType().equals("200"))
+                        {
                             pojo_q_and_aArrayList = new ArrayList<>();
                             pojo_q_and_aArrayList=appResponse.getResponseModel().getQuestionList();
                             if(SPHelper.qa_list.isEmpty()){
                                 SPHelper.qa_list=pojo_q_and_aArrayList;
                             }
-                            adapter_q_and_a = new Adapter_Q_And_A(Activity_Q_And_A.this, SPHelper.qa_list);
-                            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(Activity_Q_And_A.this, LinearLayoutManager.VERTICAL, false);
-                            rv_q_and_a.setLayoutManager(linearLayoutManager);
-                            rv_q_and_a.setAdapter(adapter_q_and_a);
 
-                            Activity_Q_And_A.this.runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    adapter_q_and_a.notifyDataSetChanged();
-                                }
-                            });
-                        } else if (response_code.equals("300")) {
-                            // idPBLoading.setVisibility(View.GONE);
+                                adapterClaimQues=new AdapterClaimQues(Activity_Q_And_A.this,SPHelper.qa_list);
+                                LinearLayoutManager layoutManager = new LinearLayoutManager(Activity_Q_And_A.this, LinearLayoutManager.VERTICAL, false);
+                                rv_q_and_a.setLayoutManager(layoutManager);
+                                rv_q_and_a.setAdapter(adapterClaimQues);
+                                Activity_Q_And_A.this.runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        adapterClaimQues.notifyDataSetChanged();
+                                    }
+                                });
+                        } else if (appResponse.getResponseType().equals("300")) {
+                           // progress.setVisibility(View.GONE);
+                            Toast.makeText(Activity_Q_And_A.this, "internal server error" + "response code:" + appResponse.getResponseType(), Toast.LENGTH_SHORT).show();
+
                         }
-                    } else {
-                        // idPBLoading.setVisibility(View.GONE);
-                        Toast.makeText(Activity_Q_And_A.this, "internal server error", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                      //  progress.setVisibility(View.GONE);
+                        Toast.makeText(Activity_Q_And_A.this, "internal server error" , Toast.LENGTH_SHORT).show();
                     }
                 }
 
                 @Override
-                public void onFailure(@NotNull Call<AppResponse> call, @NotNull Throwable t) {
-                    Toast.makeText(Activity_Q_And_A.this,
+                public void onFailure(Call<AppResponse> call, Throwable t) {
+                    Toast.makeText(getApplicationContext(),
                             t.getMessage(),
                             Toast.LENGTH_SHORT).show();
-                    // idPBLoading.setVisibility(View.GONE);
+                   // progress.setVisibility(View.GONE);
                 }
             });
         }
@@ -159,5 +171,38 @@ public class Activity_Q_And_A extends AppCompatActivity {
         super.onBackPressed();
 
         finish();
+    }
+
+    public abstract class PaginationScrollListener extends RecyclerView.OnScrollListener
+    {
+
+        private LinearLayoutManager layoutManager;
+
+        public PaginationScrollListener(LinearLayoutManager layoutManager) {
+            this.layoutManager = layoutManager;
+        }
+
+        @Override
+        public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+            super.onScrolled(recyclerView, dx, dy);
+
+            int visibleItemCount = layoutManager.getChildCount();
+            int totalItemCount = layoutManager.getItemCount();
+            int firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition();
+            if (!isLoading() && !isLastPage())
+            {
+                if ((visibleItemCount + firstVisibleItemPosition) >= totalItemCount
+                        && firstVisibleItemPosition >= 0) {
+                    loadMoreItems();
+                }
+            }
+        }
+
+        protected abstract void loadMoreItems();
+
+        public abstract boolean isLastPage();
+
+        public abstract boolean isLoading();
+
     }
 }

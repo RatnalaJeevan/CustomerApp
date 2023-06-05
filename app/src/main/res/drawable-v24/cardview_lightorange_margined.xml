@@ -5,8 +5,8 @@
 
     </solid>
 
-    <stroke android:color="@color/lightorange"
-        android:width="1px">
+    <stroke android:color="@color/blue"
+        android:width="4px">
 
     </stroke>
     <corners

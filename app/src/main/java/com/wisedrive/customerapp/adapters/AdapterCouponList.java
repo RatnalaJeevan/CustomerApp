@@ -49,22 +49,24 @@ public class AdapterCouponList extends RecyclerView.Adapter<AdapterCouponList.My
         holder.valid_days.setText("Valid :"+ Common.getDateFromString(recyclerdata.getExpiration_date()));
         holder.per_off.setText("INR \t"+IndianCurrencyFormat.format((int)recyclerdata.getDiscount_amount()));
 
-        if(recyclerdata.getIs_valid().equalsIgnoreCase("n")){
-            holder.rl_apply.setVisibility(View.INVISIBLE);
-            holder.rl_not_apply.setVisibility(View.VISIBLE);
-        }else{
-            holder.rl_apply.setVisibility(View.VISIBLE);
-            holder.rl_not_apply.setVisibility(View.INVISIBLE);
-        }
-        holder.rl_apply.setOnClickListener(new View.OnClickListener() {
+//        if(recyclerdata.getIs_valid().equalsIgnoreCase("n")){
+//            holder.rl_apply.setVisibility(View.INVISIBLE);
+//            holder.rl_not_apply.setVisibility(View.VISIBLE);
+//        }else{
+//            holder.rl_apply.setVisibility(View.VISIBLE);
+//            holder.rl_not_apply.setVisibility(View.INVISIBLE);
+//        }
+        holder.label_apply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 SPHelper.coupon_code=recyclerdata.getCoupon_code();
                 SPHelper.coupon_id=recyclerdata.getCoupon_id();
                 SPHelper.coupon_type= recyclerdata.getCoupon_type();
                 SPHelper.disc_amount=recyclerdata.getDiscount_amount();
-                if(((ApplyCouponList)context).coming_from.equals("addon")){
+                if(((ApplyCouponList)context).coming_from.equals("addon"))
+                {
                     Intent intent=new Intent(context, Addons.class);
+                    SPHelper.gone_to="add_on";
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(intent);
                 }else{
@@ -74,6 +76,8 @@ public class AdapterCouponList extends RecyclerView.Adapter<AdapterCouponList.My
                 }
             }
         });
+
+
     }
 
     @Override
@@ -82,7 +86,7 @@ public class AdapterCouponList extends RecyclerView.Adapter<AdapterCouponList.My
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView coupon_code,description,valid_days,per_off;
+        TextView coupon_code,description,valid_days,per_off,label_apply;
         RelativeLayout rl_not_apply,rl_apply;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -92,6 +96,7 @@ public class AdapterCouponList extends RecyclerView.Adapter<AdapterCouponList.My
             per_off=itemView.findViewById(R.id.per_off);
             rl_not_apply=itemView.findViewById(R.id.rl_not_apply);
             rl_apply=itemView.findViewById(R.id.rl_apply);
+            label_apply=itemView.findViewById(R.id.label_apply);
         }
     }
 }

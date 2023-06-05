@@ -40,8 +40,26 @@ public class Pojo_My_Car_page_package_list {
     String expired;
     @SerializedName("AcivationCode")
     String AcivationCode;
+    @SerializedName("dpp_id")
+    String dpp_id;
+    @SerializedName("Displaymessage")
+    String Displaymessage;
+    @SerializedName("ButtonName")
+    String ButtonName;
     @SerializedName("ServiceCount")
     PojoServiceCount ServiceCount;
+
+    public String getDisplaymessage() {
+        return Displaymessage;
+    }
+
+    public String getButtonName() {
+        return ButtonName;
+    }
+
+    public String getDpp_id() {
+        return dpp_id;
+    }
 
     public String getExpired() {
         return expired;

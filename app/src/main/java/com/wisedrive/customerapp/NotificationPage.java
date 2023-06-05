@@ -24,15 +24,17 @@ import retrofit2.Response;
 
 public class NotificationPage extends AppCompatActivity {
     RelativeLayout tv_AU_Update1;
-    TextView tv_AU_skip;
+    TextView tv_AU_skip,tv_no_thanks;
     private ApiInterface apiInterface;
     private ProgressDialog progressDialog;
     public  Intent intent;
     String customer_support_no,customer_support_email;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification_page);
+        getWindow().setStatusBarColor(getColor(R.color.white));
         SPHelper.sharedPreferenceInitialization(NotificationPage.this);
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
         progressDialog = new ProgressDialog(NotificationPage.this);
@@ -40,11 +42,13 @@ public class NotificationPage extends AppCompatActivity {
         progressDialog.setCancelable(false);
         tv_AU_skip=findViewById(R.id.tv_AU_skip);
         tv_AU_Update1=findViewById(R.id.tv_AU_Update1);
-
+        tv_no_thanks=findViewById(R.id.tv_no_thanks);
         if(SPHelper.can_skip.equalsIgnoreCase("y")){
             tv_AU_skip.setVisibility(View.VISIBLE);
+            tv_no_thanks.setVisibility(View.GONE);
         }else {
             tv_AU_skip.setVisibility(View.GONE);
+            tv_no_thanks.setVisibility(View.VISIBLE);
         }
         tv_AU_Update1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +63,15 @@ public class NotificationPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 get_support_details();
+            }
+        });
+        tv_no_thanks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent a = new Intent(Intent.ACTION_MAIN);
+                a.addCategory(Intent.CATEGORY_HOME);
+                a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(a);
             }
         });
     }
@@ -97,11 +110,12 @@ public class NotificationPage extends AppCompatActivity {
 
                             if(!lead_id.equals("")||!c_id.equals(""))
                             {
-                                if(!c_id.equals("")&&pack_activated.equalsIgnoreCase("n")){
-                                    SPHelper.fragment_is="act";
-                                }else{
-                                    SPHelper.fragment_is="plans";
-                                }
+//                                if(!c_id.equals("")&&pack_activated.equalsIgnoreCase("n")){
+//                                    SPHelper.fragment_is="act";
+//                                }else{
+//                                    SPHelper.fragment_is="plans";
+//                                }
+                                SPHelper.fragment_is="plans";
                                 Intent intent=new Intent(NotificationPage.this, CustomerHomepage.class);
                                 startActivity(intent);
                                 finish();

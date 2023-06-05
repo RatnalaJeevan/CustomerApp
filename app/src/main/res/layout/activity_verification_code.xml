@@ -29,7 +29,7 @@
             android:textColor="@color/black"
             android:textSize="50dp"
             android:layout_marginTop="20dp"
-            android:fontFamily="@font/gillroy_regular"
+            android:fontFamily="@font/regular"
             android:layout_marginLeft="20dp" />
         <TextView
             android:id="@+id/text_code"
@@ -38,7 +38,7 @@
             android:text="One Time"
             android:textColor="@color/black"
             android:textSize="50dp"
-            android:fontFamily="@font/gillroy_regular"
+            android:fontFamily="@font/regular"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
             android:layout_below="@id/text_verification" />
@@ -50,7 +50,7 @@
             android:text="Passcode"
             android:textColor="@color/black"
             android:textSize="50dp"
-            android:fontFamily="@font/gillroy_regular"
+            android:fontFamily="@font/regular"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
             android:layout_below="@id/text_code" />
@@ -77,7 +77,7 @@
         android:layout_marginTop="30dp"
         android:textColor="@color/text_color"
         android:textSize="15dp"
-        android:fontFamily="@font/gillroy_regular"/>
+        android:fontFamily="@font/regular"/>
 
     <TextView
         android:id="@+id/text_phone_number_field"
@@ -88,7 +88,7 @@
         android:background="@drawable/edit_text_background"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:fontFamily="@font/gillroy_bold"
+        android:fontFamily="@font/bold"
         android:layout_marginTop="10dp"
         android:gravity="center|left"
         android:paddingLeft="20dp"
@@ -111,7 +111,7 @@
             android:layout_height="wrap_content"
             android:text="OTP"
             android:layout_marginLeft="20dp"
-            android:fontFamily="@font/gillroy_regular"
+            android:fontFamily="@font/regular"
             android:textColor="@color/text_color"
             android:textSize="15dp"/>
 
@@ -199,7 +199,7 @@
             android:text="Next"
             android:textSize="15dp"
             android:textColor="@color/white"
-            android:fontFamily="@font/gillroy_bold"
+            android:fontFamily="@font/bold"
             android:layout_centerInParent="true"/>
     </RelativeLayout>
 
@@ -212,7 +212,7 @@
         android:layout_marginTop="15dp"
         android:layout_centerHorizontal="true"
         android:textColor="@color/text_color"
-        android:fontFamily="@font/gillroy_regular"/>
+        android:fontFamily="@font/regular"/>
 
     </RelativeLayout>
 

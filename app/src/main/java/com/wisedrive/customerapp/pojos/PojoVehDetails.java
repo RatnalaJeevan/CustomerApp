@@ -24,8 +24,22 @@ public class PojoVehDetails extends AppResponse {
             @SerializedName("brand_icon")
             private String brand_icon;
 
+            @SerializedName("customer_id")
+            private String customer_id;
+            @SerializedName("lead_id")
+            private String lead_id;
 
-            public String getCustomer_name() {
+
+
+    public String getCustomer_id() {
+        return customer_id;
+    }
+
+    public String getLead_id() {
+        return lead_id;
+    }
+
+    public String getCustomer_name() {
                 return customer_name;
             }
 

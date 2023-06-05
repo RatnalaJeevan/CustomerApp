@@ -78,7 +78,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Add_New_Car extends AppCompatActivity {
+public class Add_New_Car extends AppCompatActivity
+{
     ImageView iv_ins;
     String it_is="";
     public int selectedObject=0;
@@ -134,8 +135,6 @@ public class Add_New_Car extends AppCompatActivity {
         setContentView(R.layout.activity_add_new_car);
         instance=this;
         init_params();
-
-
         get_carimage_list();
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,7 +156,6 @@ public class Add_New_Car extends AppCompatActivity {
             public void onClick(View view) {
                 cameto--;
                 show_pages();
-
             }
         });
 
@@ -166,7 +164,7 @@ public class Add_New_Car extends AppCompatActivity {
         ArrayList<String> years = new ArrayList<String>();
         int thisYear = Calendar.getInstance().get(Calendar.YEAR);
         years.add("Select year");
-        for (int i = 1996; i <= thisYear; i++) {
+        for (int i = 2000; i <= thisYear; i++) {
             years.add(Integer.toString(i));
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, years);
@@ -201,7 +199,6 @@ public class Add_New_Car extends AppCompatActivity {
 
             }
         });
-
 
         spinner_select_bank.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -271,7 +268,8 @@ public class Add_New_Car extends AppCompatActivity {
             }
         });
 
-        tv_basic.setOnClickListener(new View.OnClickListener() {
+        tv_basic.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view) {
                 if(SPHelper.carbrandid.equals("")){
@@ -759,7 +757,7 @@ public class Add_New_Car extends AppCompatActivity {
                                 recycler_view_select_make.setVisibility(View.VISIBLE);
                                 pojo_select_make_listArrayList=new ArrayList<>();
                                 pojo_select_make_listArrayList=appResponse.getResponseModel().getBrandList();
-                                adapter_select_make = new Adapter_select_make(Add_New_Car.this, pojo_select_make_listArrayList);
+                               // adapter_select_make = new Adapter_select_make(Add_New_Car.this, pojo_select_make_listArrayList);
                                 GridLayoutManager layoutManager = new GridLayoutManager(Add_New_Car.this, 4);
                                 recycler_view_select_make.setLayoutManager(layoutManager);
                                 recycler_view_select_make.setAdapter(adapter_select_make);
@@ -816,7 +814,7 @@ public class Add_New_Car extends AppCompatActivity {
                                 pojo_select_modelArrayList = new ArrayList<>();
                                 pojo_select_modelArrayList=appResponse.getResponseModel().getModelList();
 
-                                adapter_select_model = new Adapter_Select_Model(Add_New_Car.this, pojo_select_modelArrayList);
+                               // adapter_select_model = new Adapter_Select_Model(Add_New_Car.this, pojo_select_modelArrayList);
                                 GridLayoutManager layoutManager1 = new GridLayoutManager(Add_New_Car.this, 3);
                                 recycler_view_select_model.setLayoutManager(layoutManager1);
                                 recycler_view_select_model.setAdapter(adapter_select_model);
@@ -1434,17 +1432,24 @@ public class Add_New_Car extends AppCompatActivity {
                 true, 0, new ResponseListener()
                 {
                     @Override
-                    public void ResponseSuccess(ResponseExtension response) {
-                        if (response.getResponseType().equalsIgnoreCase("200")) {
+                    public void ResponseSuccess(ResponseExtension response)
+                    {
+                        if (response.getResponseType().equalsIgnoreCase("200"))
+                        {
+
                             System.out.println(response);
                             JSONObject tktobj = response.getResponseObject();
+
                             try {
                                 idPBLoading.setVisibility(View.GONE);
                                 upload ="";
                                 SPHelper.isSuccess="add";
                                 SPHelper.comingfrom="added";
                                 SPHelper.fragment_is="cars";
-                               // Toast.makeText(Add_New_Car.this, "You have successfully added your car", Toast.LENGTH_SHORT).show();
+                                System.out.println("leadid"+response.getResponseObject().getJSONObject("vehDetails").getString("lead_id"));
+                                SPHelper.saveSPdata(Add_New_Car.this, SPHelper.lead_id, response.getResponseObject().getJSONObject("vehDetails").getString("lead_id"));
+
+                                // Toast.makeText(Add_New_Car.this, "You have successfully added your car", Toast.LENGTH_SHORT).show();
                                 SPHelper.cf_msg="You have successfully added\n"+SPHelper.brand_name+"\t"+SPHelper.car_model_name+"\t"+
                                         fuel_type+"\t"+"-"+selected_vehno.getText().toString();
                                 Intent intent=new Intent(Add_New_Car.this, CustomerHomepage.class);
@@ -1520,6 +1525,8 @@ public class Add_New_Car extends AppCompatActivity {
                         SPHelper.comingfrom="added";
                         SPHelper.isSuccess="add";
                         SPHelper.fragment_is="cars";
+                        System.out.println("leadid"+response.getResponseObject().getJSONObject("vehDetails").getString("lead_id"));
+                        SPHelper.saveSPdata(Add_New_Car.this, SPHelper.lead_id, response.getResponseObject().getJSONObject("vehDetails").getString("lead_id"));
                         SPHelper.cf_msg="You have successfully added\n"+SPHelper.brand_name+"\t"+SPHelper.car_model_name+"\t"+
                                 fuel_type+"\t"+"-"+selected_vehno.getText().toString();
                        // Toast.makeText(Add_New_Car.this, "You have successfully added your car", Toast.LENGTH_SHORT).show();

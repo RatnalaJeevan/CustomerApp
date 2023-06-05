@@ -21,6 +21,12 @@ public class Pojo_Showroom_services {
 
     @SerializedName("description")
     String description;
+    @SerializedName("Customer_address_exists")
+    String Customer_address_exists;
+
+    public String getCustomer_address_exists() {
+        return Customer_address_exists;
+    }
 
     public String getDescription() {
         return description;

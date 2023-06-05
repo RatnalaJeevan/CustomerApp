@@ -4,93 +4,106 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+
+        <carbon.widget.RelativeLayout
+            android:id="@+id/rl_max"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:background="@color/white"
+            app:carbon_cornerRadius="5dp"
+            >
+
             <RelativeLayout
-                android:id="@+id/rl_max"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="5dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:background="@drawable/includes_background"
+                android:id="@+id/rl_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
                 >
 
-                <RelativeLayout
-                    android:id="@+id/rl_image"
-                    android:layout_width="55dp"
-                    android:layout_height="55dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/background_rl">
-
-                    <ImageView
-                        android:id="@+id/image_logo"
-                        android:layout_width="31dp"
-                        android:layout_height="31dp"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/service_image" />
-
-                </RelativeLayout>
-
-            <TextView
-                android:id="@+id/text_service_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="General Service Standard"
-                android:layout_marginLeft="10dp"
-                android:textSize="15dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/gillroy_semibold"
-                android:layout_toRightOf="@id/rl_image"/>
-
-            <TextView
-                android:id="@+id/tv_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Date:1 Jan 2023"
-                android:layout_below="@id/text_service_name"
-                android:layout_marginLeft="10dp"
-                android:textSize="14dp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/gillroy_regular"
-                android:textColor="@color/heading"
-                android:layout_toRightOf="@id/rl_image" />
-
                 <ImageView
-                    android:id="@+id/plus_icon"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                   android:layout_centerVertical="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="20dp"
-                    android:src="@drawable/plus" />
-
-                <ImageView
-                    android:id="@+id/minus_icon"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="20dp"
-                    android:src="@drawable/minus"
-                    android:visibility="invisible"/>
-
+                    android:id="@+id/image_logo"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/service_image" />
 
             </RelativeLayout>
-            <RelativeLayout
-                    android:visibility="gone"
-                    android:id="@+id/description_page"
+
+         <TextView
+            android:id="@+id/text_service_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="General Service Standard"
+            android:layout_marginLeft="10dp"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/semibold"
+            android:layout_toRightOf="@id/rl_image"/>
+
+         <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date:1 Jan 2023"
+            android:layout_below="@id/text_service_name"
+            android:layout_marginLeft="10dp"
+            android:textSize="14dp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/regular"
+            android:textColor="@color/heading"
+            android:layout_toRightOf="@id/rl_image" />
+
+            <ImageView
+                android:id="@+id/plus_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/fwd_right" />
+
+            <ImageView
+                android:id="@+id/minus_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/show_less_d"
+                android:visibility="invisible"/>
+
+
+        </carbon.widget.RelativeLayout>
+        <carbon.widget.RelativeLayout
+            android:visibility="gone"
+                android:id="@+id/description_page"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_max"
+            android:background="@color/white"
+            app:carbon_cornerRadius="5dp"
+            android:layout_marginTop="-5dp"
+            android:layout_marginBottom="10dp"
+                >
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_description_lines"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/rl_max"
-                    >
+                   />
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rv_description_lines"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                </RelativeLayout>
-
+            </carbon.widget.RelativeLayout>
+    </RelativeLayout>
 </RelativeLayout>

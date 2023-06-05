@@ -65,7 +65,6 @@ import retrofit2.Response;
 
 public class InitiateNewClaim extends AppCompatActivity
 {
-
     public  boolean isServiceRunning = false;
     private ProgressDialog progressDialog;
     String filename,upload="",server_date="";
@@ -83,8 +82,7 @@ public class InitiateNewClaim extends AppCompatActivity
     RecyclerView rv_select_vehicle_no;
     Adapter_Select_Your_Vehicle_No adapter_select_your_vehicle_no;
     ArrayList<Pojo_Select_Your_Vehicle_no> pojo_select_your_vehicle_noArrayList;
-    Context context;
-    View view;
+
     TextView tv_calender;
     DatePickerDialog picker;
 
@@ -105,6 +103,7 @@ public class InitiateNewClaim extends AppCompatActivity
         setContentView(R.layout.activity_initiate_claim_new_customer_app);
         submit=findViewById(R.id.submit);
         rl=findViewById(R.id.rl);
+        SPHelper.this_is="claim";
         place_of_breakdown=findViewById(R.id.place_of_breakdown);
         more_details=findViewById(R.id.more_details);
         progressDialog = new ProgressDialog(InitiateNewClaim.this);
@@ -164,7 +163,7 @@ public class InitiateNewClaim extends AppCompatActivity
         rl_back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(InitiateNewClaim.this,Comprehensive_Warranty.class);
+                Intent intent=new Intent(InitiateNewClaim.this, ClaimWarranty.class);
                 startActivity(intent);
                 finish();
             }
@@ -368,7 +367,7 @@ public class InitiateNewClaim extends AppCompatActivity
                             pojo_initiate_claims_photosArrayList = new ArrayList<>();
                             pojo_initiate_claims_photosArrayList=appResponse.getResponseModel().getClaimImages();
                             adapter_initiate_claims_photos = new  Adapter_Initiate_Claims_Photos(InitiateNewClaim.this, pojo_initiate_claims_photosArrayList);
-                            GridLayoutManager linearLayoutManager2 = new GridLayoutManager(InitiateNewClaim.this, 3);
+                            GridLayoutManager linearLayoutManager2 = new GridLayoutManager(InitiateNewClaim.this, 2);
                             rv_photos.setLayoutManager(linearLayoutManager2);
                             rv_photos.setAdapter(adapter_initiate_claims_photos);
 
@@ -449,11 +448,9 @@ public class InitiateNewClaim extends AppCompatActivity
                     {
                         System.out.println("Succeed");
                         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
                             // pickCamera();
                             it_is = "c";
                             CallCamera(selectedObject);
-                        }
 
                     }
                     @Override
@@ -487,7 +484,6 @@ public class InitiateNewClaim extends AppCompatActivity
     void openCamera(int selectobj)
     {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
             SimpleDateFormat dateFormat = new SimpleDateFormat("-yyyy_MM_dd_HH_mm_ss_SSSSSS'.jpg'");
             String fineName = dateFormat.format(new Date());
             filename = BitmapUtility.PictUtil.getSavePath1().getPath() + "/"  + fineName;
@@ -495,7 +491,6 @@ public class InitiateNewClaim extends AppCompatActivity
                     com.wisedrive.customerapp.BuildConfig.APPLICATION_ID + ".provider", new File(filename));
             takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
             startActivityForResult(takePictureIntent, selectobj);
-        }
     }
     @Override
     protected void onActivityResult(final int requestCode, int resultCode, Intent data)
@@ -641,7 +636,7 @@ public class InitiateNewClaim extends AppCompatActivity
                             if (response_code.equals("200")) {
                                 //idPBLoading.setVisibility(View.GONE);
                                 Toast.makeText(InitiateNewClaim.this, "Claim initiated successfully", Toast.LENGTH_SHORT).show();
-                                Intent intent=new Intent(InitiateNewClaim.this, Comprehensive_Warranty.class);
+                                Intent intent=new Intent(InitiateNewClaim.this, ClaimWarranty.class);
                                 startActivity(intent);
                                 finish();
                             } else if (response_code.equals("300")) {
@@ -669,7 +664,7 @@ public class InitiateNewClaim extends AppCompatActivity
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent=new Intent(InitiateNewClaim.this,Comprehensive_Warranty.class);
+        Intent intent=new Intent(InitiateNewClaim.this, ClaimWarranty.class);
         startActivity(intent);
         finish();
     }

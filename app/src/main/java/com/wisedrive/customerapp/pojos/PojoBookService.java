@@ -22,7 +22,10 @@ public class PojoBookService {
     private String packId;
     private String packType;
 
-    public PojoBookService(String vehicleId, String customerId, String serPackId, String serviceId, String statusId, String serviceOn, String addressId, String address, String pincode, String landmark, String location, String cityId, String city, String stateId, String state, String comment, String time, String packId, String packType) {
+    public PojoBookService(String vehicleId, String customerId, String serPackId, String serviceId,
+                           String statusId, String serviceOn, String addressId, String address,
+                           String pincode, String landmark, String location, String cityId, String city,
+                           String stateId, String state, String comment, String time, String packId, String packType) {
         this.vehicleId = vehicleId;
         this.customerId = customerId;
         this.serPackId = serPackId;

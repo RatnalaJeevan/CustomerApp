@@ -18,6 +18,13 @@ public class PojoVehObj {
     String successmsg;
     @SerializedName("iswarranty")
     String iswarranty;
+    @SerializedName("InspectionButton")
+    String InspectionButton;
+
+
+    public String getInspectionButton() {
+        return InspectionButton;
+    }
 
     public String getSuccessmsg() {
         return successmsg;

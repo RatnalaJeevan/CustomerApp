@@ -56,11 +56,15 @@ public class Adapter_Initiate_Claims_Photos extends RecyclerView.Adapter< Adapte
 
         if (list.getImage() == null) {
             //uploaded_image.setImageURI(carImageLists.get(i).getImage());
+            holder.uplaod_image.setVisibility(View.VISIBLE);
+            holder.label1.setVisibility(View.VISIBLE);
         } else {
-            holder.uplaod_image.setImageURI(list.getImage());
+            holder.uplaod_image.setVisibility(View.GONE);
+            holder.label1.setVisibility(View.GONE);
+            holder.sel_aadhar_front.setImageURI(list.getImage());
         }
         holder.tv_image_name.setText(list.getImage_type());
-        holder.rl_items_upload.setOnClickListener(new View.OnClickListener()
+        holder.itemView.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
@@ -68,11 +72,8 @@ public class Adapter_Initiate_Claims_Photos extends RecyclerView.Adapter< Adapte
                 adapter_position=position;
                 ((InitiateNewClaim)context).selectedObject=position;
                 ((InitiateNewClaim)context).open_dialog();
-
             }
-
         });
-
 
     }
 
@@ -82,15 +83,16 @@ public class Adapter_Initiate_Claims_Photos extends RecyclerView.Adapter< Adapte
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements com.wisedrive.customerapp.adapters.MyViewHolder {
-        ImageView uplaod_image;
-        TextView tv_image_name;
+        ImageView uplaod_image,sel_aadhar_front;
+        TextView tv_image_name,label1;
         RelativeLayout rl_items_upload;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
+            label1=itemView.findViewById(R.id.label1);
             uplaod_image = itemView.findViewById(R.id.uplaod_image);
             tv_image_name = itemView.findViewById(R.id.tv_image_name);
-            rl_items_upload = (RelativeLayout) view.findViewById(R.id.rl_items_upload);
+            sel_aadhar_front = itemView.findViewById(R.id.sel_aadhar_front);
         }
 
     }

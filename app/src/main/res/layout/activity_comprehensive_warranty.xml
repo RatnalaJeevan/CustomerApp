@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Comprehensive_Warranty">
+    tools:context=".ClaimWarranty"
+    android:background="@color/new_app_bg">
 
     <RelativeLayout
         android:id="@+id/rl_heading"
         android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_height="50dp">
 
         <RelativeLayout
@@ -19,9 +20,10 @@
             android:layout_centerVertical="true">
         <ImageView
             android:id="@+id/back"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@drawable/back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/back_new_black"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"/>
         </RelativeLayout>
 
@@ -29,16 +31,69 @@
             android:id="@+id/tv_showroom_services"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Comprehensive Warranty"
+            android:text="Claims"
             android:layout_toRightOf="@id/rl_back"
-            android:layout_toLeftOf="@+id/expired"
+            android:layout_toLeftOf="@+id/rl_request_claim"
             android:layout_centerVertical="true"
-            android:textSize="20dp"
+            android:textSize="16sp"
             android:layout_marginLeft="20dp"
             android:textColor="@color/black"
-            android:fontFamily="@font/gillroy_regular"/>
+            android:fontFamily="@font/medium"/>
 
+        <RelativeLayout
+            android:id="@+id/rl_request_claim"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+
+            android:background="@drawable/add_car_bg"
+            >
+
+            <ImageView
+                android:id="@+id/image_plus"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/add_white"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+
+                android:id="@+id/image_car"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Claim"
+                android:textSize="14dp"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/semibold"
+                android:textColor="@color/white"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/image_plus"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/rl_call"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/rl_circle_call">
+
+            <ImageView
+                android:id="@+id/call_icon"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/tele_black" />
+
+        </RelativeLayout>
         <TextView
+            android:visibility="invisible"
             android:id="@+id/expired"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -49,53 +104,104 @@
             android:textSize="15dp"
             android:layout_marginLeft="20dp"
             android:textColor="@color/red_1"
-            android:fontFamily="@font/gillroy_semibold"/>
+            android:fontFamily="@font/semibold"/>
 
     </RelativeLayout>
 
     <RelativeLayout
 
+        android:visibility="gone"
         android:id="@+id/rl_imv"
         android:layout_width="match_parent"
         android:layout_height="240dp"
         android:layout_centerVertical="true"
         android:layout_marginBottom="20dp">
 
-        <ImageView
-            android:id="@+id/imv"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_centerInParent="true"
-            android:src="@drawable/comprehensive_warranty" />
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/semibold"
+            android:gravity="center"
+            android:text="There are no active claims for this car."
+            android:textColor="@color/black"
+            android:textSize="18dp" />
 
-        <RelativeLayout
+        <TextView
+            android:id="@+id/label1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/imv">
+            android:layout_below="@+id/label"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/regular"
+            android:gravity="center"
+            android:lineSpacingExtra="3dp"
+            android:text="Create new claim request for us to check and proceed further."
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_req_claim"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/label1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/cardview_lightgrey_margined"
+            android:backgroundTint="@color/black"
+            android:paddingStart="7dp"
+            android:paddingTop="10dp">
 
             <TextView
+                android:id="@+id/label_add"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="15dp"
-                android:fontFamily="@font/gillroy_semibold"
-                android:text="NO CLAIMS REQUESTED"
-                android:textColor="@color/heading"
-                android:textSize="20dp" />
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/semibold"
+                android:text="Request Claim"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
         </RelativeLayout>
     </RelativeLayout>
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/label_exp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/semibold"
+        android:gravity="center"
+        android:text="Sorry! Your comprehensive warranty package has been expired."
+        android:textColor="@color/black"
+        android:textSize="18dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:visibility="gone"
         android:id="@+id/rv_claim_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_below="@+id/rl_heading"
-        android:layout_above="@+id/rl_request_claim">
+        android:layout_above="@+id/rl_request_claim1">
 
     </androidx.recyclerview.widget.RecyclerView>
     <RelativeLayout
-        android:id="@+id/rl_request_claim"
+        android:visibility="gone"
+        android:id="@+id/rl_request_claim1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
@@ -108,7 +214,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:fontFamily="@font/gillroy_semibold"
+            android:fontFamily="@font/semibold"
             android:text="REQUEST CLAIM"
             android:textColor="@color/blue"
             android:textSize="20dp" />
@@ -152,25 +258,9 @@
                     android:textSize="20dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
-                    android:fontFamily="@font/gillroy_regular"/>
+                    android:fontFamily="@font/regular"/>
 
-                <RelativeLayout
-                    android:id="@+id/rl_call"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@drawable/rl_circle_call">
 
-                    <ImageView
-                        android:id="@+id/call_icon"
-                        android:layout_width="22dp"
-                        android:layout_height="22dp"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/call_2"/>
-
-                </RelativeLayout>
 
             </RelativeLayout>
 

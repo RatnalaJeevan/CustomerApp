@@ -4,176 +4,134 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".NotificationPage">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/wd_neu"
+        >
+
+    </ImageView>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/appicon1">
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_above="@+id/rl_bottom"
+           android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50dp"
+            android:src="@drawable/update_ico">
 
         </ImageView>
 
-        <TextView
-            android:id="@+id/tv_AU_Update11"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="25dp"
-            android:layout_marginBottom="25dp"
-            android:background="@drawable/cardview_dealership"
-            android:fontFamily="@font/zonapro_bold"
-            android:gravity="center"
-            android:text="Update Now"
-            android:textColor="@color/white"
-            android:textSize="16dp"
-            android:visibility="gone" />
 
         <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_above="@+id/tv_AU_Update11"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:visibility="gone">
+            android:id="@+id/rl_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="120dp"
+            android:elevation="5dp">
 
 
             <TextView
-                android:layout_width="60dp"
-                android:layout_height="50dp"
-                android:layout_alignParentRight="true"
-                android:layout_gravity="right"
-                android:layout_marginBottom="15dp"
-                android:gravity="center"
-                android:text="SKIP"
-                android:textColor="@color/blue"
-                android:textSize="17dp" />
+                android:id="@+id/tv3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/bold"
+                android:text="New Update is Available."
+                android:textColor="@color/black"
+                android:textSize="25dp" />
 
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/tv4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:orientation="vertical">
-
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="126dp"
-                        android:layout_height="150dp"
-                        android:src="@drawable/update_icon" />
-
-
-                </LinearLayout>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="30dp"
-                    android:fontFamily="@font/zonapro_regular"
-                    android:gravity="center"
-                    android:text="A New Version of the App is Available.\n Update for new features"
-                    android:textColor="#aaaaaa"
-                    android:textSize="15dp" />
-
-
-            </LinearLayout>
-        </RelativeLayout>
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:elevation="5dp"
-            app:cardCornerRadius="9dp"
-            app:cardElevation="8dp">
+                android:layout_below="@+id/tv3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="30dp"
+                android:fontFamily="@font/regular"
+                android:lineSpacingExtra="3dp"
+                android:text="The latest app update is here! Enjoy faster performance, improved security, a fresh user interface, and bug fixes. Thanks for using our app!"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
 
 
             <RelativeLayout
+                android:id="@+id/tv_AU_Update1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:elevation="5dp"
-                >
+                android:layout_height="45dp"
+                android:layout_below="@+id/tv4"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/cardview_lightgrey_margined"
+                android:backgroundTint="@color/black">
+
                 <TextView
-                    android:id="@+id/tv_AU_skip"
-                    android:layout_width="60dp"
-                    android:layout_height="40dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_gravity="right"
-                    android:layout_marginBottom="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="10dp"
                     android:fontFamily="@font/zonapro_bold"
                     android:gravity="center"
-                    android:text="SKIP"
-                    android:textColor="@color/blue"
-                    android:textSize="17dp" />
-
-
-                <ImageView
-                    android:id="@+id/image"
-                    android:layout_width="126dp"
-                    android:layout_height="150dp"
-                    android:layout_below="@+id/tv_AU_skip"
-                    android:layout_centerHorizontal="true"
-                    android:src="@drawable/update_icon" />
-
-                <TextView
-                    android:id="@+id/tv2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/image"
-                    android:layout_centerHorizontal="true"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
-                    android:fontFamily="@font/zonapro_regular"
-                    android:gravity="center"
-                    android:text="A New Version of the App is Available.\n Update for new features"
-                    android:textColor="#aaaaaa"
-                    android:textSize="15dp" />
-
-
-                <RelativeLayout
-                    android:id="@+id/tv_AU_Update1"
-                    android:layout_width="165dp"
-                    android:layout_height="45dp"
-                    android:layout_below="@+id/tv2"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:background="@drawable/cardview_dealership">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_centerInParent="true"
-                        android:layout_marginLeft="10dp"
-                        android:fontFamily="@font/zonapro_bold"
-                        android:gravity="center"
-                        android:text="Update Now"
-                        android:textColor="@color/white"
-                        android:textSize="16dp" />
-                </RelativeLayout>
-
+                    android:text="Update Now"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
             </RelativeLayout>
 
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_AU_skip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_AU_Update1"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/semibold"
+                android:gravity="center"
+                android:text="@string/skip"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
 
-        </androidx.cardview.widget.CardView>
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_no_thanks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_below="@+id/tv_AU_Update1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/semibold"
+                android:gravity="center"
+                android:text="No Thanks! Close the app"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+        </RelativeLayout>
 
     </RelativeLayout>
 </RelativeLayout>

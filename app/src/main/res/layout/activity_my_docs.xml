@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyDocs"
+    android:background="@color/new_app_bg">
+
+    <RelativeLayout
+        android:id="@+id/rl_heading"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+       >
+        <RelativeLayout
+            android:id="@+id/rl_back_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true">
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/back_new_black"
+                android:layout_marginLeft="20dp"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_showroom_services"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="My Documents"
+            android:layout_toLeftOf="@+id/expired"
+            android:layout_toRightOf="@id/rl_back_button"
+            android:layout_centerVertical="true"
+            android:textSize="16dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/medium"/>
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/expired"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EXPIRED"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textSize="15dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/red_1"
+            android:fontFamily="@font/semibold"/>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_select_your_vehicle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_heading"
+        android:text="Select Your Vehicle"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:textSize="14dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/medium"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_veh_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/tv_select_your_vehicle">
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_docs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rv_veh_list"
+        android:layout_marginTop="10dp"
+        android:visibility="gone">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/idPBLoading"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rl_purchase_pac"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="70dp">
+
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/semibold"
+            android:gravity="center"
+            android:text="It seems you don't have any active package."
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/label1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/regular"
+            android:gravity="center"
+            android:lineSpacingExtra="3dp"
+            android:text="Explore packages to save 100% your investment and save money on maintenance. We have tailored packages for you."
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_purchase"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/label1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/cardview_lightgrey_margined"
+            android:backgroundTint="@color/black"
+            android:paddingStart="7dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/label_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/semibold"
+                android:text="Buy Package"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

@@ -29,7 +29,7 @@
             android:textSize="16dp"
             android:layout_marginLeft="7dp"
             android:layout_centerVertical="true"
-            android:fontFamily="@font/gillroy_regular"
+            android:fontFamily="@font/regular"
             android:text="Doorstep Services" />
     </RelativeLayout>
 </RelativeLayout>

@@ -1,36 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="55dp"
+    android:background="@color/white"
+    android:orientation="horizontal">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:id="@+id/rl_yes"
-            android:layout_width="160dp"
-            android:layout_height="55dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/rl_no"
-            android:layout_marginBottom="20dp">
+            android:layout_marginTop="10dp"
+            >
+
+            <RelativeLayout
+                android:id="@+id/rl1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/circle_margined">
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/dot_img"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/tick_wd_bg"
+                    >
+
+                </ImageView>
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/tv_yes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/rl1"
                 android:fontFamily="@font/poppins_medium"
                 android:text="Yes"
-                android:textColor="@color/middle_gray"
-                android:textSize="14dp" />
+                android:textColor="@color/black"
+                android:textSize="15dp" />
         </RelativeLayout>
 
-
-
-
-
-    </RelativeLayout>
-
-</RelativeLayout>
+</LinearLayout>

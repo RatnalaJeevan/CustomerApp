@@ -17,11 +17,12 @@
         android:layout_marginLeft="30dp"
         android:src="@drawable/service_image"/>
         <View
+            android:visibility="invisible"
             android:id="@+id/view_request"
             android:layout_width="2dp"
             android:layout_height="30dp"
             android:layout_below="@id/imv_request"
-            android:background="@color/green"
+            android:background="@color/grey"
             android:layout_marginLeft="43dp"
             android:layout_marginTop="5dp"/>
             <View
@@ -30,7 +31,7 @@
                 android:layout_height="match_parent"
                 android:layout_below="@id/imv_request"
                 android:layout_above="@+id/view"
-                android:background="@color/green"
+                android:background="@color/black"
                 android:layout_marginLeft="43dp"
                 android:layout_marginTop="5dp"/>
             <TextView
@@ -38,13 +39,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/imv_request"
-                android:layout_toLeftOf="@+id/tv_date"
                 android:layout_marginTop="12dp"
                 android:text="Request"
                 android:layout_marginLeft="10dp"
-                android:textColor="@color/dark_green"
-                android:textSize="16dp"
-                android:fontFamily="@font/gillroy_semibold"/>
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:fontFamily="@font/semibold"/>
+
+
 
             <TextView
                 android:id="@+id/tv_request_description"
@@ -52,13 +54,12 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_status"
                 android:layout_marginRight="5dp"
-                android:layout_toLeftOf="@+id/tv_date"
                 android:layout_toRightOf="@id/imv_request"
                 android:text="Booking request recieved "
-                android:textColor="@color/dark_green"
+                android:textColor="@color/black"
                 android:layout_marginLeft="10dp"
                 android:textSize="13dp"
-                android:fontFamily="@font/gillroy_regular"/>
+                android:fontFamily="@font/medium"/>
 
             <RelativeLayout
 
@@ -69,7 +70,7 @@
                 android:layout_marginLeft="15dp"
                android:layout_toRightOf="@id/view_request"
                 android:paddingRight="5dp"
-                android:layout_below="@id/tv_request_description"
+                android:layout_below="@id/tv_date"
                 android:background="@drawable/rl_date_background">
 
                 <TextView
@@ -77,7 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:fontFamily="@font/gillroy_semibold"
+                    android:fontFamily="@font/semibold"
                     android:text="12345"
                     android:textColor="@color/black"
                     android:textSize="25dp" />
@@ -90,16 +91,17 @@
                 android:layout_below="@id/rl_otp"
                 android:layout_marginLeft="43dp" />
             <TextView
+                android:visibility="gone"
                 android:id="@+id/tv_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="12 Feb,Wed"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp"
-                android:textColor="@color/green"
+                android:layout_toRightOf="@id/imv_request"
+                android:layout_below="@+id/tv_request_description"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
                 android:textSize="12dp"
-                android:fontFamily="@font/gillroy_semibold"/>
+                android:fontFamily="@font/semibold"/>
         </RelativeLayout>
 
 </RelativeLayout>

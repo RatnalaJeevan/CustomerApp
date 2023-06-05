@@ -1,29 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <RelativeLayout
+    <carbon.widget.RelativeLayout
         android:id="@+id/rl_select_claim"
-        android:layout_width="160dp"
+        android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:paddingRight="20dp"
         android:paddingLeft="20dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/rl_date_background">
+        app:carbon_cornerRadius="5dp"
+        android:background="@color/black"
+        >
 
         <TextView
             android:id="@+id/tv_claim_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="KA01234566"
+            android:lineSpacingExtra="2dp"
             android:layout_centerInParent="true"
-            android:textSize="14dp"
-            android:fontFamily="@font/gillroy_medium"
-            android:textColor="@color/middle_gray"/>
+            android:fontFamily="@font/medium"
+            android:text="KA01234566"
+            android:textColor="@color/white"
+            android:textSize="14dp" />
 
-    </RelativeLayout>
+    </carbon.widget.RelativeLayout>
 
 </RelativeLayout>

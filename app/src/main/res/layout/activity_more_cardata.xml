@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MoreCardata"
+    android:background="@color/white">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_add_car">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/relative_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:paddingTop="3dp"
+        android:background="@color/white">
+        <RelativeLayout
+            android:id="@+id/rl_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/back_new_black" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_mycars"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/cardview_lightgrey_margined"
+            >
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/help_support_icon">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/labekl_mycars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/semibold"
+                android:text="Help"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_car_info"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/relative_layout1"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:paddingStart="7dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/cardview_lightgrey_margined"
+        android:backgroundTint="#F1EBFA"
+        >
+
+        <RelativeLayout
+            android:id="@+id/rl_edit"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentRight="true"
+            >
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="7dp"
+                android:layout_toLeftOf="@+id/label_edit"
+                android:layout_centerVertical="true"
+                android:src="@drawable/edit_blue">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/label_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/semibold"
+                android:text="Edit"
+                android:textColor="@color/blue"
+                android:textSize="14dp" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/make_model"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/semibold"
+            android:text="Maruthi Dzire"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/veh_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/make_model"
+            android:fontFamily="@font/medium"
+            android:text="KA00KA0000"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/veh_no">
+            <TextView
+                android:id="@+id/more_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/regular"
+                android:text="VDI"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+            <View
+                android:id="@+id/v1"
+                android:layout_width="2dp"
+                android:layout_height="2dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/more_details"
+                android:background="@color/black">
+
+            </View>
+            <TextView
+                android:id="@+id/more_details1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/v1"
+                android:fontFamily="@font/regular"
+                android:text="Diesel"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+            <View
+                android:id="@+id/v2"
+                android:layout_width="2dp"
+                android:layout_height="2dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/more_details1"
+                android:background="@color/black">
+
+            </View>
+
+            <TextView
+                android:id="@+id/more_details2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/v2"
+                android:fontFamily="@font/regular"
+                android:text="Oct 2018"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_cnfrm_car"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/rl_car_info"
+        android:background="@drawable/cardview_lightgrey_margined"
+        >
+
+        <TextView
+            android:id="@+id/label_cnfm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/medium"
+            android:text="Is this your car?"
+            android:textColor="@color/black"
+            android:textSize="13dp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/grey"
+                android:fontFamily="@font/regular"
+                android:text="Yes"
+                android:textColor="@color/black"
+                android:textSize="13dp"/>
+
+            <RadioButton
+                android:id="@+id/no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:buttonTint="@color/grey"
+                android:fontFamily="@font/regular"
+                android:text="No"
+                android:textColor="@color/black"
+                android:textSize="13dp"/>
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_trans"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/rl_cnfrm_car"
+        android:background="@drawable/cardview_lightgrey_margined"
+        >
+
+        <TextView
+            android:id="@+id/label_tra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/medium"
+            android:text="Transmission Type ?"
+            android:textColor="@color/black"
+            android:textSize="13dp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/manual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/grey"
+                android:fontFamily="@font/regular"
+                android:text="Manual"
+                android:textColor="@color/black"
+                android:textSize="13dp"/>
+
+            <RadioButton
+                android:id="@+id/auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:buttonTint="@color/grey"
+                android:fontFamily="@font/regular"
+                android:text="Auto"
+                android:textColor="@color/black"
+                android:textSize="13dp"/>
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_kms"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_toLeftOf="@+id/cv"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/rl_trans"
+        android:background="@drawable/cardview_lightgrey_margined"
+        >
+
+        <EditText
+            android:id="@+id/selected_kms"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="@null"
+            android:fontFamily="@font/bold"
+            android:layout_alignParentEnd="true"
+            android:paddingLeft="20dp"
+            android:inputType="number"
+            android:maxLength="6"
+            android:maxLines="1"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"/>
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/label_kms"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_trans"
+        android:layout_marginTop="21dp"
+        android:layout_marginLeft="40dp"
+        android:gravity="center"
+        android:background="@color/white"
+        android:fontFamily="@font/medium"
+        android:text="Kms driven"
+        android:textColor="@color/black"
+        android:textSize="13dp" />
+
+    <View
+        android:id="@+id/cv"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/rl_trans"
+        >
+    </View>
+
+    <RelativeLayout
+        android:id="@+id/rl_clr"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@+id/cv"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/rl_trans"
+        android:background="@drawable/cardview_lightgrey_margined"
+        >
+
+        <EditText
+            android:id="@+id/selected_clr"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:fontFamily="@font/bold"
+            android:layout_alignParentEnd="true"
+            android:paddingLeft="20dp"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:digits=" ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:inputType="textCapCharacters"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"/>
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/label_clr"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_trans"
+        android:layout_toRightOf="@+id/cv"
+        android:layout_marginTop="21dp"
+        android:layout_marginLeft="30dp"
+        android:gravity="center"
+        android:background="@color/white"
+        android:fontFamily="@font/medium"
+        android:text="Color"
+        android:textColor="@color/black"
+        android:textSize="13dp" />
+
+    <TextView
+        android:id="@+id/opt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_kms"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="40dp"
+        android:fontFamily="@font/regular"
+        android:text="Documents required [Optional]"
+        android:textColor="@color/cement"
+        android:textSize="15dp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_ac_fnt"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@id/opt"
+        android:layout_toLeftOf="@+id/cv"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/dotted_line">
+        <ImageView
+            android:id="@+id/iv_cw"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/up_black">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/label1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_cw"
+           android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/semibold"
+            android:text="Upload image"
+            android:textColor="@color/blue"
+            android:textSize="10dp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/label_ac_fnt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/cv"
+        android:layout_below="@+id/rl_ac_fnt"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:background="@color/white"
+        android:fontFamily="@font/medium"
+        android:text="Aadhar Front"
+        android:textColor="@color/black"
+        android:textSize="13dp" />
+
+
+    <RelativeLayout
+        android:id="@+id/rl_ac_bc"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@id/opt"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_toRightOf="@+id/cv"
+        android:background="@drawable/dotted_line">
+
+        <ImageView
+            android:id="@+id/iv_ab"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/up_black">
+        </ImageView>
+        <TextView
+            android:id="@+id/label2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_ab"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/semibold"
+            android:text="Upload image"
+            android:textColor="@color/blue"
+            android:textSize="10dp" />
+        <!--        <TextView-->
+        <!--            android:id="@+id/tv_adhaar_card"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Aadhaar Card"-->
+        <!--            android:layout_marginTop="25dp"-->
+        <!--            android:textSize="15dp"-->
+        <!--            android:layout_alignParentEnd="true"-->
+        <!--            android:layout_marginRight="60dp"-->
+        <!--            android:textColor="@color/bg_missing_item_txt"-->
+        <!--            android:fontFamily="@font/gillroy_medium"/>-->
+        <!--        <ImageView-->
+        <!--            android:id="@+id/iv_aadhar_front"-->
+        <!--            android:layout_width="55dp"-->
+        <!--            android:layout_height="55dp"-->
+        <!--            android:layout_marginTop="10dp"-->
+        <!--            android:src="@drawable/image_upload"-->
+        <!--            android:layout_marginLeft="40dp"-->
+        <!--            android:layout_below="@id/tv_adhaar_card"/>-->
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/iv_aadhar_back"-->
+        <!--            android:layout_width="55dp"-->
+        <!--            android:layout_height="55dp"-->
+        <!--            android:layout_alignParentEnd="true"-->
+        <!--            android:layout_marginTop="10dp"-->
+        <!--            android:layout_below="@id/tv_adhaar_card"-->
+        <!--            android:src="@drawable/image_upload"-->
+        <!--            android:layout_marginRight="30dp"/>-->
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/label_ac_bc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/cv"
+        android:layout_below="@+id/rl_ac_fnt"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:background="@color/white"
+        android:fontFamily="@font/medium"
+        android:text="Aadhar Back"
+        android:textColor="@color/black"
+        android:textSize="13dp" />
+    <RelativeLayout
+        android:id="@+id/rl_rc_fnt"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@id/label_ac_bc"
+        android:layout_toLeftOf="@+id/cv"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/dotted_line">
+
+        <ImageView
+            android:id="@+id/iv_rf"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/up_black">
+        </ImageView>
+        <TextView
+            android:id="@+id/label3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_rf"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/semibold"
+            android:text="Upload image"
+            android:textColor="@color/blue"
+            android:textSize="10dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/label_rc_fnt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/cv"
+        android:layout_below="@+id/rl_rc_fnt"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:background="@color/white"
+        android:fontFamily="@font/medium"
+        android:text="Rc Front"
+        android:textColor="@color/black"
+        android:textSize="13dp" />
+    <RelativeLayout
+        android:id="@+id/rl_rc_bc"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@id/rl_ac_bc"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_toRightOf="@+id/cv"
+        android:background="@drawable/dotted_line">
+        <ImageView
+            android:id="@+id/iv_rb"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/up_black">
+        </ImageView>
+        <TextView
+            android:id="@+id/label4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_rb"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/semibold"
+            android:text="Upload image"
+            android:textColor="@color/blue"
+            android:textSize="10dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/label_rc_bc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/cv"
+        android:layout_below="@+id/rl_rc_bc"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:background="@color/white"
+        android:fontFamily="@font/medium"
+        android:text="Rc Back"
+        android:textColor="@color/black"
+        android:textSize="13dp" />
+
+    </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+    <RelativeLayout
+        android:id="@+id/rl_add_car"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:paddingStart="7dp"
+        android:paddingTop="10dp"
+        android:background="@drawable/cardview_lightgrey_margined"
+        android:backgroundTint="@color/black"
+        >
+        <TextView
+            android:id="@+id/label_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/semibold"
+            android:text="Add Car"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+    </RelativeLayout>
+
+</RelativeLayout>

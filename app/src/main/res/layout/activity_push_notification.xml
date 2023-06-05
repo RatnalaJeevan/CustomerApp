@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PushNotification"
+    android:background="@color/new_app_bg">
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+       >
+        <RelativeLayout
+            android:id="@+id/rl_back_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp">
+
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/back_new_black" />
+
+        </RelativeLayout>
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_initiate_claims"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Initiate Claim"
+            android:textSize="18dp"
+            android:layout_marginLeft="5dp"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/regular"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@id/rl_back_button"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:visibility="gone"
+            android:id="@+id/submit"
+            android:layout_width="120dp"
+            android:layout_height="45dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:text="SUBMIT"
+            android:textSize="16dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/semibold"
+            android:background="@drawable/pay_now_button_black" />
+    </RelativeLayout>
+    <carbon.widget.RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_top"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingBottom="10dp"
+        android:elevation="2dp"
+        app:carbon_cornerRadius="12dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv_car1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/pn1">
+        </ImageView>
+        <TextView
+            android:id="@+id/label_sample"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_car1"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/semibold"
+            android:text="Car added"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+        <TextView
+            android:id="@+id/label_get"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_sample"
+            android:lineSpacingExtra="2dp"
+            android:layout_toRightOf="@+id/iv_car1"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/regular"
+            android:text="Please Activate your package to this vehicle\nPlease activate your package to this vehicle\nPlease activate your package to this vehicle\nPlease activate your package to this vehicle\nPlease activate your package to this vehicle"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/label_activate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_get"
+            android:layout_toRightOf="@+id/iv_car1"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/bold"
+            android:text="Buy Package"
+            android:textColor="#B48239"
+            android:textSize="14dp" />
+    </carbon.widget.RelativeLayout>
+
+    <carbon.widget.RelativeLayout
+        android:id="@+id/rl2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl1"
+        android:elevation="2dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:carbon_cornerRadius="12dp"
+        android:paddingBottom="10dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/pn2">
+        </ImageView>
+        <TextView
+            android:id="@+id/label_sample1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv2"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/semibold"
+            android:text="Inspection expired"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/label_get1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_sample1"
+            android:layout_toRightOf="@+id/iv2"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/regular"
+            android:text="Please activate your package to this vehicle"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_get1"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/iv2"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/bold"
+            android:text="Request For Inspection"
+            android:textColor="@color/green"
+            android:textSize="14dp" />
+    </carbon.widget.RelativeLayout>
+
+    <carbon.widget.RelativeLayout
+        android:id="@+id/rl3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl2"
+        android:elevation="2dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:carbon_cornerRadius="12dp"
+        android:paddingBottom="10dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv3"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/pn3">
+        </ImageView>
+        <TextView
+            android:id="@+id/label1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv3"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/semibold"
+            android:text="Package expired"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <TextView
+
+            android:id="@+id/label2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label1"
+            android:layout_toRightOf="@+id/iv3"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/regular"
+            android:text="package expired for your vehicle"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+        <TextView
+            android:id="@+id/label3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label2"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/iv3"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/bold"
+            android:text="Upgrade "
+            android:textColor="@color/red"
+            android:textSize="14dp" />
+    </carbon.widget.RelativeLayout>
+
+    <carbon.widget.RelativeLayout
+        android:id="@+id/rl4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl3"
+        android:elevation="2dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:carbon_cornerRadius="12dp"
+        android:paddingBottom="10dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv4"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/pn4">
+        </ImageView>
+        <TextView
+            android:id="@+id/label4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv4"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/semibold"
+            android:text="New Coupon for you"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/label5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label4"
+            android:layout_toRightOf="@+id/iv4"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/regular"
+            android:text="Please activate your package to this vehicle"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+        <TextView
+            android:id="@+id/label6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label5"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/iv4"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/semibold"
+            android:text="Use 'WD1234' while buying"
+            android:textColor="@color/blue"
+            android:textSize="15dp" />
+    </carbon.widget.RelativeLayout>
+
+    <carbon.widget.RelativeLayout
+        android:id="@+id/rl5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl4"
+        android:elevation="2dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:carbon_cornerRadius="12dp"
+        android:paddingBottom="10dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv5"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/pn5">
+        </ImageView>
+        <TextView
+            android:id="@+id/label7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv5"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/semibold"
+            android:text="New Coupon for you"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/label8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label7"
+            android:layout_toRightOf="@+id/iv5"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/regular"
+            android:text="Please activate your package to this vehicle"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+        <TextView
+            android:id="@+id/label9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label8"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/iv5"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/bold"
+            android:text="Use 'WD1234' while buying"
+            android:textColor="#DFB85A"
+            android:textSize="14dp" />
+    </carbon.widget.RelativeLayout>
+</RelativeLayout>

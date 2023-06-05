@@ -31,8 +31,6 @@ public class Adapter_Comprehensive_service extends RecyclerView.Adapter<Adapter_
     public Adapter_Comprehensive_service(Context context, ArrayList<Pojo_Comprehensive_Plans> pojo_comprehensive_plansArrayList) {
         this.context = context;
         this.pojo_comprehensive_plansArrayList = pojo_comprehensive_plansArrayList;
-
-
     }
 
     @Override

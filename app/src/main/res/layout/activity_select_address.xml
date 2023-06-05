@@ -66,17 +66,20 @@
         android:id="@+id/add_address_enter"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_centerHorizontal="true"
-        android:padding="10dp"
-        android:gravity="center"
         android:layout_alignParentBottom="true"
-        android:layout_margin="20dp"
-        android:text="ADD ADDRESS"
-        android:textSize="14dp"
-        android:fontFamily="@font/zonapro_bold"
-        android:textColor="@color/blue"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/cardview_activation_code"
         android:backgroundTint="@color/lightgrey"
-        android:background="@drawable/cardview_activation_code">
+        android:fontFamily="@font/zonapro_bold"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="ADD ADDRESS"
+        android:textColor="@color/blue"
+        android:textSize="14dp">
 
     </TextView>
 </RelativeLayout>

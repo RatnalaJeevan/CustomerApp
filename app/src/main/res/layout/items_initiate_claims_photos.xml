@@ -4,31 +4,83 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:id="@+id/rl_items_upload"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp">
-
+        android:id="@+id/rl_ac_fnt"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/dotted_line">
+        <ImageView
+            android:id="@+id/sel_aadhar_front"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            >
+        </ImageView>
         <ImageView
             android:id="@+id/uplaod_image"
-            android:layout_width="74dp"
-            android:layout_height="55dp"
-            android:src="@drawable/upload_photos_image"
-            android:layout_centerHorizontal="true"/>
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/up_black">
+        </ImageView>
 
         <TextView
-            android:id="@+id/tv_image_name"
+            android:id="@+id/label1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/uplaod_image"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:text="Front Side Visible Car Number"
-            android:layout_below="@id/uplaod_image"
-            android:fontFamily="@font/gillroy_medium"
-            android:textSize="14dp"
-            android:gravity="center"/>
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/semibold"
+            android:text="Upload image"
+            android:textColor="@color/blue"
+            android:textSize="10dp" />
+
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_image_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_ac_fnt"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:background="@color/white"
+        android:fontFamily="@font/medium"
+        android:text="Aadhar Front"
+        android:textColor="@color/black"
+        android:textSize="13dp" />
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/rl_items_upload"-->
+<!--        android:layout_width="120dp"-->
+<!--        android:layout_height="120dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginLeft="10dp">-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/uplaod_image"-->
+<!--            android:layout_width="74dp"-->
+<!--            android:layout_height="55dp"-->
+<!--            android:src="@drawable/upload_photos_image"-->
+<!--            android:layout_centerHorizontal="true"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tv_image_name"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:text="Front Side Visible Car Number"-->
+<!--            android:layout_below="@id/uplaod_image"-->
+<!--            android:fontFamily="@font/gillroy_medium"-->
+<!--            android:textSize="14dp"-->
+<!--            android:gravity="center"/>-->
+<!--    </RelativeLayout>-->
 
 
 </RelativeLayout>

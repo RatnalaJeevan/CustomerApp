@@ -4,19 +4,26 @@ package com.wisedrive.customerapp.services;
 import com.wisedrive.customerapp.commonclasses.AppResponse;
 import com.wisedrive.customerapp.pojos.PojoAddNewClaim;
 import com.wisedrive.customerapp.pojos.PojoAddService;
+import com.wisedrive.customerapp.pojos.PojoAddYourCar;
 import com.wisedrive.customerapp.pojos.PojoAdditionalService;
 import com.wisedrive.customerapp.pojos.PojoAddresses;
 import com.wisedrive.customerapp.pojos.PojoBookService;
 import com.wisedrive.customerapp.pojos.PojoCreateLead;
 import com.wisedrive.customerapp.pojos.PojoCreateOrder;
+import com.wisedrive.customerapp.pojos.PojoDeleteAdress;
 import com.wisedrive.customerapp.pojos.PojoFeedbackList;
+import com.wisedrive.customerapp.pojos.PojoGetVehdetails;
 import com.wisedrive.customerapp.pojos.PojoInitiateClaim;
+import com.wisedrive.customerapp.pojos.PojoPayParttial;
 import com.wisedrive.customerapp.pojos.PojoPeriodicMaintenanceServices;
 import com.wisedrive.customerapp.pojos.PojoRequestVehInsp;
 import com.wisedrive.customerapp.pojos.PojoScheduleAdress;
 import com.wisedrive.customerapp.pojos.PojoSellPackage;
 import com.wisedrive.customerapp.pojos.PojoServices;
 import com.wisedrive.customerapp.pojos.PojoSubmitItems;
+import com.wisedrive.customerapp.pojos.PojoSubmitSelfInsp;
+import com.wisedrive.customerapp.pojos.PojoUpdateDocs;
+import com.wisedrive.customerapp.pojos.PojoUpdateOdometer;
 import com.wisedrive.customerapp.pojos.PojoUpgradePackage;
 import com.wisedrive.customerapp.pojos.PojoUploadInvoice;
 
@@ -38,6 +45,9 @@ public interface ApiInterface
     @POST("/CustomerLogin/createLead")
     Call<AppResponse> createLead(@Body PojoCreateLead pojoCreateLead);
 
+    @POST("/Profile/reqForEdit")
+    Call<AppResponse> req_for_edit(@Body PojoCreateLead pojoCreateLead);
+
     @GET("/AddVehicle/getBrandList")
     Call<AppResponse> getBrandList();
 
@@ -53,9 +63,15 @@ public interface ApiInterface
     @GET("/Packages/getpackList")
     Call<AppResponse> getPackList(@Query("leadId") String leadId,@Query("customerId") String customerId);
 
+    @GET("/Packages/getpackListNew")
+    Call<AppResponse> getNewPackList(@Query("leadId") String leadId,@Query("customerId") String customerId);
+
     @GET("/Packages/getpackDetails")
     Call<AppResponse> getPackDetails(@Query("leadId") String leadId,@Query("customerId") String customerId,
                                      @Query("packageId") String packageId);
+
+    @GET("/Packages/getProductList")
+    Call<AppResponse> get_product_list(@Query("packageId") String packageId);
 
     @GET("/Packages/getpackDescription")
     Call<AppResponse> getPackDescription(@Query("leadId") String leadId,@Query("customerId") String customerId,
@@ -90,8 +106,10 @@ public interface ApiInterface
     Call<AppResponse> generate_order(@Body PojoCreateOrder pojoCreateOrder);
 
     @POST("/Packages/sell/Package/to/customer")
-    Call<AppResponse> sell_package(@Body PojoSellPackage pojoSellPackage);
+    Call<AppResponse> sell_package_to_customer(@Body PojoSellPackage pojoSellPackage);
 
+    @POST("/Packages/sell/Package")
+    Call<AppResponse> sell_package(@Body PojoSellPackage pojoSellPackage);
 
     @GET("/Packages/vehicleProductDetails")
     Call<AppResponse> getVehProductDetails(@Query("vehicleId") String vehicleId);
@@ -99,7 +117,8 @@ public interface ApiInterface
 
     @GET("/NewService/serviceList")
     Call<AppResponse> getServiceList(@Query("vehicleId") String vehicleId,@Query("productId") String productId,
-                                     @Query("packId") String packId,@Query("packType") String packType);
+                                     @Query("packId") String packId,@Query("packType") String packType,
+                                     @Query("customerId") String customerId);
 
     @POST("/NewService/bookService")
     Call<AppResponse> book_service(@Body PojoBookService pojoBookService);
@@ -163,10 +182,13 @@ public interface ApiInterface
                                           @Query("leadId") String leadId);
 
 
-
-
     @GET("/CustomerLogin/getAppUpdateDetails")
     Call<AppResponse> getapp_update_deatails(@Query("appId") String appId,@Query("osType") String osType);
+
+
+    @GET("/CustomerLogin/getStatus")
+    Call<AppResponse> get_cust_status(@Query("customerId") String customerId,@Query("leadId") String leadId);
+
 
     @GET("/CustomerLogin/getotp")
     Call<AppResponse> getOTP(@Query("phoneNo") String phoneNo);
@@ -186,8 +208,7 @@ public interface ApiInterface
     @POST("/Homepage/getVehicleDetails")
     Call<AppResponse> post_veh_details(@Body PojoPeriodicMaintenanceServices post);
 
-    @GET("/AddressDetails/addressList")
-    Call<AppResponse> get_address_list(@Query("customerId") String customerId);
+
 
     @POST("/AddressDetails/updateaddress")
     Call<AppResponse> post_address(@Body PojoAddresses post_address);
@@ -268,5 +289,74 @@ public interface ApiInterface
 
     @GET("/Claims/trackClaims")
     Call<AppResponse> getTrackClaim(@Query("claimId") String claimId);
+
+    @POST("/AddVehicle/updateOdometer")
+    Call<AppResponse> update_odo(@Body PojoUpdateOdometer pojoUpdateOdometer);
+
+
+    @GET("/AddVehicle/getOdometerHistory")
+    Call<AppResponse> get_odo_history(@Query("vehId") String vehId,@Query("leadVehId") String leadVehId);
+
+    @GET("/Profile/documentList")
+    Call<AppResponse> get_doc_list(@Query("vehicleId") String vehicleId,@Query("customerId") String customerId,
+                                   @Query("leadVehId") String leadVehId,@Query("leadId") String leadId);
+
+    @POST("/Profile/updateDocument")
+    Call<AppResponse> update_doc(@Body PojoUpdateDocs pojoUpdateDocs);
+
+    @GET("/Profile/docvehicleList")
+    Call<AppResponse> get_doc_veh_list(@Query("customerId") String customerId);
+
+    @GET("/Packages/getPlanList")
+    Call<AppResponse> get_c_plans_list();
+
+    @GET("/Packages/getPackageBasedOnPlan")
+    Call<AppResponse> get_pack_based_plan(@Query("leadId") String leadId,
+                                          @Query("customerId") String customerId,
+                                          @Query("planId") String planId);
+
+
+    @GET("/Packages/getUpgradePackList")
+    Call<AppResponse> get_upgrade_pac_list(@Query("leadId") String leadId, @Query("customerId") String customerId,
+                                          @Query("vehicleId") String vehicleId,@Query("packageId") String packageId,
+                                           @Query("categoryId") String categoryId,@Query("iswithActivePack") String iswithActivePack);
+    @GET("/Packages/getPartialPaymentProducts")
+    Call<AppResponse> get_partial_payment_products(@Query("packageId") String packageId);
+
+    @POST("/Inspection/getDetails")
+    Call<AppResponse> getVeh_details(@Body PojoGetVehdetails pojoGetVehdetails);
+
+    @POST("/AddVehicle/addVehicle")
+    Call<AppResponse> add_car(@Body PojoAddYourCar pojoAddYourCar);
+
+    @GET("/Inspection/getPartDetails")
+    Call<AppResponse> get_part_details(@Query("vehicleId") String vehicleId, @Query("leadVehId") String leadVehId,
+                                           @Query("partId") String partId,@Query("winsvehId") String winsvehId);
+
+    @GET("/Packages/getWarrantyBenifits")
+    Call<AppResponse> get_warranty_benefits();
+
+
+    @POST("/Inspection/submitInspectionDetails")
+    Call<AppResponse> self_insp(@Body PojoSubmitSelfInsp pojoSubmitSelfInsp);
+
+    @POST("/Packages/completePartialPayment")
+    Call<AppResponse> complete_partial(@Body PojoPayParttial pojoPayParttial);
+
+    @GET("/Packages/getServiceDetails")
+    Call<AppResponse> get_service_details(@Query("servicepackId") String servicepackId, @Query("count") String count,
+                                          @Query("dppId") String dppId);
+
+    @GET("/AddressDetails/addressList")
+    Call<AppResponse> get_address_list(@Query("customerId") String customerId);
+
+    @POST("/AddressDetails/deleteAddress")
+    Call<AppResponse> delete_adress(@Body PojoDeleteAdress pojoDeleteAdress);
+
+    @GET("/Packages/displayPopup")
+    Call<AppResponse> get_display_popup(@Query("customerId") String customerId,
+                                       @Query("leadId") String leadId );
+
+
 
 }

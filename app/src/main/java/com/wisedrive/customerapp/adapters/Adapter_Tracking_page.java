@@ -43,14 +43,28 @@ public class Adapter_Tracking_page extends RecyclerView.Adapter<Adapter_Tracking
         holder.tv_request_description.setText(list.getDescription());
         holder.tv_date.setText(list.getService_flow_date());
 
-        Glide.with(context).load(list.getIcon()).placeholder(R.drawable.icon_noimage).into(holder.imv_request);
 
+
+//        if(position==0){
+//            holder.imv_request.setImageResource(R.drawable.service_image);
+//           // Glide.with(context).load().placeholder(R.drawable.service_image).into(holder.imv_request);
+//        }else {
+//            Glide.with(context).load(list.getIcon()).placeholder(R.drawable.icon_noimage).into(holder.imv_request);
+//            holder.imv_request.setAlpha( 0.85F);
+//        }
+
+        Glide.with(context).load(list.getIcon()).placeholder(R.drawable.icon_noimage).into(holder.imv_request);
+//        if(position==0){
+//            holder.rl_cancel.setVisibility(View.VISIBLE);
+//        }else {
+//            holder.rl_cancel.setVisibility(View.GONE);
+//        }
        if(list.getOtp()==null||list.getOtp().equals("null")||list.getOtp().equals("")){
            holder.rl_otp.setVisibility(View.GONE);
            holder.view_request.setVisibility(View.VISIBLE);
-           holder.view_request1.setVisibility(View.INVISIBLE);
+         //  holder.view_request1.setVisibility(View.INVISIBLE);
        }else{
-           holder.view_request.setVisibility(View.INVISIBLE);
+         //  holder.view_request.setVisibility(View.INVISIBLE);
            holder.view_request1.setVisibility(View.VISIBLE);
            holder.rl_otp.setVisibility(View.VISIBLE);
            holder.tv_otp.setText(list.getOtp());
@@ -60,10 +74,11 @@ public class Adapter_Tracking_page extends RecyclerView.Adapter<Adapter_Tracking
             holder.view_request.setVisibility(View.INVISIBLE);
             holder.view_request1.setVisibility(View.INVISIBLE);
         }else{
-            holder.view_request.setVisibility(View.VISIBLE);
+           // holder.view_request.setVisibility(View.VISIBLE);
             holder.view_request1.setVisibility(View.VISIBLE);
         }
-       if(list.getIs_active().equalsIgnoreCase("y")){
+       if(list.getIs_active().equalsIgnoreCase("y"))
+       {
            if(list.getService_status_id().equals("8")){
                holder. tv_status.setTextColor(Color.parseColor("#FF3B30"));
                holder. tv_request_description.setTextColor(Color.parseColor("#FF3B30"));
@@ -72,19 +87,19 @@ public class Adapter_Tracking_page extends RecyclerView.Adapter<Adapter_Tracking
                holder.view_request1.setBackgroundResource(R.color.red_1);
 
            }else{
-               holder. tv_status.setTextColor(Color.parseColor("#008000"));
-               holder. tv_request_description.setTextColor(Color.parseColor("#008000"));
-               holder. tv_date.setTextColor(Color.parseColor("#008000"));
-               holder.view_request.setBackgroundResource(R.color.green);
-               holder.view_request1.setBackgroundResource(R.color.green);
+               holder. tv_status.setTextColor(Color.parseColor("#252a40"));
+               holder. tv_request_description.setTextColor(Color.parseColor("#252a40"));
+               holder. tv_date.setTextColor(Color.parseColor("#252a40"));
+               holder.view_request.setBackgroundResource(R.color.black);
+               holder.view_request1.setBackgroundResource(R.color.black);
            }
 
        }else{
-           holder.  tv_status.setTextColor(Color.parseColor("#aeaeb2"));
-           holder. tv_request_description.setTextColor(Color.parseColor("#aeaeb2"));
-           holder. tv_date.setTextColor(Color.parseColor("#aeaeb2"));
-           holder.view_request.setBackgroundResource(R.color.middle_gray);
-           holder.view_request1.setBackgroundResource(R.color.green);
+           holder.  tv_status.setTextColor(Color.parseColor("#E5E5EA"));
+           holder. tv_request_description.setTextColor(Color.parseColor("#E5E5EA"));
+           holder. tv_date.setTextColor(Color.parseColor("#E5E5EA"));
+           holder.view_request.setBackgroundResource(R.color.text_color1);
+           holder.view_request1.setBackgroundResource(R.color.text_color1);
        }
 
     }
@@ -103,6 +118,7 @@ public class Adapter_Tracking_page extends RecyclerView.Adapter<Adapter_Tracking
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
+           // rl_cancel=itemView.findViewById(R.id.rl_cancel);
             tv_status= itemView.findViewById(R.id.tv_status);
             tv_request_description= itemView.findViewById(R.id.tv_request_description);
             tv_date= itemView.findViewById(R.id.tv_date);

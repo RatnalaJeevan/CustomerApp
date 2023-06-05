@@ -4,16 +4,18 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-  <androidx.cardview.widget.CardView
+  <carbon.widget.RelativeLayout
       android:id="@+id/cardview"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-     app:cardCornerRadius="20dp"
+      app:cardCornerRadius="5dp"
       app:cardElevation="5dp"
+      android:background="@drawable/cardview_lightgrey_margined"
       android:layout_marginLeft="15dp"
       android:layout_marginRight="15dp"
-      android:layout_marginTop="10dp"
-      android:layout_marginBottom="10dp">
+      android:layout_marginTop="15dp"
+      android:layout_marginBottom="15dp"
+      android:padding="5dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -23,13 +25,14 @@
         android:id="@+id/tv_question"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:lineSpacingExtra="3dp"
         android:text="When is the last time, General Service is done?Is it done with wisedrive or elsewhere?"
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:textColor="@color/black"
         android:textSize="15dp"
-        android:fontFamily="@font/gillroy_semibold"/>
+        android:fontFamily="@font/medium"/>
 
       <TextView
           android:visibility="gone"
@@ -43,16 +46,19 @@
           android:layout_marginBottom="15dp"
           android:textSize="13dp"
           android:textColor="@color/heading"
-        android:fontFamily="@font/gillroy_regular"/>
+        android:fontFamily="@font/regular"/>
 
       <androidx.recyclerview.widget.RecyclerView
+
           android:id="@+id/rv_yes_no"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:layout_marginRight="10dp"
+          android:layout_marginTop="5dp"
           android:layout_below="@id/tv_select_option" />
 
 
     </RelativeLayout>
-  </androidx.cardview.widget.CardView>
+  </carbon.widget.RelativeLayout>
 
 </RelativeLayout>

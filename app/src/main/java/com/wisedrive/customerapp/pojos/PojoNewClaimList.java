@@ -20,6 +20,12 @@ public class PojoNewClaimList {
     String claim_name;
     @SerializedName("status_name")
     String status_name;
+    @SerializedName("requested_on")
+    String requested_on;
+
+    public String getRequested_on() {
+        return requested_on;
+    }
 
     public String getStatus_name() {
         return status_name;

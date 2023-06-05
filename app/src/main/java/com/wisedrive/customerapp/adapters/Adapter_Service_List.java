@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.wisedrive.customerapp.R;
+import com.wisedrive.customerapp.commonclasses.SPHelper;
 import com.wisedrive.customerapp.pojos.Pojo_Class_Plan_2;
 import com.wisedrive.customerapp.pojos.Pojo_Description_lines;
 import com.wisedrive.customerapp.pojos.Pojo_Service_list;
@@ -46,9 +47,16 @@ public class Adapter_Service_List extends RecyclerView.Adapter<Adapter_Service_L
         holder.text_service_name.setText(recyclerdata.getPackage_name());
        holder.tv_description.setText(recyclerdata.getPackage_description());
 
-        Glide.with(context).load(recyclerdata.getIcon_url()).placeholder(R.drawable.service_image).into(holder.image_logo);
+       Glide.with(context).load(recyclerdata.getIcon_url()).placeholder(R.drawable.service_image).into(holder.image_logo);
 
-        // holder.image_logo.setImageResource(list.getImage_logo());
+       if(position==0)
+       {
+           holder.description_page.setVisibility(View.VISIBLE);
+           pojo_service_listArrayList.get(position).isVisible=true;
+           holder.plus_icon.setVisibility(View.INVISIBLE);
+           holder.minus_icon.setVisibility(View.VISIBLE);
+       }
+
         holder.rl_max.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

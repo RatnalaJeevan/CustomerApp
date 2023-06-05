@@ -1,34 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="20dp"
-        app:cardUseCompatPadding="true">
 
-        <RelativeLayout
+        <carbon.widget.RelativeLayout
             android:id="@+id/relative_layout_services"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/service_list">
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/white"
+            android:elevation="20dp"
+            app:carbon_cornerRadius="5dp"
+            app:carbon_elevationShadowColor="@color/new_app_bg"
+            >
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="12dp"
-                android:paddingBottom="8dp">
+                >
 
 
                     <ImageView
                         android:id="@+id/image_logo"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_marginLeft="10dp"
                         android:src="@drawable/service_image" />
 
@@ -42,50 +44,49 @@
                     android:layout_marginLeft="10dp"
                     android:textSize="16dp"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/gillroy_semibold"
+                    android:fontFamily="@font/semibold"
                     android:layout_toRightOf="@id/image_logo"/>
 
                 <TextView
                     android:id="@+id/tv_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_toStartOf="@+id/tv_exp_on"
+                    android:layout_marginEnd="20dp"
                     android:text="Date:1 Jan 2023"
                     android:layout_below="@id/text_service_name"
                     android:layout_marginStart="10dp"
                     android:textSize="12dp"
-                    android:fontFamily="@font/gillroy_regular"
+                    android:fontFamily="@font/regular"
                     android:textColor="@color/black"
                     android:layout_toEndOf="@id/image_logo" />
-                <TextView
-                    android:id="@+id/tv_exp_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="10dp"
-                    android:text="Expires On"
-                    android:layout_below="@id/text_service_name"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="13dp"
-                    android:fontFamily="@font/gillroy_regular"
-                    android:textColor="@color/black" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@+id/tv_description"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toRightOf="@+id/image_logo"
+                    android:background="@color/cement">
+
+                </View>
 
                 <TextView
                     android:id="@+id/tv_exp_on"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
+                    android:layout_toEndOf="@id/image_logo"
                     android:layout_marginTop="3dp"
                     android:layout_marginRight="5dp"
-                    android:layout_below="@+id/tv_exp_label"
+                    android:layout_below="@+id/view"
                     android:text="24-03-2024"
                     android:layout_marginLeft="10dp"
                     android:textSize="15dp"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/gillroy_semibold"
+                    android:fontFamily="@font/semibold"
                     />
             </RelativeLayout>
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
+        </carbon.widget.RelativeLayout>
 
 </RelativeLayout>

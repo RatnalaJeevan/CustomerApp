@@ -1,11 +1,15 @@
 package com.wisedrive.customerapp.commonclasses;
 
+import com.google.gson.annotations.SerializedName;
+import com.wisedrive.customerapp.pojos.CustomerLoginDetails;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 
-public class ResponseExtension {
+public class ResponseExtension
+{
 
     private JSONObject response;
 
@@ -24,11 +28,20 @@ public class ResponseExtension {
 
     public String getResponseMessage() {
         try {
-            return this.response.getString("response");
+            return this.response.getString("message");
         } catch (JSONException e) {
             e.printStackTrace();
         }
         return "";
+    }
+
+    public JSONObject getVehObj() {
+        try {
+            return this.response.getJSONObject("vehDetails");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return new JSONObject();
     }
 
     public JSONObject getResponseObject() {

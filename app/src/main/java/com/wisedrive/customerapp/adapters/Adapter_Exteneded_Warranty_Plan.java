@@ -11,11 +11,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.wisedrive.customerapp.Warranty_Description;
 import com.wisedrive.customerapp.R;
 import com.wisedrive.customerapp.commonclasses.SPHelper;
+import com.wisedrive.customerapp.pojos.PojoEWPProducts;
+import com.wisedrive.customerapp.pojos.PojoEWPRc;
 import com.wisedrive.customerapp.pojos.Pojo_Extended_Warranty_Plan;
 
 import java.text.DecimalFormat;
@@ -27,7 +30,11 @@ public class Adapter_Exteneded_Warranty_Plan extends RecyclerView.Adapter<Adapte
     Context context;
     private View view;
     ArrayList<Pojo_Extended_Warranty_Plan>pojo_extended_warranty_planArrayList;
-
+    RecyclerView rv_rc_ewp,rv_ewp_product_list;
+    AdapterEWPRCList adapterEWPRCList;
+    ArrayList<PojoEWPRc> pojoEWPRcs;
+    ArrayList<PojoEWPProducts> pojoEWPProducts;
+    AdapterEWPProductList adapterEWPProductList;
     public Adapter_Exteneded_Warranty_Plan(Context context, ArrayList<Pojo_Extended_Warranty_Plan>pojo_extended_warranty_planArrayList) {
         this.context = context;
         this.pojo_extended_warranty_planArrayList =pojo_extended_warranty_planArrayList;
@@ -47,15 +54,15 @@ public class Adapter_Exteneded_Warranty_Plan extends RecyclerView.Adapter<Adapte
         IndianCurrencyFormat = new DecimalFormat("##,##,###");
         holder. text_warranty_name.setText(recyclerdata.getDisplay_name());
         holder.text_amount.setText(IndianCurrencyFormat.format((int)recyclerdata.getFinal_price()));
-        holder.plan_validity.setText(recyclerdata.getPlan_validity());
-        if((int)recyclerdata.getAmount_saved()==0){
-            holder.rl_validity_save.setVisibility(View.INVISIBLE);
-        }else{
-            holder.rl_validity_save.setVisibility(View.VISIBLE);
-            holder.text_save_amount.setText("INR \t"+IndianCurrencyFormat.format((int)recyclerdata.getAmount_saved()));
-        }
+       // holder.plan_validity.setText(recyclerdata.getPlan_validity());
+//        if((int)recyclerdata.getAmount_saved()==0){
+//            holder.rl_validity_save.setVisibility(View.INVISIBLE);
+//        }else{
+//            holder.rl_validity_save.setVisibility(View.VISIBLE);
+//            holder.text_save_amount.setText("INR \t"+IndianCurrencyFormat.format((int)recyclerdata.getAmount_saved()));
+//        }
 
-        holder.rl_amount.setOnClickListener(new View.OnClickListener() {
+        holder.rl_view_details_button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -67,6 +74,23 @@ public class Adapter_Exteneded_Warranty_Plan extends RecyclerView.Adapter<Adapte
                 view.getContext().startActivity(intent);
             }
         });
+
+        pojoEWPRcs=new ArrayList<>();
+
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false);
+        adapterEWPRCList=new AdapterEWPRCList(pojoEWPRcs,context);
+        rv_rc_ewp.setLayoutManager(linearLayoutManager);
+        rv_rc_ewp.setAdapter(adapterEWPRCList);
+
+
+        pojoEWPProducts=new ArrayList<>();
+        pojoEWPProducts.add(new PojoEWPProducts("Comprehensive Warranty"));
+        pojoEWPProducts.add(new PojoEWPProducts("Buy back Guarantee"));
+        LinearLayoutManager l1=new LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false);
+        adapterEWPProductList=new AdapterEWPProductList(pojoEWPProducts,context);
+        rv_ewp_product_list.setLayoutManager(l1);
+        rv_ewp_product_list.setAdapter(adapterEWPProductList);
+
     }
 
     @Override
@@ -77,15 +101,16 @@ public class Adapter_Exteneded_Warranty_Plan extends RecyclerView.Adapter<Adapte
     public class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView image_icon;
         TextView text_warranty_name,text_amount,text_save_amount,plan_validity;
-        RelativeLayout rl_amount,rl_validity_save;
+        RelativeLayout rl_amount,rl_view_details_button;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             rl_amount=itemView.findViewById(R.id.rl_amount);
             text_warranty_name = (TextView) itemView.findViewById(R.id.text_warranty_name);
-            text_amount = (TextView) itemView.findViewById(R.id.text_amount);
-            text_save_amount = (TextView) itemView.findViewById(R.id.text_save_amount);
-            rl_validity_save=itemView.findViewById(R.id.rl_validity_save);
-            plan_validity=itemView.findViewById(R.id.plan_validity);
+            text_amount =  itemView.findViewById(R.id.text_amount);
+            rl_view_details_button = itemView.findViewById(R.id.rl_view_details_button);
+            rv_rc_ewp=itemView.findViewById(R.id.rv_rc_ewp);
+            rv_ewp_product_list=itemView.findViewById(R.id.rv_ewp_product_list);
         }
 
     }

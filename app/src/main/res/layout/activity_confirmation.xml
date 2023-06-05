@@ -5,20 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Confirmation_Activity"
-    android:background="@color/brown">
-
+    android:background="@color/new_app_bg">
 
     <TextView
         android:id="@+id/tv_confirmation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Confirmation"
+        android:text="Payment Confirmation"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:textColor="@color/black"
         android:textSize="20dp"
-        android:fontFamily="@font/gillroy_regular"/>
-
+        android:fontFamily="@font/medium"/>
 
         <RelativeLayout
         android:id="@+id/rl_parent"
@@ -26,7 +24,8 @@
         android:layout_height="match_parent"
         android:layout_below="@id/tv_confirmation"
         android:layout_marginTop="20dp"
-        android:background="@drawable/confirmation_background">
+        android:background="@drawable/confirmation_background"
+            android:backgroundTint="@color/new_app_bg">
 
                     <RelativeLayout
                 android:id="@+id/rl_amount"
@@ -37,7 +36,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="20dp"
                 android:src="@drawable/right"/>
 
             <TextView
@@ -50,7 +49,7 @@
                 android:textSize="14dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/gillroy_regular"/>
+                android:fontFamily="@font/regular"/>
 
             <TextView
                 android:id="@+id/tv_inr"
@@ -60,7 +59,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@id/imv"
-                android:fontFamily="@font/gillroy_regular"
+                android:fontFamily="@font/regular"
                 android:text="INR"
                 android:textColor="@color/black"
                 android:textSize="13dp" />
@@ -75,7 +74,7 @@
                 android:textColor="@color/black"
                 android:textSize="26dp"
                 android:layout_marginLeft="5dp"
-                android:fontFamily="@font/gillroy_semibold"/>
+                android:fontFamily="@font/semibold"/>
 
             <TextView
                 android:id="@+id/tv_incl_gst"
@@ -88,7 +87,7 @@
                 android:textSize="14dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="5dp"
-                android:fontFamily="@font/gillroy_regular"/>
+                android:fontFamily="@font/regular"/>
 
             <TextView
                 android:id="@+id/confir_number"
@@ -100,7 +99,7 @@
                 android:layout_toRightOf="@id/imv"
                 android:textSize="14dp"
                 android:layout_marginLeft="10dp"
-                android:fontFamily="@font/gillroy_regular"/>
+                android:fontFamily="@font/regular"/>
 
             <TextView
                 android:id="@+id/number"
@@ -111,58 +110,25 @@
                 android:layout_below="@id/tv_amount"
                 android:layout_toRightOf="@id/confir_number"
                 android:textSize="14dp"
-                android:fontFamily="@font/gillroy_regular"
+                android:fontFamily="@font/regular"
                 android:layout_marginLeft="2dp"/>
 
             <View
                 android:id="@+id/view"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="1px"
                 android:layout_below="@id/number"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="8dp"
-                android:background="@color/view" />
+                android:background="@color/black" />
             </RelativeLayout>
-
-                    <TextView
-                android:id="@+id/tv_service_includes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                        android:layout_below="@+id/rl_amount"
-                android:text="Service Includes"
-                android:textColor="@color/heading"
-                android:textSize="17dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/gillroy_semibold"
-                android:layout_marginLeft="10dp" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_service_incluedes_list"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_above="@+id/view1"
-                android:layout_below="@id/tv_service_includes" />
-
-            <View
-                android:id="@+id/view1"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_above="@+id/rl_description"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="8dp"
-                android:background="@color/view" />
-
-
 
             <RelativeLayout
                 android:id="@+id/rl_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_above="@+id/relative_layout"
+                android:layout_below="@+id/rl_amount"
                 android:layout_marginTop="12dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
@@ -175,12 +141,49 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="13dp"
-                    android:fontFamily="@font/gillroy_regular"
-                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/regular"
+                    android:layout_marginTop="7dp"
                     android:layout_marginLeft="12dp"
                     android:layout_marginRight="12dp"
-                    android:text="Please check your Email for payment reciept and warranty agreement.your car will start once by clicking the link in email"/>
+                    android:textColor="@color/black"
+                    android:text="Please check your Email for payment reciept and warranty agreement.your car will start once by clicking the link in email."/>
             </RelativeLayout>
+
+                    <TextView
+                android:id="@+id/tv_service_includes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_description"
+                android:text="Includes"
+                android:textColor="@color/text_color"
+                android:textSize="16dp"
+                android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                android:fontFamily="@font/semibold"
+                android:layout_marginLeft="10dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_service_incluedes_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/tv_service_includes"
+                android:layout_above="@+id/relative_layout"/>
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_above="@+id/rl_description"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/cement" />
+
+
+
+
             <RelativeLayout
                 android:id="@+id/relative_layout"
                 android:layout_width="match_parent"
@@ -195,15 +198,16 @@
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/addons_pay_bacground">
+                    android:background="@drawable/addons_pay_bacground"
+                    android:backgroundTint="@color/black">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:fontFamily="@font/gillroy_bold"
-                        android:text="Request Inspection"
-                        android:textColor="@color/blue"
+                        android:fontFamily="@font/bold"
+                        android:text="Request For Inspection"
+                        android:textColor="@color/white"
                         android:textSize="15dp" />
                 </RelativeLayout>
 
@@ -218,10 +222,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="I'll Do Later"
-                    android:fontFamily="@font/gillroy_regular"
+                    android:fontFamily="@font/regular"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="5dp"
-                    android:textColor="@color/text_color"/>
+                    android:textColor="@color/black"/>
 
                 <View
                     android:id="@+id/view_do_later"
@@ -245,13 +249,14 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="50dp"
-                android:background="@drawable/rl_back_my_cars">
+                android:background="@drawable/rl_back_my_cars"
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:fontFamily="@font/gillroy_semibold"
+                    android:fontFamily="@font/semibold"
                     android:text="MY CARS"
                     android:textColor="@color/black"
                     android:textSize="20dp" />

@@ -3,140 +3,125 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/new_app_bg"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Plans_Fragments">
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
     <RelativeLayout
         android:id="@+id/rl_scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
     <RelativeLayout
         android:id="@+id/relative_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/text_plans"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Extended Warranty Plan"
-        android:layout_marginLeft="15dp"
-        android:textSize="20dp"
-        android:fontFamily="@font/gillroy_bold"
-        android:textColor="@color/heading" />
-        <View
-            android:id="@+id/view1"
-            android:layout_width="40dp"
-            android:layout_height="2dp"
-            android:background="@color/violet"
-            android:layout_below="@id/text_plans"
-            android:layout_marginLeft="15dp" />
+        <carbon.widget.RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/rl1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            app:carbon_cornerRadius="5dp"
+            android:background="@color/black"
+            >
 
+            <TextView
+                android:id="@+id/label_cw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/semibold"
+                android:text="Are you buying a used car ?"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+            <TextView
+                android:id="@+id/label_get_cw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label_cw"
+                android:lineSpacingExtra="3dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/medium"
+                android:text="Check if your car is pre-approved by Wisedrive and protect 100% of your investment"
+                android:textColor="@color/white"
+                android:textSize="14dp" />
+            <carbon.widget.RelativeLayout
+                android:id="@+id/rl_check_my_car"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="15dp"
+                android:layout_below="@+id/label_get_cw"
+                android:layout_marginEnd="20dp"
+                android:layout_alignParentEnd="true"
+                app:carbon_cornerRadius="18dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/check_my_car"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="22dp"
+                    android:fontFamily="@font/semibold"
+                    android:text="Complete Payment"
+                    android:textColor="@color/black"
+                    android:textSize="13dp" />
+
+                <ImageView
+
+                    android:id="@+id/iv_a"
+                    android:layout_width="20dp"
+                    android:layout_height="15dp"
+                    android:layout_toEndOf="@+id/check_my_car"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/r_arrow">
+                </ImageView>
+            </carbon.widget.RelativeLayout>
+        </carbon.widget.RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:visibility="gone"
         android:id="@+id/rv_warranty_pac_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/view1" />
-
-    <TextView
-        android:id="@+id/text_combo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Services &amp; Maintenance Plans "
         android:layout_marginTop="20dp"
-        android:textColor="@color/heading"
-        android:textSize="20dp"
-        android:fontFamily="@font/gillroy_bold"
-        android:layout_below="@id/rv_warranty_pac_list"
-        android:layout_marginLeft="15dp"/>
-        <View
-            android:id="@+id/view2"
-            android:layout_width="40dp"
-            android:layout_height="2dp"
-            android:background="@color/violet"
-            android:layout_below="@id/text_combo"
-            android:layout_marginLeft="15dp" />
+        android:layout_below="@+id/rl1"/>
+
     <androidx.recyclerview.widget.RecyclerView
+        android:visibility="gone"
         android:id="@+id/rv_service_pac_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/view2"
+        android:layout_below="@id/rv_warranty_pac_list"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"/>
-
-
-        <TextView
-            android:id="@+id/text_comprehensive_plans"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:text="Comprehensive Plans"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/gillroy_bold"
-            android:layout_below="@id/rv_service_pac_list"
-            android:layout_marginLeft="15dp"
-            android:visibility="gone"/>
-
-        <View
-            android:id="@+id/view_addon"
-            android:layout_width="40dp"
-            android:layout_height="2dp"
-            android:background="@color/violet"
-            android:layout_below="@id/text_comprehensive_plans"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:visibility="gone"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_v_addon"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/view_addon"
-            android:layout_marginTop="20dp"
-            android:visibility="gone"/>
-
-
-
-        <TextView
-            android:id="@+id/tv_combo_plans"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/heading"
-            android:textSize="20dp"
-            android:text="Combo Plans"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/gillroy_bold"
-            android:layout_below="@id/rv_service_pac_list"
-            android:layout_marginLeft="15dp" />
-
-        <View
-            android:id="@+id/view_combo_plan"
-            android:layout_width="40dp"
-            android:layout_height="2dp"
-            android:background="@color/violet"
-            android:layout_below="@id/tv_combo_plans"
-            android:layout_marginLeft="15dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_combo_pac_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/view_combo_plan"
+            android:layout_below="@id/rv_service_pac_list"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"/>
 
     </RelativeLayout>
     </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
-
 
     <ProgressBar
         android:visibility="gone"

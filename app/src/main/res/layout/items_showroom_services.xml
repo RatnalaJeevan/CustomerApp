@@ -2,71 +2,109 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/new_app_bg"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardview"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        app:cardCornerRadius="20dp"
-        android:layout_marginLeft="15dp"
-        app:cardMaxElevation="20dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:elevation="20dp">
 
-        <RelativeLayout
+    <carbon.widget.LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        app:carbon_cornerRadius="5dp"
+        app:carbon_elevationShadowColor="@color/lightgrey">
+
+        <carbon.widget.RelativeLayout
+            android:id="@+id/rl1"
             android:layout_width="match_parent"
-            android:layout_height="150dp">
+            android:layout_height="170dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/cardview_lightgrey_margined"
+            android:paddingLeft="10dp"
+            android:elevation="20dp"
+            app:carbon_elevationShadowColor="@color/lightgrey">
+
+
         <RelativeLayout
             android:id="@+id/rl_warranty_name"
             android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:background="@color/brown">
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/rl_image"
+           >
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="12dp">
+                android:paddingTop="10dp"
+                >
+
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/image_free1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/right_arrow_black" />
 
                 <RelativeLayout
+                    android:visibility="gone"
                     android:id="@+id/rl_image"
-                    android:layout_width="55dp"
-                    android:layout_height="55dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_width="50dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_centerVertical="true"
                     android:background="@drawable/background_rl">
 
                     <ImageView
                         android:id="@+id/image_logo"
-                        android:layout_width="31dp"
-                        android:layout_height="31dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_centerInParent="true"
                         android:src="@drawable/service_image" />
 
                 </RelativeLayout>
-
                 <TextView
                     android:id="@+id/text_service_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_status"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/rl_image"
                     android:text="General Service Standard"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="10dp"
                     android:textSize="15dp"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/gillroy_semibold"
-                    android:layout_toRightOf="@id/rl_image"/>
+                    android:fontFamily="@font/semibold"
+                    />
 
                 <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_toRightOf="@+id/rl_image"
+                    android:text="Inprogress"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/regular"/>
+                <TextView
+
                     android:id="@+id/tv_description"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
                     android:text="Date:1 Jan 2023"
                     android:layout_below="@id/text_service_name"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="10dp"
                     android:textSize="14dp"
-                    android:fontFamily="@font/gillroy_regular"
-                    android:textColor="@color/heading"
-                    android:layout_toRightOf="@id/rl_image" />
+                    android:fontFamily="@font/regular"
+                    android:textColor="@color/black"
+                    />
 
                 <ImageView
                     android:id="@+id/plus_icon"
@@ -88,57 +126,87 @@
                     android:visibility="gone"/>
         </RelativeLayout>
         </RelativeLayout>
-        <RelativeLayout
+
+            <com.wisedrive.customerapp.commonclasses.DottedLineView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginEnd="5dp"
+                android:layout_above="@+id/rl_status">
+
+            </com.wisedrive.customerapp.commonclasses.DottedLineView>
+        <carbon.widget.RelativeLayout
             android:id="@+id/rl_status"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:layout_below="@id/rl_warranty_name"
-            android:background="@color/green">
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/black"
+            app:carbon_cornerRadius="5dp"
+            >
 
             <RelativeLayout
-                android:id="@+id/rl_book_service"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_toStartOf="@+id/tv_track">
-
-            <TextView
-                android:id="@+id/tv_booked_on"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Status"
-                android:textColor="@color/white"
-                android:textSize="15dp"
-                android:fontFamily="@font/gillroy_regular"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"/>
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp">
+                <TextView
+                    android:id="@+id/tv_track"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book Now"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/semibold"/>
 
-            <TextView
-                android:id="@+id/tv_status"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="inprogress"
-                android:layout_below="@id/tv_booked_on"
-                android:layout_marginLeft="10dp"
-                android:textColor="@color/white"
-                android:textSize="15dp"
-                android:fontFamily="@font/gillroy_semibold"/>
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/arrow"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_toRightOf="@+id/tv_track"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/add_white" />
+
             </RelativeLayout>
 
-            <TextView
-                android:id="@+id/tv_track"
+        </carbon.widget.RelativeLayout>
+            <RelativeLayout
+
+                android:id="@+id/rl_bottom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TRACK SERVICE"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="20dp"
-                android:textColor="@color/white"
-                android:textSize="18dp"
-                android:fontFamily="@font/gillroy_semibold"/>
+                android:layout_marginLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentBottom="true"
+                >
 
+                <ImageView
+                    android:id="@+id/image_free"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/tick_wd_bg" />
 
-        </RelativeLayout>
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
-
+                <TextView
+                    android:id="@+id/text_free"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/image_free"
+                    android:text="@string/service_details"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/semibold"
+                    />
+            </RelativeLayout>
+        </carbon.widget.RelativeLayout>
+    </carbon.widget.LinearLayout>
 </RelativeLayout>

@@ -20,20 +20,30 @@ import android.widget.Toast;
 
 import com.wisedrive.customerapp.commonclasses.SPHelper;
 
-public class CustomerHomepage extends AppCompatActivity {
+public class CustomerHomepage extends AppCompatActivity
+{
     boolean doubleBackToExitPressedOnce = false;
+    public RelativeLayout relative_layout1,rl_mycars,rl_back;
     LinearLayout linear_layout_plans,linear_layout_mycar,linear_layout_activate,linear_layout_profile;
     TextView text_plans,text_mycar,text_activate,text_profile;
-    ImageView image_plans,image_mycar,image_activate,image_profile;
+    ImageView image_plans,image_mycar,image_activate,image_profile,back,wd_logo,image_bell;
     public Fragment fragment=null;
     public RelativeLayout rl_add_car_button;
     int count1=0,count2=0,count3=0,count4=0;
+    public  static  CustomerHomepage instance;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_home_page_bottom_navigation);
+        instance=this;
+        image_bell=findViewById(R.id.image_bell);
+        wd_logo=findViewById(R.id.wd_logo);
+        back=findViewById(R.id.back);
+        rl_back=findViewById(R.id.rl_back);
+        rl_mycars=findViewById(R.id.rl_mycars);
+        relative_layout1=findViewById(R.id.relative_layout1);
         rl_add_car_button=findViewById(R.id.rl_add_car_button);
         linear_layout_plans=findViewById(R.id.linear_layout_plans);
         linear_layout_mycar=findViewById(R.id.linear_layout_mycar);
@@ -49,7 +59,8 @@ public class CustomerHomepage extends AppCompatActivity {
         image_profile=findViewById(R.id.image_profile);
 
 
-        if(SPHelper.comingfrom.equals("added")){
+        if(SPHelper.comingfrom.equals("added"))
+        {
             plans_fragment();
             CongratsPage bottomSheetDialogFragment = new CongratsPage();
             bottomSheetDialogFragment.show(CustomerHomepage.this.getSupportFragmentManager(), "CongratsPage");
@@ -64,7 +75,6 @@ public class CustomerHomepage extends AppCompatActivity {
                 profile_fragmnet();
             }
         }
-
 
         linear_layout_plans.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,7 +91,6 @@ public class CustomerHomepage extends AppCompatActivity {
                 SPHelper.comingfrom="";
                 SPHelper.fragment_is="cars";
                 cars_fragment();
-
             }
         });
         linear_layout_activate.setOnClickListener(new View.OnClickListener() {
@@ -106,12 +115,52 @@ public class CustomerHomepage extends AppCompatActivity {
             public void onClick(View v) {
                 SPHelper.carmodelid="";
                 SPHelper.carbrandid="";
-                Intent intent=new Intent(CustomerHomepage.this,Add_New_Car.class);
+//                Intent intent=new Intent(CustomerHomepage.this,Add_New_Car.class);
+//                startActivity(intent);
+
+                Intent intent=new Intent(CustomerHomepage.this,EnterCarDetails.class);
                 startActivity(intent);
             }
         });
 
+        rl_mycars.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                SPHelper.comingfrom="";
+                SPHelper.fragment_is="cars";
+                cars_fragment();
+            }
+        });
+
+        rl_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(SPHelper.fragment_is.equals("cars")||SPHelper.fragment_is.equals("profile")||
+                SPHelper.fragment_is.equals("act")){
+                    back.setImageResource(R.drawable.menu);
+                    SPHelper.comingfrom="";
+                    SPHelper.fragment_is="plans";
+                    plans_fragment();
+                }
+                else {
+                    SPHelper.comingfrom="";
+                    SPHelper.fragment_is="profile";
+                    profile_fragmnet();
+                }
+            }
+        });
+
+        image_bell.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(CustomerHomepage.this,PushNotification.class);
+                startActivity(intent);
+
+            }
+        });
       }
+
     public void replaceFragment(Fragment someFragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_layout, someFragment);
@@ -119,7 +168,9 @@ public class CustomerHomepage extends AppCompatActivity {
         transaction.commit();
     }
 
-    public void plans_fragment(){
+
+    public void plans_fragment()
+    {
         if(count1==0){
             fragment= new Plans_Fragments();
             replaceFragment(fragment);
@@ -136,7 +187,11 @@ public class CustomerHomepage extends AppCompatActivity {
             linear_layout_mycar.setBackgroundResource(R.drawable.rounded_background_2);
             linear_layout_activate.setBackgroundResource(R.drawable.rounded_background_2);
             linear_layout_profile.setBackgroundResource(R.drawable.rounded_background_2);
+           // relative_layout1.setBackgroundResource(R.color.nav_bg);
             rl_add_car_button.setVisibility(View.INVISIBLE);
+            image_bell.setVisibility(View.GONE);
+            rl_mycars.setVisibility(View.VISIBLE);
+            wd_logo.setImageResource(R.drawable.wd_neu);
             count1=1;
             count2=0;
             count3=0;
@@ -161,7 +216,11 @@ public class CustomerHomepage extends AppCompatActivity {
             linear_layout_mycar.setBackgroundResource(R.drawable.rounded_background);
             linear_layout_activate.setBackgroundResource(R.drawable.rounded_background_2);
             linear_layout_profile.setBackgroundResource(R.drawable.rounded_background_2);
+            back.setImageResource(R.drawable.back_new_black);
+            wd_logo.setImageDrawable(null);
+            image_bell.setVisibility(View.GONE);
             rl_add_car_button.setVisibility(View.VISIBLE);
+            rl_mycars.setVisibility(View.GONE);
             count2=1;
             count1=0;
             count3=0;
@@ -171,8 +230,9 @@ public class CustomerHomepage extends AppCompatActivity {
     }
     public void act_fragment(){
         if(count3==0){
-            fragment= new Activate_Fragment();
+            fragment= new CheckMyCar();
             replaceFragment(fragment);
+            back.setImageResource(R.drawable.back_new_black);
             text_plans.setVisibility(View.GONE);
             text_mycar.setVisibility(View.GONE);
             text_activate.setVisibility(View.VISIBLE);
@@ -187,6 +247,10 @@ public class CustomerHomepage extends AppCompatActivity {
             linear_layout_activate.setBackgroundResource(R.drawable.rounded_background);
             linear_layout_profile.setBackgroundResource(R.drawable.rounded_background_2);
             rl_add_car_button.setVisibility(View.INVISIBLE);
+            rl_mycars.setVisibility(View.GONE);
+            image_bell.setVisibility(View.GONE);
+            wd_logo.setImageDrawable(null);
+           // relative_layout1.setBackgroundResource(R.color.nav_bg);
             count3=1;
             count2=0;
             count1=0;
@@ -195,9 +259,11 @@ public class CustomerHomepage extends AppCompatActivity {
 
     }
     public void profile_fragmnet(){
-        if(count4==0){
+        if(count4==0)
+        {
             fragment= new Profile_Fragment();
             replaceFragment(fragment);
+            back.setImageResource(R.drawable.back_new_black);
             text_plans.setVisibility(View.GONE);
             text_mycar.setVisibility(View.GONE);
             text_activate.setVisibility(View.GONE);
@@ -211,14 +277,17 @@ public class CustomerHomepage extends AppCompatActivity {
             linear_layout_mycar.setBackgroundResource(R.drawable.rounded_background_2);
             linear_layout_activate.setBackgroundResource(R.drawable.rounded_background_2);
             linear_layout_profile.setBackgroundResource(R.drawable.rounded_background);
+           // relative_layout1.setBackgroundResource(R.color.nav_bg);
             rl_add_car_button.setVisibility(View.INVISIBLE);
+            image_bell.setVisibility(View.GONE);
+            rl_mycars.setVisibility(View.GONE);
+            wd_logo.setImageResource(R.drawable.wd_neu);
             count4=1;
             count2=0;
             count3=0;
             count1=0;
         }
     }
-
 
 
     @Override
@@ -230,10 +299,11 @@ public class CustomerHomepage extends AppCompatActivity {
             a.addCategory(Intent.CATEGORY_HOME);
             a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(a);
+        }else {
+            this.doubleBackToExitPressedOnce = true;
+            // Common.CallToast(this,"Press again to close wisedrive",1);
+            Toast.makeText(this,"Press again to close wisedrive", Toast.LENGTH_SHORT).show();
         }
-
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
 
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
 
@@ -241,7 +311,11 @@ public class CustomerHomepage extends AppCompatActivity {
             public void run() {
                 doubleBackToExitPressedOnce=false;
             }
-        }, 2000);
+        }, 4000);
+    }
+
+    public  static CustomerHomepage getInstance() {
+        return instance;
     }
 }
 

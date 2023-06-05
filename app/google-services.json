@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "183167592495",
+    "project_id": "wd-mechanic-app",
+    "storage_bucket": "wd-mechanic-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:183167592495:android:2baf8bc47b7b775b00beda",
+        "android_client_info": {
+          "package_name": "com.wisedrive.customerapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "183167592495-qvdneltuk2658ojfsc4d88at8a3bn0a2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZhyo7fqjK7U6H_u-rIdgwvtI2U3MaxZo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "183167592495-qvdneltuk2658ojfsc4d88at8a3bn0a2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:183167592495:android:4f90740e9880848400beda",
+        "android_client_info": {
+          "package_name": "com.wisedrive.wisedrivemechanicapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "183167592495-qvdneltuk2658ojfsc4d88at8a3bn0a2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZhyo7fqjK7U6H_u-rIdgwvtI2U3MaxZo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "183167592495-qvdneltuk2658ojfsc4d88at8a3bn0a2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

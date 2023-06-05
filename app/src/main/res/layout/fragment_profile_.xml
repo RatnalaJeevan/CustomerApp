@@ -3,123 +3,189 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Profile_Fragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Profile_Fragment"
+    android:background="@color/new_app_bg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="20dp">
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_logout"
+        >
         <RelativeLayout
             android:id="@+id/rl_scroll"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingBottom="10dp">
 
         <RelativeLayout
             android:id="@+id/rl_parent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <RelativeLayout
                 android:id="@+id/rl_my_details"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/tv_my_details"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="MY DETAILS"
-                    android:textColor="@color/profile_text"
-                    android:textSize="15dp"
-                    android:fontFamily="@font/gillroy_bold"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginLeft="55dp"/>
 
                 <RelativeLayout
                     android:id="@+id/rl_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_my_details"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp">
 
-                    <ImageView
-                        android:id="@+id/iv1"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginStart="21dp"
-                        android:src="@drawable/c_name"/>
                 <TextView
                     android:id="@+id/c_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/gillroy_semibold"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="20dp"
-                    android:layout_toEndOf="@+id/iv1"
+                    android:layout_marginTop="2dp"
+                    android:layout_toStartOf="@+id/rl_edit_cust"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/semibold"
                     android:text="Sagar"
-                    android:textColor="@color/profile_text"
-                    android:textSize="15dp">
+                    android:textColor="@color/black"
+                    android:textSize="17dp">
 
                 </TextView>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/rl_no"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/rl_name"
-                    android:layout_marginTop="10dp">
-
-                    <ImageView
-                        android:id="@+id/iv2"
-                        android:layout_width="25dp"
-                        android:layout_height="30dp"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="20dp"
-                        android:src="@drawable/c_no"/>
                     <TextView
                         android:id="@+id/c_no"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_toEndOf="@+id/iv2"
-                        android:layout_marginStart="20dp"
-                        android:fontFamily="@font/gillroy_semibold"
+                        android:layout_toStartOf="@+id/rl_edit_cust"
+                        android:layout_marginEnd="20dp"
+                        android:layout_below="@+id/c_name"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/semibold"
                         android:text="9000000000"
-                        android:textColor="@color/profile_text"
-                        android:textSize="15dp">
+                        android:textColor="@color/black"
+                        android:textSize="17dp">
 
                     </TextView>
-                </RelativeLayout>
 
+                    <TextView
+                        android:id="@+id/c_mail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@+id/rl_edit_cust"
+                        android:layout_marginEnd="20dp"
+                        android:layout_below="@+id/c_no"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/semibold"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="17dp">
+
+                    </TextView>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_edit_cust"
+                        android:layout_width="80dp"
+                        android:layout_height="35dp"
+                       android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="20dp"
+
+                        android:background="@color/new_app_bg"
+                        >
+
+                        <ImageView
+                            android:id="@+id/iv_edit"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/edit_bla"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"/>
+
+                        <TextView
+
+                            android:id="@+id/edit_cus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Edit"
+                            android:textSize="14dp"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/semibold"
+                            android:textColor="@color/black"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/iv_edit"
+                            />
+                    </RelativeLayout>
+                </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/rl_my_cars"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/rl_no"
-                    android:layout_marginTop="15dp">
+                    android:layout_below="@id/rl_name"
+                    android:layout_marginLeft="21dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_mycars"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/rl_add_car_button"
+                        >
 
-                    <ImageView
-                        android:id="@+id/image_my_cars"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="21dp"
-                        android:src="@drawable/my_car"/>
+                    </androidx.recyclerview.widget.RecyclerView>
 
+
+                    <RelativeLayout
+                        android:id="@+id/rl_add_car_button"
+                        android:layout_width="80dp"
+                        android:layout_height="35dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="20dp"
+
+                        android:background="@color/new_app_bg"
+                        >
+
+                        <ImageView
+                            android:id="@+id/image_plus"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/add_bla"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"/>
+
+                        <TextView
+
+                            android:id="@+id/image_car"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Car"
+                            android:textSize="14dp"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/semibold"
+                            android:textColor="@color/black"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/image_plus"
+                            />
+                    </RelativeLayout>
                     <TextView
                         android:id="@+id/tv_my_car"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="My Cars"
-                        android:textColor="@color/profile_text"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/text_color"
                         android:textSize="15dp"
-                        android:layout_centerVertical="true"
-                        android:layout_toRightOf="@id/image_my_cars"
-                        android:fontFamily="@font/gillroy_semibold"
-                        android:layout_marginLeft="8dp"/>
+                        android:fontFamily="@font/semibold"
+                        />
 
                     <RelativeLayout
+                        android:visibility="gone"
                         android:layout_width="45dp"
                         android:layout_height="25dp"
                        android:layout_centerVertical="true"
@@ -133,7 +199,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
                             android:layout_marginTop="-10dp"
-                            android:fontFamily="@font/gillroy_semibold"
+                            android:fontFamily="@font/semibold"
                             android:text="0"
                             android:textColor="@color/white"
                             android:textSize="13dp" />
@@ -143,216 +209,311 @@
                 </RelativeLayout>
 
 
-                <RelativeLayout
-                    android:id="@+id/rl_package_service"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/rl_my_cars"
-                    android:layout_marginTop="15dp">
-                    <ImageView
-                        android:id="@+id/image_package_service"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="21dp"
-                        android:src="@drawable/package_service"/>
-
-                    <TextView
-                        android:id="@+id/tv_package"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Package &amp; Services"
-                        android:textColor="@color/profile_text"
-                        android:textSize="15dp"
-                        android:layout_centerVertical="true"
-                        android:layout_toRightOf="@id/image_package_service"
-                        android:fontFamily="@font/gillroy_semibold"
-                        android:layout_marginLeft="8dp"/>
-
-                    <RelativeLayout
-                        android:layout_width="45dp"
-                        android:layout_height="25dp"
-                        android:background="@drawable/rounded_corner_orange_button"
-                        android:layout_toRightOf="@id/tv_package"
-                        android:layout_marginLeft="10dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:layout_marginTop="-10dp"
-                            android:fontFamily="@font/gillroy_semibold"
-                            android:text="BUY"
-                            android:textColor="@color/white"
-                            android:textSize="13dp" />
-
-                    </RelativeLayout>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/rl_mypayments"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/rl_package_service"
-                    android:layout_marginTop="15dp">
-                    <ImageView
-                        android:id="@+id/iv_payments"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="21dp"
-                        android:src="@drawable/package_service"/>
-
-                    <TextView
-                        android:id="@+id/label_payments"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="My Payments"
-                        android:textColor="@color/profile_text"
-                        android:textSize="15dp"
-                        android:layout_centerVertical="true"
-                        android:layout_toRightOf="@id/iv_payments"
-                        android:fontFamily="@font/gillroy_semibold"
-                        android:layout_marginLeft="8dp"/>
-
-                    <RelativeLayout
-                        android:layout_width="45dp"
-                        android:layout_height="25dp"
-                        android:layout_centerVertical="true"
-                        android:background="@drawable/rounded_corner_blue_button"
-                        android:layout_toRightOf="@id/label_payments"
-                        android:layout_marginLeft="10dp">
-
-                        <TextView
-                            android:id="@+id/count_payments"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:layout_marginTop="-10dp"
-                            android:fontFamily="@font/gillroy_semibold"
-                            android:text="00"
-                            android:textColor="@color/white"
-                            android:textSize="13dp" />
-
-                    </RelativeLayout>
-                </RelativeLayout>
             </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_my_details"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Details"
+                android:textColor="@color/text_color"
+                android:textSize="15dp"
+                android:fontFamily="@font/semibold"
+                />
             <RelativeLayout
                 android:id="@+id/rl_offers"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/rl_my_details">
+                android:layout_marginLeft="20dp"
 
-                <TextView
-                    android:id="@+id/tv_offers"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="OFFERS"
-                    android:textColor="@color/profile_text"
-                    android:textSize="15dp"
-                    android:fontFamily="@font/gillroy_bold"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginLeft="55dp"/>
+                android:layout_below="@id/tv_details">
 
-                       <RelativeLayout
+
+                <View
+                    android:id="@+id/cv"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
+                    android:layout_centerHorizontal="true">
+
+                </View>
+                       <carbon.widget.RelativeLayout
                            android:id="@+id/rl_refer_earn"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                           android:layout_below="@id/tv_offers"
-                           android:layout_marginTop="10dp">
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:padding="5dp"
+                           android:layout_toLeftOf="@+id/cv"
+                           android:layout_below="@id/rl_docs"
+                           android:layout_marginRight="15dp"
+                           android:layout_marginTop="10dp"
+                           android:background="#dbc4d9"
+                           app:carbon_cornerRadius="5dp"
+                           app:carbon_elevationShadowColor="@color/bl_gre"
+                           android:elevation="2dp"
+
+                           >
 
                            <ImageView
                                android:id="@+id/image_refer_earn"
                                android:layout_width="30dp"
                                android:layout_height="30dp"
-                               android:layout_marginLeft="21dp"
-                               android:src="@drawable/refer"/>
+                               android:layout_marginTop="10dp"
+                               android:layout_marginLeft="10dp"
+                               android:src="@drawable/rfr_ear"
+                               />
 
+                           <TextView
+
+                               android:id="@+id/tv_cs"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_marginTop="5dp"
+                               android:text="coming soon"
+                               android:textSize="12dp"
+                               android:layout_alignParentRight="true"
+                               android:layout_marginRight="5dp"
+                               android:fontFamily="@font/semibold"
+                               android:textColor="@color/black"
+                               />
                            <ImageView
-                               android:id="@+id/image_coming_soon_1"
-                               android:layout_width="65dp"
-                               android:layout_height="35dp"
-                               android:layout_alignParentEnd="true"
-                               android:layout_marginRight="20dp"
-                               android:src="@drawable/coming_soon"/>
-
-
+                               android:visibility="gone"
+                               android:id="@+id/image_cs"
+                               android:layout_width="wrap_content"
+                               android:layout_height="22dp"
+                               android:elevation="2dp"
+                               android:layout_marginRight="-27dp"
+                               android:layout_alignParentRight="true"
+                               android:layout_marginTop="5dp"
+                               android:src="@drawable/cmg_soon"/>
                            <TextView
                                android:layout_width="wrap_content"
                                android:layout_height="wrap_content"
                                android:text="Refer &amp; Earn "
-                               android:textColor="@color/profile_text"
+                               android:layout_marginTop="10dp"
+                               android:textColor="@color/black"
                                android:textSize="15dp"
-                               android:layout_centerVertical="true"
-                               android:layout_toRightOf="@id/image_refer_earn"
-                               android:fontFamily="@font/gillroy_semibold"
+                               android:layout_below="@id/image_refer_earn"
+                               android:fontFamily="@font/medium"
                                android:layout_marginLeft="8dp"/>
-                            </RelativeLayout>
+                            </carbon.widget.RelativeLayout>
 
 
-                <RelativeLayout
+                <carbon.widget.RelativeLayout
                     android:id="@+id/rl_offer_discount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/rl_refer_earn"
-                    android:layout_marginTop="15dp">
+                    android:padding="5dp"
+                    android:layout_toRightOf="@+id/cv"
+                    android:layout_below="@id/rl_docs"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#dbc4d9"
+                    app:carbon_cornerRadius="5dp"
+                    app:carbon_elevationShadowColor="@color/bl_gre"
+                    android:elevation="2dp"
+                    >
 
                     <ImageView
                         android:id="@+id/image_offer_discount"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_marginLeft="21dp"
-                        android:src="@drawable/discounts"/>
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/off_disc"/>
                     <ImageView
-                        android:id="@+id/image_coming_soon_2"
-                        android:layout_width="65dp"
-                        android:layout_height="35dp"
-                       android:layout_alignParentEnd="true"
-                        android:src="@drawable/coming_soon"
-                        android:layout_marginRight="20dp"/>
+                        android:visibility="gone"
+                        android:id="@+id/image_cs1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="-29dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/cmg_soo"/>
+
+                    <TextView
+
+                        android:id="@+id/tv_cs1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="coming soon"
+                        android:textSize="12dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="5dp"
+                        android:fontFamily="@font/semibold"
+                        android:textColor="@color/black"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Offers &amp; Discounts"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:layout_below="@id/image_offer_discount"
+                        android:fontFamily="@font/medium"
+                        android:layout_marginLeft="8dp"/>
+                </carbon.widget.RelativeLayout>
+
+                <carbon.widget.RelativeLayout
+                    android:id="@+id/rl_docs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:layout_toLeftOf="@+id/cv"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    app:carbon_cornerRadius="5dp"
+                    app:carbon_elevationShadowColor="@color/bl_gre"
+                    android:elevation="2dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/image_docs"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/my_docs"/>
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Offers &amp; Discounts"
-                        android:textColor="@color/profile_text"
+                        android:text="My Documents"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/black"
                         android:textSize="15dp"
-                        android:layout_centerVertical="true"
-                        android:layout_toRightOf="@id/image_offer_discount"
-                        android:fontFamily="@font/gillroy_semibold"
+                        android:layout_below="@id/image_docs"
+                        android:fontFamily="@font/medium"
                         android:layout_marginLeft="8dp"/>
-                </RelativeLayout>
+                </carbon.widget.RelativeLayout>
+
+                <carbon.widget.RelativeLayout
+                    android:id="@+id/rl_mypayments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:layout_toRightOf="@+id/cv"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    app:carbon_cornerRadius="5dp"
+                    app:carbon_elevationShadowColor="@color/bl_gre"
+                    android:elevation="2dp">
+
+
+                    <ImageView
+                        android:id="@+id/image_payments"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/package_service"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="My Payments"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:layout_below="@id/image_payments"
+                        android:fontFamily="@font/medium"
+                        android:layout_marginLeft="8dp"/>
+                </carbon.widget.RelativeLayout>
             </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/rl_company"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            <TextView
+                android:id="@+id/tv_wd_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/rl_offers"
-                android:paddingBottom="15dp">
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="About Wisedrive"
+                android:textColor="@color/text_color"
+                android:textSize="15dp"
+                android:fontFamily="@font/semibold"
+                />
+            <carbon.widget.RelativeLayout
+                android:id="@+id/rl_legal_com"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:paddingStart="10dp"
+                android:paddingBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/tv_wd_details"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:carbon_cornerRadius="5dp"
+                android:background="@color/white">
 
+                <ImageView
+                    android:id="@+id/image_le_com"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/le_comp"/>
                 <TextView
                     android:id="@+id/tv_company"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="COMPANY"
-                    android:textColor="@color/profile_text"
+                    android:layout_marginStart="8dp"
+                    android:layout_toRightOf="@+id/image_le_com"
+                    android:layout_centerVertical="true"
+                    android:text="Legal &amp; Compliance"
+                    android:textColor="@color/black"
                     android:textSize="15dp"
-                    android:fontFamily="@font/gillroy_bold"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginLeft="55dp"/>
+                    android:fontFamily="@font/semibold" />
 
+                <ImageView
+                    android:id="@+id/iv_max"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/fwd_right"/>
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/iv_min"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/show_less_d"
+                    android:layout_marginRight="20dp"/>
+
+            </carbon.widget.RelativeLayout>
+            <carbon.widget.RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/rl_company"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/rl_legal_com"
+                android:layout_marginTop="-5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:paddingLeft="10dp"
+                android:paddingBottom="15dp"
+                android:background="@color/white"
+                app:carbon_cornerRadius="5dp">
                 <RelativeLayout
                     android:id="@+id/rl_warranty_policy"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_company"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="10dp"
+                    >
 
                     <ImageView
                         android:id="@+id/image_warranty_policy"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="21dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:src="@drawable/warranty_policy_icon" />
 
 
@@ -364,23 +525,22 @@
                         android:textSize="15dp"
                         android:layout_centerVertical="true"
                         android:layout_toRightOf="@id/image_warranty_policy"
-                        android:fontFamily="@font/gillroy_semibold"
+                        android:fontFamily="@font/semibold"
                         android:layout_marginLeft="8dp"/>
                 </RelativeLayout>
 
 
                 <RelativeLayout
                     android:id="@+id/rl_bbg_policy"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/rl_warranty_policy"
                     android:layout_marginTop="15dp">
 
                     <ImageView
                         android:id="@+id/image_bbg_policy"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="21dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:src="@drawable/buy_back"/>
 
                     <TextView
@@ -391,22 +551,21 @@
                         android:textSize="15dp"
                         android:layout_centerVertical="true"
                         android:layout_toRightOf="@id/image_bbg_policy"
-                        android:fontFamily="@font/gillroy_semibold"
+                        android:fontFamily="@font/semibold"
                         android:layout_marginLeft="8dp"/>
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/rl_terms_condition"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/rl_bbg_policy"
                     android:layout_marginTop="15dp">
 
                     <ImageView
                         android:id="@+id/image_terms_condition"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="21dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:src="@drawable/terms"/>
 
                     <TextView
@@ -414,119 +573,102 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:layout_toRightOf="@id/image_terms_condition"
-                        android:fontFamily="@font/gillroy_semibold"
+                        android:fontFamily="@font/semibold"
                         android:text="Terms &amp; Conditions"
                         android:textColor="@color/profile_text"
                         android:textSize="15dp"
                         android:layout_centerVertical="true"/>
                 </RelativeLayout>
 
-                <RelativeLayout
-                    android:id="@+id/rl_privacy_policy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/rl_terms_condition"
-                    android:layout_marginTop="20dp">
 
-                    <ImageView
-                        android:id="@+id/image_privacy_policy"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="21dp"
-                        android:src="@drawable/policy"/>
+            </carbon.widget.RelativeLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="8dp"
-                        android:layout_toRightOf="@id/image_privacy_policy"
-                        android:fontFamily="@font/gillroy_semibold"
-                        android:text="Privacy Policy"
-                        android:textColor="@color/profile_text"
-                        android:textSize="15dp" />
-                </RelativeLayout>
+            <carbon.widget.RelativeLayout
+                android:id="@+id/rl_privacy_policy"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/rl_company"
+                android:paddingStart="10dp"
+                android:paddingBottom="5dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="21dp"
+                android:layout_marginTop="15dp"
+                app:carbon_cornerRadius="5dp"
+                android:background="@color/white">
 
-                <RelativeLayout
-                    android:id="@+id/rl_help_support"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/rl_privacy_policy"
-                    android:layout_marginTop="15dp">
-
-                    <ImageView
-                        android:id="@+id/image_help_support"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="21dp"
-                        android:src="@drawable/help_support_icon"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Help &amp; Support"
-                        android:textColor="@color/profile_text"
-                        android:textSize="15dp"
-                        android:layout_centerVertical="true"
-                        android:fontFamily="@font/gillroy_semibold"
-                        android:layout_marginLeft="8dp"
-                        android:layout_toRightOf="@id/image_help_support"/>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/rl_logout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/rl_help_support"
-                    android:layout_marginTop="15dp">
-
-                    <ImageView
-                        android:id="@+id/image_logout"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="21dp"
-                        android:src="@drawable/logout"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Logout"
-                        android:textColor="@color/violet"
-                        android:textSize="15dp"
-                        android:layout_centerVertical="true"
-                        android:fontFamily="@font/gillroy_semibold"
-                        android:layout_marginLeft="8dp"
-                        android:layout_toRightOf="@id/image_logout"/>
-                </RelativeLayout>
+                <ImageView
+                    android:id="@+id/image_privacy_policy"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/policy"/>
 
                 <TextView
-                    android:id="@+id/label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/rl_logout"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="20dp"
-                    android:text="version :"
-                    android:textColor="@color/profile_text"
-                    android:textSize="15dp"
-                    android:fontFamily="@font/gillroy_semibold"
-                    android:layout_marginLeft="8dp" />
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toRightOf="@id/image_privacy_policy"
+                    android:fontFamily="@font/semibold"
+                    android:text="Privacy Policy"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+                <ImageView
+                    android:id="@+id/iv_max1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/fwd_right"/>
+            </carbon.widget.RelativeLayout>
+
+            <carbon.widget.RelativeLayout
+                android:id="@+id/rl_help_support"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:paddingStart="10dp"
+                android:paddingBottom="5dp"
+                android:layout_below="@id/rl_privacy_policy"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="21dp"
+                android:layout_marginTop="15dp"
+                app:carbon_cornerRadius="5dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/image_help_support"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/help_support_icon"/>
+
                 <TextView
-                    android:id="@+id/version"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/rl_logout"
-                    android:layout_toRightOf="@+id/label"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/app_version_name"
-                    android:textColor="@color/profile_text"
+                    android:text="Help &amp; Support"
+                    android:textColor="@color/black"
                     android:textSize="15dp"
-                    android:fontFamily="@font/gillroy_semibold"
-                    android:layout_marginLeft="8dp" />
-            </RelativeLayout>
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/semibold"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toRightOf="@id/image_help_support"/>
+
+                <ImageView
+                    android:id="@+id/iv_max2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/fwd_right"/>
+            </carbon.widget.RelativeLayout>
+
 
         </RelativeLayout>
+
+
             <ProgressBar
                 android:visibility="gone"
                 android:id="@+id/idPBLoading"
@@ -535,6 +677,56 @@
                 android:indeterminateTint="@color/blue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
+
+        <RelativeLayout
+            android:id="@+id/rl_logout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_above="@+id/label"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/cardview_lightgrey_margined"
+            android:backgroundTint="@color/black"
+            >
+            <TextView
+                android:id="@+id/get_quote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/semibold"
+                android:text="Logout"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+        </RelativeLayout>
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="version :"
+        android:textColor="@color/profile_text"
+        android:textSize="15dp"
+        android:fontFamily="@font/semibold"
+        android:layout_marginLeft="8dp" />
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/label"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="@string/app_version_name"
+        android:textColor="@color/profile_text"
+        android:textSize="15dp"
+        android:fontFamily="@font/semibold"
+        android:layout_marginLeft="8dp" />
+    </RelativeLayout>
     </FrameLayout>

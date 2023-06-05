@@ -4,13 +4,17 @@ import com.google.gson.annotations.SerializedName;
 
 public class
 Pojo_Class_Mycar {
-
+    @SerializedName("brand_icon")
+    String brand_icon;
     @SerializedName("image")
     String image;
     @SerializedName("model_id")
     String model_id;
     @SerializedName("lead_veicle_id")
     String lead_veicle_id;
+    @SerializedName("dealer_id")
+    String dealer_id;
+
     @SerializedName("manufacturing_year")
     String manufacturing_year;
     @SerializedName("transmission_type")
@@ -37,6 +41,26 @@ Pojo_Class_Mycar {
     String count;
     @SerializedName("packExist")
     String packExist;
+    @SerializedName("is_odometer_update")
+    String is_odometer_update;
+    @SerializedName("UpgradeDetails")
+    PojoUpgradeDetails UpgradeDetails;
+
+    public PojoUpgradeDetails getUpgradeDetails() {
+        return UpgradeDetails;
+    }
+
+    public String getDealer_id() {
+        return dealer_id;
+    }
+
+    public String getIs_odometer_update() {
+        return is_odometer_update;
+    }
+
+    public String getBrand_icon() {
+        return brand_icon;
+    }
 
     public String getPackExist() {
         return packExist;
@@ -101,4 +125,15 @@ Pojo_Class_Mycar {
     public String getVehicle_id() {
         return vehicle_id;
     }
+
+
+    public class PojoUpgradeDetails{
+        @SerializedName("is_upgrade")
+        String is_upgrade;
+
+        public String getIs_upgrade() {
+            return is_upgrade;
+        }
+    }
+
 }

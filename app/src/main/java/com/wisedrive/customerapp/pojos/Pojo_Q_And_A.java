@@ -15,6 +15,8 @@ public class Pojo_Q_And_A {
     @SerializedName("Answerlist")
     ArrayList<Pojo_yes_no> Answerlist;
 
+    public Pojo_Q_And_A() {
+    }
 
     public String getSymptom_question_id() {
         return symptom_question_id;

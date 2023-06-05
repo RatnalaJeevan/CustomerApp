@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,23 +27,25 @@ import retrofit2.Response;
 
 public class HelpCentre extends AppCompatActivity {
     ImageView back;
-    CardView cv1,cv3;
     private ApiInterface apiInterface;
     private ProgressDialog progressDialog;
     private String email_id="",phone_no="";
     TextView label_call;
+    RelativeLayout rl_cc,rl_mail,rl_chat;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_centre);
+        getWindow().setStatusBarColor(getColor(R.color.white));
         progressDialog = new ProgressDialog(HelpCentre.this);
         progressDialog.setMessage("Please wait...");
         progressDialog.setCancelable(false);
-        cv1=findViewById(R.id.cv1);
-        cv3=findViewById(R.id.cv3);
+        rl_chat=findViewById(R.id.rl_chat);
         back=findViewById(R.id.back);
         label_call=findViewById(R.id.label_call);
+        rl_mail=findViewById(R.id.rl_mail);
+        rl_cc=findViewById(R.id.rl_cc);
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +54,7 @@ public class HelpCentre extends AppCompatActivity {
             }
         });
         get_help_support();
-        cv1.setOnClickListener(new View.OnClickListener() {
+        rl_cc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent callIntent = new Intent(Intent.ACTION_DIAL);
@@ -59,13 +62,15 @@ public class HelpCentre extends AppCompatActivity {
                 startActivity(callIntent);
             }
         });
-        cv3.setOnClickListener(new View.OnClickListener() {
+        rl_mail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent (Intent.ACTION_VIEW , Uri.parse("mailto:" + email_id));
                 startActivity(intent);
             }
         });
+        float alphaValue = 0.85f; // Set your desired alpha value here (0.0f to 1.0f)
+        rl_chat.setAlpha(alphaValue);
     }
 
     public  void get_help_support() {
@@ -110,5 +115,21 @@ public class HelpCentre extends AppCompatActivity {
                 });
             }
         }
+    }
+
+    public void onchat(View view) {
+
+        Toast.makeText(getApplicationContext(),
+                "Coming soon",
+                Toast.LENGTH_SHORT).show();
+//        try {
+//            String contact = "+917353343536"; // Replace with the phone number or contact you want to redirect to
+//            String url = "https://api.whatsapp.com/send?phone=" + contact;
+//            Intent i = new Intent(Intent.ACTION_VIEW);
+//            i.setData(Uri.parse(url));
+//            startActivity(i);
+//        } catch (Exception e){
+//            // Handle exception if any
+//        }
     }
 }

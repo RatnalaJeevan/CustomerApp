@@ -42,7 +42,7 @@
                     android:layout_below="@id/iv_req"
                     android:layout_marginTop="30dp"
                     android:layout_centerHorizontal="true"
-                    android:fontFamily="@font/gillroy_semibold"
+                    android:fontFamily="@font/semibold"
                     android:text="You have not requested for inspection"
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -56,7 +56,7 @@
                     android:layout_marginTop="30dp"
                     android:layout_centerHorizontal="true"
                     android:background="@drawable/blue_background"
-                    android:fontFamily="@font/gillroy_bold"
+                    android:fontFamily="@font/bold"
                     android:text="Request Inspection"
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -71,7 +71,7 @@
                     android:layout_marginTop="30dp"
                     android:layout_centerHorizontal="true"
                     android:background="@drawable/blue_background"
-                    android:fontFamily="@font/gillroy_bold"
+                    android:fontFamily="@font/bold"
                     android:text="Activate"
                     android:textColor="@color/black"
                     android:textSize="15dp" />

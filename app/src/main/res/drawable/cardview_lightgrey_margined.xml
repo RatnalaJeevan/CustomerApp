@@ -6,7 +6,7 @@
     </solid>
 
     <stroke android:color="@color/cement"
-        android:width="2px">
+        android:width="1px">
 
     </stroke>
     <corners

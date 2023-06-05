@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <carbon.widget.RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        app:carbon_cornerRadius="2dp"
+        android:background="@color/white">
+
+
+    <carbon.widget.RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="12dp"
+
+        >
+
+        <ImageView
+            android:id="@+id/car_image"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/blue_car_image" />
+        <TextView
+            android:id="@+id/text_make"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/car_image"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/bold"
+            android:text="DATSUN-"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/tv_vehno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_make"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/car_image"
+            android:fontFamily="@font/medium"
+            android:text="KA00KA0000"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/iv_max"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/fwd_right"/>
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/semibold"
+            android:text="1/4"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+    </carbon.widget.RelativeLayout>
+
+    <View
+        android:id="@+id/v1"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:elevation="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/cement"
+        android:layout_below="@+id/rl1">
+
+    </View>
+    <carbon.widget.RelativeLayout
+        android:id="@+id/rl2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/v1"
+        android:paddingLeft="10dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="7dp"
+        >
+
+        <View
+            android:id="@+id/cv"
+            android:layout_width="1px"
+            android:layout_height="wrap_content"
+            android:elevation="1dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:background="@color/cement"
+            android:layout_below="@+id/rl1">
+
+        </View>
+
+        <RelativeLayout
+            android:id="@+id/rl_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_below="@+id/label_trans"
+            android:layout_alignParentRight="true"
+            android:paddingTop="3dp"
+            android:paddingBottom="5dp"
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/add_car_bg"
+            >
+
+            <TextView
+                android:id="@+id/labekl_mycars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/semibold"
+                android:text="Update"
+                android:textColor="@color/white"
+                android:textSize="10dp" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/label_trans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_make"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/medium"
+            android:text="Transmission"
+            android:textColor="@color/text_color"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/text_transmission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_trans"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/semibold"
+            android:text="Manual"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/label_fuel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_make"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/cv"
+            android:fontFamily="@font/medium"
+            android:text="Kms "
+            android:textColor="@color/text_color"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/text_fuel_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_trans"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/cv"
+            android:layout_toLeftOf="@+id/rl_update"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/semibold"
+            android:text="9,99,999"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+    </carbon.widget.RelativeLayout>
+
+    </carbon.widget.RelativeLayout>
+</RelativeLayout>

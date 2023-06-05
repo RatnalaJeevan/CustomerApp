@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EnterCarDetails"
+    android:background="@color/new_app_bg">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relative_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:paddingTop="3dp"
+        android:background="@color/new_app_bg">
+
+        <RelativeLayout
+            android:id="@+id/rl_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/back_new_black" />
+        </RelativeLayout>
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/image_bell"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/bell"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="25dp"
+            android:layout_centerVertical="true"/>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_mycars"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/cardview_lightgrey_margined"
+            >
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/help_support_icon">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/labekl_mycars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/semibold"
+                android:text="Help"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <carbon.widget.ImageView
+        android:id="@+id/sample"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:carbon_cornerRadius="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/relative_layout1"
+        android:src="@drawable/wd_add_car_logo"
+        android:layout_centerHorizontal="true">
+
+    </carbon.widget.ImageView>
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="2dp"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/sample"
+        android:gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/semibold"
+        android:text="India's Best vehicle protection program saving lakhs of rupees on expensive repairs."
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_cw"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/label"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/light_grey_marg"
+        >
+
+        <ImageView
+            android:id="@+id/iv_cw"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="30dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/sample_cw">
+        </ImageView>
+        <TextView
+            android:id="@+id/label_cw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_cw"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/bold"
+            android:text="Comprehensive Warranty"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+        <TextView
+            android:id="@+id/label_get_cw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_cw"
+            android:layout_toRightOf="@+id/iv_cw"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/medium"
+            android:text="With Buyback Guarantee"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_sm"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/rl_cw"
+        android:layout_marginTop="7dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/light_grey_marg"
+        >
+
+        <ImageView
+            android:id="@+id/iv_sm"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="30dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/sample_sm">
+        </ImageView>
+        <TextView
+            android:id="@+id/label_sm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_sm"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/bold"
+            android:text="Service and Maintenance"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+        <TextView
+            android:id="@+id/label_get_sm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_sm"
+            android:layout_toRightOf="@+id/iv_sm"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/medium"
+            android:text="At OEM Authorised Service Centres"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_rsa"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/rl_sm"
+        android:layout_marginTop="7dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/light_grey_marg"
+        >
+
+        <ImageView
+            android:id="@+id/iv_rsa"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="30dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/sample_rsa">
+        </ImageView>
+        <TextView
+            android:id="@+id/label_rsa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_rsa"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/bold"
+            android:text="Roadside Assistance"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+        <TextView
+            android:id="@+id/label_get_rsa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_rsa"
+            android:layout_toRightOf="@+id/iv_rsa"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/medium"
+            android:text="Anywhere in India"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_enter_car_no"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/rl_rsa"
+        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/cardview_lightgrey_margined"
+        android:backgroundTint="@color/white"
+        >
+
+        <ImageView
+            android:id="@+id/iv_car"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/car_plate">
+
+        </ImageView>
+
+        <EditText
+            android:id="@+id/selected_vehno"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@+id/iv_car"
+            android:hint="Enter your car number"
+            android:textColorHint="@color/text_color1"
+            android:background="@null"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/bold"
+            android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:inputType="textCapCharacters"
+            android:maxLength="15"
+            android:maxLines="1"
+            android:paddingStart="10dp"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_get_carinfo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/rl_enter_car_no"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/cardview_lightgrey_margined"
+        android:backgroundTint="@color/black"
+        >
+
+        <TextView
+            android:id="@+id/get_quote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/semibold"
+            android:text="Get details"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/rl_get_carinfo"
+        >
+        <View
+            android:id="@+id/v2"
+            android:layout_width="50dp"
+            android:layout_height="1px"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="6dp"
+            android:layout_toStartOf="@+id/label_or"
+            android:background="@color/black">
+
+        </View>
+        <TextView
+            android:id="@+id/label_or"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OR"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:fontFamily="@font/regular">
+
+        </TextView>
+        <View
+            android:id="@+id/v1"
+            android:layout_width="50dp"
+            android:layout_height="1px"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@+id/label_or"
+            android:layout_centerVertical="true"
+            android:background="@color/black">
+
+        </View>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/rl2"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/light_grey_marg"
+        >
+
+        <ImageView
+            android:id="@+id/iv_car1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/sample_car_img">
+        </ImageView>
+        <TextView
+            android:id="@+id/label_sample"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_car1"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/medium"
+            android:text="Add Car manually"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+        <TextView
+            android:id="@+id/label_get"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_sample"
+            android:layout_toRightOf="@+id/iv_car1"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/medium"
+            android:text="Select car make, model etc"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+
+        <ImageView
+            android:id="@+id/iv_car3"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/right_arrow_black">
+        </ImageView>
+
+    </RelativeLayout>
+
+    </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

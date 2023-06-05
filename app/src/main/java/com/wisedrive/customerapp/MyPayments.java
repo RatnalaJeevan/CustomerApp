@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wisedrive.customerapp.adapters.AdapterMyPayments;
@@ -37,16 +38,20 @@ public class MyPayments extends AppCompatActivity {
     public  int currentPage=1,TOTAL_PAGES=30;
     boolean isLoading,isLastPage;
     ImageView back;
+    TextView no_result;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_payments);
+        getWindow().setStatusBarColor(getColor(R.color.new_app_bg));
+        no_result=findViewById(R.id.no_result);
         idPBLoading=findViewById(R.id.idPBLoading);
         rv_mypayments=findViewById(R.id.rv_mypayments);
         back=findViewById(R.id.back);
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
         getPaymentHistory();
+
         adapterWarrantyDetails = new AdapterMyPayments(this);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MyPayments.this, LinearLayoutManager.VERTICAL, false);
         rv_mypayments.setLayoutManager(linearLayoutManager);
@@ -74,13 +79,15 @@ public class MyPayments extends AppCompatActivity {
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 finish();
             }
         });
     }
 
-    public abstract class PaginationScrollListener extends RecyclerView.OnScrollListener {
+    public abstract class PaginationScrollListener extends RecyclerView.OnScrollListener
+    {
 
         private LinearLayoutManager layoutManager;
 
@@ -149,10 +156,13 @@ public class MyPayments extends AppCompatActivity {
                             pojoMyPaymentsArrayList = new ArrayList<>();
                             pojoMyPaymentsArrayList = appResponse.getResponseModel().getPaymentHistory();
                             if(pojoMyPaymentsArrayList.isEmpty()){
-
+                                no_result.setVisibility(View.VISIBLE);
+                                rv_mypayments.setVisibility(View.GONE);
                             }
                             else
                             {
+                                no_result.setVisibility(View.GONE);
+                                rv_mypayments.setVisibility(View.VISIBLE);
                                 adapterWarrantyDetails.addAll(pojoMyPaymentsArrayList);
                                 if (currentPage <= TOTAL_PAGES)
                                 {
@@ -167,7 +177,8 @@ public class MyPayments extends AppCompatActivity {
                                 }
                                 adapterWarrantyDetails.removeLoadingFooter();
                             }
-                        } else if (response_code.equals("300")) {
+                        }
+                        else if (response_code.equals("300")) {
                             //load_list.setVisibility(View.GONE);
                            idPBLoading.setVisibility(View.GONE);
                             Toast.makeText(MyPayments.this, appResponse.getResponseModel().getMessage(), Toast.LENGTH_SHORT).show();

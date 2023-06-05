@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActYourPack">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:paddingBottom="20dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_activate_package"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+            <ImageView
+                android:id="@+id/image_star"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/blue_star"/>
+
+            <TextView
+                android:id="@+id/tv_activate_package"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_star"
+                android:text="Activate Your Package"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/black"
+                android:fontFamily="@font/semibold"
+                android:textSize="20dp"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter the 10 Digit Activation Code Provided to you at the time of purchase of your car with the used car seller."
+                android:layout_below="@id/tv_activate_package"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/dark_bluu"
+                android:textSize="14dp"
+                android:gravity="center"
+                android:fontFamily="@font/regular"/>
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/entered_act_code"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_below="@id/rl_activate_package"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:digits=" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:inputType="textCapCharacters"
+            android:hint="Activation Code"
+            android:paddingLeft="110dp"
+            android:textSize="18dp"
+            android:fontFamily="@font/medium"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rl_activate_code"/>
+
+
+        <TextView
+            android:id="@+id/resend_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@id/entered_act_code"
+            android:layout_marginEnd="25dp"
+            android:text="Resend"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/semibold"
+            android:textSize="16dp"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp">
+
+
+            <RelativeLayout
+                android:id="@+id/rl_activate_now"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/rl_activate_now">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/bold"
+                    android:text="Activate Now"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_desription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="By  clicking Activate Now ,you are accepting warranty policy,buyback guarantee policy and service &amp; maintanance terms."
+                android:layout_below="@id/rl_activate_now"
+                android:textColor="@color/dark_bluu"
+                android:textSize="12dp"
+                android:fontFamily="@font/regular"
+                android:gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/idPBLoading"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

@@ -9,14 +9,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.bumptech.glide.Glide;
+import com.wisedrive.customerapp.PopUpUpdateKms;
+import com.wisedrive.customerapp.PopupWDBenefits;
 import com.wisedrive.customerapp.R;
 import com.wisedrive.customerapp.commonclasses.SPHelper;
 import com.wisedrive.customerapp.pojos.PojoVehDetails;
@@ -30,17 +35,17 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 public class Adapter_class_mycar extends PagerAdapter {
+    RelativeLayout rl_mycar,rl_update;
     private DecimalFormat IndianCurrencyFormat;
     Context context;
     private View view;
     ArrayList<Pojo_Class_Mycar> pojo_class_mycarArrayList;
-    TextView text_make,text_model, text_kms,text_transmission,text_fuel_type;
+    TextView text_make,tv_vehno, position_car,text_transmission,text_fuel_type;
     ImageView car_image,image_kms,image_transmission,image_fuel;
     public Adapter_class_mycar(Context context, ArrayList<Pojo_Class_Mycar> pojo_class_mycarArrayList) {
         this.context = context;
         this.pojo_class_mycarArrayList = pojo_class_mycarArrayList;
     }
-
 
     @Override
     public int getCount() {
@@ -49,6 +54,7 @@ public class Adapter_class_mycar extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
+
         return view == ( object);
     }
 
@@ -56,41 +62,81 @@ public class Adapter_class_mycar extends PagerAdapter {
     public void destroyItem(ViewGroup itemView, int position, Object view) {
         itemView.removeView((View) view);
     }
-    @SuppressLint("SetTextI18n")
+    @SuppressLint({"SetTextI18n", "MissingInflatedId"})
     @NonNull
     @NotNull
     @Override
-    public Object instantiateItem(@NonNull @NotNull ViewGroup view, int position) {
-
-        View itemView = LayoutInflater.from(context).inflate(R.layout.items_class_mycar, view, false);
+    public Object instantiateItem(@NonNull @NotNull ViewGroup view, int position)
+    {
+        View itemView = LayoutInflater.from(context).inflate(R.layout.items_cars_list, view, false);
         IndianCurrencyFormat = new DecimalFormat("##,##,###");
         text_make = itemView.findViewById(R.id.text_make);
-        text_model =  itemView.findViewById(R.id.text_model);
-        text_kms =  itemView.findViewById(R.id.text_kms);
+        tv_vehno =  itemView.findViewById(R.id.tv_vehno);
+        position_car =  itemView.findViewById(R.id.position);
         text_transmission =  itemView.findViewById(R.id.text_transmission);
         text_fuel_type=  itemView.findViewById(R.id.text_fuel_type);
         car_image = itemView.findViewById(R.id.car_image);
-        image_kms = itemView.findViewById(R.id.image_kms);
-        image_transmission = itemView.findViewById(R.id.image_transmission);
-        image_fuel=itemView.findViewById(R.id.image_fuel);
+        rl_update=itemView.findViewById(R.id.rl_update);
+
 
         Pojo_Class_Mycar list = pojo_class_mycarArrayList.get(position);
-        text_make.setText(list.getVehicle_make()+"-");
-        text_model.setText(list.getVehicle_model()+"-"+list.getVehicle_no().toUpperCase());
-        text_kms.setText(IndianCurrencyFormat.format(Integer.parseInt(list.getOdometer()))+"\tkms");
+
+        if(pojo_class_mycarArrayList.size()>1){
+           position_car.setVisibility(View.VISIBLE);
+        }else {
+            position_car.setVisibility(View.GONE);
+        }
+        text_make.setText(list.getVehicle_model()+"-"+list.getFuel_type());
+        tv_vehno.setText(list.getVehicle_no().toUpperCase());
         text_transmission.setText(list.getTransmission_type());
-        text_fuel_type.setText(list.getFuel_type());
-        Glide.with(context).load(list.getImage()).placeholder(R.drawable.blue_car_image).into(car_image);
+        if(list.getOdometer()==null||list.getOdometer().equals("null")){
+            text_fuel_type.setText("");
+        }else {
+            text_fuel_type.setText(IndianCurrencyFormat.format(Integer.parseInt(list.getOdometer())));
+        }
+
+         Glide.with(context).load(list.getBrand_icon()).placeholder(R.drawable.icon_noimage).into(car_image);
 
 
-        // car_image.setImageResource(list.getCar_image());
-        //image_kms.setImageResource(list.getK());
-        //image_transmission.setImageResource(list.getImage_transmission());
-       // image_fuel.setImageResource(list.getImage_fuel());
+
+        position_car.setText((position+1)+"/"+pojo_class_mycarArrayList.size());
+        if(SPHelper.is_odo_update.equalsIgnoreCase("y")){
+            rl_update.setVisibility(View.VISIBLE);
+        }else {
+            rl_update.setVisibility(View.GONE);
+        }
+        rl_update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SPHelper.is_od_update=list.getIs_odometer_update();
+                PopUpUpdateKms bottomSheetDialogFragment = new PopUpUpdateKms();
+                bottomSheetDialogFragment.show(((FragmentActivity)context).getSupportFragmentManager(), bottomSheetDialogFragment.getTag());
+
+            }
+        });
+
+
         view.addView(itemView);
+
         return itemView;
     }
 
+    @Override
+    public float getPageWidth(int position) {
+        float l=1f;
+        if(pojo_class_mycarArrayList.size()>1){
+            return l=0.8f;
+        }
+        return l;
+    }
 
+    public int getScreenWidth() {
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        Display display = wm.getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        return size.x;
+
+    }
 
 }

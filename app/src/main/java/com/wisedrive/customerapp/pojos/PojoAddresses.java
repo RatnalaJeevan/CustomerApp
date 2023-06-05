@@ -28,6 +28,9 @@ public class PojoAddresses {
     private String city;
     @SerializedName("state")
     private String state;
+    @SerializedName("location")
+    private String location;
+
 
     //post address attributes
     // adrs1,2,landmark,pincode,city,state,customerid
@@ -38,7 +41,6 @@ public class PojoAddresses {
     /*private String city;
     private String state;*/
     private String customerId;
-    private String location;
 
     //pincode model attributes
     //1.pincode 2.state 3.city
@@ -187,5 +189,9 @@ public class PojoAddresses {
 
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
+    }
+
+    public String getLocation() {
+        return location;
     }
 }

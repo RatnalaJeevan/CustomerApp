@@ -4,55 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HelpCentre">
+    tools:context=".HelpCentre"
+    android:background="@color/white">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
     <RelativeLayout
         android:id="@+id/rl1"
         android:layout_marginBottom="10dp"
         android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/blue">
+        >
 
         <ImageView
             android:id="@+id/back"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_alignParentLeft="true"
-            android:src="@drawable/arrow_back"
+            android:src="@drawable/back_new_black"
             android:layout_marginLeft="21dp"
             android:layout_marginTop="10dp">
 
         </ImageView>
-        <TextView
-            android:id="@+id/tv1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Need Help?"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/white"
-            android:textSize="10dp"
-            android:fontFamily="@font/gillroy_regular"/>
+
         <TextView
             android:id="@+id/tv1_1"
-            android:layout_below="@+id/tv1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/hns"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:maxLines="3"
             android:layout_centerHorizontal="true"
             android:gravity="center"
             android:text="Help Centre"
             android:textSize="22dp"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/white"
-            android:fontFamily="@font/gillroy_bold"/>
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/bold"/>
         <ImageView
-            android:layout_width="175dp"
-            android:layout_height="136dp"
-            android:layout_below="@+id/tv1_1"
-            android:src="@drawable/help_centre"
+            android:id="@+id/hns"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/back"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/hns_cv"
             android:layout_centerHorizontal="true">
 
         </ImageView>
@@ -65,162 +67,101 @@
         android:layout_marginTop="10dp"
         android:text="Tell us how we can help"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/blue"
+        android:textColor="@color/black"
         android:textSize="20dp"
-        android:fontFamily="@font/gillroy_bold"/>
+        android:fontFamily="@font/bold"/>
     <TextView
         android:id="@+id/tv4"
         android:layout_below="@+id/tv3"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:maxLines="3"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:text="Our crew of superheroes are standing by  For services and support"
+        android:text="Our business support hours are Monday through Saturday, 8am to 8pm IST. However, our Roadside assistance team is available 24 hrs any day.  You can reach on email anytime."
         android:textSize="16dp"
         android:layout_marginTop="5dp"
-        android:textColor="@color/blue"
-        android:fontFamily="@font/gillroy_regular"/>
+        android:textColor="@color/black"
+        android:fontFamily="@font/regular"/>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cv1"
+
+    <carbon.widget.RelativeLayout
+        android:id="@+id/rl_cc"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_margin="20dp"
-        app:cardCornerRadius="7dp"
-        android:elevation="10dp"
-        android:layout_below="@+id/tv4">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        <ImageView
-            android:id="@+id/iv_chat"
-            android:layout_width="75dp"
-            android:layout_height="64dp"
-            android:layout_marginLeft="10dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:src="@drawable/chat_icon"
-            >
-        </ImageView>
+        android:layout_height="60dp"
+        android:layout_below="@+id/tv4"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="30dp"
+        android:background="@color/black"
+        app:carbon_cornerRadius="7dp">
+
+
         <TextView
             android:id="@+id/chat_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/iv_chat"
-            android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="Customer Care"
-            android:textSize="18dp"
-            android:fontFamily="@font/gillroy_bold">
-        </TextView>
-            <TextView
-                android:id="@+id/label_call"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/chat_tv"
-                android:layout_toRightOf="@+id/iv_chat"
-                android:text="Start a Conversion now"
-                android:textSize="12dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/gillroy_regular">
-            </TextView>
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/semibold"
+            android:text="Customer Support"
+            android:textColor="@color/white"
+            android:textSize="16dp">
 
-            <ImageView
-                android:id="@+id/iv_call"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="10dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentEnd="true"
-                android:src="@drawable/phone_green"
-                >
-            </ImageView>
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:visibility="gone"
-        android:id="@+id/cv2"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        app:cardCornerRadius="7dp"
-        android:elevation="10dp"
-        android:layout_below="@+id/cv1">
-        <RelativeLayout
+        </TextView>
+
+        <TextView
+            android:id="@+id/label_call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chat_tv"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@+id/iv_chat"
+            android:fontFamily="@font/regular"
+            android:text="Start a Conversion now"
+            android:textColor="@color/white"
+            android:textSize="12dp">
+
+        </TextView>
+
+        <ImageView
+            android:id="@+id/iv_call"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/call_whit">
+
+        </ImageView>
+    </carbon.widget.RelativeLayout>
+
+
+        <carbon.widget.RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/rl_mail1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <ImageView
-                android:id="@+id/iv_faqs"
-                android:layout_width="75dp"
-                android:layout_height="64dp"
-                android:layout_marginLeft="10dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"
-                android:src="@drawable/faqs_icon"
-                >
-            </ImageView>
-            <TextView
-                android:id="@+id/faqs_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/iv_faqs"
-                android:text="FAQS"
-                android:textSize="18dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:fontFamily="@font/zonapro_bold">
-            </TextView>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/faqs_tv"
-                android:layout_toRightOf="@+id/iv_faqs"
-                android:text="Find Intelligent answer instantly"
-                android:textSize="12dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/zonapro_regular">
-            </TextView>
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cv3"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        app:cardCornerRadius="7dp"
-        android:elevation="10dp"
-        android:layout_below="@+id/cv1">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <ImageView
-                android:id="@+id/iv_email"
-                android:layout_width="75dp"
-                android:layout_height="64dp"
-                android:layout_marginLeft="10dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"
-                android:src="@drawable/email_icon"
-                >
-            </ImageView>
+            android:layout_height="60dp"
+            android:layout_below="@+id/rl_cc"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            app:carbon_cornerRadius="7dp"
+            android:background="@color/black"
+            >
             <TextView
                 android:id="@+id/email_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/iv_email"
-                android:text="E mail"
-                android:textSize="18dp"
-                android:layout_marginTop="20dp"
+                android:text="Email Support"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"
-                android:fontFamily="@font/gillroy_bold">
+                android:fontFamily="@font/semibold">
             </TextView>
             <TextView
                 android:layout_width="match_parent"
@@ -230,9 +171,10 @@
                 android:layout_toStartOf="@+id/iv_msg"
                 android:text="Get the Solution become your inbox"
                 android:textSize="12dp"
+                android:textColor="@color/white"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/gillroy_regular">
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/regular">
             </TextView>
 
             <ImageView
@@ -242,9 +184,134 @@
                 android:layout_marginEnd="10dp"
                 android:layout_centerVertical="true"
                 android:layout_alignParentEnd="true"
-                android:src="@drawable/email"
+                android:src="@drawable/mail_white"
                 >
             </ImageView>
+        </carbon.widget.RelativeLayout>
+
+            <TextView
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_cc"
+                android:layout_alignParentRight="true"
+                android:text="coming soon"
+                android:textSize="12dp"
+                android:textColor="@color/white"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="70dp"
+                android:elevation="10dp"
+                android:fontFamily="@font/regular">
+            </TextView>
+    <carbon.widget.RelativeLayout
+        android:id="@+id/rl_chat"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/rl_mail1"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        app:carbon_cornerRadius="7dp"
+        android:background="@color/black"
+        android:onClick="onchat"
+        >
+        <TextView
+            android:id="@+id/tv_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_email"
+            android:text="Chat Support"
+            android:textSize="16dp"
+            android:textColor="@color/cement"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/semibold">
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_chat"
+            android:layout_toEndOf="@+id/iv_email"
+            android:layout_toStartOf="@+id/iv_msg"
+            android:text="Chat with our support team"
+            android:textSize="12dp"
+            android:textColor="@color/cement"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/regular">
+        </TextView>
+
+        <ImageView
+            android:id="@+id/iv_chat"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/chat_whit"
+            android:alpha="0.95"
+            >
+        </ImageView>
+    </carbon.widget.RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_bg"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/rl_chat"
+        android:background="@drawable/circle_white"
+        android:backgroundTint="#F0f3ff"
+        >
+
+        <ImageView
+            android:id="@+id/iv_mail"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/mail_blac"
+            >
+        </ImageView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/rl_bg">
+        <TextView
+            android:id="@+id/label_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/regular"
+            android:text="Send us an e-mail"
+            android:textColor="@color/black"
+            android:textSize="12dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/label_my_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/label_mail"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/semibold"
+            android:text="support@wisedrive.in"
+            android:textColor="@color/black"
+            android:textSize="14dp">
+
+        </TextView>
+    </RelativeLayout>
+
         </RelativeLayout>
-    </androidx.cardview.widget.CardView>
+    </androidx.core.widget.NestedScrollView>
+
 </RelativeLayout>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PopupPackDetails">
+
+    <RelativeLayout
+    android:id="@+id/rl_tab"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+    android:layout_marginLeft="25dp"
+    android:layout_marginRight="20dp">
+
+    <RelativeLayout
+        android:id="@+id/rl_add_ser"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@+id/cv">
+        <TextView
+            android:id="@+id/tv_pack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/semibold"
+            android:text="General Service Standard"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <View
+            android:id="@+id/v1"
+            android:layout_width="50dp"
+            android:layout_height="7px"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="4dp"
+            android:layout_below="@+id/tv_pack"
+            android:background="@color/black"
+            >
+        </View>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/cv"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_centerHorizontal="true">
+    </View>
+
+    <RelativeLayout
+        android:id="@+id/rl_addon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/cv">
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:fontFamily="@font/semibold"
+            android:text="AddOns"
+            android:textColor="@color/lightgrey"
+            android:textSize="15dp" />
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/v2"
+            android:layout_width="50dp"
+            android:layout_height="7px"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="4dp"
+            android:layout_below="@+id/tv2"
+            android:background="@color/black"
+            >
+        </View>
+    </RelativeLayout>
+
+
+</RelativeLayout>
+    <TextView
+        android:id="@+id/label1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_tab"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/semibold"
+        android:text="What's Included"
+        android:textColor="@color/black"
+        android:textSize="17dp">
+
+    </TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/rv_ss_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/label1"
+        android:layout_marginBottom="50dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:visibility="gone"
+        android:id="@+id/rv_add_on_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/label1"
+        android:layout_marginBottom="50dp"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/descrpt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rv_ss_list"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="50dp"
+        android:fontFamily="@font/regular"
+        android:gravity="start"
+        android:lineSpacingExtra="3dp"
+        android:text="This service is done at OEM Authorised service centre. This service is done at OEM Authorised service centre. This service is done at OEM Authorised service centre. This service is done at OEM Authorised service centre."
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        android:visibility="gone">
+
+    </TextView>
+</RelativeLayout>

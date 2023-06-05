@@ -2,13 +2,18 @@ package com.wisedrive.customerapp.commonclasses;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.Uri;
 
 import com.wisedrive.customerapp.adapters.AdapterCustomerVehicleList;
 import com.wisedrive.customerapp.adapters.Adapter_Yes_No;
 import com.wisedrive.customerapp.pojos.PojoAnswerDetails;
+import com.wisedrive.customerapp.pojos.PojoPaidAddonList;
+import com.wisedrive.customerapp.pojos.PojoSelAddOnn;
+import com.wisedrive.customerapp.pojos.PojoUpgrade;
 import com.wisedrive.customerapp.pojos.PojoVehDetails;
 import com.wisedrive.customerapp.pojos.Pojo_Class_Addons_List;
 import com.wisedrive.customerapp.pojos.Pojo_Q_And_A;
+import com.wisedrive.customerapp.pojos.Pojo_Service_Includes;
 import com.wisedrive.customerapp.pojos.Pojo_yes_no;
 
 import java.util.ArrayList;
@@ -103,6 +108,45 @@ public class SPHelper {
     public static String msg="";
     public static String is_active="";
     public static String is_exp="";
+    public static String current_page="";
+    public static String coupon_code_type_id="";
+    public static String this_is="";
+    public static String doc_id="";
+    public static String doc_name="";
+    public static String plan_id="";
+    public static int plan_size;
+    public static String is_ok_partial_pay = "";
+    public static ArrayList<PojoSelAddOnn> sel_addon_list=new ArrayList<>();
+    public static double per_amount;
+    public static double part_amount;
+    public static String is_part="";
+    public static String w_ins_id="";
+    public static String fuel_type="";
+    public static String mnf_year="";
+    public static ArrayList<Pojo_Service_Includes> pojo_service_includes=new ArrayList<>();
+    public static double remain_amount;
+    public static String ser_status_id="";
+    public static String ser_pac_id="";
+    public static String server_date="";
+    public static double add_on_amount=0;
+    public static ArrayList<PojoUpgrade> upgrade_list=new ArrayList<>();
+    public static ArrayList<PojoPaidAddonList> pojoServiceListArrayList=new ArrayList<>();
+    public static String is_upgrade="";
+    public static String it_is="";
+    public static String is_partial_pay="";
+    public static String sel_upgrade_pac_id="";
+    public static String d_id="";
+    public static String kms_driven="";
+    public static String color="";
+    public static String doc_img="";
+    public static String is_edit="";
+    public static String is_od_update="";
+    public static String show_add_car="";
+    public static String doc_edited="";
+    public static Uri sel_uri= Uri.parse("");
+    public static String show_self="";
+    public static String is_odo_update="";
+    public static String gone_to="";
 
     private  static String spName="CustomerApp";
 

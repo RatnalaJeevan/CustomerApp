@@ -6,14 +6,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.wisedrive.customerapp.PopupPackDetails;
+import com.wisedrive.customerapp.PopupShowServiceDetails;
 import com.wisedrive.customerapp.R;
 import com.wisedrive.customerapp.commonclasses.Common;
+import com.wisedrive.customerapp.commonclasses.SPHelper;
 import com.wisedrive.customerapp.pojos.PojoMyPayments;
 import com.wisedrive.customerapp.pojos.PojoPaidAddonList;
 
@@ -31,8 +36,6 @@ public class AdapterMyPayments extends RecyclerView.Adapter<RecyclerView.ViewHol
     Context context;
     private View view;
     ArrayList<PojoMyPayments> pojoMyPayments;
-    ArrayList<PojoPaidAddonList> pojoServiceListArrayList;
-    AdapterPaidAddonList adapterServiceList;
 
     public AdapterMyPayments(Context context) {
         this.context = context;
@@ -60,7 +63,8 @@ public class AdapterMyPayments extends RecyclerView.Adapter<RecyclerView.ViewHol
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder1, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder1, int position)
+    {
         switch (getItemViewType(position)) {
             case ITEM:
                 final MyViewHolder holder = (MyViewHolder) holder1;
@@ -71,19 +75,15 @@ public class AdapterMyPayments extends RecyclerView.Adapter<RecyclerView.ViewHol
                 holder.tv_amount.setText(IndianCurrencyFormat.format((int)(list.getAmount())));
                 holder.tv_date.setText(Common.getDateFromString(list.getPackage_purchased_on()));
 
-                pojoServiceListArrayList = new ArrayList();
-                pojoServiceListArrayList=list.getAddonHistory();
-                if(pojoServiceListArrayList.isEmpty()){
-                    holder.tv_addons.setVisibility(View.GONE);
-                    holder.rv_service_name.setVisibility(View.GONE);
-                }else{
-                    holder.rv_service_name.setVisibility(View.VISIBLE);
-                    holder.tv_addons.setVisibility(View.VISIBLE);
-                    adapterServiceList = new AdapterPaidAddonList(context, pojoServiceListArrayList);
-                    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
-                    holder. rv_service_name.setLayoutManager(linearLayoutManager);
-                    holder.rv_service_name.setAdapter(adapterServiceList);
-                }
+                holder.rl_bottom.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        SPHelper.pojo_service_includes=list.get_product_list();
+                        SPHelper.pojoServiceListArrayList=list.getAddonHistory();
+                        PopupPackDetails bottomSheetDialogFragment = new PopupPackDetails();
+                        bottomSheetDialogFragment.show(((FragmentActivity)context).getSupportFragmentManager(), bottomSheetDialogFragment.getTag());
+                    }
+                });
 
                 break;
             case LOADING:
@@ -136,30 +136,32 @@ public class AdapterMyPayments extends RecyclerView.Adapter<RecyclerView.ViewHol
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-
+        RelativeLayout rl_bottom;
         TextView tv_warranty_name,tv_make,tv_amount,tv_date,tv_addons ;
         RecyclerView rv_service_name;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-
+            rl_bottom=itemView.findViewById(R.id.rl_bottom);
             tv_warranty_name = itemView.findViewById(R.id.tv_warranty_name);
             tv_make = itemView.findViewById(R.id.tv_make);
             tv_amount = itemView.findViewById(R.id.tv_amount);
             tv_date= itemView.findViewById(R.id.tv_date);
             rv_service_name=itemView.findViewById(R.id.rv_service_name);
-            tv_addons=itemView.findViewById(R.id.tv_addons);
+            //tv_addons=itemView.findViewById(R.id.tv_addons);
         }
     }
 
     private class LoadingViewHolder extends RecyclerView.ViewHolder
     {
 
-
         public LoadingViewHolder(View view) {
             super(view);
             progressBar =  view.findViewById(R.id.itemProgressbar);
         }
     }
+
+
+
 
 
 }

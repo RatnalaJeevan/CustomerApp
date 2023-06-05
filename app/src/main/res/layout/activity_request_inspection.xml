@@ -5,41 +5,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Request_Inspection"
-    android:background="@drawable/request_inspection_back">
+    android:background="@color/white">
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+
     <RelativeLayout
         android:id="@+id/rl_back"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp">
+        android:padding="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true">
 
         <ImageView
             android:id="@+id/back"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_centerInParent="true"
-            android:src="@drawable/bacxk_arrow_white" />
+            android:src="@drawable/back_new_black" />
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/text_inspection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Get Your Car Inspected before activating"
-        android:textColor="@color/white"
-        android:layout_below="@id/rl_back"
-        android:textSize="36dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="30dp"
-        android:fontFamily="@font/gillroy_regular"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"/>
+            android:id="@+id/text_inspection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="30dp"
+            android:layout_toRightOf="@id/rl_back"
+            android:fontFamily="@font/regular"
+            android:text="Inspect your car"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+    </RelativeLayout>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/scroo_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/text_inspection">
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_top"
+        android:layout_marginBottom="10dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -49,8 +57,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white">
-        
+
+
+        <TextView
+            android:id="@+id/tv_slct_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Date &amp; Time"
+            android:textColor="@color/bg_missing_item_txt"
+            android:textSize="16dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/semibold"/>
+
         <RelativeLayout
+            android:visibility="gone"
             android:id="@+id/rl_vehicle_no"
             android:layout_width="match_parent"
             android:layout_height="65dp"
@@ -74,7 +95,7 @@
                 android:layout_marginLeft="10dp"
                 android:textSize="15dp"
                 android:textColor="@color/lightgrey"
-                android:fontFamily="@font/gillroy_semibold"/>
+                android:fontFamily="@font/semibold"/>
 
             <EditText
                 android:id="@+id/entered_veh_no"
@@ -82,7 +103,7 @@
                 android:layout_height="45dp"
                 android:layout_marginRight="20dp"
                 android:layout_centerVertical="true"
-                android:fontFamily="@font/gillroy_bold"
+                android:fontFamily="@font/bold"
                 android:layout_alignParentEnd="true"
                 android:gravity="center|left"
                 android:inputType="textCapCharacters"
@@ -94,6 +115,7 @@
               </RelativeLayout>
 
         <RelativeLayout
+            android:visibility="gone"
             android:id="@+id/rl_select_date"
             android:layout_width="match_parent"
             android:layout_height="65dp"
@@ -118,7 +140,7 @@
                 android:layout_marginLeft="10dp"
                 android:textSize="15dp"
                 android:textColor="@color/lightgrey"
-                android:fontFamily="@font/gillroy_semibold"/>
+                android:fontFamily="@font/semibold"/>
 
             <TextView
                 android:id="@+id/select_date"
@@ -132,10 +154,11 @@
                 android:textSize="15dp"
                 android:background="@drawable/edit_background"
                 android:textColor="@color/black"
-                android:fontFamily="@font/gillroy_bold"/>
+                android:fontFamily="@font/bold"/>
         </RelativeLayout>
 
         <RelativeLayout
+            android:visibility="gone"
             android:id="@+id/rl_select_time"
             android:layout_width="match_parent"
             android:layout_height="65dp"
@@ -160,7 +183,7 @@
                 android:layout_marginLeft="10dp"
                 android:textSize="15dp"
                 android:textColor="@color/lightgrey"
-                android:fontFamily="@font/gillroy_semibold"/>
+                android:fontFamily="@font/semibold"/>
 
             <TextView
                 android:id="@+id/select_time"
@@ -174,10 +197,22 @@
                 android:gravity="center|left"
                 android:background="@drawable/edit_background"
                 android:textColor="@color/black"
-                android:fontFamily="@font/gillroy_bold"/>
+                android:fontFamily="@font/bold"/>
         </RelativeLayout>
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_select_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_slct_date"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            />
+
         <RelativeLayout
+            android:visibility="gone"
             android:id="@+id/rl_name"
             android:layout_width="match_parent"
             android:layout_height="65dp"
@@ -202,7 +237,7 @@
                 android:layout_marginLeft="10dp"
                 android:textSize="15dp"
                 android:textColor="@color/lightgrey"
-                android:fontFamily="@font/gillroy_semibold"/>
+                android:fontFamily="@font/semibold"/>
 
             <EditText
                 android:id="@+id/entered_name"
@@ -211,7 +246,7 @@
                 android:layout_marginRight="20dp"
                 android:gravity="center|left"
                 android:layout_centerVertical="true"
-                android:fontFamily="@font/gillroy_bold"
+                android:fontFamily="@font/bold"
                 android:layout_alignParentEnd="true"
                 android:digits=" abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 android:paddingLeft="10dp"
@@ -220,6 +255,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:visibility="gone"
             android:id="@+id/rl_phone"
             android:layout_width="match_parent"
             android:layout_height="65dp"
@@ -244,7 +280,7 @@
                 android:layout_marginLeft="10dp"
                 android:textSize="15dp"
                 android:textColor="@color/lightgrey"
-                android:fontFamily="@font/gillroy_semibold"/>
+                android:fontFamily="@font/semibold"/>
 
             <EditText
                 android:id="@+id/entered_no"
@@ -253,7 +289,7 @@
                 android:layout_marginRight="20dp"
                 android:gravity="center|left"
                 android:layout_centerVertical="true"
-                android:fontFamily="@font/gillroy_bold"
+                android:fontFamily="@font/bold"
                 android:layout_alignParentEnd="true"
                 android:inputType="number"
                 android:maxLength="10"
@@ -263,89 +299,182 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/rl_location"
+            android:id="@+id/rl_address2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rv_select_date">
+
+            <ImageView
+                android:id="@+id/image_address2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:padding="2dp"
+                android:src="@drawable/pin"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_address2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter Address"
+                android:layout_toRightOf="@id/image_address2"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="15dp"
+                android:textColor="@color/bg_missing_item_txt"
+                android:fontFamily="@font/semibold"/>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/change_adress2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/tv_address2"
+                android:background="@drawable/addons_pay_bacground"
+                android:fontFamily="@font/semibold"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"
+                android:text="Change Address"
+                android:textColor="@color/blue"
+                android:textSize="12dp" />
+            <EditText
+                android:id="@+id/cust_adress2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:paddingStart="8dp"
+                android:paddingTop="8dp"
+                android:maxLength="100"
+                android:maxLines="2"
+                android:lineSpacingExtra="2dp"
+                android:textSize="15dp"
+                android:hint="Enter Dr-no, street, cross, main road"
+                android:textColorHint="@color/lightgrey"
+                android:fontFamily="@font/semibold"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_below="@id/tv_address2"
+                android:textColor="@color/black"
+                android:gravity="start"
+                android:background="@drawable/edit_background"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rl_location1"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:layout_below="@id/rl_phone"
+            android:layout_below="@id/rl_address2"
             android:layout_marginTop="10dp">
 
             <ImageView
-                android:id="@+id/image_location"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:id="@+id/iv_location"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:padding="2dp"
                 android:src="@drawable/pin"
                 android:layout_marginLeft="20dp"
                 android:layout_centerVertical="true"/>
 
             <TextView
-                android:id="@+id/tv_location"
+                android:visibility="gone"
+                android:id="@+id/tv_location1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Location"
-                android:layout_toRightOf="@id/image_location"
+                android:layout_toRightOf="@id/iv_location"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
                 android:textSize="15dp"
-                android:textColor="@color/lightgrey"
-                android:fontFamily="@font/gillroy_semibold"/>
+                android:textColor="@color/bg_missing_item_txt"
+                android:fontFamily="@font/semibold"/>
 
             <EditText
-                android:id="@+id/cust_location"
-                android:layout_width="200dp"
+                android:id="@+id/cust_location1"
+                android:layout_width="match_parent"
                 android:layout_height="45dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/tv_location1"
                 android:layout_marginRight="20dp"
+                android:hint="Enter Location"
+                android:textSize="15dp"
+                android:textColorHint="@color/lightgrey"
                 android:layout_centerVertical="true"
                 android:gravity="center|left"
                 android:digits=" abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                android:fontFamily="@font/gillroy_bold"
-                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/bold"
                 android:paddingLeft="10dp"
                 android:textColor="@color/black"
                 android:background="@drawable/edit_background"/>
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/rl_address"
+            android:visibility="gone"
+            android:id="@+id/rl_address1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/rl_location">
+            android:layout_below="@id/rv_select_date">
 
             <ImageView
-                android:id="@+id/image_address"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:id="@+id/image_address1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:padding="2dp"
                 android:src="@drawable/pin"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="10dp"/>
 
             <TextView
-                android:id="@+id/tv_address"
+                android:id="@+id/tv_address1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Address"
-                android:layout_toRightOf="@id/image_address"
-                android:layout_marginTop="25dp"
+                android:text="Enter Address"
+                android:layout_toRightOf="@id/image_address1"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:textSize="15dp"
-                android:textColor="@color/lightgrey"
-                android:fontFamily="@font/gillroy_semibold"/>
+                android:textColor="@color/bg_missing_item_txt"
+                android:fontFamily="@font/semibold"/>
 
+            <TextView
+                android:id="@+id/change_adress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/tv_address1"
+                android:background="@drawable/addons_pay_bacground"
+                android:fontFamily="@font/semibold"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"
+                android:text="Change Address"
+                android:textColor="@color/blue"
+                android:textSize="12dp" />
             <EditText
                 android:id="@+id/cust_adress"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="60dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="15dp"
                 android:paddingStart="8dp"
                 android:paddingTop="8dp"
-                android:maxLength="50"
+                android:maxLength="100"
+                android:maxLines="2"
+                android:lineSpacingExtra="2dp"
                 android:hint="Enter Dr-no, street, cross, main road"
                 android:textColorHint="@color/cement"
-                android:fontFamily="@font/gillroy_semibold"
+                android:fontFamily="@font/semibold"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
-                android:layout_below="@id/tv_address"
+                android:layout_below="@id/tv_address1"
                 android:textColor="@color/black"
                 android:gravity="start"
                 android:background="@drawable/edit_background"/>
@@ -355,7 +484,7 @@
             android:id="@+id/rl_pincode"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_below="@+id/rl_address"
+            android:layout_below="@+id/rl_location1"
             android:layout_marginTop="10dp">
 
             <ImageView
@@ -363,7 +492,7 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="10dp"
+                android:layout_centerVertical="true"
                 android:src="@drawable/state_city_icon"
                 android:padding="5dp">
 
@@ -374,13 +503,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="12dp"
+                android:layout_centerVertical="true"
                 android:layout_marginEnd="10dp"
                 android:layout_toRightOf="@+id/iv_pincode"
-                android:fontFamily="@font/poppins_semibold"
+                android:fontFamily="@font/semibold"
                 android:gravity="center"
                 android:text="Pincode"
-                android:textColor="@color/lightgrey"
+                android:textColor="@color/bg_missing_item_txt"
                 android:textSize="15dp">
 
             </TextView>
@@ -391,242 +520,419 @@
                 android:layout_height="40dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
                 android:paddingStart="8dp"
                 android:textSize="16dp"
                 android:gravity="center|left"
                 android:textColor="@color/black"
                 android:inputType="number"
                 android:maxLength="6"
-                android:fontFamily="@font/gillroy_semibold"
+                android:fontFamily="@font/semibold"
                 android:background="@drawable/edit_background"
-              >
+                >
 
             </EditText>
         </RelativeLayout>
 
         <RelativeLayout
+            android:visibility="gone"
             android:id="@+id/rl_city"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/rl_pincode"
+            android:layout_toLeftOf="@+id/v1"
             android:layout_marginTop="10dp">
 
-            <ImageView
-                android:id="@+id/iv_city"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/state_city_icon"
-                android:padding="5dp">
-
-            </ImageView>
-
-            <TextView
-                android:id="@+id/label_city"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="10dp"
-                android:layout_toRightOf="@+id/iv_city"
-                android:fontFamily="@font/poppins_semibold"
-                android:gravity="center"
-                android:text="City"
-                android:textColor="@color/lightgrey"
-                android:textSize="15dp">
-
-            </TextView>
 
             <TextView
                 android:id="@+id/selected_city"
-                android:layout_width="180dp"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:text="Bangalore"
                 android:paddingStart="8dp"
-                android:fontFamily="@font/gillroy_semibold"
-                android:gravity="center|left"
+                android:fontFamily="@font/semibold"
+                android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 android:background="@drawable/edit_background"
-               >
+                >
 
             </TextView>
         </RelativeLayout>
+        <View
+            android:id="@+id/v1"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_centerHorizontal="true">
 
+        </View>
         <RelativeLayout
+            android:visibility="gone"
             android:id="@+id/rl_state"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_below="@+id/rl_city"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_pincode"
+            android:layout_toRightOf="@+id/v1"
             android:layout_marginTop="10dp">
 
-            <ImageView
-                android:id="@+id/iv_state"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/state_city_icon"
-                android:padding="5dp">
-
-            </ImageView>
-
-            <TextView
-                android:id="@+id/label_state"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="10dp"
-                android:layout_toRightOf="@+id/iv_state"
-                android:fontFamily="@font/poppins_semibold"
-                android:gravity="center"
-                android:text="State"
-                android:textColor="@color/lightgrey"
-                android:textSize="15dp">
-
-            </TextView>
 
             <TextView
                 android:id="@+id/selected_state"
-                android:layout_width="180dp"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+                android:text="Karnataka"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:paddingStart="8dp"
-                android:fontFamily="@font/gillroy_semibold"
-                android:gravity="center|left"
+                android:fontFamily="@font/semibold"
+                android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 android:background="@drawable/edit_background"
-               >
+                >
 
             </TextView>
         </RelativeLayout>
-        <RelativeLayout
-            android:id="@+id/registration_card"
-            android:layout_width="200dp"
-            android:layout_height="100dp"
-            android:layout_below="@id/rl_state">
 
-            <TextView
-                android:id="@+id/tv_registration_card"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Registration Card"
-                android:layout_marginTop="25dp"
-                android:layout_marginLeft="40dp"
-                android:textSize="15dp"
-                android:textColor="@color/lightgrey"
-                android:fontFamily="@font/gillroy_semibold"/>
+        <View
+            android:id="@+id/cv"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_centerHorizontal="true"
 
-            <ImageView
-                android:id="@+id/iv_rc_front"
-                android:layout_width="55dp"
-                android:layout_height="55dp"
-                android:src="@drawable/image_upload"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="10dp"
-                android:layout_below="@id/tv_registration_card"/>
+            >
+        </View>
 
-            <ImageView
-                android:id="@+id/iv_rc_back"
-                android:layout_width="55dp"
-                android:layout_height="55dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="10dp"
-                android:layout_below="@id/tv_registration_card"
-                android:src="@drawable/image_upload"
-                android:layout_marginRight="40dp"/>
 
-        </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/adhaar_card"
-            android:layout_width="200dp"
-            android:layout_height="100dp"
+            android:id="@+id/rl_ac_fnt"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
             android:layout_below="@id/rl_state"
-            android:layout_alignParentEnd="true">
-
-            <TextView
-                android:id="@+id/tv_adhaar_card"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Adhaar Card"
-                android:layout_marginTop="25dp"
-                android:textSize="15dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="60dp"
-                android:textColor="@color/lightgrey"
-                android:fontFamily="@font/gillroy_semibold"/>
+            android:layout_toLeftOf="@+id/cv"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/dotted_line">
             <ImageView
                 android:id="@+id/iv_aadhar_front"
-                android:layout_width="55dp"
-                android:layout_height="55dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/image_upload"
-                android:layout_marginLeft="40dp"
-                android:layout_below="@id/tv_adhaar_card"/>
-
-            <ImageView
-                android:id="@+id/iv_aadhar_back"
-                android:layout_width="55dp"
-                android:layout_height="55dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="10dp"
-                android:layout_below="@id/tv_adhaar_card"
-                android:src="@drawable/image_upload"
-                android:layout_marginRight="40dp"/>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/rl_insurnce_copy"
-            android:layout_width="200dp"
-            android:layout_height="100dp"
-            android:layout_below="@id/adhaar_card">
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/up_black">
+            </ImageView>
 
             <TextView
-                android:id="@+id/tv_insurance_cpoy"
+                android:id="@+id/label1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Insurance Cpoy"
-                android:layout_marginTop="25dp"
-                android:textSize="15dp"
-                android:layout_marginLeft="40dp"
-                android:textColor="@color/lightgrey"
-                android:fontFamily="@font/gillroy_semibold"/>
+                android:layout_below="@+id/iv_aadhar_front"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/semibold"
+                android:text="Upload image"
+                android:textColor="@color/blue"
+                android:textSize="10dp" />
+            <ImageView
+                android:id="@+id/sel_aadhar_front"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                >
+            </ImageView>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/label_ac_fnt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/cv"
+            android:layout_below="@+id/rl_ac_fnt"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:background="@color/white"
+            android:fontFamily="@font/medium"
+            android:text="Aadhar Front"
+            android:textColor="@color/black"
+            android:textSize="13dp" />
+
+
+        <RelativeLayout
+            android:id="@+id/rl_ac_bc"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_below="@id/rl_state"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toRightOf="@+id/cv"
+            android:background="@drawable/dotted_line">
 
             <ImageView
-                android:id="@+id/iv_ins_copy"
-                android:layout_width="55dp"
-                android:layout_height="55dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/image_upload"
-                android:layout_marginLeft="40dp"
-                android:layout_below="@id/tv_insurance_cpoy"/>
+                android:id="@+id/sel_aadhar_back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                >
+            </ImageView>
+            <ImageView
+                android:id="@+id/iv_aadhar_back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/up_black">
+            </ImageView>
+            <TextView
+                android:id="@+id/label2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_aadhar_back"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/semibold"
+                android:text="Upload image"
+                android:textColor="@color/blue"
+                android:textSize="10dp" />
+            <!--        <TextView-->
+            <!--            android:id="@+id/tv_adhaar_card"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:text="Aadhaar Card"-->
+            <!--            android:layout_marginTop="25dp"-->
+            <!--            android:textSize="15dp"-->
+            <!--            android:layout_alignParentEnd="true"-->
+            <!--            android:layout_marginRight="60dp"-->
+            <!--            android:textColor="@color/bg_missing_item_txt"-->
+            <!--            android:fontFamily="@font/gillroy_medium"/>-->
+            <!--        <ImageView-->
+            <!--            android:id="@+id/iv_aadhar_front"-->
+            <!--            android:layout_width="55dp"-->
+            <!--            android:layout_height="55dp"-->
+            <!--            android:layout_marginTop="10dp"-->
+            <!--            android:src="@drawable/image_upload"-->
+            <!--            android:layout_marginLeft="40dp"-->
+            <!--            android:layout_below="@id/tv_adhaar_card"/>-->
+
+            <!--        <ImageView-->
+            <!--            android:id="@+id/iv_aadhar_back"-->
+            <!--            android:layout_width="55dp"-->
+            <!--            android:layout_height="55dp"-->
+            <!--            android:layout_alignParentEnd="true"-->
+            <!--            android:layout_marginTop="10dp"-->
+            <!--            android:layout_below="@id/tv_adhaar_card"-->
+            <!--            android:src="@drawable/image_upload"-->
+            <!--            android:layout_marginRight="30dp"/>-->
+
         </RelativeLayout>
+
+        <TextView
+            android:id="@+id/label_ac_bc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/cv"
+            android:layout_below="@+id/rl_ac_fnt"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:background="@color/white"
+            android:fontFamily="@font/medium"
+            android:text="Aadhar Back"
+            android:textColor="@color/black"
+            android:textSize="13dp" />
+        <RelativeLayout
+            android:id="@+id/rl_rc_fnt"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_below="@id/label_ac_bc"
+            android:layout_toLeftOf="@+id/cv"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/dotted_line">
+
+            <ImageView
+                android:id="@+id/sel_rc_fnt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                >
+            </ImageView>
+            <ImageView
+                android:id="@+id/iv_rc_front"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/up_black">
+            </ImageView>
+            <TextView
+                android:id="@+id/label3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_rc_front"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/semibold"
+                android:text="Upload image"
+                android:textColor="@color/blue"
+                android:textSize="10dp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/label_rc_fnt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/cv"
+            android:layout_below="@+id/rl_rc_fnt"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:background="@color/white"
+            android:fontFamily="@font/medium"
+            android:text="Rc Front"
+            android:textColor="@color/black"
+            android:textSize="13dp" />
+        <RelativeLayout
+            android:id="@+id/rl_rc_bc"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_below="@id/rl_ac_bc"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toRightOf="@+id/cv"
+            android:background="@drawable/dotted_line">
+
+            <ImageView
+                android:id="@+id/sel_rc_back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                >
+            </ImageView>
+            <ImageView
+                android:id="@+id/iv_rc_back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/up_black">
+            </ImageView>
+            <TextView
+                android:id="@+id/label4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_rc_back"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/semibold"
+                android:text="Upload image"
+                android:textColor="@color/blue"
+                android:textSize="10dp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/label_rc_bc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/cv"
+            android:layout_below="@+id/rl_rc_bc"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:background="@color/white"
+            android:fontFamily="@font/medium"
+            android:text="Rc Back"
+            android:textColor="@color/black"
+            android:textSize="13dp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_ins"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_below="@id/label_rc_bc"
+            android:layout_toLeftOf="@+id/cv"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/dotted_line">
+
+            <ImageView
+                android:id="@+id/sel_ins"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                >
+            </ImageView>
+            <ImageView
+                android:id="@+id/iv_ins_copy"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/up_black">
+            </ImageView>
+            <TextView
+                android:id="@+id/label5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_ins_copy"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/semibold"
+                android:text="Upload image"
+                android:textColor="@color/blue"
+                android:textSize="10dp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/label_ins"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/cv"
+            android:layout_below="@+id/rl_ins"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="60dp"
+            android:gravity="center"
+            android:background="@color/white"
+            android:fontFamily="@font/medium"
+            android:text="Insurance Copy"
+            android:textColor="@color/black"
+            android:textSize="13dp" />
 
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/submit"
-            android:layout_width="125dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_alignParentEnd="true"
-           android:layout_below="@id/rl_insurnce_copy"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="20dp"
+            android:layout_alignParentBottom="true"
             android:text="Submit"
             android:textSize="17dp"
             android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:textColor="@color/white"
-            android:fontFamily="@font/gillroy_semibold"
-            android:background="@drawable/submit_button"/>
+            android:fontFamily="@font/semibold"
+            android:background="@drawable/submit_button"
+            android:backgroundTint="@color/black"/>
     </RelativeLayout>
         </RelativeLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
     <ProgressBar
         android:visibility="gone"
@@ -636,4 +942,5 @@
         android:indeterminateTint="@color/blue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
 </RelativeLayout>

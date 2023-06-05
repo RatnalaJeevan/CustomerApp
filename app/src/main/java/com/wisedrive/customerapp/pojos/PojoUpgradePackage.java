@@ -28,6 +28,7 @@ public class PojoUpgradePackage {
     private String couponTypeId;
     private double couponAmount;
 
+
     public PojoUpgradePackage(String productId, String addonId, String mainPackId, String subpackId,
                               double amount, String payStatus, String payType, String mode, String refNo,
                               String orderId, String paymentId, double discount, String gatewayId, String leadId,

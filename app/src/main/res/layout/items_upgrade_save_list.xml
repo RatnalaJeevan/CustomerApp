@@ -4,30 +4,48 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
+        android:id="@+id/rl_cw"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+        android:paddingBottom="12dp"
+        android:paddingTop="12dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/grey_marg"
+        >
 
         <ImageView
             android:id="@+id/image"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="20dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="30dp"
             android:layout_centerVertical="true"
-            android:src="@drawable/up_arrow"/>
-
+            android:src="@drawable/i_ico">
+        </ImageView>
         <TextView
             android:id="@+id/upgrade_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Free upgrade to 1 year Comprehensive Warranty with Buy back guarantee worth Rs 6000 "
-            android:layout_toRightOf="@id/image"
-            android:layout_marginLeft="10dp"
-            android:textSize="15dp"
-            android:textColor="@color/text"
-            android:layout_marginRight="20dp"
-           android:layout_centerVertical="true"
-            android:fontFamily="@font/gillroy_semibold"/>
-        </RelativeLayout>
+            android:layout_toRightOf="@+id/image"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/bold"
+            android:text="Comprehensive Warranty"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/upgrade_list"
+            android:layout_toRightOf="@+id/image"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/medium"
+            android:text="OEM authorised showroom"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
 
-       </RelativeLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>

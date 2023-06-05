@@ -4,13 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MyCar_Fragment"
+    android:background="@color/new_app_bg"
    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <RelativeLayout
         android:id="@+id/rl_main"
         android:layout_width="match_parent"
         android:clickable="false"
         android:layout_height="match_parent">
+
         <ProgressBar
             android:visibility="gone"
             android:id="@+id/idPBLoading"
@@ -19,10 +28,11 @@
             android:indeterminateTint="@color/blue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-      <RelativeLayout
+       <RelativeLayout
         android:id="@+id/rl_my_cars"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+           android:paddingTop="10dp">
 
         <TextView
             android:id="@+id/text_plans"
@@ -31,13 +41,15 @@
             android:text="My Cars"
             android:layout_marginLeft="20dp"
             android:textSize="20dp"
-            android:fontFamily="@font/gillroy_bold"
+            android:visibility="gone"
+            android:fontFamily="@font/bold"
             android:textColor="@color/heading"/>
         <View
             android:id="@+id/view1"
             android:layout_width="70dp"
             android:layout_height="2dp"
             android:background="@color/violet"
+            android:visibility="gone"
             android:layout_below="@id/text_plans"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="2dp"/>
@@ -46,9 +58,61 @@
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/view_pager_2"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="150dp"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
             android:layout_below="@id/view1"/>
 
+           <RelativeLayout
+               android:visibility="gone"
+               android:id="@+id/rl1"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="5dp"
+               android:paddingTop="8dp"
+               android:paddingBottom="8dp"
+               android:background="@color/bl_vio"
+               android:layout_below="@+id/view_pager_2">
+
+               <TextView
+                   android:id="@+id/text_name"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_toLeftOf="@+id/rl_act_warr"
+                   android:text="This car is not protected with any package. Our vehicle protection plans protect your car from expensive repairs and saves money on regular maintenance."
+                   android:textSize="13dp"
+                   android:lineSpacingExtra="4dp"
+                   android:textColor="@color/dar_or"
+                   android:layout_marginLeft="20dp"
+                   android:layout_marginRight="10dp"
+                   android:layout_centerVertical="true"
+                   android:fontFamily="@font/medium"/>
+
+               <RelativeLayout
+                   android:id="@+id/rl_act_warr"
+                   android:layout_width="70dp"
+                   android:layout_height="25dp"
+                   android:layout_centerVertical="true"
+                   android:layout_alignParentRight="true"
+                   android:layout_marginRight="20dp"
+                   android:background="@drawable/background"
+                   android:backgroundTint="@color/dar_or"
+                   >
+
+                   <TextView
+
+                       android:id="@+id/act_warr"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Activate"
+                       android:textSize="12dp"
+                       android:layout_centerHorizontal="true"
+                       android:fontFamily="@font/semibold"
+                       android:textColor="@color/white"
+                       android:layout_centerVertical="true"
+                       />
+               </RelativeLayout>
+           </RelativeLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:visibility="gone"
@@ -56,9 +120,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_below="@id/view_pager_2" />
+            android:layout_marginBottom="10dp"
+            android:layout_below="@id/rl1" />
+
 
 
           <RelativeLayout
@@ -86,7 +150,7 @@
                       android:layout_height="wrap_content"
                       android:layout_centerHorizontal="true"
                       android:layout_marginTop="10dp"
-                      android:fontFamily="@font/gillroy_bold"
+                      android:fontFamily="@font/bold"
                       android:text="NO ACTIVE SERVICES"
                       android:textColor="@color/heading"
                       android:textSize="24dp" />
@@ -109,40 +173,155 @@
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:layout_centerInParent="true"
-                  android:fontFamily="@font/gillroy_semibold"
+                  android:fontFamily="@font/semibold"
                   android:text="BUY PACKAGE"
                   android:textColor="@color/blue"
                   android:textSize="20dp" />
           </RelativeLayout>
 
     </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/rl_purchase_pac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="70dp">
+
+
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="30dp"
+                android:fontFamily="@font/semibold"
+                android:gravity="center"
+                android:text="It seems you don't have any active package."
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/label1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:fontFamily="@font/regular"
+                android:gravity="center"
+                android:lineSpacingExtra="3dp"
+                android:text="Explore packages to save 100% your investment and save money on maintenance. We have tailored packages for you."
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <RelativeLayout
+                android:id="@+id/rl_purchase"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/label1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/cardview_lightgrey_margined"
+                android:backgroundTint="@color/black"
+                android:paddingStart="7dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/label_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/semibold"
+                    android:text="Buy Package"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
         <RelativeLayout
             android:visibility="gone"
             android:id="@+id/rl_add_car"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_marginBottom="50dp"
+            android:layout_alignParentBottom="true"
             >
 
-        <ImageView
-            android:id="@+id/add_car"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/add_car" />
+            <TextView
+                android:id="@+id/label_add_car"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="2dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="30dp"
+                android:fontFamily="@font/bold"
+                android:gravity="center"
+                android:text="It seems you don't have any cars added."
+                android:textColor="@color/black"
+                android:textSize="20dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ADD CAR"
-            android:layout_below="@id/add_car"
-            android:layout_centerHorizontal="true"
-            android:textSize="20dp"
-            android:textColor="@color/blue"
-            android:fontFamily="@font/gillroy_bold"
-            android:layout_marginTop="10dp"/>
-    </RelativeLayout>
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/label1_add_car"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label_add_car"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:fontFamily="@font/regular"
+                android:gravity="center"
+                android:lineSpacingExtra="2dp"
+                android:text="Add car to to explore best packages that suit your need. Our tailor made products saves your money and guarantees peace of mind."
+                android:textColor="@color/black"
+                android:textSize="15dp" />
 
+            <RelativeLayout
+                android:id="@+id/rl_add1"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/label1_add_car"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/cardview_lightgrey_margined"
+                android:backgroundTint="@color/black"
+                android:paddingStart="7dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/label_add1_car"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/semibold"
+                    android:text="Add My Car"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
 
 </FrameLayout>
 

@@ -7,6 +7,16 @@ public class Pojo_Select_Date {
     String date;
     @SerializedName("display_date")
     String display_date;
+    String isSelected="n";
+
+    public String getIsSelected() {
+        return isSelected;
+    }
+
+    public void setIsSelected(String isSelected) {
+        this.isSelected = isSelected;
+    }
+
     public String getDate() {
         return date;
     }

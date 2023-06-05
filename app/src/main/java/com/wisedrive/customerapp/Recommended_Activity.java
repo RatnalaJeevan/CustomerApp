@@ -41,7 +41,7 @@ public class Recommended_Activity extends AppCompatActivity implements CFCheckou
     String orderID = "";
     String paymentSessionID = "";
     String payment_status = "", cforderid = "", final_amount = "";
-    CFSession.Environment cfEnvironment = CFSession.Environment.PRODUCTION;
+    CFSession.Environment cfEnvironment = CFSession.Environment.SANDBOX;
     ProgressBar idPBLoading;
     TextView do_u_know;
     private static Recommended_Activity instance;

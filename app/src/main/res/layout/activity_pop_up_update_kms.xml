@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PopUpUpdateKms">
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/semibold"
+        android:text="Update kms every 90 days"
+        android:textColor="@color/black"
+        android:textSize="14dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_kms_reading"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/label">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/label_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rv_kms_reading"
+       android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="50dp"
+        android:fontFamily="@font/semibold"
+        android:text="Update kms every 90 days"
+        android:textColor="@color/black"
+        android:textSize="14dp" />
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rl2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/label">
+
+        <ImageView
+            android:id="@+id/taken_odo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:scaleType="fitXY"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/odo_sample" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/lable_kms"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/taken_odo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/semibold"
+            android:text="Enter Kms Driven"
+            android:textColor="@color/black"
+            android:textSize="14dp">
+        </TextView>
+
+            <EditText
+            android:id="@+id/selected_kms"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/lable_kms"
+            android:layout_marginTop="15dp"
+            android:background="@null"
+            android:hint="Enter Kms driven"
+            android:letterSpacing="0.03"
+            android:textColorHint="@color/grey"
+            android:fontFamily="@font/bold"
+            android:paddingLeft="10dp"
+            android:inputType="number"
+            android:maxLength="6"
+            android:maxLines="1"
+            android:textSize="16dp"
+            android:textColor="@color/black"/>
+        <View
+            android:layout_width="150dp"
+            android:layout_height="1px"
+            android:layout_centerHorizontal="true"
+            android:background="@color/cement"
+            android:layout_below="@+id/selected_kms"
+            >
+
+        </View>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_update_kms"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/rv_kms_reading"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/addons_pay_bacground"
+        android:backgroundTint="@color/black">
+
+        <TextView
+            android:id="@+id/label_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/bold"
+            android:text="Update kms"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rl_update_now"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/rl2"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/addons_pay_bacground"
+        android:backgroundTint="@color/black">
+
+        <TextView
+            android:id="@+id/label_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/bold"
+            android:text="Update Now"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/idPBLoading"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

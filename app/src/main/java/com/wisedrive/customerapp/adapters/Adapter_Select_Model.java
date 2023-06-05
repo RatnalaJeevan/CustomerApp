@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.wisedrive.customerapp.AddYourCar;
 import com.wisedrive.customerapp.R;
 import com.wisedrive.customerapp.commonclasses.SPHelper;
 import com.wisedrive.customerapp.pojos.Pojo_Select_Model;
@@ -19,14 +20,18 @@ import com.wisedrive.customerapp.pojos.Pojo_Select_Model;
 import java.util.ArrayList;
 
 public class Adapter_Select_Model extends RecyclerView.Adapter<Adapter_Select_Model.MyViewHolder> {
+
+    private AddYourCar myFragment;
+
     Context context;
     private View view;
     ArrayList<Pojo_Select_Model> pojo_select_modelArrayList;
     private int selectedPosition = -1;
 
 
-    public Adapter_Select_Model(Context context, ArrayList<Pojo_Select_Model> pojo_select_modelArrayList) {
-        this.context = context;
+
+    public Adapter_Select_Model(AddYourCar myFragment, ArrayList<Pojo_Select_Model> pojo_select_modelArrayList) {
+        this.myFragment = myFragment;
         this.view = view;
         this.pojo_select_modelArrayList = pojo_select_modelArrayList;
     }
@@ -40,14 +45,14 @@ public class Adapter_Select_Model extends RecyclerView.Adapter<Adapter_Select_Mo
         Pojo_Select_Model recyclerdata = pojo_select_modelArrayList.get(position);
         holder.tv_model.setText(recyclerdata.getCar_model());
         if (selectedPosition == position) {
-            holder.rl_select_model.setSelected(true); //using selector drawable
-            holder.rl_select_model.setBackgroundResource(R.drawable.select_model_bg);
-            holder.tv_model.setTextColor(Color.parseColor("#0000FF"));
+//            holder.rl_select_model.setSelected(true); //using selector drawable
+//            holder.rl_select_model.setBackgroundResource(R.drawable.select_model_bg);
+//            holder.tv_model.setTextColor(Color.parseColor("#0000FF"));
 
         } else {
-            holder.rl_select_model.setSelected(false);
-            holder.rl_select_model.setBackgroundResource(R.drawable.model_background);
-            holder.tv_model.setTextColor(Color.parseColor("#D3D3D3"));
+//            holder.rl_select_model.setSelected(false);
+//            holder.rl_select_model.setBackgroundResource(R.drawable.model_background);
+//            holder.tv_model.setTextColor(Color.parseColor("#D3D3D3"));
 
         }
 
@@ -60,6 +65,8 @@ public class Adapter_Select_Model extends RecyclerView.Adapter<Adapter_Select_Mo
                     notifyItemChanged(selectedPosition);
                 selectedPosition = holder.getAdapterPosition();
                 notifyItemChanged(selectedPosition);
+
+                myFragment.get_basic_details();
 
             }
         });

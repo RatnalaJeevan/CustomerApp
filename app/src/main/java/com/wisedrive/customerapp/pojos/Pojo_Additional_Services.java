@@ -17,6 +17,15 @@ public class Pojo_Additional_Services {
     String product_name;
     @SerializedName("product_icon")
     String product_icon;
+    String isSelected="n";
+
+    public String getIsSelected() {
+        return isSelected;
+    }
+
+    public void setIsSelected(String isSelected) {
+        this.isSelected = isSelected;
+    }
 
     public String getProduct_icon() {
         return product_icon;

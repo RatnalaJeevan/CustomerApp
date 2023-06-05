@@ -35,7 +35,7 @@
                 android:layout_marginRight="30dp"
                 android:textColor="@color/black"
                 android:textSize="14dp"
-                android:fontFamily="@font/gillroy_semibold"/>
+                android:fontFamily="@font/semibold"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -49,7 +49,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:fontFamily="@font/gillroy_regular"
+                    android:fontFamily="@font/regular"
                     android:text="Expires On"
                     android:textColor="@color/black"
                     android:textSize="12dp" />
@@ -59,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_expires_on"
-                android:fontFamily="@font/gillroy_semibold"
+                android:fontFamily="@font/semibold"
                 android:text="04 Feb,2023"
                 android:textColor="@color/black"
                 android:textSize="14dp" />

@@ -19,6 +19,8 @@ public class Pojo_Service_list {
     String description;
     @SerializedName("package_description")
     String package_description;
+    @SerializedName("is_eligible")
+    String is_eligible;
 
     @SerializedName("is_expired")
     String is_expired;
@@ -46,6 +48,16 @@ public class Pojo_Service_list {
     public void setVisibility(boolean visibility) {
         this.isVisible = isVisible;
 
+    }
+
+    double percentage_amount_to_pay;
+
+    public double getPercentage_amount_to_pay() {
+        return percentage_amount_to_pay;
+    }
+
+    public String getIs_eligible() {
+        return is_eligible;
     }
 
     public double getFinal_price() {

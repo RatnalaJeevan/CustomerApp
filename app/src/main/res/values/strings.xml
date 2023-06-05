@@ -1,12 +1,21 @@
 <resources>
     <string name="app_name">Wisedrive</string>
+    <string name="key" translatable="false">
+        AIzaSyANN5mOrtp7LZaEepCu9DtJzaiNC_eeOp8
+    </string>
     <string name="req_code"><u><b>Request Activation Code</b></u></string>
     <string name="engine_name">Engine &amp; Transmission Warranty worth</string>
     <string name="happycode">Please provide this code to service advisor when your car is ready for delivery and you are satisfied with the work performed on your car. </string>
-    <string name="app_version_name">1.3</string>
+    <string name="app_version_name">1.4</string>
     <string name="title_home">Wisedrive</string>
     <string name="title_dashboard">Wisedrive</string>
     <string name="title_notifications">Wisedrive</string>
     <string name="sign">Sign\nin to\nWisedrive</string>
+    <string name="si_dscp">A simple 3 step process which should not take more than 5 min can speed up the activation process.Just add few data points, take some images and Videos. That\'s it. Our Generative Sound AI will take care of the rest.</string>
+    <string name="service_details"><u>Service Details</u></string>
+    <string name="pay_as_you_go">Flexible payment option</string>
+    <string name="details"><u>Service Details</u></string>
+    <string name="skip"><u>Skip</u></string>
+    <string name="view_document"><u>View Document</u></string>
 
 </resources>

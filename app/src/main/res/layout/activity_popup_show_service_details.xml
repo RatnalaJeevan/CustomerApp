@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PopupShowServiceDetails">
+
+    <TextView
+        android:id="@+id/c_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/semibold"
+        android:text="General Service Standard"
+        android:textColor="@color/black"
+        android:textSize="17dp">
+
+    </TextView>
+    <TextView
+        android:id="@+id/c_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_below="@+id/c_name"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/regular"
+        android:text="This service is done at OEM Authorised service centre."
+        android:textColor="@color/black"
+        android:textSize="12dp">
+
+    </TextView>
+    <ImageView
+        android:id="@+id/image_plus"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/cancel"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp"/>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/cement"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@+id/c_no">
+
+    </View>
+
+    <TextView
+        android:id="@+id/label1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view1"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/semibold"
+        android:text="What's Included"
+        android:textColor="@color/black"
+        android:textSize="17dp">
+
+    </TextView>
+
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/rv_ss_list"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/label1"
+       android:layout_marginBottom="20dp">
+
+   </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/descrpt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_below="@+id/rv_ss_list"
+        android:lineSpacingExtra="3dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="50dp"
+        android:fontFamily="@font/regular"
+        android:gravity="start"
+        android:text="This service is done at OEM Authorised service centre. This service is done at OEM Authorised service centre. This service is done at OEM Authorised service centre. This service is done at OEM Authorised service centre."
+        android:textColor="@color/black"
+        android:textSize="12dp">
+
+    </TextView>
+</RelativeLayout>

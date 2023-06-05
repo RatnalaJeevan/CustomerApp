@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ApplyCouponList">
+    tools:context=".ApplyCouponList"
+    android:background="@color/new_app_bg">
 
     <RelativeLayout
         android:id="@+id/rl_heading"
@@ -19,7 +20,7 @@
                 android:id="@+id/back"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:src="@drawable/back"
+                android:src="@drawable/back_new_black"
                 android:layout_marginLeft="20dp"/>
         </RelativeLayout>
 
@@ -30,14 +31,15 @@
             android:text="Coupons for you"
             android:layout_toRightOf="@id/rl_back_button"
             android:layout_marginTop="25dp"
-            android:textSize="20dp"
+            android:textSize="16dp"
             android:layout_marginLeft="20dp"
             android:textColor="@color/black"
-            android:fontFamily="@font/gillroy_regular"/>
+            android:fontFamily="@font/regular"/>
 
     </RelativeLayout>
 
     <RelativeLayout
+        android:visibility="gone"
         android:id="@+id/rl_coupon_label"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -59,7 +61,7 @@
             android:layout_centerVertical="true"
             android:maxLines="1"
             android:capitalize="characters"
-            android:fontFamily="@font/gillroy_semibold"
+            android:fontFamily="@font/semibold"
             android:textColorHint="@color/cement"
             android:hint="Type coupon code here..."
             android:background="@null">
@@ -74,7 +76,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginTop="8dp"
-            android:fontFamily="@font/gillroy_semibold"
+            android:fontFamily="@font/semibold"
             android:textSize="20dp"
             android:textColor="@color/cement"
             android:layout_marginLeft="5dp"/>
@@ -91,7 +93,7 @@
         android:text="Coupon code GPAY is invalid.Please try another code"
         android:layout_below="@+id/rl_coupon_label"
         android:layout_marginTop="8dp"
-        android:fontFamily="@font/gillroy_regular"
+        android:fontFamily="@font/regular"
         android:textSize="13dp"
         android:textColor="@color/red"
         android:layout_marginLeft="5dp"/>

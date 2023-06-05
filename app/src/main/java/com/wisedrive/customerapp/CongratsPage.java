@@ -26,7 +26,8 @@ public class CongratsPage extends BottomSheetDialogFragment {
     public String coming_from="";
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_congrats_page, container, false);
         activity=getActivity();
         label1=v.findViewById(R.id.label1);
@@ -50,7 +51,7 @@ public class CongratsPage extends BottomSheetDialogFragment {
         if(SPHelper.isSuccess.equals("add")){
             iv_anim.setImageResource(R.drawable.insp_approved);
         }else{
-            rl_retry.setVisibility(View.VISIBLE);
+           // rl_retry.setVisibility(View.VISIBLE);
             iv_anim.setImageResource(R.drawable.alert_anim);
         }
 
