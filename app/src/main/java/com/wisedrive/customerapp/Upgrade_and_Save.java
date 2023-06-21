@@ -55,17 +55,16 @@ public class Upgrade_and_Save extends AppCompatActivity implements CFCheckoutRes
     ArrayList<Pojo_Upgrade_Save> pojo_upgrade_saveArrayList;
     ArrayList<Pojo_Upgrade_Save> pojo1;
     String actcode="";
-    RelativeLayout rl_upgrade_button,rl_back,rl_coupon_label,rl_coupon_applied;
+    RelativeLayout rl_back,rl_coupon_label,rl_coupon_applied;
     TextView tv_amount_buy,tv_upgrade_save,tv_dis_amount,tv_total_amount,coupon_label,coupon_code,pay,
-            ok,description,call_me,tvamount,tv_disamount,label_save;
-    AppCompatButton pay_button;
+            ok,description,tvamount,tv_disamount,label_save;
     private DecimalFormat IndianCurrencyFormat;
     NestedScrollView nsv;
     RelativeLayout rl_no_upgrade,rl3;
     String orderID = "";
     String paymentSessionID = "";
     String payment_status = "", cforderid = "", final_amount = "";
-    CFSession.Environment cfEnvironment = CFSession.Environment.SANDBOX;
+    CFSession.Environment cfEnvironment = CFSession.Environment.PRODUCTION;
     ProgressBar idPBLoading;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -83,8 +82,6 @@ public class Upgrade_and_Save extends AppCompatActivity implements CFCheckoutRes
         pay=findViewById(R.id.pay);
         label_save=findViewById(R.id.label_save);
         tv_disamount=findViewById(R.id.tv_disamount);
-        call_me=findViewById(R.id.call_me);
-        pay_button=findViewById(R.id.pay_button);
         rl_no_upgrade=findViewById(R.id.rl_no_upgrade);
         nsv=findViewById(R.id.nsv);
         ok=findViewById(R.id.ok);
@@ -92,14 +89,12 @@ public class Upgrade_and_Save extends AppCompatActivity implements CFCheckoutRes
         IndianCurrencyFormat = new DecimalFormat("##,##,###");
         coupon_code=findViewById(R.id.coupon_code);
         coupon_label=findViewById(R.id.coupon_label);
-        rl_coupon_label=findViewById(R.id.rl_coupon_label);
         rl_coupon_applied=findViewById(R.id.rl_coupon_applied);
         tv_upgrade_save=findViewById(R.id.tv_upgrade_save);
         tv_amount_buy=findViewById(R.id.tv_amount_buy);
         tv_dis_amount=findViewById(R.id.tv_dis_amount);
         tv_total_amount=findViewById(R.id.tv_total_amount);
         rv_upgrade=findViewById(R.id.rv_upgrade);
-        rl_upgrade_button=findViewById(R.id.rl_upgrade_button);
         rl_back=findViewById(R.id.rl_back);
         tvamount=findViewById(R.id.tvamount);
         apiInterface= ApiClient.getClient().create(ApiInterface.class);
@@ -114,14 +109,6 @@ public class Upgrade_and_Save extends AppCompatActivity implements CFCheckoutRes
         });
 
 
-        pay_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(Upgrade_and_Save.this,Recommended_Activity.class);
-                startActivity(intent);
-            }
-        });
-
         pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -129,30 +116,8 @@ public class Upgrade_and_Save extends AppCompatActivity implements CFCheckoutRes
             }
         });
 
-        rl_coupon_label.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Upgrade_and_Save.this, ApplyCouponList.class);
-                intent.putExtra("comingfrom","upgrade");
-                startActivity(intent);
-            }
-        });
 
-        rl_coupon_applied.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //remove coupon
-                rl_coupon_applied.setVisibility(View.INVISIBLE);
-                rl_coupon_label.setVisibility(View.VISIBLE);
-               // coupon_label.setVisibility(View.GONE);
-                SPHelper.disc_amount=0;
-                SPHelper.coupon_code="";
-                SPHelper.coupon_id="";
-                SPHelper.coupon_type="";
-                tv_dis_amount.setText("0");
-                tv_total_amount.setText(IndianCurrencyFormat.format((int) SPHelper.final_amount));
-            }
-        });
+
         rl_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -364,12 +329,20 @@ public class Upgrade_and_Save extends AppCompatActivity implements CFCheckoutRes
                 if(SPHelper.lead_veh_id==null||SPHelper.lead_veh_id.equals("null")){
                     SPHelper.lead_veh_id="";
                 }
-                PojoUpgradePackage pojoSellPackage = new PojoUpgradePackage(SPHelper.package_id, "", SPHelper.main_pack_id,
-                        SPHelper.cat_id, SPHelper.final_amount-SPHelper.disc_amount, payment_status, "online", "", cforderid, orderID,
-                        "", SPHelper.disc_amount, "", lead_id, SPHelper.veh_id,
-                        c_id,SPHelper.lead_veh_id,"Y",
-                        "N", "", "",SPHelper.coupon_id,SPHelper.coupon_type,SPHelper.disc_amount);
-                Call<AppResponse> call = apiInterface.upgrade_package(pojoSellPackage);
+//                PojoUpgradePackage pojoSellPackage = new PojoUpgradePackage(SPHelper.package_id, "", SPHelper.main_pack_id,
+//                        SPHelper.cat_id, SPHelper.final_amount-SPHelper.disc_amount, payment_status, "online", "", cforderid, orderID,
+//                        "", SPHelper.disc_amount, "", lead_id, SPHelper.veh_id,
+//                        c_id,SPHelper.lead_veh_id,"Y",
+//                        "N", "", "",SPHelper.coupon_id,SPHelper.coupon_type,SPHelper.disc_amount);
+
+                PojoSellPackage pojo_upgradee = new PojoSellPackage(SPHelper.package_id, "", SPHelper.main_pack_id,
+                        SPHelper.cat_id, SPHelper.final_amount, payment_status, "online", "", cforderid, orderID,
+                        "", SPHelper.disc_amount, "", lead_id, c_id,
+                        SPHelper.lead_veh_id, "Y", "N", "", "",
+                        SPHelper.coupon_id,SPHelper.coupon_type,0,SPHelper.veh_id,
+                        "","","","N",
+                        SPHelper.final_amount,0,"Y");
+                Call<AppResponse> call = apiInterface.sell_package(pojo_upgradee);
                 call.enqueue(new Callback<AppResponse>() {
                     @Override
                     public void onResponse(@NotNull Call<AppResponse> call, @NotNull Response<AppResponse> response) {
@@ -407,6 +380,7 @@ public class Upgrade_and_Save extends AppCompatActivity implements CFCheckoutRes
             }
         }
     }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();

@@ -61,19 +61,19 @@ public class CongratsPage extends BottomSheetDialogFragment {
                 dismiss();
             }
         });
-        rl_retry.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view)
-            {
-
-                if(coming_from.equals("addon")){
-                    Addons.getInstance().create_sessionID();
-                }else{
-                    Recommended_Activity.getInstance().create_sessionID();
-                }
-                dismiss();
-            }
-        });
+//        rl_retry.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view)
+//            {
+//
+//                if(coming_from.equals("addon")){
+//                    Addons.getInstance().create_sessionID();
+//                }else{
+//                    Recommended_Activity.getInstance().create_sessionID();
+//                }
+//                dismiss();
+//            }
+//        });
         return v;
     }
 }

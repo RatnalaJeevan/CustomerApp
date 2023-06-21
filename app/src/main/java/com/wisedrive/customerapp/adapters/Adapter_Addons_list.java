@@ -58,15 +58,15 @@ public class Adapter_Addons_list  extends RecyclerView.Adapter<Adapter_Addons_li
             holder.tv_valid.setText("Validity : "+list.getPlan_validity());
         }
 
-        if (list.getIs_recommended().equalsIgnoreCase("y")) {
-            holder.r_l_status.setBackgroundResource(R.drawable.circle_white);
-            holder.label_rec.setText("Recommended");
-            holder.label_rec.setTextColor(Color.parseColor("#cc8899"));
-        } else  {
-            holder.r_l_status.setBackgroundResource(R.drawable.blue_background);
-            holder.label_rec.setText("New");
-            holder.label_rec.setTextColor(Color.parseColor("#0619C3"));
-        }
+//        if (list.getIs_recommended().equalsIgnoreCase("y")) {
+//            holder.r_l_status.setBackgroundResource(R.drawable.circle_white);
+//            holder.label_rec.setText("Recommended");
+//            holder.label_rec.setTextColor(Color.parseColor("#cc8899"));
+//        } else  {
+//            holder.r_l_status.setBackgroundResource(R.drawable.blue_background);
+//            holder.label_rec.setText("New");
+//            holder.label_rec.setTextColor(Color.parseColor("#0619C3"));
+//        }
 
         if(list.getIsSelected().equals("y")){
             holder.white_check.setVisibility(View.VISIBLE);

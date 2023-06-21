@@ -24,7 +24,6 @@ import com.wisedrive.customerapp.PopUpUpdateKms;
 import com.wisedrive.customerapp.PopupWDBenefits;
 import com.wisedrive.customerapp.R;
 import com.wisedrive.customerapp.commonclasses.SPHelper;
-import com.wisedrive.customerapp.pojos.PojoVehDetails;
 import com.wisedrive.customerapp.pojos.Pojo_Class_Mycar;
 import com.wisedrive.customerapp.pojos.Pojo_Class_Plan_2;
 

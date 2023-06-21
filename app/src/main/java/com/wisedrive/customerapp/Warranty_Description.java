@@ -466,6 +466,7 @@ public class Warranty_Description extends AppCompatActivity implements ViewPager
                             double per_amount=appResponse.getResponseModel().getPayAsyouGoEligibility().getPercentage_amount_to_pay();
                             SPHelper.is_ok_partial_pay=is_eligible;
                             SPHelper.per_amount=per_amount;
+                            SPHelper.final_per=SPHelper.per_amount;
 
 
                         } else if (response_code.equals("300")) {

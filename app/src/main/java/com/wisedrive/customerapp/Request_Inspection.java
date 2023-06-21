@@ -305,26 +305,6 @@ public class Request_Inspection extends AppCompatActivity
                             " enter valid pincode",
                             Toast.LENGTH_SHORT).show();
                 }
-                else if(rc_front_url.equals("") ){
-                    Toast.makeText(Request_Inspection.this,
-                            " Upload RC front photo",
-                            Toast.LENGTH_SHORT).show();
-                }
-                else if( rc_back_url.equals("")){
-                    Toast.makeText(Request_Inspection.this,
-                            " Upload RC back photo",
-                            Toast.LENGTH_SHORT).show();
-                }
-                else if(aadhar_frnt_url.equals("") ){
-                    Toast.makeText(Request_Inspection.this,
-                            " Upload aadhar front photo",
-                            Toast.LENGTH_SHORT).show();
-                }
-                else if(aadhar_back_url.equals("")){
-                    Toast.makeText(Request_Inspection.this,
-                            " Upload Aadhar back photo",
-                            Toast.LENGTH_SHORT).show();
-                }
                 else {
                     req_insp();
                 }
@@ -385,6 +365,7 @@ public class Request_Inspection extends AppCompatActivity
             });
         }
     }
+
     public void get_pincode_details() {
         if(!Connectivity.isNetworkConnected(Request_Inspection.this))
         {
@@ -526,6 +507,7 @@ public class Request_Inspection extends AppCompatActivity
             }
         });
     }
+
     void openCamera()
     {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -661,7 +643,7 @@ public class Request_Inspection extends AppCompatActivity
                 @Override
                 public void onStateChanged(int id, TransferState state) {
                     if (TransferState.COMPLETED == state) {
-                        Toast.makeText(Request_Inspection.this, onclick+"\tuploaded!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Request_Inspection.this, onclick+" uploaded!", Toast.LENGTH_SHORT).show();
                         String finalurl = s3Client.getResourceUrl("ab-prod-container", key);
                         System.out.print(finalurl);
                         Request_Inspection.this.runOnUiThread(new Runnable() {

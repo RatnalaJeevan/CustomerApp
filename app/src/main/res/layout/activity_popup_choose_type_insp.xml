@@ -50,7 +50,6 @@
                 android:src="@drawable/tick_green" />
         </RelativeLayout>
 
-
         <TextView
             android:id="@+id/validity"
             android:layout_width="wrap_content"
@@ -62,6 +61,34 @@
             android:text="Self Inspection"
             android:textColor="@color/black"
             android:textSize="16dp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_edit_cust"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="3dp"
+            android:layout_toRightOf="@+id/validity"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/new_app_bg"
+            android:backgroundTint="@color/black"
+            >
+
+            <TextView
+                android:id="@+id/edit_cus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/semibold"
+                android:text="coming soon"
+                android:textColor="@color/white"
+                android:textSize="12dp" />
+        </RelativeLayout>
 
         <ImageView
             android:id="@+id/plus_icon"

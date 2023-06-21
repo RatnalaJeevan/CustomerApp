@@ -21,7 +21,6 @@ import com.bumptech.glide.Glide;
 import com.wisedrive.customerapp.ActYourPack;
 import com.wisedrive.customerapp.Activity_Showroom_Services;
 import com.wisedrive.customerapp.ClaimWarranty;
-import com.wisedrive.customerapp.FragmentPopoup;
 import com.wisedrive.customerapp.MyCar_Fragment;
 import com.wisedrive.customerapp.PopupChooseTypeInsp;
 import com.wisedrive.customerapp.R;

@@ -32,6 +32,7 @@ public class PojoSellPackage {
     private String isPartialPayment;
     private double packFullAmount;
     private double packPartialAmount;
+    private String isUpgrade;
 
     public PojoSellPackage(String productId, String addonId, String mainPackId, String subpackId, double amount,
                            String payStatus, String payType, String mode, String refNo, String orderId,
@@ -39,7 +40,7 @@ public class PojoSellPackage {
                            String leadVehicleId, String withpack, String ismultipleaddon, String deliveryNote,
                            String salesReceipt, String couponId, String couponTypeId, double couponAmount, String vehicleId
                            ,String couponCode,String couponCodeTypeId,String addedFrom, String isPartialPayment,
-                            double packFullAmount, double packPartialAmount) {
+                            double packFullAmount, double packPartialAmount,String isUpgrade) {
         this.productId = productId;
         this.addonId = addonId;
         this.mainPackId = mainPackId;
@@ -70,6 +71,7 @@ public class PojoSellPackage {
         this.isPartialPayment=isPartialPayment;
         this.packFullAmount=packFullAmount;
         this.packPartialAmount=packPartialAmount;
+        this.isUpgrade=isUpgrade;
     }
 
 

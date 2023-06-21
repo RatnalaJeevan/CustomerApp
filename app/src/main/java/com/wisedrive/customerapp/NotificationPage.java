@@ -31,7 +31,8 @@ public class NotificationPage extends AppCompatActivity {
     String customer_support_no,customer_support_email;
     @SuppressLint("MissingInflatedId")
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification_page);
         getWindow().setStatusBarColor(getColor(R.color.white));
@@ -50,29 +51,17 @@ public class NotificationPage extends AppCompatActivity {
             tv_AU_skip.setVisibility(View.GONE);
             tv_no_thanks.setVisibility(View.VISIBLE);
         }
-        tv_AU_Update1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent httpIntent = new Intent(Intent.ACTION_VIEW);
-                httpIntent.setData(Uri.parse(SPHelper.app_url));
-                startActivity(httpIntent);
-            }
+        tv_AU_Update1.setOnClickListener(view -> {
+            Intent httpIntent = new Intent(Intent.ACTION_VIEW);
+            httpIntent.setData(Uri.parse(SPHelper.app_url));
+            startActivity(httpIntent);
         });
-        tv_AU_skip.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view) {
-                get_support_details();
-            }
-        });
-        tv_no_thanks.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent a = new Intent(Intent.ACTION_MAIN);
-                a.addCategory(Intent.CATEGORY_HOME);
-                a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(a);
-            }
+        tv_AU_skip.setOnClickListener(view -> get_support_details());
+        tv_no_thanks.setOnClickListener(view -> {
+            Intent a = new Intent(Intent.ACTION_MAIN);
+            a.addCategory(Intent.CATEGORY_HOME);
+            a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(a);
         });
     }
 
@@ -110,11 +99,6 @@ public class NotificationPage extends AppCompatActivity {
 
                             if(!lead_id.equals("")||!c_id.equals(""))
                             {
-//                                if(!c_id.equals("")&&pack_activated.equalsIgnoreCase("n")){
-//                                    SPHelper.fragment_is="act";
-//                                }else{
-//                                    SPHelper.fragment_is="plans";
-//                                }
                                 SPHelper.fragment_is="plans";
                                 Intent intent=new Intent(NotificationPage.this, CustomerHomepage.class);
                                 startActivity(intent);

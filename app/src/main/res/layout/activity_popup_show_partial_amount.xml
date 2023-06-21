@@ -18,7 +18,162 @@
         android:textColor="@color/black"
         android:textSize="14dp" />
 
+
+    <carbon.widget.RelativeLayout
+        android:id="@+id/rl_pay_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/label"
+        app:carbon_cornerRadius="5dp"
+        android:paddingBottom="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:background="@color/black"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp">
+
+        <TextView
+            android:id="@+id/tv_starts_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/regular"
+            android:text="Package Fee"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/tv_inr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INR "
+            android:layout_marginTop="14dp"
+            android:layout_toStartOf="@+id/tv_amount_buy"
+            android:fontFamily="@font/regular"
+            android:textColor="@color/white"
+            android:textSize="13dp"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/tv_amount_buy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10,000"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/semibold"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="5dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:visibility="gone"
+            android:id="@+id/rv_sel_addon_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/tv_starts_from">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+        <RelativeLayout
+
+            android:id="@+id/rl_disc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/rv_sel_addon_list">
+            <TextView
+                android:id="@+id/tv_ac"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/regular"
+                android:text="Add-on amount"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tv_inr1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" INR "
+                android:layout_marginTop="5dp"
+                android:layout_toStartOf="@+id/tv_total_add_on_amount"
+                android:fontFamily="@font/regular"
+                android:textColor="@color/white"
+                android:textSize="13dp"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:id="@+id/tv_total_add_on_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_marginTop="2dp"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/semibold"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_marginLeft="5dp"/>
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="@color/white"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/rl_disc">
+
+        </View>
+
+        <TextView
+            android:id="@+id/tv_total_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/regular"
+            android:text="Pay now"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+        <TextView
+            android:id="@+id/tv_inr2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INR "
+            android:layout_below="@+id/view1"
+            android:layout_marginTop="12dp"
+            android:layout_toStartOf="@+id/tv_total_amount"
+            android:fontFamily="@font/regular"
+            android:textColor="@color/white"
+            android:textSize="13dp"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/tv_total_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10,000"
+            android:layout_below="@+id/view1"
+            android:layout_marginTop="8dp"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/semibold"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="5dp"/>
+
+    </carbon.widget.RelativeLayout>
+
     <RelativeLayout
+        android:visibility="gone"
         android:id="@+id/rl1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,13 +208,14 @@
     </RelativeLayout>
 
     <View
+        android:visibility="gone"
         android:id="@+id/v1"
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:background="@color/black"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_below="@+id/rl1">
+        android:layout_below="@+id/rl_pay_button">
 
     </View>
 
@@ -106,4 +262,6 @@
             android:textColor="@color/white"
             android:textSize="15dp" />
     </RelativeLayout>
+
+
 </RelativeLayout>

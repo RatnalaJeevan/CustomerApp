@@ -43,8 +43,7 @@ public class AdaperComboProducts extends RecyclerView.Adapter<AdaperComboProduct
 
         Typeface font1 = Typeface.createFromAsset(context.getAssets(), "fonts/medium.ttf");
         Typeface font2 = Typeface.createFromAsset(context.getAssets(), "fonts/regular.ttf");
-//        Typeface font1 = Typeface.DEFAULT_BOLD;
-//        Typeface font2 = Typeface.SERIF;
+
         SpannableString spannableString = new SpannableString(recyclerdata.getValidity()+" "+recyclerdata.getProduct_name());
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
@@ -55,11 +54,8 @@ public class AdaperComboProducts extends RecyclerView.Adapter<AdaperComboProduct
             spannableString.setSpan(new TypefaceSpan(font2), recyclerdata.getValidity().length()+1, spannableString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
 
-// Set the modified SpannableString to the TextView
         holder.tv_comprehensive_warranty_description.setText(spannableString);
-//        holder.tv_comprehensive_warranty.setText(recyclerdata.getProduct_name());
-//        holder.tv_comprehensive_warranty_description.setText(recyclerdata.getValidity());
-       // holder.validity.setText(recyclerdata.getValidity());
+
     }
 
     @Override

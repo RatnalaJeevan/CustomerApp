@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
 
-import com.wisedrive.customerapp.adapters.AdapterCustomerVehicleList;
 import com.wisedrive.customerapp.adapters.Adapter_Yes_No;
 import com.wisedrive.customerapp.pojos.PojoAnswerDetails;
 import com.wisedrive.customerapp.pojos.PojoPaidAddonList;
@@ -147,6 +146,7 @@ public class SPHelper {
     public static String show_self="";
     public static String is_odo_update="";
     public static String gone_to="";
+    public static double final_per;
 
     private  static String spName="CustomerApp";
 

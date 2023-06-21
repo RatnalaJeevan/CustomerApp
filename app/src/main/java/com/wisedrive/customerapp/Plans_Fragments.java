@@ -27,7 +27,6 @@ import android.widget.Toast;
 import com.appsflyer.AppsFlyerLib;
 import com.bumptech.glide.Glide;
 import com.wisedrive.customerapp.adapters.Adapter_Combo_Plans;
-import com.wisedrive.customerapp.adapters.Adapter_Comprehensive_service;
 import com.wisedrive.customerapp.adapters.Adapter_Service_and_Maintanance_Plan;
 import com.wisedrive.customerapp.adapters.Adapter_Exteneded_Warranty_Plan;
 import com.wisedrive.customerapp.commonclasses.Connectivity;
@@ -36,7 +35,6 @@ import com.wisedrive.customerapp.commonclasses.AppResponse;
 import com.wisedrive.customerapp.pojos.Pojo_Combo_Plans;
 import com.wisedrive.customerapp.pojos.Pojo_Service_and_Maintanance_Plans;
 import com.wisedrive.customerapp.pojos.Pojo_Extended_Warranty_Plan;
-import com.wisedrive.customerapp.pojos.Pojo_Comprehensive_Plans;
 import com.wisedrive.customerapp.services.ApiClient;
 import com.wisedrive.customerapp.services.ApiInterface;
 

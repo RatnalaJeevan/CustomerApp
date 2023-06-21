@@ -1,16 +1,10 @@
 package com.wisedrive.customerapp.adapters;
 
-import static android.app.Activity.RESULT_OK;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.app.Dialog;
+
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.os.Bundle;
-import android.provider.MediaStore;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,14 +13,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.wisedrive.customerapp.Activity_Showroom_Services;
-import com.wisedrive.customerapp.Add_New_Car;
+
 import com.wisedrive.customerapp.InitiateNewClaim;
 import com.wisedrive.customerapp.R;
-import com.wisedrive.customerapp.pojos.Pojo_Upload_Image;
 import com.wisedrive.customerapp.pojos.Pojo_initiate_Claims_Photos;
 
 import java.util.ArrayList;

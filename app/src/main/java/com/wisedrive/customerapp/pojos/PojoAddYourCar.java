@@ -1,9 +1,6 @@
 package com.wisedrive.customerapp.pojos;
 
-import com.wisedrive.customerapp.Add_New_Car;
-import com.wisedrive.customerapp.commonclasses.SPHelper;
 
-import org.json.JSONArray;
 
 import java.util.ArrayList;
 

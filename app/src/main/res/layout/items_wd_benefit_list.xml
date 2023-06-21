@@ -22,7 +22,7 @@
             android:layout_centerVertical="true"
             android:layout_marginTop="12dp"
             android:layout_marginRight="10dp"
-            android:src="@drawable/cb_icon" />
+            android:src="@drawable/icon_noimage" />
 
         <TextView
             android:id="@+id/tv5"

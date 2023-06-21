@@ -13,9 +13,7 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.wisedrive.customerapp.adapters.AdapterAllClaimsList;
 import com.wisedrive.customerapp.adapters.AdapterClaimQues;
-import com.wisedrive.customerapp.adapters.AdapterMyPayments;
 import com.wisedrive.customerapp.adapters.Adapter_Q_And_A;
 import com.wisedrive.customerapp.commonclasses.AppResponse;
 import com.wisedrive.customerapp.commonclasses.Connectivity;

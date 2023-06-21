@@ -29,7 +29,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MyPayments extends AppCompatActivity {
+public class MyPayments extends AppCompatActivity
+{
     ProgressBar idPBLoading;
     private ApiInterface apiInterface;
     RecyclerView rv_mypayments;
@@ -118,7 +119,6 @@ public class MyPayments extends AppCompatActivity {
         public abstract boolean isLoading();
 
     }
-
 
     public void getPaymentHistory() {
         currentPage=1;

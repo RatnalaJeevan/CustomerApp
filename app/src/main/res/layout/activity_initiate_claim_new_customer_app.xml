@@ -49,7 +49,9 @@
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/Action_bar">
+        android:layout_above="@+id/submit"
+        android:layout_below="@id/Action_bar"
+        android:layout_marginBottom="10dp">
 
         <RelativeLayout
             android:id="@+id/rl_scroll_view"

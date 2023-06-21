@@ -8,7 +8,7 @@
     tools:context=".Activity_Q_And_A">
 
 
-        <RelativeLayout
+    <RelativeLayout
            android:id="@+id/action_bar"
            android:layout_width="match_parent"
            android:layout_height="50dp"
@@ -44,7 +44,7 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
+    <RelativeLayout
             android:id="@+id/rl_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -100,7 +100,7 @@
 
     </ExpandableListView>
 
-            <androidx.appcompat.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/submit"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"

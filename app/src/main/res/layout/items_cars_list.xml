@@ -30,7 +30,7 @@
             android:id="@+id/car_image"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:src="@drawable/blue_car_image" />
+            android:src="@drawable/icon_noimage" />
         <TextView
             android:id="@+id/text_make"
             android:layout_width="wrap_content"

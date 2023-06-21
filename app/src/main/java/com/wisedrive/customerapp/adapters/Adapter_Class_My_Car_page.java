@@ -47,7 +47,7 @@ public class Adapter_Class_My_Car_page extends RecyclerView.Adapter<Adapter_Clas
     public void onBindViewHolder(@NonNull Adapter_Class_My_Car_page.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Pojo_Class_Mycar list = pojo_class_mycarArrayList.get(position);
         IndianCurrencyFormat = new DecimalFormat("##,##,###");
-        Glide.with(context).load(list.getImage()).placeholder(R.drawable.blue_car_image).into(holder.car_image);
+        Glide.with(context).load(list.getImage()).placeholder(R.drawable.icon_noimage).into(holder.car_image);
         holder.text_make.setText(list.getVehicle_make()+"-");
         holder.text_model.setText(list.getVehicle_model()+"-"+list.getVehicle_no().toUpperCase());
         if(list.getOdometer()==null||list.getOdometer().equals("null")||list.getOdometer().equals("")){
@@ -59,7 +59,7 @@ public class Adapter_Class_My_Car_page extends RecyclerView.Adapter<Adapter_Clas
         holder.text_transmission.setText(list.getTransmission_type());
         holder.text_fuel_type.setText(list.getFuel_type());
         holder.veh_no.setText(list.getVehicle_no().toUpperCase(Locale.ROOT));
-        Glide.with(context).load(list.getBrand_icon()).placeholder(R.drawable.blue_car_image).into(holder.image_my_cars);
+        Glide.with(context).load(list.getBrand_icon()).placeholder(R.drawable.icon_noimage).into(holder.image_my_cars);
 
         holder.rl_mycar.setBackgroundResource(R.drawable.gradients_mycars);
         holder.rl_mycar.setBackgroundTintList(ContextCompat.getColorStateList(context, R.color.car_background));

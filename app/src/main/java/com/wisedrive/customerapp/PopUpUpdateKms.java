@@ -194,9 +194,7 @@ public class PopUpUpdateKms extends BottomSheetDialogFragment {
             @Override
             public void onSuccess()
             {
-                System.out.println("Succeed");
-                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                    // pickCamera();
+
                     it_is = "c";
                     CallCamera();
 
@@ -212,7 +210,8 @@ public class PopUpUpdateKms extends BottomSheetDialogFragment {
     public void CallCamera() {
 
         mRequestPermissionHandler.requestPermission(activity, new String[]{
-                Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE
+                Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
         }, 123, new RequestPermissionHandler.RequestPermissionListener() {
             @Override
             public void onSuccess() {
@@ -225,6 +224,7 @@ public class PopUpUpdateKms extends BottomSheetDialogFragment {
             }
         });
     }
+
     public void open_Camera()
     {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);

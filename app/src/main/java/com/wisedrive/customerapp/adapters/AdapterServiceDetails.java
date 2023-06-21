@@ -37,7 +37,7 @@ public class AdapterServiceDetails extends RecyclerView.Adapter<AdapterServiceDe
         PojoServiceDetails recyclerdata=serviceDetails.get(position);
         holder.tv_general_service_name.setText(recyclerdata.getPackage_name());
         holder.tv_general_service_description.setText(recyclerdata.getPackage_description());
-        Glide.with(context).load(recyclerdata.getIcon_url()).placeholder(R.drawable.blue_car_image).into(holder.image_1);
+        Glide.with(context).load(recyclerdata.getIcon_url()).placeholder(R.drawable.icon_noimage).into(holder.image_1);
 
 
     }

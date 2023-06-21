@@ -44,17 +44,7 @@ public class Adapter_Select_Model extends RecyclerView.Adapter<Adapter_Select_Mo
     public void onBindViewHolder(@NonNull Adapter_Select_Model.MyViewHolder holder,  int position) {
         Pojo_Select_Model recyclerdata = pojo_select_modelArrayList.get(position);
         holder.tv_model.setText(recyclerdata.getCar_model());
-        if (selectedPosition == position) {
-//            holder.rl_select_model.setSelected(true); //using selector drawable
-//            holder.rl_select_model.setBackgroundResource(R.drawable.select_model_bg);
-//            holder.tv_model.setTextColor(Color.parseColor("#0000FF"));
 
-        } else {
-//            holder.rl_select_model.setSelected(false);
-//            holder.rl_select_model.setBackgroundResource(R.drawable.model_background);
-//            holder.tv_model.setTextColor(Color.parseColor("#D3D3D3"));
-
-        }
 
         holder.rl_select_model.setOnClickListener(new View.OnClickListener() {
             @Override

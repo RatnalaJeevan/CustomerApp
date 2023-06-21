@@ -51,7 +51,7 @@ public class Adapter_Showroom_Services extends RecyclerView.Adapter< Adapter_Sho
 
         holder.text_service_name.setText(recyclerdata.getPackage_name());
         holder.tv_description.setText(recyclerdata.getDescription());
-        Glide.with(context).load(recyclerdata.getIcon_url()).placeholder(R.drawable.blue_car_image).into(holder.image_logo);
+        Glide.with(context).load(recyclerdata.getIcon_url()).placeholder(R.drawable.icon_noimage).into(holder.image_logo);
 
         if (recyclerdata.getStatus_id().equals(""))
         {

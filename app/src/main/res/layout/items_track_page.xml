@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     >
 
-        <RelativeLayout
+    <RelativeLayout
             android:id="@+id/rl_request"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -16,7 +16,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginLeft="30dp"
         android:src="@drawable/service_image"/>
-        <View
+    <View
             android:visibility="invisible"
             android:id="@+id/view_request"
             android:layout_width="2dp"
@@ -25,7 +25,7 @@
             android:background="@color/grey"
             android:layout_marginLeft="43dp"
             android:layout_marginTop="5dp"/>
-            <View
+    <View
                 android:id="@+id/view_request1"
                 android:layout_width="2dp"
                 android:layout_height="match_parent"
@@ -34,74 +34,72 @@
                 android:background="@color/black"
                 android:layout_marginLeft="43dp"
                 android:layout_marginTop="5dp"/>
-            <TextView
-                android:id="@+id/tv_status"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/imv_request"
-                android:layout_marginTop="12dp"
-                android:text="Request"
-                android:layout_marginLeft="10dp"
-                android:textColor="@color/black"
-                android:textSize="15dp"
-                android:fontFamily="@font/semibold"/>
+    <TextView
+    android:id="@+id/tv_status"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@id/imv_request"
+    android:layout_marginTop="12dp"
+    android:text="Request"
+    android:layout_marginLeft="10dp"
+    android:textColor="@color/black"
+    android:textSize="15dp"
+    android:fontFamily="@font/semibold"/>
 
+    <TextView
+        android:id="@+id/tv_request_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_status"
+        android:layout_marginRight="5dp"
+        android:layout_toRightOf="@id/imv_request"
+        android:text="Booking request recieved "
+        android:textColor="@color/black"
+        android:layout_marginLeft="10dp"
+        android:textSize="13dp"
+        android:fontFamily="@font/medium"/>
 
+    <RelativeLayout
 
-            <TextView
-                android:id="@+id/tv_request_description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_status"
-                android:layout_marginRight="5dp"
-                android:layout_toRightOf="@id/imv_request"
-                android:text="Booking request recieved "
-                android:textColor="@color/black"
-                android:layout_marginLeft="10dp"
-                android:textSize="13dp"
-                android:fontFamily="@font/medium"/>
+        android:id="@+id/rl_otp"
+        android:layout_width="145dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+       android:layout_toRightOf="@id/view_request"
+        android:paddingRight="5dp"
+        android:layout_below="@id/tv_date"
+        android:background="@drawable/rl_date_background">
 
-            <RelativeLayout
+        <TextView
+            android:id="@+id/tv_otp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/semibold"
+            android:text="12345"
+            android:textColor="@color/black"
+            android:textSize="25dp" />
 
-                android:id="@+id/rl_otp"
-                android:layout_width="145dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="15dp"
-               android:layout_toRightOf="@id/view_request"
-                android:paddingRight="5dp"
-                android:layout_below="@id/tv_date"
-                android:background="@drawable/rl_date_background">
-
-                <TextView
-                    android:id="@+id/tv_otp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:fontFamily="@font/semibold"
-                    android:text="12345"
-                    android:textColor="@color/black"
-                    android:textSize="25dp" />
-
-            </RelativeLayout>
-            <View
-                android:id="@+id/view"
-                android:layout_width="1dp"
-                android:layout_height="20dp"
-                android:layout_below="@id/rl_otp"
-                android:layout_marginLeft="43dp" />
-            <TextView
-                android:visibility="gone"
-                android:id="@+id/tv_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12 Feb,Wed"
-                android:layout_toRightOf="@id/imv_request"
-                android:layout_below="@+id/tv_request_description"
-                android:layout_marginLeft="10dp"
-                android:textColor="@color/black"
-                android:textSize="12dp"
-                android:fontFamily="@font/semibold"/>
+    </RelativeLayout>
+    <View
+        android:id="@+id/view"
+        android:layout_width="1dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/rl_otp"
+        android:layout_marginLeft="43dp" />
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12 Feb,Wed"
+        android:layout_toRightOf="@id/imv_request"
+        android:layout_below="@+id/tv_request_description"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        android:fontFamily="@font/semibold"/>
         </RelativeLayout>
 
 </RelativeLayout>

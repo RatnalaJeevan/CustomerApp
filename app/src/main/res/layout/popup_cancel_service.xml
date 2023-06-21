@@ -27,7 +27,7 @@
                     android:layout_marginRight="10dp"
                     android:fontFamily="@font/zonapro_semibold"
                     android:gravity="center"
-                    android:text="Are You Sure you want to cancel the service?"
+                    android:text="Are you Sure you want to cancel the service?"
                     android:textSize="16dp">
 
                 </TextView>

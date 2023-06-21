@@ -23,19 +23,12 @@
         android:layout_height="wrap_content"
        >
 
-        <ImageView
-            android:visibility="gone"
-            android:id="@+id/image_star"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/blue_star"/>
+
 
         <TextView
             android:id="@+id/tv_activate_package"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/image_star"
             android:text="Check My Car"
             android:layout_centerHorizontal="true"
             android:textColor="@color/black"
@@ -369,13 +362,6 @@
                     android:paddingBottom="7dp"
                     >
 
-                    <ImageView
-                        android:visibility="gone"
-                        android:id="@+id/image_logo"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="10dp"
-                        android:src="@drawable/sh_wa" />
 
                     <TextView
                         android:id="@+id/text_warranty_name"

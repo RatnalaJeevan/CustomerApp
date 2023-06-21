@@ -44,18 +44,18 @@ public class Adapter_Service_Includes extends RecyclerView.Adapter<Adapter_Servi
         holder.tv_description.setText(list.getDescription());
         holder.tv_exp_on.setText("Valid till \t"+ Common.getDateFromString(list.getValid_to()));
         //holder.image_logo.setImageResource(list.getImage_logo());
-       // Glide.with(context).load(list.getProduct_icon()).placeholder(R.drawable.service_image).into(holder.image_logo);
+        Glide.with(context).load(list.getProduct_icon()).placeholder(R.drawable.service_image).into(holder.image_logo);
 
-        if(list.getProduct_name().equals("Road Side Assistance")){
-            holder.image_logo.setImageResource(R.drawable.rsa);
-        }else if(list.getProduct_name().equals("Showroom Services")){
-            holder.image_logo.setImageResource(R.drawable.sh_se);
-        }
-        else if(list.getProduct_name().equals("Buy Back Guarantee")){
-            holder.image_logo.setImageResource(R.drawable.cb_icon);
-        }else {
-            holder.image_logo.setImageResource(R.drawable.sh_wa);
-        }
+//        if(list.getProduct_name().equals("Road Side Assistance")){
+//            holder.image_logo.setImageResource(R.drawable.rsa);
+//        }else if(list.getProduct_name().equals("Showroom Services")){
+//            holder.image_logo.setImageResource(R.drawable.sh_se);
+//        }
+//        else if(list.getProduct_name().equals("Buy Back Guarantee")){
+//            holder.image_logo.setImageResource(R.drawable.cb_icon);
+//        }else {
+//            holder.image_logo.setImageResource(R.drawable.sh_wa);
+//        }
 
     }
 

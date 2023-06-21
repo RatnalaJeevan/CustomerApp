@@ -70,7 +70,7 @@ public class Addons extends AppCompatActivity implements CFCheckoutResponseCallb
     String orderID = "";
     String paymentSessionID = "";
     String payment_status = "", cforderid = "", final_amount = "",paack_id="";
-    CFSession.Environment cfEnvironment = CFSession.Environment.SANDBOX;
+    CFSession.Environment cfEnvironment = CFSession.Environment.PRODUCTION;
     private DecimalFormat IndianCurrencyFormat;
     public static Addons instance;
     String lead_id = "", c_id = "";
@@ -179,7 +179,7 @@ public class Addons extends AppCompatActivity implements CFCheckoutResponseCallb
                 SPHelper.coupon_type="";
                 rl_disc.setVisibility(View.GONE);
                 tv_dis_amount.setText("0");
-                tv_total_amount.setText(IndianCurrencyFormat.format((int) ((SPHelper.upgrade_amount+SPHelper.add_on_amount)-SPHelper.disc_amount)));
+                tv_total_amount.setText(IndianCurrencyFormat.format( ((SPHelper.upgrade_amount+SPHelper.add_on_amount)-SPHelper.disc_amount)));
 
                 PopupShowPartialAmount bottomSheetDialogFragment = new PopupShowPartialAmount();
                 bottomSheetDialogFragment.show(Addons.this.getSupportFragmentManager(), "Popup");
@@ -246,7 +246,7 @@ public class Addons extends AppCompatActivity implements CFCheckoutResponseCallb
                 SPHelper.gone_to="";
                 rl_disc.setVisibility(View.GONE);
                 tv_dis_amount.setText("0");
-                tv_total_amount.setText(IndianCurrencyFormat.format((int) ((SPHelper.upgrade_amount+SPHelper.add_on_amount)-SPHelper.disc_amount)));
+                tv_total_amount.setText(IndianCurrencyFormat.format( ((SPHelper.upgrade_amount+SPHelper.add_on_amount)-SPHelper.disc_amount)));
             }
         });
 
@@ -530,15 +530,22 @@ public class Addons extends AppCompatActivity implements CFCheckoutResponseCallb
             paack_id=SPHelper.sel_upgrade_pac_id;
         }
 
+        if(SPHelper.is_upgrade.equals(""))
+        {
+            SPHelper.is_upgrade="n";
+        }
+
+
         PojoSellPackage pojoSellPackage = new PojoSellPackage(paack_id, SPHelper.selected_addon_id, SPHelper.main_pack_id,
                 SPHelper.cat_id, c_paying_amout, payment_status, "online", "", cforderid, orderID,
                 "", SPHelper.disc_amount, "", lead_id, SPHelper.getSPData(Addons.this, SPHelper.customer_id, ""),
                 SPHelper.lead_veh_id, "Y", is_multiple_addon, "", "",SPHelper.coupon_id,SPHelper.coupon_type,SPHelper.disc_amount,SPHelper.veh_id,
                 SPHelper.coupon_code,SPHelper.coupon_code_type_id,"",SPHelper.is_part,
-                SPHelper.pack_amount,SPHelper.part_amount);
+                SPHelper.pack_amount,SPHelper.part_amount,SPHelper.is_upgrade);
 
         Log.d("print","object"+pojoSellPackage.toString());
     }
+
     public void buyAddOnPack() {
         {
             if (!Connectivity.isNetworkConnected(Addons.this)) {
@@ -553,12 +560,16 @@ public class Addons extends AppCompatActivity implements CFCheckoutResponseCallb
                     paack_id=SPHelper.sel_upgrade_pac_id;
                 }
 
+                if(SPHelper.is_upgrade.equals(""))
+                {
+                    SPHelper.is_upgrade="n";
+                }
                 PojoSellPackage pojoSellPackage = new PojoSellPackage(paack_id, SPHelper.selected_addon_id, SPHelper.main_pack_id,
                         SPHelper.cat_id, c_paying_amout, payment_status, "online", "", cforderid, orderID,
                         "", SPHelper.disc_amount, "", lead_id, SPHelper.getSPData(Addons.this, SPHelper.customer_id, ""),
                         SPHelper.lead_veh_id, "Y", is_multiple_addon, "", "",SPHelper.coupon_id,SPHelper.coupon_type,SPHelper.disc_amount,SPHelper.veh_id,
                         SPHelper.coupon_code,SPHelper.coupon_code_type_id,"",SPHelper.is_part,
-                        SPHelper.pack_amount,SPHelper.part_amount);
+                        SPHelper.pack_amount,SPHelper.part_amount,SPHelper.is_upgrade);
                 Call<AppResponse> call = apiInterface.sell_package(pojoSellPackage);
                 call.enqueue(new Callback<AppResponse>() {
                     @Override
@@ -707,13 +718,20 @@ public class Addons extends AppCompatActivity implements CFCheckoutResponseCallb
 
         }
         else {
-            if(SPHelper.is_ok_partial_pay==null||SPHelper.is_ok_partial_pay.equals("null")||
-                    SPHelper.is_ok_partial_pay.equalsIgnoreCase("n"))
-            {
+
+            if(SPHelper.is_upgrade.equalsIgnoreCase("y")){
                 tv_partial.setVisibility(View.INVISIBLE);
-            }else {
-                tv_partial.setVisibility(View.VISIBLE);
             }
+            else {
+                if(SPHelper.is_ok_partial_pay==null||SPHelper.is_ok_partial_pay.equals("null")||
+                        SPHelper.is_ok_partial_pay.equalsIgnoreCase("n"))
+                {
+                    tv_partial.setVisibility(View.INVISIBLE);
+                }else {
+                    tv_partial.setVisibility(View.VISIBLE);
+                }
+            }
+
         }
 
 
@@ -728,8 +746,8 @@ public class Addons extends AppCompatActivity implements CFCheckoutResponseCallb
         System.out.println("tv_amount"+tv_amount_buy.getText().toString());
 
 
-        tv_amount_buy.setText((IndianCurrencyFormat.format((int) (SPHelper.upgrade_amount))));
-        tv_total_amount.setText((IndianCurrencyFormat.format((int)
+        tv_amount_buy.setText((IndianCurrencyFormat.format( (SPHelper.upgrade_amount))));
+        tv_total_amount.setText((IndianCurrencyFormat.format(
                 ((SPHelper.upgrade_amount+SPHelper.add_on_amount)-SPHelper.disc_amount))));
 
         if(tv_amount_buy.getText().toString().equals("0")){

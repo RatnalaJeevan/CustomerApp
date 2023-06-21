@@ -118,7 +118,7 @@
                     android:layout_height="75dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="5dp"
-                    android:src="@drawable/ext_warr_pl" />
+                    android:src="@drawable/icon_noimage" />
                 <TextView
                     android:id="@+id/plan"
                     android:layout_width="match_parent"

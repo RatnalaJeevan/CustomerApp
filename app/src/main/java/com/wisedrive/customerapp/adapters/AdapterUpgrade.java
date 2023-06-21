@@ -49,7 +49,7 @@ public class AdapterUpgrade extends RecyclerView.Adapter<AdapterUpgrade.Recycler
         PojoUpgrade list=pojoUpgrades.get(position);
         IndianCurrencyFormat = new DecimalFormat("##,##,###");
         holder.pack_name.setText(list.getPackage_name());
-        holder.tv_amount_buy.setText(IndianCurrencyFormat.format((int) list.getFinal_price()));
+        holder.tv_amount_buy.setText(IndianCurrencyFormat.format( list.getFinal_price()));
 
 
         if(list.getIsSelected().equals("y"))
@@ -126,7 +126,8 @@ public class AdapterUpgrade extends RecyclerView.Adapter<AdapterUpgrade.Recycler
 
                 if(SPHelper.is_upgrade.equalsIgnoreCase("y"))
                 {
-                    if (position != RecyclerView.NO_POSITION){
+                    if (position != RecyclerView.NO_POSITION)
+                    {
                         selectedPosition = holder.getAdapterPosition();
                     }
                 }
@@ -146,8 +147,8 @@ public class AdapterUpgrade extends RecyclerView.Adapter<AdapterUpgrade.Recycler
                             Addons.getInstance().rl_coupon_label.setVisibility(View.VISIBLE);
                             SPHelper.is_partial_pay="";
                             SPHelper.upgrade_amount=SPHelper.pack_amount;
+                            SPHelper.final_per=SPHelper.per_amount;
                             Addons.getInstance().get_update_amounnt();
-
                         }
                     }
 
@@ -163,7 +164,7 @@ public class AdapterUpgrade extends RecyclerView.Adapter<AdapterUpgrade.Recycler
                             SPHelper.upgrade_amount=list.getFinal_price();
                             SPHelper.sel_upgrade_pac_id=list.getPackage_id();
                             SPHelper.is_partial_pay=list.getPayAsyouGoEligibility().getIs_eligible();
-                            SPHelper.per_amount=list.getPayAsyouGoEligibility().getPercentage_amount_to_pay();
+                            SPHelper.final_per=list.getPayAsyouGoEligibility().getPercentage_amount_to_pay();
                             Addons.getInstance().rl_disc.setVisibility(View.GONE);
                             Addons.getInstance().tv_dis_amount.setText("0");
                             SPHelper.disc_amount=0;
@@ -171,7 +172,6 @@ public class AdapterUpgrade extends RecyclerView.Adapter<AdapterUpgrade.Recycler
                             Addons.getInstance().rl_coupon_applied.setVisibility(View.INVISIBLE);
                             Addons.getInstance().rl_coupon_label.setVisibility(View.VISIBLE);
                             Addons.getInstance().get_update_amounnt();
-
                         }
                         else {
                             pojoUpgrades.get(i).setIsSelected("n");

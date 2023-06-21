@@ -98,13 +98,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".My_Cars"
-            android:exported="true">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
         <activity
             android:name=".Activation_Confirmation_Activity"
             android:exported="false">
@@ -112,13 +106,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".Recommended_Activity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
         <activity
             android:name=".Upgrade_and_Save"
             android:exported="false">
@@ -164,18 +152,14 @@
         <activity
             android:name=".HelpCentre"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".CustomerFeedBack"
-            android:screenOrientation="portrait" />
+
         <activity
             android:name=".CustomerHomepage"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Create_Account"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Add_New_Car"
-            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Addons"
             android:screenOrientation="portrait" />

@@ -49,7 +49,7 @@ public class PopupFullPayment extends BottomSheetDialogFragment implements CFChe
     String lead_id = "", c_id = "";
     String paymentSessionID = "";
     String payment_status = "", cforderid = "", final_amount = "";
-    CFSession.Environment cfEnvironment = CFSession.Environment.SANDBOX;
+    CFSession.Environment cfEnvironment = CFSession.Environment.PRODUCTION;
     TextView label1;
     Activity activity;
     private ApiInterface apiInterface;
